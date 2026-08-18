@@ -1,0 +1,11 @@
+id,nome,turma,idade,faltas,nota_1b,nota_2b,nota_3b,nota_4b,media_final,presenca_pct,situacao,conceito
+1,Ana,A,20.0,1,8.5,9.0,7.5,8.0,8.25,98.8,Aprovado,B
+2,Bruno,A,22.0,3,6.0,6.17,7.0,5.5,6.17,96.2,Reprovado,C
+3,Carla,A,21.0,0,9.5,10.0,9.0,9.8,9.57,100.0,Aprovado,A
+4,Diego,A,20.5,5,4.0,5.0,4.5,4.5,4.5,93.8,Reprovado,D
+5,Elena,A,20.0,2,7.5,8.0,7.0,7.5,7.5,97.5,Aprovado,B
+6,Fabio,B,23.0,0,9.0,8.5,9.5,8.0,8.75,100.0,Aprovado,B
+7,Gabi,B,21.0,4,6.5,7.0,6.0,6.5,6.5,95.0,Reprovado,C
+8,Hugo,B,22.0,6,3.5,4.5,4.0,3.5,3.88,92.5,Reprovado,D
+9,Ines,B,20.0,1,7.5,8.0,7.5,8.0,7.75,98.8,Aprovado,B
+10,Joao,B,21.5,3,6.0,5.83,5.5,6.0,5.83,96.2,Reprovado,C
