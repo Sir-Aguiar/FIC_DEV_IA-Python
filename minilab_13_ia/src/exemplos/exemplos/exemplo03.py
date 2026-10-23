@@ -17,20 +17,37 @@ produz informação plausível e falsa sobre um documento oficial.
 
 import re
 import sys
-from typing import Dict, List
+from pathlib import Path
+from typing import Dict, List, Optional
 
 from exemplo02 import AssistenteDocumentos
 
+# Páginas = número no arquivo PDF (não o número impresso no Diário Oficial).
 # (pergunta, deve_responder, página esperada quando houver resposta)
 BATERIA: List[tuple] = [
-    ("Qual o prazo para envio das propostas?", True, 1),
-    ("Qual o valor estimado da contratação?", True, 1),
-    ("A empresa pode participar em consórcio?", True, 2),
-    ("Qual o capital social mínimo exigido?", True, 2),
-    ("Qual a garantia exigida para o notebook?", True, 3),
-    ("Qual o percentual da multa por atraso na entrega?", False, None),
-    ("Quem é o pregoeiro responsável pela sessão?", False, None),
+    ("Há cobrança de taxa de inscrição no processo seletivo da MTI?", True, 1),
+    ("Qual a remuneração do perfil Analista de TI - Gerente de Projeto?", True, 2),
+    ("Qual o percentual de vagas reservadas às pessoas com deficiência?", True, 3),
+    ("Qual o período de inscrições previsto no cronograma do edital?", True, 4),
+    ("O exame admissional é obrigatório na contratação?", True, 5),
+    (
+        "Qual a multa aplicada se o contratado não cumprir o aviso prévio de 30 dias?",
+        True,
+        27,
+    ),
+    (
+        "A Gerência de Aquisições realiza procedimentos licitatórios de quais modalidades?",
+        True,
+        10,
+    ),
+    ("Qual o capital social mínimo exigido para participar do certame?", False, None),
+    ("Quem é o pregoeiro responsável pela sessão pública?", False, None),
     ("Qual a alíquota do IPVA em Mato Grosso em 2026?", False, None),
+]
+
+DOCUMENTOS_PADRAO = [
+    "processo_seletivo_mti.pdf",
+    "regimento_interno_mti.pdf",
 ]
 
 
@@ -63,33 +80,84 @@ def avaliar(assistente: AssistenteDocumentos) -> List[Dict]:
                 "pergunta": pergunta,
                 "esperado": "responder" if deve_responder else "recusar",
                 "obtido": "respondeu" if respondeu else "recusou",
+                "pagina_esperada": pagina_esperada,
+                "pagina_citada": citadas,
                 "paginas": citadas,
                 "situacao": situacao,
+                "resposta": resultado["resposta"],
             }
         )
 
     return linhas
 
 
-def main() -> None:
-    caminho = sys.argv[1] if len(sys.argv) > 1 else "edital_exemplo.pdf"
+def _pasta_data() -> Path:
+    return Path(__file__).resolve().parents[2] / "data"
 
-    assistente = AssistenteDocumentos(arquivo_auditoria="auditoria.jsonl")
-    info = assistente.carregar_documento(caminho)
-    print(f"Acervo: {info['nome']} ({info['total_trechos']} trechos)\n")
+
+def _parse_args() -> tuple:
+    """Aceita PDFs e um limiar opcional no intervalo (0, 1)."""
+    limiar = 0.45
+    caminhos: List[str] = []
+    for argumento in sys.argv[1:]:
+        try:
+            valor = float(argumento)
+        except ValueError:
+            caminhos.append(argumento)
+            continue
+        if 0 < valor < 1:
+            limiar = valor
+        else:
+            caminhos.append(argumento)
+    if not caminhos:
+        caminhos = [str(_pasta_data() / nome) for nome in DOCUMENTOS_PADRAO]
+    return caminhos, limiar
+
+
+def _fmt_pagina(valor: Optional[int] | List[int]) -> str:
+    if valor is None:
+        return "—"
+    if isinstance(valor, list):
+        return ", ".join(str(n) for n in valor) if valor else "—"
+    return str(valor)
+
+
+def main() -> None:
+    caminhos, limiar = _parse_args()
+
+    assistente = AssistenteDocumentos(
+        similaridade_minima=limiar,
+        arquivo_auditoria="auditoria.jsonl",
+    )
+    for caminho in caminhos:
+        info = assistente.carregar_documento(caminho)
+        print(f"Acervo: {info['nome']} ({info['total_trechos']} trechos)")
+    print(f"Limiar de similaridade: {limiar}\n")
 
     linhas = avaliar(assistente)
 
-    print(f"{'Pergunta':<52} {'Esperado':<10} {'Obtido':<10} Situação")
-    print("-" * 110)
+    print(
+        f"{'Pergunta':<58} {'Esperado':<10} {'Obtido':<10} "
+        f"{'Pág. esp.':<10} {'Pág. citada':<12} Situação"
+    )
+    print("-" * 130)
     for linha in linhas:
         print(
-            f"{linha['pergunta'][:50]:<52} "
-            f"{linha['esperado']:<10} {linha['obtido']:<10} {linha['situacao']}"
+            f"{linha['pergunta'][:56]:<58} "
+            f"{linha['esperado']:<10} {linha['obtido']:<10} "
+            f"{_fmt_pagina(linha['pagina_esperada']):<10} "
+            f"{_fmt_pagina(linha['pagina_citada']):<12} "
+            f"{linha['situacao']}"
         )
 
     falhas = [linha for linha in linhas if linha["situacao"].startswith("FALHA")]
+    legitimas_recusadas = [
+        linha
+        for linha in linhas
+        if linha["esperado"] == "responder" and linha["obtido"] == "recusou"
+    ]
     print(f"\n{len(linhas) - len(falhas)} de {len(linhas)} comportamentos corretos.")
+    print(f"Perguntas legítimas recusadas: {len(legitimas_recusadas)}.")
     if falhas:
         print("Falhas encontradas — o assistente não está pronto para uso real.")
 
