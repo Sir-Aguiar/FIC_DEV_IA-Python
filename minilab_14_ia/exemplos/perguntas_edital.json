@@ -1,0 +1,393 @@
+{
+  "documento": "edital_pregao_012_2026.txt",
+  "descricao": "Conjunto de avaliacao do Edital de Pregao Eletronico n. 012/2026. Doze perguntas respondiveis, com clausula de origem e trecho-gabarito verificavel, e tres perguntas cuja resposta nao consta do documento, usadas para medir abstencao.",
+  "perguntas": [
+    {
+      "id": 1,
+      "pergunta": "Qual é o prazo de entrega dos equipamentos?",
+      "clausula": "11.1",
+      "trecho_gabarito": "45 (quarenta e cinco) dias corridos",
+      "chaves": [
+        "45"
+      ],
+      "respondivel": true
+    },
+    {
+      "id": 2,
+      "pergunta": "Qual é o valor total estimado da contratação?",
+      "clausula": "1.2",
+      "trecho_gabarito": "R$ 1.847.320,00 (um milhão",
+      "chaves": [
+        "1.847.320"
+      ],
+      "respondivel": true
+    },
+    {
+      "id": 3,
+      "pergunta": "Qual o percentual exigido de garantia de execução contratual?",
+      "clausula": "10.4",
+      "trecho_gabarito": "garantia de execução contratual no percentual de 5% (cinco por cento)",
+      "chaves": [
+        "5%",
+        "cinco por cento"
+      ],
+      "respondivel": true
+    },
+    {
+      "id": 4,
+      "pergunta": "Por quantos meses os equipamentos devem ter garantia do fornecedor?",
+      "clausula": "11.6",
+      "trecho_gabarito": "garantia mínima de 36 (trinta e seis) meses",
+      "chaves": [
+        "36"
+      ],
+      "respondivel": true
+    },
+    {
+      "id": 5,
+      "pergunta": "Qual índice corrige o valor devido quando a Administração atrasa o pagamento?",
+      "clausula": "12.5",
+      "trecho_gabarito": "Índice Nacional de Preços ao Consumidor Amplo (IPCA)",
+      "chaves": [
+        "IPCA"
+      ],
+      "respondivel": true
+    },
+    {
+      "id": 6,
+      "pergunta": "Qual é a taxa de juros de mora aplicada em caso de atraso no pagamento?",
+      "clausula": "12.6",
+      "trecho_gabarito": "juros de mora de 0,5% (meio por cento) ao mês",
+      "chaves": [
+        "0,5%",
+        "0.5%",
+        "meio por cento"
+      ],
+      "respondivel": true
+    },
+    {
+      "id": 7,
+      "pergunta": "Qual é o limite máximo da multa por atraso na entrega dos bens?",
+      "clausula": "13.2",
+      "trecho_gabarito": "limitada a 15% (quinze por cento) do valor total do contrato",
+      "chaves": [
+        "15%",
+        "quinze por cento"
+      ],
+      "respondivel": true
+    },
+    {
+      "id": 8,
+      "pergunta": "Qual patrimônio líquido mínimo o licitante precisa comprovar?",
+      "clausula": "6.6",
+      "trecho_gabarito": "patrimônio líquido mínimo equivalente a 10% (dez por cento)",
+      "chaves": [
+        "10%",
+        "dez por cento"
+      ],
+      "respondivel": true
+    },
+    {
+      "id": 9,
+      "pergunta": "Qual a quantidade mínima de unidades que o atestado de capacidade técnica deve comprovar?",
+      "clausula": "6.7",
+      "trecho_gabarito": "quantidade mínima de 50 (cinquenta) unidades",
+      "chaves": [
+        "50"
+      ],
+      "respondivel": true
+    },
+    {
+      "id": 10,
+      "pergunta": "Em quantos dias o pagamento é feito depois do atesto da nota fiscal?",
+      "clausula": "12.2",
+      "trecho_gabarito": "prazo de até 30 (trinta) dias corridos",
+      "chaves": [
+        "30"
+      ],
+      "respondivel": true
+    },
+    {
+      "id": 11,
+      "pergunta": "Qual é o prazo de vigência do contrato?",
+      "clausula": "10.2",
+      "trecho_gabarito": "vigência do contrato será de 12 (doze) meses",
+      "chaves": [
+        "12 (doze) meses",
+        "12 meses",
+        "doze meses",
+        "12 (doze)"
+      ],
+      "respondivel": true
+    },
+    {
+      "id": 12,
+      "pergunta": "Em que endereço os equipamentos devem ser entregues?",
+      "clausula": "11.3",
+      "trecho_gabarito": "Avenida Historiador Rubens de Mendonça",
+      "chaves": [
+        "Rubens de Mendonça"
+      ],
+      "respondivel": true
+    },
+    {
+      "id": 13,
+      "pergunta": "Qual é a alíquota do Imposto sobre Serviços aplicável a esta contratação?",
+      "clausula": null,
+      "trecho_gabarito": null,
+      "chaves": [],
+      "respondivel": false
+    },
+    {
+      "id": 14,
+      "pergunta": "O edital admite a participação de empresas reunidas em consórcio?",
+      "clausula": null,
+      "trecho_gabarito": null,
+      "chaves": [],
+      "respondivel": false
+    },
+    {
+      "id": 15,
+      "pergunta": "Qual é o telefone da central de atendimento do Pregoeiro?",
+      "clausula": null,
+      "trecho_gabarito": null,
+      "chaves": [],
+      "respondivel": false
+    },
+    {
+      "id": 16,
+      "pergunta": "Qual o valor unitário informado no edital para cada notebook educacional?",
+      "clausula": null,
+      "trecho_gabarito": null,
+      "chaves": [],
+      "respondivel": false,
+      "armadilha": "O edital informa o valor do lote e a quantidade, mas nunca o valor unitário. Um modelo sem guarda faz a divisão e apresenta o resultado como se estivesse escrito."
+    },
+    {
+      "id": 17,
+      "pergunta": "Quantos monitores o edital de mobiliário escolar prevê?",
+      "clausula": null,
+      "trecho_gabarito": null,
+      "chaves": [],
+      "respondivel": false,
+      "armadilha": "Monitores aparecem apenas no edital de informática. A resposta plausível vem do documento errado, e a verificação numérica não a detecta porque o número existe no contexto."
+    }
+  ],
+  "acervo": [
+    "edital_pregao_012_2026.txt",
+    "edital_pregao_008_2026.txt"
+  ],
+  "perguntas_acervo": [
+    {
+      "id": 101,
+      "pergunta": "Qual é o prazo de entrega dos equipamentos de informática?",
+      "documento": "edital_pregao_012_2026.txt",
+      "clausula": "11.1",
+      "trecho_gabarito": "45 (quarenta e cinco) dias corridos",
+      "chaves": [
+        "45"
+      ],
+      "respondivel": true
+    },
+    {
+      "id": 102,
+      "pergunta": "Qual é o valor estimado da aquisição de equipamentos de informática?",
+      "documento": "edital_pregao_012_2026.txt",
+      "clausula": "1.2",
+      "trecho_gabarito": "R$ 1.847.320,00 (um milhão",
+      "chaves": [
+        "1.847.320"
+      ],
+      "respondivel": true
+    },
+    {
+      "id": 103,
+      "pergunta": "Por quantos meses os computadores e notebooks têm garantia?",
+      "documento": "edital_pregao_012_2026.txt",
+      "clausula": "11.6",
+      "trecho_gabarito": "garantia mínima de 36 (trinta e seis) meses",
+      "chaves": [
+        "36"
+      ],
+      "respondivel": true
+    },
+    {
+      "id": 104,
+      "pergunta": "Qual a taxa de juros de mora no contrato de equipamentos de informática?",
+      "documento": "edital_pregao_012_2026.txt",
+      "clausula": "12.6",
+      "trecho_gabarito": "juros de mora de 0,5% (meio por cento) ao mês",
+      "chaves": [
+        "0,5%",
+        "meio por cento"
+      ],
+      "respondivel": true
+    },
+    {
+      "id": 105,
+      "pergunta": "Qual a vigência do contrato de fornecimento de equipamentos de informática?",
+      "documento": "edital_pregao_012_2026.txt",
+      "clausula": "10.2",
+      "trecho_gabarito": "vigência do contrato será de 12 (doze) meses",
+      "chaves": [
+        "12 (doze) meses",
+        "12 meses",
+        "doze meses",
+        "12 (doze)"
+      ],
+      "respondivel": true
+    },
+    {
+      "id": 106,
+      "pergunta": "Em que endereço devem ser entregues os equipamentos de informática?",
+      "documento": "edital_pregao_012_2026.txt",
+      "clausula": "11.3",
+      "trecho_gabarito": "Avenida Historiador Rubens de Mendonça",
+      "chaves": [
+        "Rubens de Mendonça"
+      ],
+      "respondivel": true
+    },
+    {
+      "id": 107,
+      "pergunta": "Qual é o prazo de entrega do mobiliário escolar?",
+      "documento": "edital_pregao_008_2026.txt",
+      "clausula": "11.1",
+      "trecho_gabarito": "60 (sessenta) dias corridos",
+      "chaves": [
+        "60"
+      ],
+      "respondivel": true
+    },
+    {
+      "id": 108,
+      "pergunta": "Qual é o valor estimado da aquisição de mobiliário escolar?",
+      "documento": "edital_pregao_008_2026.txt",
+      "clausula": "1.2",
+      "trecho_gabarito": "R$ 3.214.900,00 (três milhões",
+      "chaves": [
+        "3.214.900"
+      ],
+      "respondivel": true
+    },
+    {
+      "id": 109,
+      "pergunta": "Por quantos meses as mesas e cadeiras escolares têm garantia?",
+      "documento": "edital_pregao_008_2026.txt",
+      "clausula": "11.6",
+      "trecho_gabarito": "garantia mínima de 60 (sessenta) meses",
+      "chaves": [
+        "60"
+      ],
+      "respondivel": true
+    },
+    {
+      "id": 110,
+      "pergunta": "Qual a taxa de juros de mora no contrato de mobiliário escolar?",
+      "documento": "edital_pregao_008_2026.txt",
+      "clausula": "12.5",
+      "trecho_gabarito": "juros de mora de 1% (um por cento) ao mês",
+      "chaves": [
+        "um por cento",
+        "1% ao mês",
+        "1% (um",
+        "de 1%"
+      ],
+      "respondivel": true
+    },
+    {
+      "id": 111,
+      "pergunta": "Qual a vigência do contrato de fornecimento de mobiliário escolar?",
+      "documento": "edital_pregao_008_2026.txt",
+      "clausula": "10.2",
+      "trecho_gabarito": "vigência do contrato será de 24 (vinte e quatro) meses",
+      "chaves": [
+        "24 (vinte e quatro) meses",
+        "24 meses",
+        "vinte e quatro meses",
+        "24 (vinte"
+      ],
+      "respondivel": true
+    },
+    {
+      "id": 112,
+      "pergunta": "Em que endereço deve ser entregue o mobiliário escolar?",
+      "documento": "edital_pregao_008_2026.txt",
+      "clausula": "11.3",
+      "trecho_gabarito": "Rua Engenheiro Edgard Prado Arze",
+      "chaves": [
+        "Edgard Prado Arze"
+      ],
+      "respondivel": true
+    }
+  ],
+  "perguntas_literais": [
+    {
+      "id": 201,
+      "pergunta": "O que estabelece a cláusula 11.6 do Edital de Pregão 012/2026?",
+      "documento": "edital_pregao_012_2026.txt",
+      "clausula": "11.6",
+      "trecho_gabarito": "garantia mínima de 36 (trinta e seis) meses",
+      "chaves": [
+        "36"
+      ],
+      "respondivel": true
+    },
+    {
+      "id": 202,
+      "pergunta": "Qual dotação orçamentária usa o Programa 2041 e a Ação 4382?",
+      "documento": "edital_pregao_012_2026.txt",
+      "clausula": "14.1",
+      "trecho_gabarito": "Programa 2041, Ação 4382",
+      "chaves": [
+        "2041"
+      ],
+      "respondivel": true
+    },
+    {
+      "id": 203,
+      "pergunta": "Para qual e-mail devem ser enviadas as impugnações ao edital da SECITEC?",
+      "documento": "edital_pregao_012_2026.txt",
+      "clausula": "8.1",
+      "trecho_gabarito": "licitacao@secitec.mt.gov.br",
+      "chaves": [
+        "licitacao@secitec.mt.gov.br"
+      ],
+      "respondivel": true
+    },
+    {
+      "id": 204,
+      "pergunta": "Qual pontuação mínima no índice PassMark CPU Mark é exigida dos microcomputadores?",
+      "documento": "edital_pregao_012_2026.txt",
+      "clausula": "17.2",
+      "trecho_gabarito": "15.000 pontos no índice PassMark CPU Mark",
+      "chaves": [
+        "15.000"
+      ],
+      "respondivel": true
+    },
+    {
+      "id": 205,
+      "pergunta": "O que exige a cláusula 6.7 do edital de equipamentos de informática?",
+      "documento": "edital_pregao_012_2026.txt",
+      "clausula": "6.7",
+      "trecho_gabarito": "quantidade mínima de 50 (cinquenta) unidades",
+      "chaves": [
+        "50"
+      ],
+      "respondivel": true
+    },
+    {
+      "id": 206,
+      "pergunta": "Qual o número do Processo Administrativo do Pregão 008/2026?",
+      "documento": "edital_pregao_008_2026.txt",
+      "clausula": "preâmbulo",
+      "trecho_gabarito": "2026/0003115",
+      "chaves": [
+        "2026/0003115",
+        "0003115"
+      ],
+      "respondivel": true
+    }
+  ]
+}

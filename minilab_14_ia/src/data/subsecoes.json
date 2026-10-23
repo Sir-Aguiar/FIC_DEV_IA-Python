@@ -1,0 +1,386 @@
+{
+  "documento": {
+    "titulo": "Regimento Interno da Empresa Mato-grossense de Tecnologia da Informação - MTI",
+    "orgao": "MTI",
+    "data_aprovacao": "2025-01-02",
+    "idioma": "pt-BR",
+    "arquivo": "regimento_interno_mti.pdf",
+    "decreto": "Decreto nº 1.212, de 2 de janeiro de 2025"
+  },
+  "secoes": [
+    {
+      "id": "caracterizacao",
+      "tipo": "capitulo",
+      "numero": "I.I",
+      "rotulo": "Título I, Capítulo I",
+      "titulo": "Da caracterização",
+      "parte": {
+        "numero": "I",
+        "titulo": "Da caracterização e objetivos"
+      },
+      "pagina_inicio": null,
+      "pagina_fim": null,
+      "tema": "Natureza jurídica e origem histórica da MTI",
+      "texto_completo": "Art. 1º A Empresa Mato-grossense de Tecnologia da Informação - MTI, assim denominada pelo Art. 1º, da Lei Complementar nº 574, de 04 de fevereiro de 2016, é uma empresa pública dotada de personalidade jurídica de direito privado, criada inicialmente com a denominação de Centro de Processamento de Dados do Estado de Mato Grosso - CEPROMAT nos termos da Lei nº 3.359, de 18 de junho de 1973, autorizada a transformação em empresa pública pela Lei nº 3.681 de 28 de novembro de 1975 e Decreto nº 1.664, de 26 de dezembro de 1978, vinculada à Secretaria de Estado de Planejamento e Gestão - SEPLAG por força do disposto na alínea “c”, do inciso II, do art. 34 da Lei Complementar nº 612, de 28 de janeiro de 2019. A MTI está de acordo com o que dispõe a Lei Federal nº 6.404, de 15 de dezembro de 1976, a Lei Federal nº 13.303 de 30 de junho de 2016 e o",
+      "paragrafos": [
+        {
+          "numero": 1,
+          "bloco_tematico": null,
+          "texto": "A Empresa Mato-grossense de Tecnologia da Informação - MTI, assim denominada pelo Art. 1º, da Lei Complementar nº 574, de 04 de fevereiro de 2016, é uma empresa pública dotada de personalidade jurídica de direito privado, criada inicialmente com a denominação de Centro de Processamento de Dados do Estado de Mato Grosso - CEPROMAT nos termos da Lei nº 3.359, de 18 de junho de 1973, autorizada a transformação em empresa pública pela Lei nº 3.681 de 28 de novembro de 1975 e Decreto nº 1.664, de 26 de dezembro de 1978, vinculada à Secretaria de Estado de Planejamento e Gestão - SEPLAG por força do disposto na alínea “c”, do inciso II, do art. 34 da Lei Complementar nº 612, de 28 de janeiro de 2019. A MTI está de acordo com o que dispõe a Lei Federal nº 6.404, de 15 de dezembro de 1976, a Lei Federal nº 13.303 de 30 de junho de 2016 e o",
+          "alineas": []
+        }
+      ]
+    },
+    {
+      "id": "objetivos",
+      "tipo": "capitulo",
+      "numero": "I.II",
+      "rotulo": "Título I, Capítulo II",
+      "titulo": "Dos objetivos",
+      "parte": {
+        "numero": "I",
+        "titulo": "Da caracterização e objetivos"
+      },
+      "pagina_inicio": null,
+      "pagina_fim": null,
+      "tema": "Objetivos e alcance dos serviços da MTI",
+      "texto_completo": "Art. 2º Nos termos do artigo 5º do Decreto nº 722, de 23 de Fevereiro 2024, constituem-se objetivos da Empresa Mato-grossense de Tecnologia da Informação - MTI: § 1º A Empresa Mato-grossense de Tecnologia da Informação - MTI poderá prestar seus serviços aos órgãos públicos da esfera Federal, Estadual Municipal e iniciativa privada. § 2º A Empresa Mato-grossense de Tecnologia da Informação - MTI poderá, mediante convênio, termo de cooperação ou contrato de patrocínio, prestar apoio técnico e financeiro aos projetos e programas desenvolvidos por outras entidades estatais que estejam vinculadas à sua área de atuação. § 3º Para a consecução de seus fins a Empresa poderá celebrar contratos, acordos, convênios, ou outros instrumentos afins com quaisquer entidades da Administração Pública, esferas de governo federal, estadual e municipal e com a iniciativa privada.\nI - prestar serviços de Infraestrutura de Tecnologia da Informação e Comunicação -TIC;\nII - prestar serviços de elaboração de projetos, assessoria, consultoria, suporte, monitoramento, gerenciamento e treinamento na área de Tecnologia da Informação e Comunicação;\nIII - prestar serviços de desenvolvimento, integração, implementação, manutenção e sustentação de sistemas de informação e aplicativos;\nIV - prestar serviços de processamento e tratamentos de dados, promover a integração entre sistemas de informação e bases de dados por meio de soluções de interoperabilidade;\nV - desenvolver atividades de inovação e pesquisa tecnológica, disseminação de novas tecnologias de produtos e serviços relacionados à Tecnologia de Informação e Comunicação.",
+      "paragrafos": [
+        {
+          "numero": 2,
+          "bloco_tematico": null,
+          "texto": "Nos termos do artigo 5º do Decreto nº 722, de 23 de Fevereiro 2024, constituem-se objetivos da Empresa Mato-grossense de Tecnologia da Informação - MTI: § 1º A Empresa Mato-grossense de Tecnologia da Informação - MTI poderá prestar seus serviços aos órgãos públicos da esfera Federal, Estadual Municipal e iniciativa privada. § 2º A Empresa Mato-grossense de Tecnologia da Informação - MTI poderá, mediante convênio, termo de cooperação ou contrato de patrocínio, prestar apoio técnico e financeiro aos projetos e programas desenvolvidos por outras entidades estatais que estejam vinculadas à sua área de atuação. § 3º Para a consecução de seus fins a Empresa poderá celebrar contratos, acordos, convênios, ou outros instrumentos afins com quaisquer entidades da Administração Pública, esferas de governo federal, estadual e municipal e com a iniciativa privada.",
+          "alineas": [
+            {
+              "marcador": "I",
+              "texto": "prestar serviços de Infraestrutura de Tecnologia da Informação e Comunicação -TIC;",
+              "itens": []
+            },
+            {
+              "marcador": "II",
+              "texto": "prestar serviços de elaboração de projetos, assessoria, consultoria, suporte, monitoramento, gerenciamento e treinamento na área de Tecnologia da Informação e Comunicação;",
+              "itens": []
+            },
+            {
+              "marcador": "III",
+              "texto": "prestar serviços de desenvolvimento, integração, implementação, manutenção e sustentação de sistemas de informação e aplicativos;",
+              "itens": []
+            },
+            {
+              "marcador": "IV",
+              "texto": "prestar serviços de processamento e tratamentos de dados, promover a integração entre sistemas de informação e bases de dados por meio de soluções de interoperabilidade;",
+              "itens": []
+            },
+            {
+              "marcador": "V",
+              "texto": "desenvolver atividades de inovação e pesquisa tecnológica, disseminação de novas tecnologias de produtos e serviços relacionados à Tecnologia de Informação e Comunicação.",
+              "itens": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "conselho-administracao",
+      "tipo": "secao",
+      "numero": "III.I.I",
+      "rotulo": "Título III, Capítulo I, Seção I",
+      "titulo": "Do Conselho de Administração",
+      "parte": {
+        "numero": "III",
+        "titulo": "Das competências"
+      },
+      "pagina_inicio": 2,
+      "pagina_fim": 2,
+      "tema": "Competências do Conselho de Administração",
+      "texto_completo": "Art. 4º O Conselho de Administração, órgão superior de deliberação colegiada da Empresa Mato-grossense de Tecnologia da Informação - MTI, tem como missão discutir e aprovar estratégias de negócio apresentadas pela diretoria, acompanhar e zelar pela governança corporativa da empresa e participar de atividades institucionais, em conformidade com a missão da destinadas a promover o desenvolvimento e a integração na área da Tecnologia da Informação e Comunicação no Estado;\nII - deliberar sobre alteração do Estatuto Social da Empresa Mato-grossense de Tecnologia da Informação - MTI, encaminhando-o ao Governador do Estado para a devida formalização legal, respeitando a legislação vigente;\nIII - aprovar e fiscalizar o Acordo de Resultados ou instrumento equivalente com metas e resultados específicos a serem alcançados;\nIV - fixar orientação geral dos negócios da Empresa;\nV - monitorar a gestão dos diretores;\nVI - examinar, a qualquer tempo, os livros e papéis da empresa;\nVII - solicitar informações sobre contratos celebrados ou em via de celebração, e quaisquer outros atos, com vista a assegurar a execução da política da empresa;\nVIII - manifestar-se sobre o relatório da administração e as prestações de contas da empresa;\nIX - aprovar o Plano de Negócios para o exercício anual seguinte;\nX - aprovar o planejamento estratégico, contendo a estratégia de longo prazo atualizada com análise de riscos e oportunidades para, no mínimo, os próximos 5 (cinco) anos;\nXI - aprovar a Carta Anual de Políticas Públicas e Governança Corporativa;\nXII - aprovar a Política de Transações com partes relacionadas;\nXIII - aprovar o Relatório Integrado de Sustentabilidade;\nXIV - aprovar a Política de Divulgação da Informação;\nXV - apoiar a Área de Conformidade, Gestão de Riscos e de Controle Interno quando houver suspeita do envolvimento em irregularidades ou descumprimento da obrigação de adoção de medidas necessárias em relação a situação relatada, por parte dos membros da Diretoria, assegurada sempre a sua atuação independente;\nXVI - aprovar o Código de Conduta e Integridade;\nXVII - discutir, aprovar e monitorar decisões envolvendo práticas de governança corporativa, relacionamento com partes interessadas, política de gestão de pessoas e código de conduta dos agentes;\nXVIII - implementar e supervisionar os sistemas de gestão de riscos e de controle interno estabelecidos para a prevenção e mitigação dos principais riscos a que está exposta a empresa pública, inclusive os riscos relacionados à integridade das informações contábeis e financeiras e os relacionados à ocorrência de corrupção e fraude;\nXIX - devem participar, anualmente, de treinamentos específicos sobre divulgação de informações, controle interno, código de conduta, a Lei Federal nº 12.846, de 1º de agosto de 2013 (Lei Anticorrupção), Governança Corporativa e demais temas relacionados às atividades da empresa pública;\nXX - aprovar a contratação de seguro de responsabilidade civil em favor dos Administradores da Empresa (Conselho de Administração e Diretoria Executiva), se assim tiver interesse;\nXXI - deliberar sobre as alterações de estrutura, avaliando o impacto econômico-financeiro, encaminhando-a ao Governador do Estado para a devida formalização legal, respeitando a legislação vigente;\nXXII - deliberar sobre as demonstrações contábeis e a respectiva prestação de contas;\nXXIII - deliberar sobre a criação de filiais, sucursais e escritórios em outros municípios e países;\nXXIV - autorizar viagens a serviços ou de estudos ao exterior;\nXXV - promover a interpretação do presente Estatuto e deliberar sobre os casos omissos.",
+      "paragrafos": [
+        {
+          "numero": 4,
+          "bloco_tematico": null,
+          "texto": "O Conselho de Administração, órgão superior de deliberação colegiada da Empresa Mato-grossense de Tecnologia da Informação - MTI, tem como missão discutir e aprovar estratégias de negócio apresentadas pela diretoria, acompanhar e zelar pela governança corporativa da empresa e participar de atividades institucionais, em conformidade com a missão da destinadas a promover o desenvolvimento e a integração na área da Tecnologia da Informação e Comunicação no Estado;",
+          "alineas": [
+            {
+              "marcador": "II",
+              "texto": "deliberar sobre alteração do Estatuto Social da Empresa Mato-grossense de Tecnologia da Informação - MTI, encaminhando-o ao Governador do Estado para a devida formalização legal, respeitando a legislação vigente;",
+              "itens": []
+            },
+            {
+              "marcador": "III",
+              "texto": "aprovar e fiscalizar o Acordo de Resultados ou instrumento equivalente com metas e resultados específicos a serem alcançados;",
+              "itens": []
+            },
+            {
+              "marcador": "IV",
+              "texto": "fixar orientação geral dos negócios da Empresa;",
+              "itens": []
+            },
+            {
+              "marcador": "V",
+              "texto": "monitorar a gestão dos diretores;",
+              "itens": []
+            },
+            {
+              "marcador": "VI",
+              "texto": "examinar, a qualquer tempo, os livros e papéis da empresa;",
+              "itens": []
+            },
+            {
+              "marcador": "VII",
+              "texto": "solicitar informações sobre contratos celebrados ou em via de celebração, e quaisquer outros atos, com vista a assegurar a execução da política da empresa;",
+              "itens": []
+            },
+            {
+              "marcador": "VIII",
+              "texto": "manifestar-se sobre o relatório da administração e as prestações de contas da empresa;",
+              "itens": []
+            },
+            {
+              "marcador": "IX",
+              "texto": "aprovar o Plano de Negócios para o exercício anual seguinte;",
+              "itens": []
+            },
+            {
+              "marcador": "X",
+              "texto": "aprovar o planejamento estratégico, contendo a estratégia de longo prazo atualizada com análise de riscos e oportunidades para, no mínimo, os próximos 5 (cinco) anos;",
+              "itens": []
+            },
+            {
+              "marcador": "XI",
+              "texto": "aprovar a Carta Anual de Políticas Públicas e Governança Corporativa;",
+              "itens": []
+            },
+            {
+              "marcador": "XII",
+              "texto": "aprovar a Política de Transações com partes relacionadas;",
+              "itens": []
+            },
+            {
+              "marcador": "XIII",
+              "texto": "aprovar o Relatório Integrado de Sustentabilidade;",
+              "itens": []
+            },
+            {
+              "marcador": "XIV",
+              "texto": "aprovar a Política de Divulgação da Informação;",
+              "itens": []
+            },
+            {
+              "marcador": "XV",
+              "texto": "apoiar a Área de Conformidade, Gestão de Riscos e de Controle Interno quando houver suspeita do envolvimento em irregularidades ou descumprimento da obrigação de adoção de medidas necessárias em relação a situação relatada, por parte dos membros da Diretoria, assegurada sempre a sua atuação independente;",
+              "itens": []
+            },
+            {
+              "marcador": "XVI",
+              "texto": "aprovar o Código de Conduta e Integridade;",
+              "itens": []
+            },
+            {
+              "marcador": "XVII",
+              "texto": "discutir, aprovar e monitorar decisões envolvendo práticas de governança corporativa, relacionamento com partes interessadas, política de gestão de pessoas e código de conduta dos agentes;",
+              "itens": []
+            },
+            {
+              "marcador": "XVIII",
+              "texto": "implementar e supervisionar os sistemas de gestão de riscos e de controle interno estabelecidos para a prevenção e mitigação dos principais riscos a que está exposta a empresa pública, inclusive os riscos relacionados à integridade das informações contábeis e financeiras e os relacionados à ocorrência de corrupção e fraude;",
+              "itens": []
+            },
+            {
+              "marcador": "XIX",
+              "texto": "devem participar, anualmente, de treinamentos específicos sobre divulgação de informações, controle interno, código de conduta, a Lei Federal nº 12.846, de 1º de agosto de 2013 (Lei Anticorrupção), Governança Corporativa e demais temas relacionados às atividades da empresa pública;",
+              "itens": []
+            },
+            {
+              "marcador": "XX",
+              "texto": "aprovar a contratação de seguro de responsabilidade civil em favor dos Administradores da Empresa (Conselho de Administração e Diretoria Executiva), se assim tiver interesse;",
+              "itens": []
+            },
+            {
+              "marcador": "XXI",
+              "texto": "deliberar sobre as alterações de estrutura, avaliando o impacto econômico-financeiro, encaminhando-a ao Governador do Estado para a devida formalização legal, respeitando a legislação vigente;",
+              "itens": []
+            },
+            {
+              "marcador": "XXII",
+              "texto": "deliberar sobre as demonstrações contábeis e a respectiva prestação de contas;",
+              "itens": []
+            },
+            {
+              "marcador": "XXIII",
+              "texto": "deliberar sobre a criação de filiais, sucursais e escritórios em outros municípios e países;",
+              "itens": []
+            },
+            {
+              "marcador": "XXIV",
+              "texto": "autorizar viagens a serviços ou de estudos ao exterior;",
+              "itens": []
+            },
+            {
+              "marcador": "XXV",
+              "texto": "promover a interpretação do presente Estatuto e deliberar sobre os casos omissos.",
+              "itens": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "conselho-fiscal",
+      "tipo": "secao",
+      "numero": "III.I.II",
+      "rotulo": "Título III, Capítulo I, Seção II",
+      "titulo": "Do Conselho Fiscal",
+      "parte": {
+        "numero": "III",
+        "titulo": "Das competências"
+      },
+      "pagina_inicio": 2,
+      "pagina_fim": 3,
+      "tema": "Competências do Conselho Fiscal",
+      "texto_completo": "Art. 5º O Conselho Fiscal da MTI, órgão fiscalizador, tem como missão assegurar os princípios de transparência, equidade e prestação de contas da Empresa, competindo-lhe:\nI - fiscalizar a gestão financeira da Empresa, zelando pelo bom e regular emprego de seus recursos financeiros e orçamentários;\nII - examinar os balanços, balancetes, relatórios e prestação de contas da Empresa do ano que findou, restituindo- os ao seu Di- retor-Presidente com o respectivo parecer até o 5º (quinto) dia útil do mês de março de cada ano;\nIII - acompanhar e analisar a execução financeira e orçamentária da Empresa, podendo examinar livros ou quaisquer documentos e ainda requisitar informações que entender necessárias;\nIV - pronunciar-se sobre assunto de fiscalização a que for submetido pelo Conselho Administrativo e/ou pelo Diretor Presidente da Empresa;\nVII - levar ao conhecimento do Diretor-Presidente e do Conselho de Administração da Empresa quaisquer irregularidades constatadas;\nVIII - exarar parecer técnico contendo relatório, fundamentação, conclusão e recomendações sobre as análises realizadas em cada reunião, entregando-o impreterivelmente até a data da reunião subsequente.",
+      "paragrafos": [
+        {
+          "numero": 5,
+          "bloco_tematico": null,
+          "texto": "O Conselho Fiscal da MTI, órgão fiscalizador, tem como missão assegurar os princípios de transparência, equidade e prestação de contas da Empresa, competindo-lhe:",
+          "alineas": [
+            {
+              "marcador": "I",
+              "texto": "fiscalizar a gestão financeira da Empresa, zelando pelo bom e regular emprego de seus recursos financeiros e orçamentários;",
+              "itens": []
+            },
+            {
+              "marcador": "II",
+              "texto": "examinar os balanços, balancetes, relatórios e prestação de contas da Empresa do ano que findou, restituindo- os ao seu Di- retor-Presidente com o respectivo parecer até o 5º (quinto) dia útil do mês de março de cada ano;",
+              "itens": []
+            },
+            {
+              "marcador": "III",
+              "texto": "acompanhar e analisar a execução financeira e orçamentária da Empresa, podendo examinar livros ou quaisquer documentos e ainda requisitar informações que entender necessárias;",
+              "itens": []
+            },
+            {
+              "marcador": "IV",
+              "texto": "pronunciar-se sobre assunto de fiscalização a que for submetido pelo Conselho Administrativo e/ou pelo Diretor Presidente da Empresa;",
+              "itens": []
+            },
+            {
+              "marcador": "VII",
+              "texto": "levar ao conhecimento do Diretor-Presidente e do Conselho de Administração da Empresa quaisquer irregularidades constatadas;",
+              "itens": []
+            },
+            {
+              "marcador": "VIII",
+              "texto": "exarar parecer técnico contendo relatório, fundamentação, conclusão e recomendações sobre as análises realizadas em cada reunião, entregando-o impreterivelmente até a data da reunião subsequente.",
+              "itens": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "gestao-pessoas",
+      "tipo": "secao",
+      "numero": "III.V.IV",
+      "rotulo": "Título III, Capítulo V, Seção IV",
+      "titulo": "Da Unidade de Gestão de Pessoas",
+      "parte": {
+        "numero": "III",
+        "titulo": "Das competências"
+      },
+      "pagina_inicio": 2,
+      "pagina_fim": 8,
+      "tema": "Competências da Unidade de Gestão de Pessoas",
+      "texto_completo": "Art. 34º A Unidade de Gestão de Pessoas tem como missão promover a gestão estratégica dos processos e subsistemas de gestão de pessoas e departamento de pessoal, competindo-lhe: Parágrafo único: A Unidade de Gestão de Pessoas atuará sob a orientação da Unidade Jurídica, submetendo a ela os processos relativos a empregados públicos que carecem de amparo técnico para a tomada de decisão pelo Diretor da área.\nI - propor, implantar e avaliar a Política e o Regimento de Gestão de Pessoas;\nII - supervisionar e orientar a execução dos processos de provimento, movimentação, desenvolvimento, manutenção e monitoramento de pessoal;\nIII - propor, implantar, supervisionar e orientar a execução do Programa gestão por competência;\nIV - acompanhar processo administrativo disciplinar;\nV - gerir a realização de concurso público e processos seletivos;\nVI - participar de negociações coletivas e acordos trabalhistas e monitorar ACT;\nVII - propor, implantar e monitorar a execução PCCS - Plano de Cargos, Carreiras e Salários;\nVIII - supervisionar os processos de recrutamento, seleção, integração e retenção de talentos;\nIX - desenvolver, implementar e acompanhar indicadores de Gestão de Pessoas.\nX - implementar ações corretivas e preventivas para a melhoria contínua dos processos da unidade;\nXI - monitorar o processo de eleição da Comissão Interna de Prevenção de Acidentes (CIPA).;\nXII - planejar, monitorar, controlar e avaliar orçamento da despesa com pessoal/encargo social\nXIII - propor, implantar o regulamento de licença para capacitação;\nXIV - propor, implantar e avaliar o Programa de Socialização do Conhecimento\nXV - propor, implantar e avaliar o Regulamento de Capacitação e Desenvolvimento;\nXVI - zelar pela conformidade com as normas legais e regulamentares vigentes relativas às atividades da Unidade",
+      "paragrafos": [
+        {
+          "numero": 34,
+          "bloco_tematico": null,
+          "texto": "A Unidade de Gestão de Pessoas tem como missão promover a gestão estratégica dos processos e subsistemas de gestão de pessoas e departamento de pessoal, competindo-lhe: Parágrafo único: A Unidade de Gestão de Pessoas atuará sob a orientação da Unidade Jurídica, submetendo a ela os processos relativos a empregados públicos que carecem de amparo técnico para a tomada de decisão pelo Diretor da área.",
+          "alineas": [
+            {
+              "marcador": "I",
+              "texto": "propor, implantar e avaliar a Política e o Regimento de Gestão de Pessoas;",
+              "itens": []
+            },
+            {
+              "marcador": "II",
+              "texto": "supervisionar e orientar a execução dos processos de provimento, movimentação, desenvolvimento, manutenção e monitoramento de pessoal;",
+              "itens": []
+            },
+            {
+              "marcador": "III",
+              "texto": "propor, implantar, supervisionar e orientar a execução do Programa gestão por competência;",
+              "itens": []
+            },
+            {
+              "marcador": "IV",
+              "texto": "acompanhar processo administrativo disciplinar;",
+              "itens": []
+            },
+            {
+              "marcador": "V",
+              "texto": "gerir a realização de concurso público e processos seletivos;",
+              "itens": []
+            },
+            {
+              "marcador": "VI",
+              "texto": "participar de negociações coletivas e acordos trabalhistas e monitorar ACT;",
+              "itens": []
+            },
+            {
+              "marcador": "VII",
+              "texto": "propor, implantar e monitorar a execução PCCS - Plano de Cargos, Carreiras e Salários;",
+              "itens": []
+            },
+            {
+              "marcador": "VIII",
+              "texto": "supervisionar os processos de recrutamento, seleção, integração e retenção de talentos;",
+              "itens": []
+            },
+            {
+              "marcador": "IX",
+              "texto": "desenvolver, implementar e acompanhar indicadores de Gestão de Pessoas.",
+              "itens": []
+            },
+            {
+              "marcador": "X",
+              "texto": "implementar ações corretivas e preventivas para a melhoria contínua dos processos da unidade;",
+              "itens": []
+            },
+            {
+              "marcador": "XI",
+              "texto": "monitorar o processo de eleição da Comissão Interna de Prevenção de Acidentes (CIPA).;",
+              "itens": []
+            },
+            {
+              "marcador": "XII",
+              "texto": "planejar, monitorar, controlar e avaliar orçamento da despesa com pessoal/encargo social",
+              "itens": []
+            },
+            {
+              "marcador": "XIII",
+              "texto": "propor, implantar o regulamento de licença para capacitação;",
+              "itens": []
+            },
+            {
+              "marcador": "XIV",
+              "texto": "propor, implantar e avaliar o Programa de Socialização do Conhecimento",
+              "itens": []
+            },
+            {
+              "marcador": "XV",
+              "texto": "propor, implantar e avaliar o Regulamento de Capacitação e Desenvolvimento;",
+              "itens": []
+            },
+            {
+              "marcador": "XVI",
+              "texto": "zelar pela conformidade com as normas legais e regulamentares vigentes relativas às atividades da Unidade",
+              "itens": []
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

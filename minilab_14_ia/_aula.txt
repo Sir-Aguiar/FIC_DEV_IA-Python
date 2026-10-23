@@ -1,0 +1,1010 @@
+
+===== PAGE 1 =====
+FIC DEV IA – IA Generativa | Aula 12: Introdução ao RAG (Retrieval-Augmented Generation)
+Aula 12 - Introdução ao RAG
+(Retrieval-Augmented Generation)
+Autores: Prof. Dr. Benevid Felix da Silva, Prof. Dr. Robson Gomes de Melo
+Problema
+A Comissão Permanente de Licitação da Secretaria de Estado de Ciência e Tecnologia
+mantém, em uma pasta de rede, alguns milhares de documentos: editais publicados nos
+últimos cinco anos, termos de referência, contratos, atas de reunião e ofícios circulares.
+Quando um servidor precisa saber qual foi o prazo de entrega fixado em determinado
+pregão, ou qual percentual de garantia contratual costuma ser exigido, a única alternativa
+é abrir os arquivos um a um e procurar. O tempo gasto nessa busca é grande, o resultado
+depende da memória de quem procura, e a resposta encontrada raramente vem
+acompanhada da referência exata que a sustenta.
+A tentação imediata é enviar tudo para um assistente de IA e perguntar. Essa saída falha
+por dois motivos distintos: o acervo inteiro não cabe em nenhuma janela de contexto
+disponível, e o modelo, quando não encontra a informação, tende a produzir uma
+resposta plausível em vez de admitir que não sabe. Em um processo administrativo, uma
+resposta plausível e errada é pior do que nenhuma resposta, porque será usada como
+fundamento de um ato que alguém precisará assinar.
+O RAG (Retrieval-Augmented Generation, geração aumentada por recuperação) é a
+arquitetura que resolve as duas dificuldades ao mesmo tempo. Antes de responder, o
+sistema busca no acervo os trechos que efetivamente tratam da pergunta, e só então
+pede ao modelo que redija a resposta usando exclusivamente aqueles trechos, citando
+de onde vieram. Esta aula constrói esse sistema do zero, mede a qualidade do que ele
+produz e mostra o que fazer quando ele erra — porque ele erra, e reconhecer o erro é
+parte da engenharia.
+Objetivos
+• Compreender as quatro etapas do pipeline RAG e o papel de cada uma
+• Decidir entre contexto direto e recuperação a partir de critérios de custo, escala,
+atualização e rastreabilidade
+• Comparar estratégias de divisão de documentos com medição sobre um edital real
+• Identificar as três falhas típicas de um sistema RAG e instrumentar o pipeline para
+revelá-las
+• Implementar abstenção controlada, de modo que o sistema responda "não encontrei"
+em vez de inventar
+• Avaliar a qualidade de um sistema RAG com conjunto de perguntas e gabarito
+Página 1 de 25 | Prof. Dr. Benevid Felix da Silva, Prof. Dr. Robson Gomes de Melo
+===== PAGE 2 =====
+FIC DEV IA – IA Generativa | Aula 12: Introdução ao RAG (Retrieval-Augmented Generation)
+Conteúdo
+1. RAG: o que mudou e o que permanece
+1.1 O que é RAG
+O RAG é uma arquitetura que combina recuperação de informação e geração de texto
+em um único fluxo de resposta. Em vez de perguntar ao modelo aquilo que ele porventura
+aprendeu durante o treinamento, o sistema primeiro busca em uma base documental
+própria os trechos pertinentes à pergunta e depois entrega esses trechos ao modelo
+como contexto obrigatório. A diferença prática é grande: o modelo deixa de ser a fonte da
+informação e passa a ser o redator de uma resposta cuja fonte é o documento do órgão.
+O pipeline se organiza em quatro etapas, e é útil separá-las desde já porque cada uma
+falha de um jeito diferente. A divisão (chunking) fatia os documentos em trechos
+recuperáveis; a vetorização converte cada trecho em um embedding, conforme a Aula
+11; a recuperação encontra os trechos mais próximos da pergunta; e a geração produz a
+resposta final a partir do que foi recuperado. Uma falha na primeira etapa não é corrigível
+nas seguintes, motivo pelo qual a Seção 3 desta aula se dedica inteiramente a ela.
+A primeira e a segunda etapas acontecem uma única vez por documento, no que se
+chama indexação. A terceira e a quarta acontecem a cada pergunta, no que se chama
+consulta. Essa separação temporal tem consequência direta no custo, porque o trabalho
+caro de processar o acervo é pago uma vez, enquanto cada pergunta paga apenas o
+custo de comparar vetores e de gerar algumas centenas de tokens.
+1.2 A pergunta legítima: por que não colocar o documento inteiro no
+prompt?
+Quando esta aula foi escrita pela primeira vez, a resposta era simples: não cabia. Em
+2023 as janelas de contexto típicas comportavam de 4 mil a 8 mil tokens, o equivalente a
+uma dúzia de páginas, e qualquer documento administrativo de porte exigia fatiamento.
+Em 2026 a situação é outra, pois GPT-5.6, Gemini 3.1 Pro e Claude Opus 5 operam com
+aproximadamente 1 milhão de tokens, conforme a Aula 02, Seção 1 — algo em torno de
+mil e quinhentas páginas.
+A pergunta, portanto, deixou de ser ingênua e passou a ser correta. O edital que serve de
+base a esta aula tem 24 mil caracteres, cerca de 7 mil tokens, e ocupa menos de 1% de
+uma janela moderna. Para responder três perguntas sobre esse documento isolado,
+montar um índice vetorial é trabalho desproporcional, e a Aula 09, Seção 2.4, já discute o
+caso análogo em sumarização, com medições que mostram o fatiamento perdendo para
+a chamada única quando o documento cabe inteiro.
+Página 2 de 25 | Prof. Dr. Benevid Felix da Silva, Prof. Dr. Robson Gomes de Melo
+===== PAGE 3 =====
+FIC DEV IA – IA Generativa | Aula 12: Introdução ao RAG (Retrieval-Augmented Generation)
+Figura 1: Os quatro critérios que decidem entre enviar o documento inteiro e recuperar apenas os trechos
+relevantes. A janela de 1 milhão de tokens tornou a primeira opção viável para documentos avulsos, sem
+torná-la a resposta certa para acervos.
+Quatro razões, contudo, mantêm o RAG necessário, e nenhuma delas foi resolvida pelo
+crescimento das janelas. Elas não dependem do tamanho do documento, mas do modo
+como o acervo é usado ao longo do tempo. Convém examiná-las uma a uma, porque a
+decisão de arquitetura costuma se apoiar em apenas uma delas.
+Custo. Enviar o documento inteiro significa pagar por ele em cada pergunta. Um edital de
+7 mil tokens consultado cem vezes ao dia consome 700 mil tokens de entrada diários,
+enquanto o mesmo edital indexado responde cada pergunta com cerca de 350 tokens de
+contexto, conforme a medição da Seção 3.3. A diferença é de vinte vezes, e ela aparece
+na fatura de um serviço que atenda o público.
+Escala. Um documento cabe na janela, mas um acervo não cabe em nenhuma. Os cinco
+anos de editais da Comissão de Licitação somam dezenas de milhões de tokens, e não
+existe nem existirá janela que os comporte, porque o acervo cresce continuamente
+enquanto a janela cresce por saltos. A recuperação resolve esse problema por
+construção, já que o índice não tem limite prático de tamanho e a busca custa
+aproximadamente o mesmo com dez ou com dez mil documentos.
+Atualização incremental. Documentos administrativos são revisados, retificados e
+substituídos com frequência. Em um sistema de recuperação, uma retificação exige
+reindexar apenas os trechos alterados, operação de segundos; em um sistema que envia
+Página 3 de 25 | Prof. Dr. Benevid Felix da Silva, Prof. Dr. Robson Gomes de Melo
+===== PAGE 4 =====
+FIC DEV IA – IA Generativa | Aula 12: Introdução ao RAG (Retrieval-Augmented Generation)
+o documento inteiro, cada revisão precisa ser propagada a todo prompt que o contenha.
+Quanto mais dinâmico o acervo, maior a vantagem da recuperação.
+Rastreabilidade. Esta é a razão que mais pesa no serviço público e a menos citada nas
+discussões técnicas. Quando o sistema recupera trechos antes de responder, o conjunto
+de trechos recuperados é um registro objetivo, gravável em log e conferível por terceiros:
+é possível demonstrar que a resposta se apoiou na cláusula 11.1 do Edital 012/2026 e em
+nenhuma outra. Quando o documento inteiro vai no prompt, a citação depende de o
+modelo escolher citar corretamente, e a Seção 4.3 mostra que essa confiança não se
+sustenta.
+Nota: A regra prática decorre disso. Documento avulso, poucas perguntas, uso pontual:
+envie o documento inteiro e economize a complexidade. Acervo, volume recorrente ou
+necessidade de auditoria: construa o pipeline de recuperação. O erro comum não é usar
+RAG demais nem de menos, e sim adotá-lo por hábito, sem medir se ele era necessário.
+1.3 Os modelos e os documentos usados nesta aula
+Os exemplos empregam quatro modelos de dois provedores, escolhidos para que o aluno
+compare custos e papéis com dados medidos. Os preços abaixo foram conferidos nas
+páginas oficiais em agosto de 2026 e correspondem à faixa de contexto curto.
+Modelo Provedor Papel na aula Preço por 1 M de
+tokens
+text-embedding-3-sm OpenAI Vetorização dos trechos US$ 0,02
+all e das perguntas
+gpt-5.6-luna OpenAI Geração das respostas, US$ 0,20 entrada / US$
+nível econômico 1,20 saída
+gpt-5.6-terra OpenAI Juiz automático na US$ 2,00 entrada / US$
+avaliação da Seção 5 12,00 saída
+openai/gpt-oss-20b Groq Reordenação dos US$ 0,075 entrada /
+candidatos no Anexo US$ 0,30 saída
+A.1.1
+O acervo de trabalho tem dois documentos, ambos em arquivos/aula12/. O Edital de
+Pregão Eletrônico 012/2026, da Secretaria de Ciência e Tecnologia, trata da aquisição
+de equipamentos de informática e tem 24.239 caracteres distribuídos em 133 cláusulas
+numeradas. O Edital de Pregão Eletrônico 008/2026, da Secretaria de Educação, trata
+da aquisição de mobiliário escolar, segue a mesma estrutura de seções e traz valores
+diferentes em quase todas as cláusulas. A semelhança estrutural entre os dois não é
+acidental: ela reproduz a situação real de um acervo de licitações e é o que torna o
+experimento da Seção 3.3 informativo.
+Atenção: A família GPT-5.6 alterou dois parâmetros presentes em todo código escrito
+para gerações anteriores, conforme a Aula 09, Seção 1.3. O antigo max_tokens foi
+substituído por max_completion_tokens, e temperature aceita apenas o valor padrão, de
+modo que o controle de esforço passou a ser feito por reasoning_effort. Os exemplos
+desta aula usam reasoning_effort="none" na geração, porque extrair um valor de um
+trecho já recuperado não demanda raciocínio prolongado.
+Página 4 de 25 | Prof. Dr. Benevid Felix da Silva, Prof. Dr. Robson Gomes de Melo
+===== PAGE 5 =====
+FIC DEV IA – IA Generativa | Aula 12: Introdução ao RAG (Retrieval-Augmented Generation)
+2. O pipeline mínimo, de ponta a ponta
+2.1 As quatro etapas em código
+A figura abaixo separa a indexação da consulta e nomeia o que cada etapa entrega à
+seguinte. Vale observar que a seta que liga o índice à recuperação é tracejada: o índice é
+consultado, não reconstruído, e essa é exatamente a assimetria de custo que justifica a
+arquitetura.
+Figura 2: As quatro etapas do pipeline RAG, separadas em indexação e consulta. A indexação roda uma vez
+por documento; a consulta roda a cada pergunta e é a única que o usuário percebe.
+O exemplo01.py implementa o pipeline completo em cerca de setenta linhas, usando o
+ChromaDB apresentado na Aula 11 como banco vetorial. A classe AssistenteEdital tem
+um método por etapa, o que permite instrumentar cada uma separadamente nas seções
+seguintes.
+class AssistenteEdital:
+"""Pipeline RAG mínimo: dividir, indexar, recuperar, gerar."""
+def __init__(self, nome_colecao: str = "editais"):
+self.llm = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
+self.chroma = chromadb.Client() # em memória, para a aula
+self.colecao = self.chroma.get_or_create_collection(
+name=nome_colecao,
+embedding_function=embedding_functions.OpenAIEmbeddingFunction(
+api_key=os.getenv("OPENAI_API_KEY"),
+model_name=MODELO_EMBEDDING,
+),
+metadata={"hnsw:space": "cosine"},
+)
+# ---------- Etapas 1 e 2: dividir e indexar ----------------------
+def indexar(self, caminho: pathlib.Path) -> int:
+texto = caminho.read_text(encoding="utf-8")
+rotulo = rotulo_do_documento(texto)
+chunks = Chunker.por_clausula_com_titulo(texto, rotulo)
+base = self.colecao.count()
+self.colecao.add(
+documents=[c["texto"] for c in chunks],
+Página 5 de 25 | Prof. Dr. Benevid Felix da Silva, Prof. Dr. Robson Gomes de Melo
+===== PAGE 6 =====
+FIC DEV IA – IA Generativa | Aula 12: Introdução ao RAG (Retrieval-Augmented Generation)
+metadatas=[{"origem": c["origem"], "arquivo": caminho.name}
+for c in chunks],
+ids=[f"{caminho.stem}_{base + i}" for i in range(len(chunks))],
+)
+return len(chunks)
+# ---------- Etapa 3: recuperar -----------------------------------
+def recuperar(self, pergunta: str, k: int = 4) -> list:
+r = self.colecao.query(query_texts=[pergunta], n_results=k)
+return [
+{"texto": doc, "origem": meta["origem"],
+"similaridade": 1 - dist} # Chroma devolve distância
+for doc, meta, dist in zip(r["documents"][0], r["metadatas"][0],
+r["distances"][0])
+]
+A etapa de geração é onde as regras de conduta do sistema são declaradas. O prompt
+não pede uma resposta bem redigida: ele impõe três obrigações verificáveis, e a terceira
+delas — a fórmula fixa de recusa — é o que permitirá, na Seção 4, distinguir por máquina
+uma resposta de uma abstenção.
+INSTRUCAO = """Você é um assistente que responde sobre editais de licitação \
+do Estado de Mato Grosso.
+Regras invioláveis:
+1. Use exclusivamente os trechos numerados abaixo.
+2. Cite a fonte entre colchetes ao final de cada afirmação, no formato [1].
+3. Se os trechos não contiverem a resposta, escreva apenas: NÃO ENCONTRADO \
+nos documentos indexados.
+TRECHOS:
+{contexto}
+PERGUNTA: {pergunta}
+RESPOSTA:"""
+Execução:
+python exemplo01.py
+2.2 O que a primeira execução já revela
+A saída do exemplo01.py, obtida em execução real, mostra três comportamentos que
+orientam o restante da aula. Cada resposta vem acompanhada da similaridade e da
+cláusula de origem de cada trecho recuperado, e são justamente esses dois números que
+transformam uma caixa-preta em um sistema auditável.
+P: Qual é o prazo de entrega dos equipamentos de informática?
+R: O prazo de entrega dos equipamentos de informática é de 45 (quarenta e cinco)
+dias corridos, contados do recebimento da Ordem de Fornecimento. [1]
+[1] sim. 0.728 — Edital de Pregão 012/2026, cláusula 11.1
+[2] sim. 0.724 — Edital de Pregão 012/2026, cláusula 11.6
+P: Qual o percentual de garantia de execução exigido no pregão 012/2026?
+R: 5% (cinco por cento) do valor total do contrato. [1]
+[1] sim. 0.691 — Edital de Pregão 012/2026, cláusula 10.4
+[2] sim. 0.685 — Edital de Pregão 008/2026, cláusula 10.4
+P: Qual é a alíquota do Imposto sobre Serviços aplicável à contratação?
+R: NÃO ENCONTRADO nos documentos indexados.
+[1] sim. 0.441 — Edital de Pregão 012/2026, cláusula 12.6
+A primeira resposta acerta e cita a cláusula certa, o que confirma que o pipeline funciona.
+A segunda merece atenção porque o segundo trecho recuperado é a cláusula 10.4 do
+outro edital, com similaridade praticamente idêntica, e o sistema só escolheu certo
+porque a pergunta trazia o número do pregão. A terceira mostra a assinatura numérica da
+Página 6 de 25 | Prof. Dr. Benevid Felix da Silva, Prof. Dr. Robson Gomes de Melo
+===== PAGE 7 =====
+FIC DEV IA – IA Generativa | Aula 12: Introdução ao RAG (Retrieval-Augmented Generation)
+ausência: quando a informação não existe no acervo, a similaridade do melhor trecho cai
+de aproximadamente 0,70 para 0,44, e esse desnível é a base do mecanismo de
+abstenção da Seção 4.4.
+3. Chunking: a divisão do documento
+3.1 Por que a divisão é o gargalo
+A divisão do documento determina o que pode ser recuperado, e o que não pode ser
+recuperado não pode ser respondido. Se uma cláusula for cortada ao meio, nenhuma
+pergunta trará a metade que ficou em outro trecho; se um trecho não carregar consigo a
+informação de qual documento pertence, nenhuma busca conseguirá distingui-lo de um
+trecho parecido de outro documento. Trata-se, portanto, do único ponto do pipeline cuja
+falha é irrecuperável a jusante, e é por isso que ele merece medição em vez de opinião.
+Há um detalhe que costuma passar despercebido e que organiza toda esta seção. A
+busca vetorial enxerga apenas o texto do trecho, e não os metadados guardados ao
+lado dele no banco. Registrar que um trecho veio do Edital 012/2026 ajuda a auditoria e
+ajuda o modelo na hora de gerar, mas não ajuda em nada na hora de recuperar, porque o
+vetor foi calculado só com o texto. Essa assimetria explica por que a estratégia vencedora
+do experimento é aquela que coloca a identificação do documento dentro do trecho.
+3.2 Cinco estratégias sobre um edital real
+O exemplo02.py implementa cinco estratégias e as aplica ao Edital 012/2026. As duas
+primeiras cortam o texto a cada 400 caracteres, com e sem sobreposição, ignorando por
+completo a estrutura do documento. A terceira usa a cláusula como unidade,
+aproveitando que editais são redigidos em blocos numerados. A quarta agrupa a seção
+inteira, com todas as suas cláusulas. A quinta mantém a cláusula como unidade e prefixa
+a ela uma linha com o edital de origem e o título da seção.
+@staticmethod
+def por_clausula_com_titulo(texto: str, rotulo: str = "") -> List[dict]:
+"""Uma cláusula por chunk, prefixada pelo documento e pela seção."""
+chunks, titulo = [], "Preâmbulo"
+for bloco in texto.split("\n\n"):
+bloco = bloco.strip()
+if not bloco:
+continue
+if CABECALHO.match(bloco) and "\n" not in bloco:
+titulo = bloco
+continue
+c = CLAUSULA.match(bloco)
+chunks.append({
+"texto": f"[{rotulo} | {titulo}]\n{bloco}",
+"origem": f"{_curto(rotulo)}, cláusula {c.group(1)}" if c
+else f"{_curto(rotulo)}, {titulo}",
+})
+return chunks
+O rótulo do documento não é escrito à mão. A função rotulo_do_documento o extrai do
+próprio texto, combinando o número do edital, que está no preâmbulo, com o objeto, que
+está na cláusula 1.1, e o resultado para o Edital 012/2026 é "Edital de Pregão 012/2026
+— equipamentos de informática destinados à modernização". Essa automação importa
+porque um acervo real tem centenas de documentos e ninguém rotulará cada um
+manualmente.
+Página 7 de 25 | Prof. Dr. Benevid Felix da Silva, Prof. Dr. Robson Gomes de Melo
+===== PAGE 8 =====
+FIC DEV IA – IA Generativa | Aula 12: Introdução ao RAG (Retrieval-Augmented Generation)
+Execução:
+python exemplo02.py
+Figura 3: As cinco estratégias aplicadas ao mesmo edital, com as medidas de cada uma. O número de
+chunks varia de 21 a 133, e o percentual de cláusulas que sobrevivem inteiras varia de 51% a 100%.
+O resultado medido sobre o Edital 012/2026 está na tabela abaixo, obtido em execução
+real do programa. A última coluna registra quantas das 133 cláusulas do edital
+sobrevivem inteiras em algum trecho, e é a medida mais direta do dano causado por um
+corte cego. Ela interessa porque uma cláusula partida ao meio nunca será recuperada por
+inteiro, qualquer que seja a pergunta.
+Estratégia Chunks Tamanho médio Maior chunk Cláusulas inteiras
+Fixo, 400 61 397 400 51%
+caracteres
+Fixo, 400 com 76 397 400 61%
+sobreposição de
+80
+Por cláusula 133 180 432 100%
+(parágrafo)
+Por seção 21 1.115 2.457 100%
+Cláusula com título 113 325 536 100%
+do documento
+O corte fixo destrói metade das cláusulas do edital, e a sobreposição de 80 caracteres
+recupera apenas dez pontos percentuais desse prejuízo. A imagem mais eloquente
+aparece na saída do programa, que mostra a mesma cláusula 11.1 sob cada estratégia:
+no corte fixo simples, o trecho começa no meio da cláusula 10.7 e o prazo de entrega fica
+na quarta linha, precedido por conteúdo sem relação com a pergunta.
+3.3 Experimento: qual estratégia responde melhor
+Descrever estratégias não decide nada. Esta subseção submete as cinco a um teste com
+gabarito e mede três grandezas por estratégia, para que a escolha se apoie em números
+Página 8 de 25 | Prof. Dr. Benevid Felix da Silva, Prof. Dr. Robson Gomes de Melo
+===== PAGE 9 =====
+FIC DEV IA – IA Generativa | Aula 12: Introdução ao RAG (Retrieval-Augmented Generation)
+e não em preferência. O exemplo03.py executa o experimento inteiro em cerca de seis
+minutos e custa aproximadamente dois centavos de dólar.
+O protocolo. O conjunto de avaliação está em perguntas_edital.json e traz, para cada
+pergunta, três informações: a cláusula onde a resposta se encontra, um trecho-gabarito
+que precisa aparecer no contexto recuperado, e uma ou mais chaves que precisam
+aparecer na resposta final. A recuperação usa text-embedding-3-small com similaridade
+de cosseno e devolve os três trechos mais próximos; a geração usa gpt-5.6-luna com a
+instrução de responder em uma frase ou recusar. As três medidas são:
+• recall@3 — fração de perguntas cujo trecho-gabarito aparece íntegro em algum dos
+três trechos recuperados; mede a etapa de recuperação isoladamente
+• acerto — fração de respostas que contêm o valor correto; mede o que efetivamente
+chega ao usuário
+• contexto — média de tokens de entrada por pergunta; mede o custo de operação
+A separação entre as duas primeiras medidas é deliberada. Um sistema pode recuperar o
+trecho certo e ainda assim responder errado, e a distinção entre os dois casos indica
+onde investir o esforço de correção.
+Rodada 1: um edital, perguntas diretas. O primeiro teste indexa somente o Edital
+012/2026 e faz doze perguntas diretas sobre ele. O resultado, obtido em execução real, é
+o seguinte:
+Estratégia Chunks recall@3 Acerto Contexto Custo total
+Fixo, 400 61 100% 100% 373 t US$ 0,00122
+caracteres
+Fixo, 400 com 76 100% 100% 380 t US$ 0,00123
+sobreposição
+Por cláusula 133 100% 100% 256 t US$ 0,00091
+Por seção 21 100% 100% 913 t US$ 0,00256
+Cláusula com 113 100% 100% 350 t US$ 0,00113
+título
+Todas as cinco acertam tudo. Esse empate não é decepção experimental, e sim o
+primeiro achado da aula: sobre um documento único, pequeno e bem estruturado, com
+perguntas cujo vocabulário coincide com o da cláusula, a estratégia de divisão é
+praticamente irrelevante para a correção. Quem tem apenas um edital e faz perguntas
+diretas sobre ele não deve gastar tempo escolhendo entre estratégias de chunking,
+porque o ganho é nulo.
+O que a rodada 1 diferencia é o custo. A divisão por seção envia 913 tokens de contexto
+por pergunta, contra 256 da divisão por cláusula, uma razão de 3,6 vezes para o mesmo
+resultado. Trechos grandes carregam junto muito texto irrelevante, e em uma rotina de
+alto volume essa diferença se traduz diretamente em despesa sem contrapartida de
+qualidade.
+Rodada 2: dois editais parecidos, perguntas por assunto. O segundo teste aproxima
+o experimento da realidade em dois pontos. O acervo passa a conter os dois editais,
+estruturalmente iguais e com valores diferentes, e as doze perguntas deixam de citar o
+Página 9 de 25 | Prof. Dr. Benevid Felix da Silva, Prof. Dr. Robson Gomes de Melo
+===== PAGE 10 =====
+FIC DEV IA – IA Generativa | Aula 12: Introdução ao RAG (Retrieval-Augmented Generation)
+número do pregão, identificando o documento apenas pelo assunto — "prazo de entrega
+dos equipamentos de informática", "prazo de entrega do mobiliário escolar". É
+exatamente assim que um servidor pergunta.
+Estratégia Chunks recall@3 Acerto Contexto Custo total
+Fixo, 400 95 50% 42% 390 t US$ 0,00123
+caracteres
+Fixo, 400 com 119 33% 42% 402 t US$ 0,00128
+sobreposição
+Por cláusula 226 92% 75% 260 t US$ 0,00104
+Por seção 41 75% 67% 812 t US$ 0,00229
+Cláusula com 187 92% 92% 355 t US$ 0,00125
+título
+O empate desapareceu. O corte fixo, que acertava tudo com um documento, responde
+corretamente a menos da metade das perguntas quando há dois documentos parecidos
+no índice, e a versão com sobreposição fica ainda pior na recuperação. A divisão por
+cláusula recupera o trecho certo em 92% dos casos, mas converte isso em apenas 75%
+de respostas corretas. A divisão por cláusula com o título do documento mantém os
+mesmos 92% de recall e os converte em 92% de acerto.
+Figura 4: Percentual de respostas corretas nas duas rodadas. Com um único edital todas as estratégias
+empatam; com dois editais parecidos a diferença entre a pior e a melhor chega a cinquenta pontos
+percentuais.
+O que explica a diferença. Vale examinar as falhas, porque elas são mais instrutivas que
+os acertos. Na estratégia de corte fixo, a pergunta sobre o prazo de entrega do mobiliário
+escolar recebeu a resposta "45 dias corridos", que é o prazo do edital de informática: o
+índice trouxe o trecho do documento errado e o modelo o usou sem hesitar. Na estratégia
+por cláusula, a pergunta sobre a vigência do contrato de equipamentos de informática
+Página 10 de 25 | Prof. Dr. Benevid Felix da Silva, Prof. Dr. Robson Gomes de Melo
+===== PAGE 11 =====
+FIC DEV IA – IA Generativa | Aula 12: Introdução ao RAG (Retrieval-Augmented Generation)
+recebeu "24 meses", que é a vigência do contrato de mobiliário, embora o trecho correto
+estivesse entre os recuperados — aqui a recuperação funcionou e a geração escolheu
+mal, porque nada no texto do trecho dizia a qual edital ele pertencia.
+Esse é o mecanismo central. Um trecho que diz apenas "10.2. O prazo de vigência do
+contrato será de 12 (doze) meses" é indistinguível de "10.2. O prazo de vigência do
+contrato será de 24 (vinte e quatro) meses" tanto para o índice quanto para o modelo. Ao
+prefixar cada trecho com "[Edital de Pregão 012/2026 — equipamentos de informática
+destinados à modernização | 10. DO CONTRATO E DA GARANTIA CONTRATUAL]",
+duas coisas mudam de uma vez: a busca passa a ter sinal temático para discriminar os
+documentos, e o modelo passa a ver, dentro do próprio trecho, de onde ele veio.
+Uma objeção honesta. É legítimo perguntar por que não injetar o documento de origem
+no prompt, a partir dos metadados, em vez de repeti-lo em cada trecho. A resposta é que
+essa correção ajuda somente a geração, e o experimento mostra que a maior parte do
+prejuízo está na recuperação: com corte fixo, o recall@3 cai a 50% e nenhum ajuste no
+prompt recupera um trecho que jamais foi buscado. Injetar metadados no prompt é uma
+boa prática complementar, tratada no Anexo A.1.2, e não substitui a decisão sobre o que
+entra no texto indexado.
+O custo do rótulo. Prefixar cada trecho tem preço, e ele deve ser declarado. O rótulo
+elevou o tamanho médio do trecho de 180 para 325 caracteres, o que aumentou o
+consumo de embedding na indexação e elevou o contexto médio de 260 para 355 tokens
+por pergunta. Em troca, o acerto subiu de 75% para 92%, de modo que a operação custa
+cerca de 37% mais tokens de contexto e entrega dezessete pontos percentuais a mais de
+respostas corretas — um câmbio favorável em qualquer aplicação que produza
+documento oficial.
+Nota: Os valores de recall@3 são determinísticos, porque dependem apenas dos
+embeddings. Os valores de acerto variam levemente entre execuções, já que a geração
+é amostrada: repetindo o experimento, a estratégia por cláusula oscilou entre 67% e
+75%, e as demais repetiram exatamente. Ao reproduzir o experimento em sala, espere
+variação de uma pergunta e não trate diferenças menores que isso como significativas.
+3.4 Recomendações derivadas do experimento
+As recomendações abaixo decorrem das medições e não de convenção. A primeira
+coluna descreve a situação, e não o tipo de documento, porque o experimento mostrou
+que o tamanho do acervo pesa mais que o gênero textual.
+Situação Estratégia recomendada Justificativa medida
+Um documento, perguntas Nenhuma — envie o Todas as estratégias
+ocasionais documento inteiro empataram em 100% na
+rodada 1
+Um documento, muitas Por cláusula ou parágrafo Mesmo acerto com o menor
+perguntas contexto, 256 tokens
+Acervo com documentos Cláusula com título do Único a manter 92% de acerto
+semelhantes documento na rodada 2
+Documento sem estrutura Por parágrafo, com título de Preserva a unidade redacional
+numerada seção e o contexto
+Página 11 de 25 | Prof. Dr. Benevid Felix da Silva, Prof. Dr. Robson Gomes de Melo
+===== PAGE 12 =====
+FIC DEV IA – IA Generativa | Aula 12: Introdução ao RAG (Retrieval-Augmented Generation)
+Situação Estratégia recomendada Justificativa medida
+Texto corrido sem parágrafos Tamanho fixo com Último recurso; preserva só
+claros sobreposição 61% das cláusulas inteiras
+Três parâmetros práticos completam o quadro. O tamanho do trecho deve acompanhar
+a unidade de sentido do documento, e para textos normativos brasileiros essa unidade é
+o artigo ou a cláusula, entre 150 e 500 caracteres. A sobreposição só se justifica quando
+o corte é cego, pois com corte estrutural ela apenas duplica conteúdo e infla o índice. O
+valor de k, o número de trechos recuperados, foi fixado em três nos experimentos, e
+aumentá-lo eleva a chance de trazer o trecho certo ao custo de mais contexto e de mais
+oportunidades de o modelo se confundir.
+4. Quando o RAG erra
+Um pipeline RAG não emite erro de execução quando erra de conteúdo. Ele devolve um
+parágrafo bem escrito, com citação, e cabe a quem o construiu descobrir que aquele
+parágrafo está errado. Esta seção provoca deliberadamente as três falhas típicas, com o
+exemplo04.py, e apresenta o detector de cada uma.
+Figura 5: As três falhas típicas de um sistema RAG, o sintoma de cada uma e o instrumento capaz de
+revelá-la. Nenhuma delas se manifesta como exceção no código.
+4.1 Falha 1 — a recuperação traz o trecho errado
+O índice devolve trechos plausíveis, porém do documento ou da cláusula errada, e o
+modelo responde com o que recebeu. Provocando a falha com corte fixo sobre o acervo
+de dois editais, a saída real foi esta:
+Pergunta: Qual é o prazo de entrega do mobiliário escolar?
+Gabarito: 60 (sessenta) dias corridos (edital 008/2026, cláusula 11.1)
+Página 12 de 25 | Prof. Dr. Benevid Felix da Silva, Prof. Dr. Robson Gomes de Melo
+===== PAGE 13 =====
+FIC DEV IA – IA Generativa | Aula 12: Introdução ao RAG (Retrieval-Augmented Generation)
+Resposta: O prazo de entrega do mobiliário escolar é de 45 (quarenta e cinco)
+dias corridos, contados do recebimento da Ordem de Fornecimento. [3]
+Trechos: [1] sim. 0.622 — Edital 008/2026, offset 8000
+[2] sim. 0.614 — Edital 008/2026, offset 400
+[3] sim. 0.605 — Edital 012/2026, offset 14000
+Detector: trecho-gabarito no contexto? NÃO
+Detector: margem entre o 1º e o 3º trecho = 0.017
+A resposta é fluente, cita fonte e está errada, pois entrega o prazo do edital de informática
+para uma pergunta sobre mobiliário. Dois detectores a revelam. O primeiro é o conjunto
+de avaliação com trecho-gabarito, que só existe se alguém o construir, e é a razão pela
+qual a Seção 5 insiste nele. O segundo funciona em produção, sem gabarito: a margem
+entre a similaridade do primeiro e do último trecho recuperado foi de apenas 0,017, o que
+significa que os três candidatos pareciam igualmente relevantes e a escolha do modelo
+foi, na prática, um sorteio. Margem baixa é sinal de que a pergunta deveria ser
+encaminhada à conferência humana.
+4.2 Falha 2 — o modelo responde sem contexto suficiente
+A segunda falha é a que mais preocupa em serviço público, e o comportamento dos
+modelos exige uma descrição precisa. Submetidas cinco perguntas cuja resposta não
+consta de nenhum dos dois editais, com um prompt sem regra de abstenção, o modelo
+recusou-se a responder em três casos e inventou nos outros dois:
+Pergunta: Qual é a alíquota do Imposto sobre Serviços aplicável a esta contratação?
+Resposta: Não é possível identificar, nos trechos apresentados, a alíquota do
+Imposto sobre Serviços aplicável à contratação.
+Pergunta: Qual o valor unitário informado no edital para cada notebook educacional?
+Resposta: O valor unitário informado é de R$ 4.900,00 por notebook educacional
+(R$ 612.500,00 ÷ 125 unidades). [1]
+Pergunta: Quantos monitores o edital de mobiliário escolar prevê?
+Resposta: O edital prevê a aquisição de 240 monitores. [1]
+Os dois últimos casos são invenções de tipos diferentes e ambos merecem atenção. No
+primeiro, o modelo calculou um valor unitário que o edital não informa, dividindo o valor
+do lote pela quantidade, e apresentou o resultado como se estivesse escrito no
+documento. No segundo, o modelo respondeu com um número que existe no acervo,
+porém pertence ao outro edital, pois o edital de mobiliário não prevê monitor algum.
+Há ainda um problema nas três recusas espontâneas, e ele é sutil. Elas estão corretas
+quanto ao conteúdo, mas escritas em prosa livre, com redação diferente a cada
+execução. Um sistema a jusante — uma planilha, um formulário, uma fila de triagem —
+não tem como distinguir "Não é possível identificar, nos trechos apresentados, a alíquota"
+de uma resposta afirmativa qualquer. O modelo foi honesto; o sistema continuou incapaz
+de saber disso.
+4.3 Falha 3 — a citação não sustenta a afirmação
+A terceira falha é a mais perigosa porque vem revestida de rigor. A resposta cita [2], o
+trecho [2] existe e é legítimo, e a afirmação atribuída a ele não está lá. O detector mais
+barato aproveita uma característica dos documentos administrativos: quase tudo o que
+importa neles é número, e número pode ser conferido por comparação de texto.
+NUMERO = re.compile(r"\d+(?:[.,]\d+)*\s*%?")
+Página 13 de 25 | Prof. Dr. Benevid Felix da Silva, Prof. Dr. Robson Gomes de Melo
+===== PAGE 14 =====
+FIC DEV IA – IA Generativa | Aula 12: Introdução ao RAG (Retrieval-Augmented Generation)
+def ancoragem(resposta: str, recuperados: list) -> tuple:
+"""Verifica se cada número da resposta existe em algum trecho recuperado."""
+contexto = " ".join(normalizar(c["texto"]) for c, _ in recuperados)
+numeros = [n.strip() for n in NUMERO.findall(resposta)]
+orfaos = [n for n in numeros if normalizar(n) not in contexto]
+return len(numeros), orfaos
+Aplicado às dezessete respostas do conjunto de avaliação, o detector encontrou dois
+casos de número sem lastro. Um deles é revelador: perguntado sobre o valor estimado da
+aquisição de informática, o modelo somou dois lotes e apresentou "R$ 1.234.820,00",
+cifra que não aparece em documento algum e que, além de inventada, está errada, já que
+o valor total do edital é R$ 1.847.320,00. A soma parecia uma gentileza do modelo e
+produziu um dado falso com aparência de dado apurado.
+O mesmo exemplo expõe o limite do detector. A resposta "240 monitores" para o edital de
+mobiliário não foi sinalizada, porque o número 240 realmente aparecia entre os trechos
+recuperados, apenas no documento errado. Verificação numérica alcança a invenção,
+não a troca de fonte, e essa última só se resolve pela conferência de qual documento
+originou o trecho — mais um argumento a favor de carregar essa identificação dentro do
+próprio trecho.
+Execução:
+python exemplo04.py
+4.4 Fazer o sistema dizer "não encontrei"
+Identificadas as três falhas, resta construir a defesa contra elas. O exemplo05.py aplica
+três guardas em sequência, cada uma interceptando uma falha diferente, e nenhuma
+delas basta sozinha. A ordem importa, porque a primeira evita a chamada ao modelo, a
+segunda disciplina o que ele escreve e a terceira confere o que ele escreveu.
+Figura 6: As três guardas entre a pergunta e a resposta. Qualquer uma delas pode desviar o fluxo para a
+recusa padronizada, e apenas o que passa pelas três compõe documento oficial.
+Página 14 de 25 | Prof. Dr. Benevid Felix da Silva, Prof. Dr. Robson Gomes de Melo
+===== PAGE 15 =====
+FIC DEV IA – IA Generativa | Aula 12: Introdução ao RAG (Retrieval-Augmented Generation)
+Guarda 1 — limiar de similaridade. Se o trecho mais próximo ficar abaixo de um limiar,
+o sistema recusa sem sequer chamar o modelo, o que economiza a chamada e elimina a
+oportunidade de invenção. O limiar não deve ser adivinhado, e o programa o calibra
+medindo a similaridade do primeiro trecho nas doze perguntas com resposta e nas cinco
+sem resposta:
+perguntas com resposta no acervo (12): mínimo 0,509 | mediana 0,696 | máximo 0,767
+perguntas sem resposta no acervo (5): mínimo 0,498 | mediana 0,590 | máximo 0,695
+limiar corta perguntas respondíveis corta perguntas sem resposta
+0,45 0 0
+0,50 0 1
+0,55 1 2
+0,60 1 3
+0,65 3 3
+0,70 7 5
+A tabela desmente a expectativa de que um limiar bem escolhido resolva o problema. As
+duas distribuições se sobrepõem: existe pergunta respondível com similaridade 0,509 e
+pergunta sem resposta com similaridade 0,695, de modo que qualquer corte capaz de
+barrar a segunda também barra a primeira. O limiar serve como rede de segurança
+grosseira, e por isso foi fixado em 0,50 nos experimentos, deixando o trabalho fino para
+as guardas seguintes.
+Guarda 2 — contrato de saída. Em vez de esperar que o modelo recuse bem, o prompt
+determina a forma exata da recusa e proíbe explicitamente as operações que geraram
+invenção na Seção 4.2:
+PROMPT_COM_CONTRATO = """Você responde sobre editais de licitação do Estado de \
+Mato Grosso para uso em processo administrativo.
+Regras invioláveis:
+1. Use exclusivamente os trechos numerados abaixo. Conhecimento próprio é proibido.
+2. Não calcule, não estime e não deduza valores que não estejam escritos.
+3. Confira se o trecho se refere ao edital sobre o qual se pergunta.
+4. Se a resposta não estiver literalmente nos trechos, escreva apenas: {recusa}
+5. Cite a fonte no formato [n] ao final de cada afirmação.
+TRECHOS:
+{contexto}
+PERGUNTA: {pergunta}
+RESPOSTA:"""
+A regra 2 é a que impede o caso do notebook de R$ 4.900,00, e a regra 3 é a que ataca a
+troca de documento. A regra 4 é a mais importante do ponto de vista de engenharia,
+porque transforma a recusa em um valor reconhecível por comparação de string, e não
+em prosa que precisa ser interpretada.
+Guarda 3 — ancoragem. Depois de gerada, a resposta passa pelo verificador numérico
+da Seção 4.3, e qualquer número sem lastro no contexto invalida a resposta inteira, que é
+substituída pela recusa padrão. É uma guarda conservadora e assumidamente grosseira:
+ela descarta respostas boas que citem, por exemplo, um número escrito por extenso no
+documento e em algarismo na resposta. Em aplicação que sustenta ato administrativo,
+esse erro para o lado seguro é preferível ao contrário.
+def responder_com_guarda(pergunta: str, recuperados: list, limiar: float) -> dict:
+"""Pipeline protegido. Devolve a resposta e o motivo de eventual recusa."""
+if recuperados[0][1] < limiar: # Guarda 1
+return {"resposta": RECUSA, "motivo": f"similaridade {recuperados[0][1]:.3f}"
+f" abaixo do limiar {limiar}"}
+Página 15 de 25 | Prof. Dr. Benevid Felix da Silva, Prof. Dr. Robson Gomes de Melo
+===== PAGE 16 =====
+FIC DEV IA – IA Generativa | Aula 12: Introdução ao RAG (Retrieval-Augmented Generation)
+texto = gerar(pergunta, recuperados, # Guarda 2
+PROMPT_COM_CONTRATO.replace("{recusa}", RECUSA))
+if normalizar(RECUSA) in normalizar(texto):
+return {"resposta": RECUSA, "motivo": "o modelo declarou não encontrar"}
+_, orfaos = ancoragem(texto, recuperados) # Guarda 3
+if orfaos:
+return {"resposta": RECUSA,
+"motivo": f"números sem lastro no contexto: {orfaos}"}
+return {"resposta": texto, "motivo": ""}
+4.5 O que as três guardas mudaram
+O exemplo05.py roda as dezessete perguntas — doze com resposta no acervo e cinco
+sem — pelos dois pipelines e compara. A classificação usa apenas critérios verificáveis
+por máquina, o que exige uma distinção honesta: para as perguntas sem resposta, o
+sistema só sabe diferenciar "recusa no formato contratado" de "texto livre que alguém
+precisa ler".
+Veredito Pipeline ingênuo Pipeline protegido
+Acerto 11 11
+Erro 1 0
+Recusa indevida 0 1
+Recusa no formato contratado 0 5
+Resposta livre, exigindo leitura 5 0
+humana
+Respostas com número sem 1 0
+lastro
+A leitura da tabela precisa ser feita com cuidado, porque a diferença não está onde se
+costuma esperar. O número de acertos é o mesmo nos dois pipelines, o que significa que
+as guardas não melhoraram a capacidade de responder. O que elas mudaram foi tudo o
+mais: as cinco perguntas sem resposta passaram a produzir uma recusa que o sistema
+reconhece, o único erro factual desapareceu, e o número inventado deixou de sair.
+Execução:
+python exemplo05.py
+O preço dessa proteção também está na tabela, na linha de recusa indevida. Uma
+pergunta que tinha resposta no acervo — sobre a garantia dos computadores, cláusula
+11.6 do Edital 012/2026 — passou a ser recusada, porque a recuperação trouxe a
+cláusula 10.4, sobre garantia de execução contratual, e o modelo corretamente declarou
+que aquilo não respondia à pergunta. O sistema deixou de errar e passou a não
+responder, o que é a troca certa para um processo administrativo, e o Anexo A.1.1 mostra
+como recuperar essa pergunta sem afrouxar as guardas.
+Atenção: A regra operacional para o serviço público decorre desta seção. Um assistente
+que responde a tudo é um passivo, porque transfere ao servidor a tarefa de descobrir
+quais respostas são confiáveis. Um assistente que recusa de forma reconhecível permite
+encaminhar o caso à conferência humana, e é essa possibilidade de encaminhamento —
+Página 16 de 25 | Prof. Dr. Benevid Felix da Silva, Prof. Dr. Robson Gomes de Melo
+===== PAGE 17 =====
+FIC DEV IA – IA Generativa | Aula 12: Introdução ao RAG (Retrieval-Augmented Generation)
+não a taxa de acerto — que torna a ferramenta utilizável em processo que gera efeito
+jurídico.
+Nota: Três melhorias elevam bastante a qualidade do pipeline, mas não são necessárias
+para colocá-lo de pé: a recuperação híbrida com reordenação dos candidatos, a filtragem
+por metadados antes da busca e a portabilidade do mesmo pipeline para outro provedor.
+As três estão no Anexo A.1, como leitura dirigida.
+5. Avaliar antes de colocar no ar
+5.1 O conjunto de perguntas com gabarito
+Nada nesta aula seria demonstrável sem o arquivo perguntas_edital.json, e essa é a
+lição mais transferível do material. Um conjunto de avaliação não precisa ser grande para
+ser útil: doze perguntas com gabarito bastaram para separar cinco estratégias de
+chunking, e cinco perguntas sem resposta no acervo bastaram para revelar a propensão
+a inventar e medir o efeito das três guardas. O trabalho de montá-lo é de algumas horas
+de um servidor que conheça o acervo, e sem ele qualquer afirmação sobre qualidade é
+impressão pessoal.
+O conjunto precisa conter três tipos de pergunta, e a ausência de qualquer um deles cega
+uma parte do sistema. As perguntas com resposta conhecida medem o acerto e
+exigem o registro do trecho de origem, não apenas da resposta. As perguntas sem
+resposta no acervo medem a abstenção e são as mais frequentemente esquecidas,
+embora sejam as que revelam a propensão a inventar. As perguntas com armadilha,
+como o valor unitário que exige uma divisão ou o dado que existe apenas no documento
+vizinho, medem justamente aquilo que os dois primeiros tipos não alcançam.
+5.2 O juiz automático
+Com o conjunto pronto, é possível automatizar parte da conferência usando um modelo
+mais capaz como avaliador. O exemplo07.py emprega o gpt-5.6-terra para atribuir duas
+notas a cada resposta, com saída estruturada para que o resultado seja processável. A
+fidelidade pergunta se a resposta se sustenta nos trechos entregues ao sistema, e a
+utilidade pergunta se ela atende quem perguntou, distinção necessária porque uma
+recusa é sempre fiel e nem sempre útil.
+ESQUEMA = {
+"type": "json_schema",
+"json_schema": {
+"name": "avaliacao_rag",
+"strict": True,
+"schema": {
+"type": "object",
+"properties": {
+"fidelidade": {"type": "integer", "minimum": 0, "maximum": 2,
+"description": "2 se toda afirmação está nos trechos, "
+"1 se parte, 0 se contradiz ou inventa"},
+"utilidade": {"type": "integer", "minimum": 0, "maximum": 2,
+"description": "2 se responde direto, 1 se parcial, "
+"0 se não responde"},
+"justificativa": {"type": "string"},
+},
+"required": ["fidelidade", "utilidade", "justificativa"],
+"additionalProperties": False,
+},
+},
+}
+Página 17 de 25 | Prof. Dr. Benevid Felix da Silva, Prof. Dr. Robson Gomes de Melo
+===== PAGE 18 =====
+FIC DEV IA – IA Generativa | Aula 12: Introdução ao RAG (Retrieval-Augmented Generation)
+Execução:
+python exemplo07.py
+5.3 O limite do juiz automático
+O resultado da avaliação, executada sobre as dezessete respostas do pipeline protegido,
+foi de fidelidade média 2,00 e utilidade média 1,88. Confrontado com o gabarito, o
+mesmo conjunto revelou duas discordâncias, e o programa as isolou automaticamente:
+Casos em que o juiz automático e o gabarito discordaram: 2
+P103: gabarito diz FALHOU, juiz deu fidelidade 2 e utilidade 2 —
+Os trechos não informam prazo de garantia dos computadores ou notebooks.
+O prazo de 12 meses citado é de vigência contratual.
+P16: gabarito diz ok, juiz deu fidelidade 2 e utilidade 0 —
+A recusa é fiel por definição, mas não é útil: os trechos informam
+125 notebooks e valor estimado total de R$ 612.500,00.
+As duas discordâncias apontam limitações diferentes e ambas importam. Na P103, o juiz
+deu nota máxima a uma resposta que o gabarito reprova, e ele não errou ao fazê-lo:
+diante dos trechos que recebeu, a recusa era de fato fiel e apropriada, porque nenhum
+deles continha a resposta. O que o juiz não podia saber é que a resposta existia no
+acervo e a recuperação falhou, informação que apenas o gabarito possui.
+Na P16, o juiz penalizou a recusa por considerá-la pouco útil, argumentando que os
+trechos traziam a quantidade e o valor do lote. Esse raciocínio é exatamente a operação
+proibida pela regra 2 do contrato de saída, e a divergência mostra que um avaliador
+genérico tende a premiar a prestatividade acima da literalidade. Em domínio
+administrativo essa preferência está invertida, de modo que o critério de utilidade precisa
+ser reescrito para o contexto antes de ser usado como métrica de aceitação.
+Daí a conclusão que fecha a seção e ecoa a Aula 09, Seção 5.4. O juiz automático
+avalia a geração, não a recuperação, e portanto não substitui o conjunto com gabarito,
+apenas o complementa. Ele serve para monitorar em escala a fidelidade das respostas
+em produção, onde gabarito não existe, e é incapaz de detectar a falha mais comum de
+um sistema RAG, que é buscar no lugar errado.
+Requisitos
+• Python 3.10 ou superior
+• Conceitos de embeddings e bancos vetoriais (Aula 11)
+• Chamadas a APIs de LLM com python-dotenv (Aula 04, Seções 8 e 9)
+• Saída estruturada com JSON Schema (Aula 08, Seção 5), usada na Seção 5
+Instalação:
+pip install openai chromadb groq numpy python-dotenv
+Chaves necessárias: OPENAI_API_KEY para embeddings e geração, GROQ_API_KEY para o
+reranking da Seção 5.1. Ambas devem ficar em arquivo .env, nunca no código, conforme
+a Aula 04, Seção 9.
+Página 18 de 25 | Prof. Dr. Benevid Felix da Silva, Prof. Dr. Robson Gomes de Melo
+===== PAGE 19 =====
+FIC DEV IA – IA Generativa | Aula 12: Introdução ao RAG (Retrieval-Augmented Generation)
+Mini LAB
+Construir um assistente de consulta para um acervo próprio, medindo a qualidade antes
+de declará-lo pronto. A atividade usa apenas OpenAI e Groq, provedores disponíveis no
+ambiente do curso.
+Parte 1 — Acervo e conjunto de avaliação
+1. Reúna de três a cinco documentos administrativos em texto, do seu órgão ou da
+pasta arquivos/aula09/, garantindo que ao menos dois tratem de assuntos
+semelhantes
+2. Monte um arquivo perguntas.json com dez perguntas com resposta no acervo,
+registrando para cada uma o documento, o trecho-gabarito e a chave esperada na
+resposta
+3. Acrescente quatro perguntas sem resposta no acervo, sendo pelo menos uma
+armadilha aritmética, no modelo da pergunta 16 desta aula
+Parte 2 — Pipeline e medição
+4. Adapte o exemplo03.py ao seu acervo e execute o experimento com pelo menos três
+estratégias de chunking
+5. Registre em uma tabela o recall@3, o acerto e o contexto médio de cada estratégia, e
+indique qual você adotaria
+6. Adapte o exemplo05.py, calibre o limiar com os seus próprios dados e execute o
+pipeline protegido sobre as quatorze perguntas
+Parte 3 — Análise
+7. Produza uma tabela final comparando o pipeline ingênuo e o protegido, nas mesmas
+categorias da Seção 4.5
+8. Escolha uma pergunta que o sistema errou e classifique a falha entre as três da
+Seção 4, justificando com o número que sustenta a classificação
+9. Redija um parágrafo de no máximo dez linhas respondendo: este sistema pode ser
+usado para fundamentar um despacho? Sob que condições?
+Critérios de avaliação:
+• [ ] Conjunto de avaliação com os três tipos de pergunta, incluindo trecho-gabarito
+• [ ] Experimento de chunking executado com números reais, não estimados
+• [ ] Limiar calibrado com dados do próprio acervo, com a tabela de corte apresentada
+• [ ] Recusa em formato reconhecível por máquina, verificada nas quatro perguntas
+sem resposta
+• [ ] Falha classificada corretamente entre as três, com o detector que a revelou
+• [ ] Parágrafo final com condição de uso explícita e defensável
+Anexo — Leitura Dirigida
+O conteúdo deste anexo complementa a aula, mas não é necessário para acompanhar as
+demonstrações do encontro presencial. Ele foi separado para que as três horas de aula
+caibam no essencial, e deve ser lido depois, por conta própria. As remissões no corpo da
+aula indicam o ponto em que cada assunto se encaixa.
+Página 19 de 25 | Prof. Dr. Benevid Felix da Silva, Prof. Dr. Robson Gomes de Melo
+===== PAGE 20 =====
+FIC DEV IA – IA Generativa | Aula 12: Introdução ao RAG (Retrieval-Augmented Generation)
+A.1 Melhorias que valem o esforço
+A.1.1 Recuperação híbrida e reranking
+A busca vetorial acerta o sentido e erra o literal. Ela entende que "prazo de entrega" e
+"prazo para fornecer os bens" são a mesma coisa, mas dilui exatamente aquilo que um
+servidor usa para se referir a um documento: número de cláusula, número de processo,
+código orçamentário, endereço de correio eletrônico. O BM25, algoritmo clássico de
+busca lexical que pontua documentos pela frequência das palavras da consulta, tem o
+defeito simétrico, pois acerta o literal e não enxerga sinônimo.
+Somar as duas listas resolve boa parte do problema, e a técnica usual é o Reciprocal
+Rank Fusion, que atribui a cada documento a soma de 1/(60 + posição) em cada
+ranking. A fusão é indiferente à escala das pontuações, o que a torna aplicável a métodos
+incomparáveis entre si, e é implementada em cinco linhas:
+def rrf(*listas, k: int = 60) -> list:
+"""Reciprocal Rank Fusion: soma 1/(k + posição) de cada lista de ranking."""
+pontos = {}
+for lista in listas:
+for posicao, indice in enumerate(lista):
+pontos[indice] = pontos.get(indice, 0) + 1 / (k + posicao + 1)
+return sorted(pontos, key=pontos.get, reverse=True)
+O exemplo06.py implementa o BM25 em Python puro, sem dependência externa, e
+compara os métodos sobre dois conjuntos de perguntas. O primeiro reúne as doze
+perguntas por assunto da Seção 3.3, e o segundo acrescenta seis perguntas que trazem
+termo literal, como "a cláusula 11.6 do Edital 012/2026" ou "o número do Processo
+Administrativo do Pregão 008/2026". A separação permite ver que os dois métodos
+vencem em conjuntos diferentes, o que é a premissa da fusão.
+Figura 7: A composição da recuperação híbrida. Cada método isolado falha em parte das perguntas, e a
+fusão com janela de doze candidatos contém o trecho correto em 100% dos casos, cabendo ao reranking
+selecionar os três finais.
+Página 20 de 25 | Prof. Dr. Benevid Felix da Silva, Prof. Dr. Robson Gomes de Melo
+===== PAGE 21 =====
+FIC DEV IA – IA Generativa | Aula 12: Introdução ao RAG (Retrieval-Augmented Generation)
+Conjunto Vetorial BM25 Híbrido, k = 3 Híbrido, k = 12
+Perguntas por 92% 75% 92% 100%
+assunto (12)
+Perguntas com 50% 83% 83% 100%
+termo literal (6)
+O resultado confirma a complementaridade dos métodos. A busca vetorial vence nas
+perguntas por assunto e perde nas literais; o BM25 faz exatamente o contrário; e a fusão
+nunca fica abaixo do melhor dos dois em cada conjunto. Entre as perguntas que o BM25
+salvou está justamente aquela em que a similaridade vetorial não encontrou o número do
+processo administrativo, sequência de dígitos que o embedding não tem como
+representar de modo distintivo.
+A última coluna é a mais informativa. Ampliando a janela de três para doze candidatos, a
+fusão passa a conter o trecho correto em 100% das perguntas dos dois conjuntos,
+marca que nenhum dos métodos isolados alcança. Isso significa que, a partir daí, o
+problema deixou de ser encontrar o trecho e passou a ser colocá-lo entre os três que irão
+ao modelo — e é precisamente esse o trabalho do reranking.
+O reranking reordena um conjunto maior de candidatos com um modelo de linguagem
+que lê pergunta e trechos juntos, e devolve os três finais. Executado sobre os doze
+candidatos da fusão, ele elevou o recall dos dois conjuntos a 100%, aproveitando
+integralmente a margem aberta pela coluna anterior. A medição foi obtida em execução
+real, porém anterior ao ajuste final do rótulo dos trechos, e não pôde ser repetida na
+execução definitiva porque o limite diário de tokens do nível gratuito da Groq havia sido
+atingido.
+def reranquear(pergunta: str, candidatos: list, n: int = K) -> list:
+"""Reordena candidatos com um modelo de pesos abertos servido pela Groq."""
+lista = "\n\n".join(f"[{i}] {c['texto'][:300]}" for i, c in enumerate(candidatos))
+pedido = dict(
+model=MODELO_RERANK,
+messages=[{"role": "user", "content":
+f"Ordene os trechos do mais para o menos útil para responder "
+f"à pergunta. Responda apenas com um JSON no formato "
+f'{{"ordem": [n, n, n]}} com os {n} melhores índices.\n\n'
+f"PERGUNTA: {pergunta}\n\nTRECHOS:\n{lista}"}],
+response_format={"type": "json_object"},
+reasoning_effort="low",
+max_completion_tokens=4000,
+)
+O modelo usado é o openai/gpt-oss-20b servido pela Groq, escolha deliberada por três
+motivos. Ele é de pesos abertos, o que permite ao órgão executá-lo em infraestrutura
+própria caso os trechos não possam sair da rede interna; custa cerca de um terço do
+modelo econômico da OpenAI; e a latência da Groq mantém a reordenação dentro do
+tempo aceitável para uma resposta interativa.
+Atenção: O gpt-oss-20b é modelo de raciocínio, e os tokens de pensamento saem do
+mesmo limite de saída, conforme a armadilha documentada na Aula 02, Seção 9. Com
+max_completion_tokens apertado, a chamada retorna conteúdo vazio e o
+response_format falha com erro 400, sem que nada indique a causa real. O exemplo usa
+reasoning_effort="low" e limite de 1.500 tokens, valor que se mostrou suficiente e que
+importa por um segundo motivo: a Groq contabiliza o limite de saída solicitado na sua
+Página 21 de 25 | Prof. Dr. Benevid Felix da Silva, Prof. Dr. Robson Gomes de Melo
+===== PAGE 22 =====
+FIC DEV IA – IA Generativa | Aula 12: Introdução ao RAG (Retrieval-Augmented Generation)
+cota, de modo que pedir 4.000 tokens por chamada esgota a franquia gratuita em poucas
+requisições. Quando a cota se esgota, o exemplo mantém a ordem da fusão em vez de
+interromper a execução.
+Execução:
+python exemplo06.py
+O programa encerra fechando o caso deixado em aberto na Seção 4.5, a pergunta sobre
+a garantia dos computadores que o pipeline protegido havia recusado:
+A pergunta 103, recusada pelo pipeline do exemplo 05:
+Por quantos meses os computadores e notebooks têm garantia?
+vetorial trouxe a cláusula 11.6? NÃO (cláusula 10.2, cláusula 17.7, cláusula 10.4)
+híbrido trouxe a cláusula 11.6? sim (cláusula 10.2, cláusula 11.6, cláusula 10.4)
+A recusa indevida não era um defeito das guardas, e sim uma limitação da recuperação
+que as guardas revelaram corretamente. Corrigida a recuperação, a resposta aparece
+sem que nenhuma proteção precise ser afrouxada, e essa é a ordem certa de trabalho:
+instrumentar primeiro, diagnosticar depois, corrigir a etapa que o diagnóstico apontou.
+A.1.2 Metadados: filtrar antes de buscar
+A Seção 3.3 mostrou que metadados guardados ao lado do trecho não ajudam a busca
+vetorial, porque ela só enxerga o texto. Eles servem, porém, para algo que a busca
+vetorial não faz: restringir o espaço de busca antes de compará-lo. Quando o usuário
+já sabe que a pergunta se refere ao Pregão 012/2026, filtrar o índice por esse metadado
+elimina de saída toda a confusão entre documentos.
+O ChromaDB aceita esse filtro diretamente na consulta, e o custo computacional é
+desprezível:
+resultados = colecao.query(
+query_texts=["Qual o prazo de entrega?"],
+n_results=3,
+where={"arquivo": "edital_pregao_012_2026.txt"},
+)
+Os metadados úteis em acervo administrativo são poucos e previsíveis. Convém registrar
+o arquivo de origem, a cláusula ou página, o órgão emissor, o tipo documental e a
+data de publicação, porque são esses os recortes pelos quais um servidor efetivamente
+busca. Registrar a data permite ainda a filtragem mais valiosa em acervo jurídico, que é
+limitar a busca aos documentos vigentes e evitar que um edital revogado fundamente
+uma resposta atual.
+A.1.3 O mesmo pipeline em outro provedor
+Uma técnica que ganhou espaço a partir de 2024 automatiza aquilo que a Seção 3.2 fez
+com expressão regular: em vez de extrair o rótulo do documento por padrão de texto, um
+modelo de linguagem lê o documento e o trecho e redige a frase de contexto que
+antecederá o trecho no índice. O ganho é a aplicabilidade a documentos sem estrutura
+numerada, nos quais nenhuma expressão regular funciona, e o custo é uma chamada de
+modelo por trecho na indexação.
+Nota: Este exemplo é ilustrativo e não foi executado durante a preparação do material,
+pois o ambiente do curso não dispõe de chave deste provedor. Ele está aqui para
+evidenciar que a mesma tarefa se resolve em provedores distintos, com diferenças
+pequenas de sintaxe. Caso você obtenha uma chave própria, o código funciona com a
+adaptação indicada.
+Página 22 de 25 | Prof. Dr. Benevid Felix da Silva, Prof. Dr. Robson Gomes de Melo
+===== PAGE 23 =====
+FIC DEV IA – IA Generativa | Aula 12: Introdução ao RAG (Retrieval-Augmented Generation)
+import anthropic
+cliente = anthropic.Anthropic() # lê ANTHROPIC_API_KEY do ambiente
+def contextualizar(documento: str, trecho: str) -> str:
+"""Gera com um LLM a frase de contexto que antecede o trecho no índice."""
+resposta = cliente.messages.create(
+model="claude-sonnet-5",
+max_tokens=300,
+thinking={"type": "disabled"}, # tarefa trivial; poupa tokens
+system="Você recebe um documento e um trecho dele. Escreva uma única "
+"frase curta que situe o trecho no documento, indicando de que "
+"documento e de que seção ele veio. Responda apenas com a frase.",
+messages=[{
+"role": "user",
+"content": [
+{"type": "text",
+"text": f"<documento>{documento}</documento>",
+"cache_control": {"type": "ephemeral"}},
+{"type": "text", "text": f"<trecho>{trecho}</trecho>"},
+],
+}],
+)
+return next(b.text for b in resposta.content if b.type == "text").strip()
+Três observações sobre esse código valem para qualquer provedor. O documento inteiro
+é enviado a cada trecho, o que seria proibitivo sem o cache_control, marcação que instrui
+o provedor a reaproveitar o processamento do prefixo repetido e reduz substancialmente
+o custo dessa indexação. O raciocínio é desativado explicitamente, porque nos modelos
+de 2026 ele vem ligado por padrão e consumiria o limite de saída de uma tarefa que não
+precisa dele — é a mesma armadilha vista no reranking da Seção 5.1, em outro provedor.
+E a leitura da resposta percorre os blocos de conteúdo em busca do tipo text, em vez de
+acessar o primeiro bloco diretamente, porque os modelos atuais podem devolver blocos
+de raciocínio antes do texto final.
+O Google segue caminho diferente e oferece o File Search na Gemini API, ferramenta
+gerenciada que importa, divide, indexa e recupera os documentos, devolvendo citações
+com número de página, de modo que o desenvolvedor não escreve nenhuma das quatro
+etapas (Google, 2026). A cobrança recai sobre os embeddings gerados na indexação e
+sobre os tokens dos trechos recuperados, sem custo de armazenamento. A conveniência
+é evidente e o preço também: as decisões medidas na Seção 3.3, especialmente a
+estratégia de divisão, deixam de estar sob o controle de quem constrói o sistema.
+A.2 Do laboratório ao serviço
+Três considerações separam o pipeline desta aula de um sistema que atende servidores.
+A primeira é de proteção de dados: indexar documentos significa enviar seu texto ao
+provedor de embeddings, e a Aula 01, Seção 10, trata das exigências que a LGPD impõe
+a esse trânsito. Documentos com dados pessoais de cidadãos demandam decisão
+consciente entre usar API externa e executar um modelo de embedding em infraestrutura
+própria, alternativa viável e abordada na Aula 11.
+A segunda é de operação do índice. Um acervo real muda: editais são retificados,
+contratos são aditados, documentos são revogados. O índice precisa de um processo de
+atualização que remova os trechos do documento antigo antes de inserir os do novo, sob
+Página 23 de 25 | Prof. Dr. Benevid Felix da Silva, Prof. Dr. Robson Gomes de Melo
+===== PAGE 24 =====
+FIC DEV IA – IA Generativa | Aula 12: Introdução ao RAG (Retrieval-Augmented Generation)
+pena de o sistema passar a responder com base em texto sem vigência — falha
+silenciosa e especialmente grave em matéria normativa.
+A terceira é de registro. Todo o instrumental construído aqui — trechos recuperados,
+similaridades, motivo da recusa — deve ser gravado junto com cada resposta, e não
+apenas exibido na tela. É esse registro que permite responder, meses depois, com que
+fundamento o sistema afirmou o que afirmou, e é ele que transforma o assistente de uma
+conveniência em um componente auditável de processo administrativo.
+Nota: Esta aula é o alicerce técnico do Desafio 02, no qual será construído um chatbot
+que responde sobre documentos anexados pelo usuário. A Aula 13 acrescenta a leitura
+de PDF e a interface, e a Aula 15 acrescenta a conversa com histórico. O pipeline, as
+guardas e o conjunto de avaliação desenvolvidos aqui são reaproveitados integralmente
+nas três etapas seguintes.
+Referências
+ANTHROPIC. Contextual Retrieval. 2024. Disponível em:
+https://www.anthropic.com/news/contextual-retrieval. Acesso em: ago. 2026.
+ANTHROPIC. Messages API — Anthropic Docs. 2026. Disponível em:
+https://docs.anthropic.com/en/api/messages. Acesso em: ago. 2026.
+BRASIL. Lei nº 14.133, de 1º de abril de 2021. Lei de Licitações e Contratos
+Administrativos. Disponível em:
+https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2021/lei/l14133.htm. Acesso em: ago.
+2026.
+CHROMA. Chroma Docs — Collections and Queries. 2026. Disponível em:
+https://docs.trychroma.com/. Acesso em: ago. 2026.
+CORMACK, G. V.; CLARKE, C. L. A.; BUETTCHER, S. Reciprocal Rank Fusion
+Outperforms Condorcet and Individual Rank Learning Methods. In: Proceedings of
+SIGIR '09, 2009. Disponível em: https://dl.acm.org/doi/10.1145/1571941.1572114. Acesso
+em: ago. 2026.
+GOOGLE. File Search — Gemini API. 2026. Disponível em:
+https://ai.google.dev/gemini-api/docs/file-search. Acesso em: ago. 2026.
+GROQ. Models and Pricing. 2026. Disponível em:
+https://console.groq.com/docs/models. Acesso em: ago. 2026.
+LEWIS, P. et al. Retrieval-Augmented Generation for Knowledge-Intensive NLP
+Tasks. In: Advances in Neural Information Processing Systems (NeurIPS), 2020.
+Disponível em: https://arxiv.org/abs/2005.11401. Acesso em: ago. 2026.
+LIU, N. F. et al. Lost in the Middle: How Language Models Use Long Contexts.
+Transactions of the Association for Computational Linguistics, v. 12, 2024. Disponível em:
+https://arxiv.org/abs/2307.03172. Acesso em: ago. 2026.
+OPENAI. API Pricing. 2026. Disponível em:
+https://developers.openai.com/api/docs/pricing. Acesso em: ago. 2026.
+OPENAI. Embeddings — OpenAI API Documentation. 2026. Disponível em:
+https://platform.openai.com/docs/guides/embeddings. Acesso em: ago. 2026.
+Página 24 de 25 | Prof. Dr. Benevid Felix da Silva, Prof. Dr. Robson Gomes de Melo
+===== PAGE 25 =====
+FIC DEV IA – IA Generativa | Aula 12: Introdução ao RAG (Retrieval-Augmented Generation)
+ROBERTSON, S.; ZARAGOZA, H. The Probabilistic Relevance Framework: BM25 and
+Beyond. Foundations and Trends in Information Retrieval, v. 3, n. 4, 2009. Disponível em:
+https://dl.acm.org/doi/10.1561/1500000019. Acesso em: ago. 2026.
+Página 25 de 25 | Prof. Dr. Benevid Felix da Silva, Prof. Dr. Robson Gomes de Melo

@@ -1,0 +1,182 @@
+{
+  "acervo": {
+    "fonte": "Regimento Interno da Empresa Mato-grossense de Tecnologia da Informação - MTI (Decreto nº 1.212, de 2 de janeiro de 2025)",
+    "documentos": [
+      {
+        "id": "caracterizacao",
+        "numero": "I.I",
+        "titulo": "Da caracterização"
+      },
+      {
+        "id": "objetivos",
+        "numero": "I.II",
+        "titulo": "Dos objetivos"
+      },
+      {
+        "id": "conselho-administracao",
+        "numero": "III.I.I",
+        "titulo": "Do Conselho de Administração"
+      },
+      {
+        "id": "conselho-fiscal",
+        "numero": "III.I.II",
+        "titulo": "Do Conselho Fiscal"
+      },
+      {
+        "id": "gestao-pessoas",
+        "numero": "III.V.IV",
+        "titulo": "Da Unidade de Gestão de Pessoas"
+      }
+    ]
+  },
+  "perguntas": [
+    {
+      "id": 1,
+      "no_acervo": true,
+      "pergunta": "Qual é a natureza jurídica da MTI?",
+      "documento": "caracterizacao",
+      "paragrafo": 1,
+      "trecho_gabarito": "empresa pública dotada de personalidade jurídica de direito privado",
+      "chave_esperada": "empresa pública de direito privado",
+      "chaves": ["empresa publica", "direito privado"]
+    },
+    {
+      "id": 2,
+      "no_acervo": true,
+      "pergunta": "Qual era a denominação inicial da MTI?",
+      "documento": "caracterizacao",
+      "paragrafo": 1,
+      "trecho_gabarito": "Centro de Processamento de Dados do Estado de Mato Grosso - CEPROMAT",
+      "chave_esperada": "CEPROMAT",
+      "chaves": ["cepromat"]
+    },
+    {
+      "id": 3,
+      "no_acervo": true,
+      "pergunta": "Qual o primeiro objetivo da MTI listado no regimento?",
+      "documento": "objetivos",
+      "paragrafo": 2,
+      "trecho_gabarito": "prestar serviços de Infraestrutura de Tecnologia da Informação e Comunicação",
+      "chave_esperada": "infraestrutura de TIC",
+      "chaves": ["infraestrutura"]
+    },
+    {
+      "id": 4,
+      "no_acervo": true,
+      "pergunta": "A MTI pode prestar serviços à iniciativa privada?",
+      "documento": "objetivos",
+      "paragrafo": 2,
+      "trecho_gabarito": "órgãos públicos da esfera Federal, Estadual Municipal e iniciativa privada",
+      "chave_esperada": "iniciativa privada",
+      "chaves": ["iniciativa privada"]
+    },
+    {
+      "id": 5,
+      "no_acervo": true,
+      "pergunta": "Qual é a missão do Conselho de Administração da MTI?",
+      "documento": "conselho-administracao",
+      "paragrafo": 4,
+      "trecho_gabarito": "órgão superior de deliberação colegiada",
+      "chave_esperada": "deliberação colegiada e estratégias de negócio",
+      "chaves": ["discutir e aprovar", "estrategias de negocio", "governanca corporativa", "deliberacao colegiada"]
+    },
+    {
+      "id": 6,
+      "no_acervo": true,
+      "pergunta": "Por quantos anos, no mínimo, deve ser atualizada a estratégia de longo prazo aprovada pelo Conselho de Administração?",
+      "documento": "conselho-administracao",
+      "paragrafo": 4,
+      "trecho_gabarito": "no mínimo, os próximos 5 (cinco) anos",
+      "chave_esperada": "5 anos",
+      "chaves": ["5 (cinco) anos", "cinco anos", "5 anos"]
+    },
+    {
+      "id": 7,
+      "no_acervo": true,
+      "pergunta": "Qual é a missão do Conselho Fiscal da MTI?",
+      "documento": "conselho-fiscal",
+      "paragrafo": 5,
+      "trecho_gabarito": "órgão fiscalizador, tem como missão assegurar os princípios de transparência",
+      "chave_esperada": "transparência, equidade e prestação de contas",
+      "chaves": ["transparencia", "equidade", "prestacao de contas"]
+    },
+    {
+      "id": 8,
+      "no_acervo": true,
+      "pergunta": "Até quando o Conselho Fiscal deve restituir os balanços e a prestação de contas com parecer?",
+      "documento": "conselho-fiscal",
+      "paragrafo": 5,
+      "trecho_gabarito": "até o 5º (quinto) dia útil do mês de março",
+      "chave_esperada": "5º dia útil de março",
+      "chaves": ["5o (quinto) dia util", "quinto dia util", "marco"]
+    },
+    {
+      "id": 9,
+      "no_acervo": true,
+      "pergunta": "Qual é a missão da Unidade de Gestão de Pessoas?",
+      "documento": "gestao-pessoas",
+      "paragrafo": 34,
+      "trecho_gabarito": "promover a gestão estratégica dos processos e subsistemas de gestão de pessoas",
+      "chave_esperada": "gestão estratégica de pessoas",
+      "chaves": ["gestao estrategica", "departamento de pessoal"]
+    },
+    {
+      "id": 10,
+      "no_acervo": true,
+      "pergunta": "A Unidade de Gestão de Pessoas é responsável por concurso público?",
+      "documento": "gestao-pessoas",
+      "paragrafo": 34,
+      "trecho_gabarito": "gerir a realização de concurso público e processos seletivos",
+      "chave_esperada": "concurso público e processos seletivos",
+      "chaves": ["concurso publico"]
+    },
+    {
+      "id": 11,
+      "no_acervo": false,
+      "tipo": "fora_do_acervo",
+      "pergunta": "Quem resolve os casos omissos neste Regimento Interno?",
+      "documento": null,
+      "paragrafo": null,
+      "trecho_gabarito": null,
+      "chave_esperada": "não consta no acervo",
+      "chaves": ["nao encontrado", "não encontrado"],
+      "observacao": "A resposta está no Título V (art. 80), que não faz parte das cinco subseções indexadas."
+    },
+    {
+      "id": 12,
+      "no_acervo": false,
+      "tipo": "fora_do_acervo",
+      "pergunta": "Qual é o salário do Diretor-Presidente da MTI?",
+      "documento": null,
+      "paragrafo": null,
+      "trecho_gabarito": null,
+      "chave_esperada": "não consta no acervo",
+      "chaves": ["nao encontrado", "não encontrado"],
+      "observacao": "Remuneração não consta no regimento."
+    },
+    {
+      "id": 13,
+      "no_acervo": false,
+      "tipo": "fora_do_acervo",
+      "pergunta": "Qual artigo da LGPD define dado pessoal?",
+      "documento": null,
+      "paragrafo": null,
+      "trecho_gabarito": null,
+      "chave_esperada": "não consta no acervo",
+      "chaves": ["nao encontrado", "não encontrado"],
+      "observacao": "Norma externa ao acervo."
+    },
+    {
+      "id": 14,
+      "no_acervo": false,
+      "tipo": "armadilha_aritmetica",
+      "pergunta": "O planejamento estratégico aprovado pelo Conselho de Administração cobre no mínimo 5 anos. Se cada ano tiver 12 meses, quantos meses esse horizonte mínimo representa?",
+      "documento": null,
+      "paragrafo": null,
+      "trecho_gabarito": null,
+      "chave_esperada": "não consta no acervo",
+      "chaves": ["nao encontrado", "não encontrado"],
+      "observacao": "Armadilha aritmética: 5 × 12 = 60 não está no acervo. O sistema deve responder NÃO ENCONTRADO, não calcular."
+    }
+  ]
+}

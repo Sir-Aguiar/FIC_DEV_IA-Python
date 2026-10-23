@@ -1,0 +1,123 @@
+{
+  "modelo_embedding": "gemini-embedding-001",
+  "modelo_llm": "openai/gpt-oss-20b",
+  "k": 3,
+  "chamadas_embedding": 16,
+  "rodada_1": {
+    "secao_inteira": {
+      "chunks": 1,
+      "recall": 100.0,
+      "acerto": 100.0,
+      "contexto": 932.0,
+      "falhas": []
+    },
+    "por_paragrafo": {
+      "chunks": 1,
+      "recall": 100.0,
+      "acerto": 50.0,
+      "contexto": 924.0,
+      "falhas": [
+        {
+          "id": 5,
+          "doc": "conselho-administracao",
+          "recall": true,
+          "resposta": "A missão do Conselho de Administração da MTI é discutir e apro"
+        }
+      ]
+    },
+    "janela_200_50": {
+      "chunks": 4,
+      "recall": 100.0,
+      "acerto": 50.0,
+      "contexto": 1017.0,
+      "falhas": [
+        {
+          "id": 5,
+          "doc": "conselho-administracao",
+          "recall": true,
+          "resposta": ""
+        }
+      ]
+    }
+  },
+  "rodada_2": {
+    "secao_inteira": {
+      "chunks": 5,
+      "recall": 100.0,
+      "acerto": 78.57142857142857,
+      "contexto": 1364.9285714285713,
+      "falhas": [
+        {
+          "id": 5,
+          "doc": "conselho-administracao",
+          "recall": true,
+          "resposta": ""
+        },
+        {
+          "id": 11,
+          "doc": "fora_do_acervo",
+          "recall": false,
+          "resposta": "O Conselho de Administração resolve os casos omissos."
+        },
+        {
+          "id": 14,
+          "doc": "armadilha_aritmetica",
+          "recall": false,
+          "resposta": "O horizonte mínimo de 5 anos representa 60 meses."
+        }
+      ]
+    },
+    "por_paragrafo": {
+      "chunks": 5,
+      "recall": 100.0,
+      "acerto": 78.57142857142857,
+      "contexto": 1357.2142857142858,
+      "falhas": [
+        {
+          "id": 5,
+          "doc": "conselho-administracao",
+          "recall": true,
+          "resposta": "A missão"
+        },
+        {
+          "id": 11,
+          "doc": "fora_do_acervo",
+          "recall": false,
+          "resposta": "O Conselho de Administração resolve os casos omissos neste Regimento Interno."
+        },
+        {
+          "id": 14,
+          "doc": "armadilha_aritmetica",
+          "recall": false,
+          "resposta": "O horizonte mínimo de planejamento estratégico representa 60 meses."
+        }
+      ]
+    },
+    "janela_200_50": {
+      "chunks": 10,
+      "recall": 100.0,
+      "acerto": 78.57142857142857,
+      "contexto": 946.0714285714286,
+      "falhas": [
+        {
+          "id": 5,
+          "doc": "conselho-administracao",
+          "recall": true,
+          "resposta": "A missão do Conselho de Administração da MTI é discutir"
+        },
+        {
+          "id": 11,
+          "doc": "fora_do_acervo",
+          "recall": false,
+          "resposta": "O Conselho de Administração resolve os casos omissos."
+        },
+        {
+          "id": 14,
+          "doc": "armadilha_aritmetica",
+          "recall": false,
+          "resposta": "O horizonte mínimo de 5 anos corresponde a 60 meses."
+        }
+      ]
+    }
+  }
+}

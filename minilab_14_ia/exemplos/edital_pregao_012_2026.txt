@@ -1,0 +1,275 @@
+ESTADO DE MATO GROSSO
+SECRETARIA DE ESTADO DE CIÊNCIA E TECNOLOGIA
+COMISSÃO PERMANENTE DE LICITAÇÃO
+
+EDITAL DE PREGÃO ELETRÔNICO N. 012/2026
+Processo Administrativo n. 2026/0004871
+Tipo: Menor preço por lote
+Modo de disputa: Aberto
+Data de abertura da sessão pública: 22 de setembro de 2026, às 09h00 (horário de Brasília)
+Local: Portal Nacional de Contratações Públicas (PNCP)
+Regime jurídico: Lei n. 14.133, de 1º de abril de 2021
+
+1. DO OBJETO
+
+1.1. Constitui objeto do presente Pregão Eletrônico a aquisição de equipamentos de informática destinados à modernização dos laboratórios das escolas estaduais de tempo integral, conforme especificações técnicas, quantitativos e condições de fornecimento constantes do Termo de Referência (Anexo I) deste Edital.
+
+1.2. O valor total estimado da contratação é de R$ 1.847.320,00 (um milhão, oitocentos e quarenta e sete mil, trezentos e vinte reais), assim distribuído: Lote 1, R$ 986.400,00; Lote 2, R$ 612.500,00; Lote 3, R$ 248.420,00.
+
+1.3. A licitação será dividida em 3 (três) lotes, conforme quadro constante do Anexo I, facultada ao licitante a participação em um, em alguns ou em todos os lotes, observada a obrigatoriedade de cotação integral dos itens que compõem cada lote.
+
+1.4. O critério de julgamento adotado será o de MENOR PREÇO POR LOTE, observadas as exigências contidas neste Edital e seus Anexos quanto às especificações do objeto.
+
+1.5. Integram este Edital, independentemente de transcrição, os seguintes anexos: Anexo I, Termo de Referência; Anexo II, Modelo de Proposta de Preços; Anexo III, Minuta de Contrato; Anexo IV, Modelo de Declaração de Enquadramento como Microempresa ou Empresa de Pequeno Porte.
+
+2. DA PARTICIPAÇÃO NA LICITAÇÃO
+
+2.1. Poderão participar deste Pregão os interessados cujo ramo de atividade seja compatível com o objeto desta licitação e que estejam com cadastro regular no Sistema de Cadastramento Unificado de Fornecedores (SICAF), nos termos da legislação vigente.
+
+2.2. Será concedido tratamento diferenciado e simplificado às microempresas e empresas de pequeno porte, na forma da Lei Complementar n. 123, de 14 de dezembro de 2006, mediante apresentação da declaração constante do Anexo IV.
+
+2.3. Os Lotes 2 e 3 são de participação exclusiva de microempresas e empresas de pequeno porte, nos termos do art. 48 da Lei Complementar n. 123/2006.
+
+2.4. Não poderão participar desta licitação os interessados que se encontrem sob falência, recuperação judicial não homologada, concurso de credores, dissolução ou liquidação.
+
+2.5. É vedada a participação de empresas declaradas inidôneas para licitar ou contratar com a Administração Pública, bem como daquelas punidas com suspensão temporária de participação em licitação ou impedidas de contratar com o Estado de Mato Grosso.
+
+2.6. É vedada a participação de pessoa jurídica cujo dirigente, sócio ou responsável técnico seja servidor, empregado ou ocupante de cargo comissionado na Secretaria de Estado de Ciência e Tecnologia.
+
+2.7. A participação neste certame implica a aceitação integral e irretratável dos termos deste Edital e de seus Anexos, bem como a observância dos preceitos legais e regulamentares aplicáveis.
+
+3. DO CREDENCIAMENTO E DA APRESENTAÇÃO DA PROPOSTA
+
+3.1. O credenciamento é o nível básico do registro cadastral no PNCP e constitui condição obrigatória para a participação neste Pregão Eletrônico.
+
+3.2. O licitante responsabiliza-se exclusiva e formalmente pelas transações efetuadas em seu nome, assumindo como firmes e verdadeiras suas propostas e seus lances.
+
+3.3. O uso da senha de acesso pelo licitante é de sua responsabilidade exclusiva, incluindo qualquer transação efetuada diretamente ou por seu representante, não cabendo ao provedor do sistema ou à Secretaria responder por eventuais danos decorrentes de uso indevido da senha.
+
+3.4. As propostas deverão ser encaminhadas exclusivamente por meio do sistema eletrônico, até a data e o horário estabelecidos para abertura da sessão pública, quando então encerrar-se-á automaticamente a fase de recebimento de propostas.
+
+3.5. O prazo de validade da proposta não será inferior a 60 (sessenta) dias, contados da data de sua apresentação, prorrogável na forma do art. 90, § 4º, da Lei n. 14.133/2021.
+
+3.6. Nos valores propostos estarão inclusos todos os custos operacionais, encargos previdenciários, trabalhistas, tributários, comerciais, fretes, seguros e quaisquer outros que incidam direta ou indiretamente no fornecimento dos bens.
+
+4. DA ABERTURA DA SESSÃO PÚBLICA E DA FASE DE LANCES
+
+4.1. A abertura da sessão pública dar-se-á automaticamente, no horário indicado no preâmbulo deste Edital, com a divulgação das propostas de preços recebidas.
+
+4.2. O Pregoeiro verificará as propostas apresentadas, desclassificando desde logo aquelas que não estejam em conformidade com os requisitos estabelecidos neste Edital, contenham vícios insanáveis ou não apresentem as especificações técnicas exigidas no Termo de Referência.
+
+4.3. O sistema ordenará automaticamente as propostas classificadas, sendo que somente estas participarão da fase de lances.
+
+4.4. Será adotado para o envio de lances o modo de disputa aberto, em que os licitantes apresentarão lances públicos e sucessivos, com prorrogações, conforme o critério de julgamento adotado neste Edital.
+
+4.5. A etapa de lances da sessão pública terá duração de 10 (dez) minutos e, após isso, será prorrogada automaticamente pelo sistema quando houver lance ofertado nos últimos 2 (dois) minutos do período de duração da sessão pública.
+
+4.6. O intervalo mínimo de diferença de valores entre os lances, que incidirá tanto em relação aos lances intermediários quanto em relação ao lance que cobrir a melhor oferta, será de R$ 500,00 (quinhentos reais).
+
+4.7. Não serão aceitos dois ou mais lances de mesmo valor, prevalecendo aquele que for recebido e registrado em primeiro lugar pelo sistema.
+
+4.8. Encerrada a etapa de envio de lances da sessão pública, o Pregoeiro deverá encaminhar, pelo sistema eletrônico, contraproposta ao licitante que tenha apresentado o melhor preço, para que seja obtida melhor proposta.
+
+5. DA ACEITABILIDADE DA PROPOSTA VENCEDORA
+
+5.1. Encerrada a etapa de negociação, o Pregoeiro examinará a proposta classificada em primeiro lugar quanto à adequação ao objeto e à compatibilidade do preço em relação ao valor estimado para a contratação.
+
+5.2. Será desclassificada a proposta que apresentar preço final superior ao preço máximo fixado no item 1.2 deste Edital ou que contiver vício insanável.
+
+5.3. Será desclassificada a proposta que apresentar preço manifestamente inexequível, assim considerado aquele que não venha a ter demonstrada sua viabilidade por meio de documentação que comprove que os custos envolvidos na contratação são coerentes com os de mercado.
+
+5.4. Presume-se inexequível a proposta cujo valor seja inferior a 50% (cinquenta por cento) do valor estimado pela Administração para o respectivo lote, cabendo ao licitante o ônus de demonstrar sua exequibilidade.
+
+5.5. O licitante classificado em primeiro lugar deverá encaminhar a proposta de preço adequada ao último lance no prazo de 2 (duas) horas, contado da solicitação do Pregoeiro no sistema eletrônico.
+
+5.6. A Administração poderá realizar diligência para aferir a exequibilidade da proposta ou exigir do licitante que ela seja demonstrada, vedada a inclusão posterior de documento ou informação que deveria constar originariamente da proposta.
+
+6. DA HABILITAÇÃO
+
+6.1. Como condição prévia ao exame da documentação de habilitação do licitante detentor da proposta classificada em primeiro lugar, o Pregoeiro verificará o eventual descumprimento das condições de participação mediante consulta ao SICAF e ao Cadastro Nacional de Empresas Inidôneas e Suspensas (CEIS).
+
+6.2. Para fins de habilitação jurídica, o licitante deverá apresentar ato constitutivo, estatuto ou contrato social em vigor, devidamente registrado, e, no caso de sociedades por ações, acompanhado de documento de eleição de seus administradores.
+
+6.3. Para fins de regularidade fiscal e trabalhista, o licitante deverá apresentar prova de inscrição no Cadastro Nacional de Pessoas Jurídicas, certidão negativa de débitos relativos a tributos federais e à dívida ativa da União, certidão de regularidade perante as Fazendas Estadual e Municipal do domicílio da sede, certificado de regularidade do Fundo de Garantia do Tempo de Serviço e Certidão Negativa de Débitos Trabalhistas.
+
+6.4. As certidões apresentadas deverão estar com prazo de validade em vigor na data da sessão pública, admitindo-se, quando o documento não consignar prazo, a validade de 90 (noventa) dias contados da data de sua emissão.
+
+6.5. Para fins de qualificação econômico-financeira, o licitante deverá apresentar balanço patrimonial e demonstrações contábeis do último exercício social, já exigíveis e apresentados na forma da lei, vedada a substituição por balancetes ou balanços provisórios.
+
+6.6. O licitante deverá comprovar patrimônio líquido mínimo equivalente a 10% (dez por cento) do valor estimado do lote para o qual apresentar proposta, exigência aplicável exclusivamente ao Lote 1.
+
+6.7. Para fins de qualificação técnica, o licitante deverá apresentar ao menos 1 (um) atestado de capacidade técnica, emitido por pessoa jurídica de direito público ou privado, que comprove o fornecimento anterior de equipamentos de informática em quantidade mínima de 50 (cinquenta) unidades.
+
+6.8. O atestado de capacidade técnica deverá conter a identificação do emitente, a descrição do objeto fornecido, os quantitativos e o período de fornecimento, podendo o Pregoeiro promover diligência para confirmar sua veracidade junto ao emitente.
+
+6.9. O licitante deverá declarar, sob as penas da lei, que não emprega menor de 18 (dezoito) anos em trabalho noturno, perigoso ou insalubre e não emprega menor de 16 (dezesseis) anos, salvo na condição de aprendiz a partir de 14 (quatorze) anos.
+
+7. DOS RECURSOS ADMINISTRATIVOS
+
+7.1. Declarado o vencedor e decorrida a fase de regularização fiscal e trabalhista da microempresa ou empresa de pequeno porte, se for o caso, qualquer licitante poderá, durante o prazo concedido na sessão pública, de forma imediata e sob pena de preclusão, manifestar sua intenção de recorrer.
+
+7.2. Havendo manifestação motivada da intenção de recorrer, será concedido ao licitante o prazo de 3 (três) dias úteis para apresentação das razões recursais, ficando os demais licitantes desde logo intimados a apresentar contrarrazões em igual prazo, contado a partir do término do prazo do recorrente.
+
+7.3. A falta de manifestação imediata e motivada do licitante quanto à intenção de recorrer importará a decadência desse direito e a consequente adjudicação do objeto ao licitante declarado vencedor.
+
+7.4. O acolhimento do recurso importará a invalidação apenas dos atos insuscetíveis de aproveitamento.
+
+7.5. Os autos do processo permanecerão com vista franqueada aos interessados na sede da Secretaria, durante o horário de expediente, das 08h00 às 12h00 e das 14h00 às 18h00.
+
+8. DA IMPUGNAÇÃO E DOS PEDIDOS DE ESCLARECIMENTO
+
+8.1. Qualquer pessoa poderá impugnar os termos deste Edital, por irregularidade na aplicação da Lei n. 14.133/2021, até 3 (três) dias úteis anteriores à data fixada para abertura da sessão pública, mediante petição a ser enviada exclusivamente para o endereço eletrônico licitacao@secitec.mt.gov.br.
+
+8.2. A impugnação será respondida pelo Pregoeiro em até 3 (três) dias úteis, limitado ao último dia útil anterior à data da abertura do certame.
+
+8.3. Os pedidos de esclarecimento referentes a este processo licitatório deverão ser enviados ao Pregoeiro até 3 (três) dias úteis anteriores à data designada para abertura da sessão pública, exclusivamente por meio eletrônico.
+
+8.4. O acolhimento da impugnação contra o ato convocatório somente implicará nova divulgação do Edital e reabertura do prazo se a alteração afetar a formulação das propostas.
+
+9. DA ADJUDICAÇÃO E DA HOMOLOGAÇÃO
+
+9.1. Não havendo interposição de recurso, o Pregoeiro adjudicará o objeto ao licitante vencedor e encaminhará o processo à autoridade competente para homologação.
+
+9.2. Havendo interposição de recurso, após o julgamento, a autoridade competente adjudicará o objeto e homologará o procedimento licitatório.
+
+9.3. A homologação do resultado desta licitação não implicará direito à contratação, ficando facultado à Administração revogar a licitação por razões de interesse público decorrente de fato superveniente devidamente comprovado.
+
+10. DO CONTRATO E DA GARANTIA CONTRATUAL
+
+10.1. Homologado o resultado da licitação, o licitante vencedor será convocado para assinar o instrumento contratual no prazo de 5 (cinco) dias úteis, contados da data da convocação, sob pena de decair do direito à contratação.
+
+10.2. O prazo de vigência do contrato será de 12 (doze) meses, contados da data de sua assinatura, prorrogável na forma dos arts. 106 e 107 da Lei n. 14.133/2021.
+
+10.3. O contrato poderá ser alterado, com as devidas justificativas, nos casos previstos no art. 124 da Lei n. 14.133/2021, ficando o contratado obrigado a aceitar acréscimos ou supressões de até 25% (vinte e cinco por cento) do valor inicial atualizado do contrato.
+
+10.4. Será exigida garantia de execução contratual no percentual de 5% (cinco por cento) do valor total do contrato, a ser prestada em até 10 (dez) dias úteis após a assinatura, em uma das modalidades previstas no art. 96 da Lei n. 14.133/2021.
+
+10.5. A garantia de execução contratual será liberada ou restituída após a emissão do termo de recebimento definitivo, mediante requerimento do contratado, e, quando prestada em dinheiro, será atualizada monetariamente.
+
+10.6. A fiscalização do contrato será exercida por servidor formalmente designado pela autoridade competente, a quem competirá atestar o recebimento dos bens e comunicar eventuais irregularidades.
+
+10.7. A designação do fiscal do contrato constará de portaria publicada no Diário Oficial do Estado no prazo de 10 (dez) dias úteis contados da assinatura do contrato.
+
+11. DOS PRAZOS DE ENTREGA E DO RECEBIMENTO
+
+11.1. O prazo de entrega dos equipamentos será de 45 (quarenta e cinco) dias corridos, contados do recebimento da Ordem de Fornecimento emitida pela Secretaria, admitida a entrega parcelada mediante autorização prévia da fiscalização.
+
+11.2. O prazo de entrega poderá ser prorrogado uma única vez, por igual período, mediante solicitação fundamentada apresentada antes do vencimento do prazo original e aceita pela fiscalização do contrato.
+
+11.3. Os equipamentos deverão ser entregues no Almoxarifado Central da Secretaria de Estado de Ciência e Tecnologia, situado na Avenida Historiador Rubens de Mendonça, n. 3.415, Bairro Bosque da Saúde, Cuiabá, Mato Grosso, de segunda a sexta-feira, das 08h00 às 11h30 e das 14h00 às 17h00.
+
+11.4. O recebimento provisório será efetuado no ato da entrega, mediante termo circunstanciado, para efeito de posterior verificação da conformidade dos bens com as especificações do Termo de Referência.
+
+11.5. O recebimento definitivo será efetuado em até 15 (quinze) dias úteis contados do recebimento provisório, após a verificação da qualidade e da quantidade dos bens e a consequente aceitação pela comissão de recebimento.
+
+11.6. Os equipamentos deverão ser fornecidos com garantia mínima de 36 (trinta e seis) meses, na modalidade on-site, com atendimento no local de instalação e prazo máximo de 5 (cinco) dias úteis para solução dos chamados técnicos.
+
+11.7. Durante o período de garantia, o contratado deverá manter canal de atendimento telefônico e eletrônico em funcionamento nos dias úteis, das 08h00 às 18h00, para abertura e acompanhamento de chamados técnicos.
+
+12. DO PAGAMENTO
+
+12.1. O pagamento será efetuado mediante crédito em conta corrente indicada pelo contratado, em instituição financeira contratada pelo Estado de Mato Grosso.
+
+12.2. O pagamento será realizado no prazo de até 30 (trinta) dias corridos, contados da data do atesto da nota fiscal pela fiscalização do contrato, observada a ordem cronológica de pagamentos prevista no art. 141 da Lei n. 14.133/2021.
+
+12.3. A nota fiscal somente será atestada após o recebimento definitivo dos bens e a verificação da regularidade fiscal e trabalhista do contratado.
+
+12.4. Havendo erro na apresentação da nota fiscal ou circunstância que impeça a liquidação da despesa, o pagamento ficará sobrestado até que o contratado providencie as medidas saneadoras, sem que isso gere direito a atualização financeira.
+
+12.5. Ocorrendo atraso no pagamento por culpa exclusiva da Administração, o valor devido será atualizado monetariamente pela variação do Índice Nacional de Preços ao Consumidor Amplo (IPCA), calculado pro rata die entre a data do vencimento e a do efetivo pagamento.
+
+12.6. Sobre o valor atualizado na forma do item anterior incidirão juros de mora de 0,5% (meio por cento) ao mês, calculados pro rata die, até a data do efetivo pagamento.
+
+13. DAS SANÇÕES ADMINISTRATIVAS
+
+13.1. Comete infração administrativa o licitante ou contratado que der causa à inexecução parcial ou total do contrato, deixar de entregar a documentação exigida, apresentar declaração ou documentação falsa, fraudar a licitação ou praticar ato lesivo previsto no art. 155 da Lei n. 14.133/2021.
+
+13.2. Pelo atraso injustificado na entrega dos bens será aplicada multa moratória de 0,5% (meio por cento) por dia de atraso sobre o valor da parcela inadimplida, limitada a 15% (quinze por cento) do valor total do contrato.
+
+13.3. Pela inexecução total do contrato será aplicada multa compensatória de 20% (vinte por cento) sobre o valor total do contrato, sem prejuízo das demais sanções cabíveis.
+
+13.4. A aplicação das sanções será precedida de processo administrativo em que se assegure ao interessado o contraditório e a ampla defesa, com prazo de 15 (quinze) dias úteis para apresentação de defesa prévia.
+
+13.5. As multas aplicadas poderão ser descontadas da garantia de execução contratual, dos pagamentos eventualmente devidos ou cobradas judicialmente.
+
+13.6. A sanção de impedimento de licitar e contratar será aplicada pelo prazo máximo de 3 (três) anos, e a de declaração de inidoneidade, pelo prazo mínimo de 3 (três) e máximo de 6 (seis) anos, na forma dos arts. 156 e 158 da Lei n. 14.133/2021.
+
+14. DA DOTAÇÃO ORÇAMENTÁRIA
+
+14.1. As despesas decorrentes desta contratação correrão à conta dos recursos consignados no Orçamento Geral do Estado para o exercício de 2026, na seguinte classificação: Programa 2041, Ação 4382, Elemento de Despesa 4.4.90.52, Fonte 1.500.
+
+14.2. O valor empenhado para o exercício de 2026 corresponde a R$ 1.847.320,00, conforme Nota de Empenho a ser emitida após a homologação do certame.
+
+14.3. Nos exercícios seguintes, as despesas correrão à conta das dotações próprias consignadas nos respectivos orçamentos anuais.
+
+15. DAS DISPOSIÇÕES FINAIS
+
+15.1. A autoridade competente poderá revogar a licitação por razões de interesse público decorrente de fato superveniente devidamente comprovado, ou anulá-la por ilegalidade, de ofício ou por provocação de terceiros, mediante parecer escrito e devidamente fundamentado.
+
+15.2. Os licitantes assumem todos os custos de preparação e apresentação de suas propostas, não sendo a Administração, em nenhum caso, responsável por esses custos, independentemente da condução ou do resultado do processo licitatório.
+
+15.3. Na contagem dos prazos estabelecidos neste Edital, excluir-se-á o dia do início e incluir-se-á o do vencimento, considerando-se os dias consecutivos, exceto quando explicitamente disposto em contrário.
+
+15.4. O desatendimento de exigências formais não essenciais não importará o afastamento do licitante, desde que seja possível o aproveitamento do ato, observados os princípios da isonomia e do interesse público.
+
+15.5. As normas disciplinadoras da licitação serão sempre interpretadas em favor da ampliação da disputa entre os interessados, desde que não comprometam o interesse da Administração, o princípio da isonomia, a finalidade e a segurança da contratação.
+
+15.6. Fica eleito o foro da Comarca de Cuiabá, Estado de Mato Grosso, para dirimir as questões decorrentes deste Edital, com renúncia expressa a qualquer outro, por mais privilegiado que seja.
+
+Cuiabá, 28 de agosto de 2026.
+
+Ricardo Ferreira Manso
+Pregoeiro Oficial
+Secretaria de Estado de Ciência e Tecnologia
+
+ANEXO I - TERMO DE REFERÊNCIA
+
+16. DO OBJETO E DA JUSTIFICATIVA
+
+16.1. Aquisição de equipamentos de informática para modernização dos laboratórios de 28 (vinte e oito) escolas estaduais de tempo integral, atendendo ao Programa Estadual de Educação Digital instituído pelo Decreto Estadual n. 1.492/2025.
+
+16.2. O parque tecnológico atual das unidades atendidas possui idade média superior a 8 (oito) anos, com índice de indisponibilidade mensal de 22% (vinte e dois por cento), o que compromete a execução das atividades pedagógicas previstas na matriz curricular.
+
+17. DA ESPECIFICAÇÃO DOS LOTES
+
+17.1. LOTE 1 - MICROCOMPUTADORES DESKTOP - 240 (duzentas e quarenta) unidades - Valor estimado de R$ 986.400,00.
+
+17.2. O microcomputador deverá possuir processador com no mínimo 6 (seis) núcleos físicos, frequência base mínima de 2,5 GHz e desempenho mínimo de 15.000 pontos no índice PassMark CPU Mark.
+
+17.3. O microcomputador deverá possuir memória RAM de no mínimo 16 GB (dezesseis gigabytes), padrão DDR5, expansível a 64 GB, e unidade de armazenamento de estado sólido de no mínimo 512 GB, interface NVMe PCIe 4.0.
+
+17.4. O microcomputador deverá ser entregue com sistema operacional de 64 bits com licença perpétua, em português do Brasil, acompanhado de mídia de recuperação ou mecanismo equivalente de reinstalação, e fonte de alimentação com eficiência energética mínima equivalente à certificação 80 Plus Bronze.
+
+17.5. LOTE 2 - NOTEBOOKS EDUCACIONAIS - 125 (cento e vinte e cinco) unidades - Valor estimado de R$ 612.500,00.
+
+17.6. O notebook deverá possuir processador com no mínimo 4 (quatro) núcleos físicos, desempenho mínimo de 9.000 pontos no índice PassMark CPU Mark e memória RAM de no mínimo 8 GB (oito gigabytes), padrão DDR5.
+
+17.7. O notebook deverá possuir tela de 14 (quatorze) polegadas, resolução mínima de 1920 x 1080 pixels, painel IPS antirreflexo, bateria com autonomia mínima de 6 (seis) horas em uso contínuo e peso máximo de 1,8 kg (um quilograma e oitocentos gramas), incluindo bateria.
+
+17.8. LOTE 3 - MONITORES E PERIFÉRICOS - 240 (duzentos e quarenta) monitores e 240 (duzentos e quarenta) conjuntos de teclado e mouse - Valor estimado de R$ 248.420,00.
+
+17.9. O monitor deverá possuir 23,8 (vinte e três vírgula oito) polegadas, resolução Full HD, painel IPS, com ajuste de altura e inclinação, e o conjunto de teclado e mouse deverá ser com fio, padrão ABNT2, conexão USB.
+
+18. DAS OBRIGAÇÕES DO CONTRATADO
+
+18.1. Entregar os bens no prazo, no local e nas condições estabelecidos no Edital e neste Termo de Referência, acompanhados da respectiva nota fiscal e do termo de garantia do fabricante.
+
+18.2. Substituir, às suas expensas, no prazo de 10 (dez) dias úteis, os bens que apresentarem defeito de fabricação ou divergência em relação às especificações técnicas exigidas.
+
+18.3. Manter, durante toda a execução do contrato, todas as condições de habilitação e qualificação exigidas na licitação.
+
+18.4. Responsabilizar-se pelos encargos trabalhistas, previdenciários, fiscais e comerciais resultantes da execução do contrato.
+
+19. DAS OBRIGAÇÕES DA CONTRATANTE
+
+19.1. Receber o objeto no prazo e nas condições estabelecidas, comunicando ao contratado eventuais irregularidades verificadas.
+
+19.2. Efetuar o pagamento no prazo previsto no Edital, após o cumprimento das formalidades legais.
+
+19.3. Proporcionar ao contratado as condições necessárias à execução do objeto, prestando as informações e os esclarecimentos solicitados.
+
+20. DA SUSTENTABILIDADE
+
+20.1. Os equipamentos deverão atender aos requisitos da Diretiva de Restrição de Substâncias Perigosas, com apresentação de declaração do fabricante no momento da entrega.
+
+20.2. O contratado deverá efetuar, sem custo adicional, a logística reversa das embalagens utilizadas no transporte dos equipamentos, no prazo de 30 (trinta) dias corridos após a entrega.

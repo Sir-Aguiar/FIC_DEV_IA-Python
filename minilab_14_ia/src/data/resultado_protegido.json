@@ -1,0 +1,647 @@
+{
+  "modelo_embedding": "gemini-embedding-001",
+  "modelo_llm": "openai/gpt-oss-120b",
+  "estrategia": "janela_200_50",
+  "limiar": 0.71,
+  "calibracao": {
+    "com_resposta": [
+      0.7135,
+      0.7158,
+      0.7253,
+      0.7467,
+      0.7491,
+      0.7576,
+      0.7581,
+      0.7701,
+      0.7748,
+      0.8223
+    ],
+    "sem_resposta": [
+      0.6033,
+      0.6552,
+      0.6766,
+      0.6865
+    ],
+    "tabela_corte": [
+      {
+        "limiar": 0.6,
+        "corta_com": 0,
+        "corta_sem": 0
+      },
+      {
+        "limiar": 0.65,
+        "corta_com": 0,
+        "corta_sem": 1
+      },
+      {
+        "limiar": 0.7,
+        "corta_com": 0,
+        "corta_sem": 4
+      },
+      {
+        "limiar": 0.75,
+        "corta_com": 5,
+        "corta_sem": 4
+      },
+      {
+        "limiar": 0.8,
+        "corta_com": 9,
+        "corta_sem": 4
+      },
+      {
+        "limiar": 0.85,
+        "corta_com": 10,
+        "corta_sem": 4
+      }
+    ]
+  },
+  "placar": {
+    "ingênuo": {
+      "acerto": 10,
+      "erro": 0,
+      "recusa indevida": 0,
+      "recusa no contrato": 0,
+      "resposta livre": 4
+    },
+    "protegido": {
+      "acerto": 10,
+      "erro": 0,
+      "recusa indevida": 0,
+      "recusa no contrato": 4,
+      "resposta livre": 0
+    }
+  },
+  "sem_lastro": {
+    "ingênuo": 2,
+    "protegido": 0
+  },
+  "perguntas": [
+    {
+      "id": 1,
+      "pergunta": "Qual é a natureza jurídica da MTI?",
+      "respondivel": true,
+      "tipo": null,
+      "documento": "caracterizacao",
+      "similaridade_top1": 0.7491,
+      "margem": 0.0475,
+      "trechos": [
+        {
+          "origem": "caracterizacao",
+          "indice": 0,
+          "similaridade": 0.7491
+        },
+        {
+          "origem": "objetivos",
+          "indice": 0,
+          "similaridade": 0.717
+        },
+        {
+          "origem": "conselho-administracao",
+          "indice": 0,
+          "similaridade": 0.7015
+        }
+      ],
+      "gabarito_no_contexto": true,
+      "ingênuo": {
+        "resposta": "A MTI é uma **empresa pública** dotada de personalidade jurídica de direito privado【1】.",
+        "veredito": "acerto",
+        "numeros": 0,
+        "orfaos": []
+      },
+      "protegido": {
+        "resposta": "A MTI é uma empresa pública dotada de personalidade jurídica de direito privado【1】.",
+        "veredito": "acerto",
+        "numeros": 0,
+        "orfaos": [],
+        "motivo": ""
+      }
+    },
+    {
+      "id": 2,
+      "pergunta": "Qual era a denominação inicial da MTI?",
+      "respondivel": true,
+      "tipo": null,
+      "documento": "caracterizacao",
+      "similaridade_top1": 0.7253,
+      "margem": 0.0676,
+      "trechos": [
+        {
+          "origem": "caracterizacao",
+          "indice": 0,
+          "similaridade": 0.7253
+        },
+        {
+          "origem": "objetivos",
+          "indice": 0,
+          "similaridade": 0.6722
+        },
+        {
+          "origem": "conselho-administracao",
+          "indice": 0,
+          "similaridade": 0.6576
+        }
+      ],
+      "gabarito_no_contexto": true,
+      "ingênuo": {
+        "resposta": "A denominação inicial da MTI era **Centro de Processamento de Dados do Estado de Mato Grosso – CEPROMAT**【1】.",
+        "veredito": "acerto",
+        "numeros": 0,
+        "orfaos": []
+      },
+      "protegido": {
+        "resposta": "A empresa foi criada inicialmente com a denominação de **Centro de Processamento de Dados do Estado de Mato Grosso – CEPROMAT**. [1]",
+        "veredito": "acerto",
+        "numeros": 0,
+        "orfaos": [],
+        "motivo": ""
+      }
+    },
+    {
+      "id": 3,
+      "pergunta": "Qual o primeiro objetivo da MTI listado no regimento?",
+      "respondivel": true,
+      "tipo": null,
+      "documento": "objetivos",
+      "similaridade_top1": 0.7158,
+      "margem": 0.0227,
+      "trechos": [
+        {
+          "origem": "objetivos",
+          "indice": 0,
+          "similaridade": 0.7158
+        },
+        {
+          "origem": "conselho-administracao",
+          "indice": 0,
+          "similaridade": 0.7045
+        },
+        {
+          "origem": "conselho-fiscal",
+          "indice": 0,
+          "similaridade": 0.6931
+        }
+      ],
+      "gabarito_no_contexto": true,
+      "ingênuo": {
+        "resposta": "O primeiro objetivo da MTI, conforme o regimento, é **prestar serviços de Infraestrutura de Tecnologia da Informação e Comunicação – TIC**【1】.",
+        "veredito": "acerto",
+        "numeros": 0,
+        "orfaos": []
+      },
+      "protegido": {
+        "resposta": "prestar serviços de Infraestrutura de Tecnologia da Informação e Comunicação – TIC【1】",
+        "veredito": "acerto",
+        "numeros": 0,
+        "orfaos": [],
+        "motivo": ""
+      }
+    },
+    {
+      "id": 4,
+      "pergunta": "A MTI pode prestar serviços à iniciativa privada?",
+      "respondivel": true,
+      "tipo": null,
+      "documento": "objetivos",
+      "similaridade_top1": 0.7581,
+      "margem": 0.0765,
+      "trechos": [
+        {
+          "origem": "objetivos",
+          "indice": 0,
+          "similaridade": 0.7581
+        },
+        {
+          "origem": "caracterizacao",
+          "indice": 0,
+          "similaridade": 0.7201
+        },
+        {
+          "origem": "conselho-administracao",
+          "indice": 0,
+          "similaridade": 0.6816
+        }
+      ],
+      "gabarito_no_contexto": true,
+      "ingênuo": {
+        "resposta": "Sim. Conforme o § 1º do Art. 2º, a Empresa Mato‑grossense de Tecnologia da Informação – MTI pode prestar seus serviços aos órgãos públicos da esfera federal, estadual e municipal **e à iniciativa privada**【1】.",
+        "veredito": "acerto",
+        "numeros": 2,
+        "orfaos": []
+      },
+      "protegido": {
+        "resposta": "Sim. A MTI pode prestar seus serviços à iniciativa privada【1】.",
+        "veredito": "acerto",
+        "numeros": 0,
+        "orfaos": [],
+        "motivo": ""
+      }
+    },
+    {
+      "id": 5,
+      "pergunta": "Qual é a missão do Conselho de Administração da MTI?",
+      "respondivel": true,
+      "tipo": null,
+      "documento": "conselho-administracao",
+      "similaridade_top1": 0.7701,
+      "margem": 0.1009,
+      "trechos": [
+        {
+          "origem": "conselho-administracao",
+          "indice": 0,
+          "similaridade": 0.7701
+        },
+        {
+          "origem": "conselho-fiscal",
+          "indice": 0,
+          "similaridade": 0.7388
+        },
+        {
+          "origem": "conselho-administracao",
+          "indice": 1,
+          "similaridade": 0.6692
+        }
+      ],
+      "gabarito_no_contexto": true,
+      "ingênuo": {
+        "resposta": "A missão do Conselho de Administração da MTI é “discutir e aprovar estratégias de negócio apresentadas pela diretoria, acompanhar e zelar pela governança corporativa da empresa e participar de atividades institucionais, em conformidade com a missão da empresa destinada a promover o desenvolvimento e a integração na área da Tecnologia da Informação e Comunicação no Estado”【1†L1-L4】.",
+        "veredito": "acerto",
+        "numeros": 0,
+        "orfaos": []
+      },
+      "protegido": {
+        "resposta": "A missão do Conselho de Administração da MTI é “discutir e aprovar estratégias de negócio apresentadas pela diretoria, acompanhar e zelar pela governança corporativa da empresa e participar de atividades institucionais, em conformidade com a missão da destinadas a promover o desenvolvimento e a integração na área da Tecnologia da Informação e Comunicação no Estado”【1】",
+        "veredito": "acerto",
+        "numeros": 0,
+        "orfaos": [],
+        "motivo": ""
+      }
+    },
+    {
+      "id": 6,
+      "pergunta": "Por quantos anos, no mínimo, deve ser atualizada a estratégia de longo prazo aprovada pelo Conselho de Administração?",
+      "respondivel": true,
+      "tipo": null,
+      "documento": "conselho-administracao",
+      "similaridade_top1": 0.7135,
+      "margem": 0.0601,
+      "trechos": [
+        {
+          "origem": "conselho-administracao",
+          "indice": 1,
+          "similaridade": 0.7135
+        },
+        {
+          "origem": "conselho-administracao",
+          "indice": 0,
+          "similaridade": 0.6625
+        },
+        {
+          "origem": "conselho-administracao",
+          "indice": 2,
+          "similaridade": 0.6535
+        }
+      ],
+      "gabarito_no_contexto": true,
+      "ingênuo": {
+        "resposta": "A estratégia de longo prazo aprovada pelo Conselho de Administração deve ser atualizada, no mínimo, para os próximos **5 (cinco) anos** [1][2].",
+        "veredito": "acerto",
+        "numeros": 1,
+        "orfaos": []
+      },
+      "protegido": {
+        "resposta": "A estratégia de longo prazo aprovada pelo Conselho de Administração deve ser atualizada, no mínimo, para os próximos **5 (cinco) anos**. [1]",
+        "veredito": "acerto",
+        "numeros": 1,
+        "orfaos": [],
+        "motivo": ""
+      }
+    },
+    {
+      "id": 7,
+      "pergunta": "Qual é a missão do Conselho Fiscal da MTI?",
+      "respondivel": true,
+      "tipo": null,
+      "documento": "conselho-fiscal",
+      "similaridade_top1": 0.8223,
+      "margem": 0.1708,
+      "trechos": [
+        {
+          "origem": "conselho-fiscal",
+          "indice": 0,
+          "similaridade": 0.8223
+        },
+        {
+          "origem": "conselho-administracao",
+          "indice": 0,
+          "similaridade": 0.7176
+        },
+        {
+          "origem": "objetivos",
+          "indice": 0,
+          "similaridade": 0.6516
+        }
+      ],
+      "gabarito_no_contexto": true,
+      "ingênuo": {
+        "resposta": "A missão do Conselho Fiscal da MTI é assegurar os princípios de transparência, equidade e prestação de contas da empresa, fiscalizando a gestão financeira, examinando balanços, relatórios e prestações de contas, acompanhando a execução financeira e orçamentária, e emitindo pareceres técnicos sobre suas análises【1】.",
+        "veredito": "acerto",
+        "numeros": 0,
+        "orfaos": []
+      },
+      "protegido": {
+        "resposta": "A missão do Conselho Fiscal da MTI é assegurar os princípios de transparência, equidade e prestação de contas da Empresa. [1]",
+        "veredito": "acerto",
+        "numeros": 0,
+        "orfaos": [],
+        "motivo": ""
+      }
+    },
+    {
+      "id": 8,
+      "pergunta": "Até quando o Conselho Fiscal deve restituir os balanços e a prestação de contas com parecer?",
+      "respondivel": true,
+      "tipo": null,
+      "documento": "conselho-fiscal",
+      "similaridade_top1": 0.7467,
+      "margem": 0.1283,
+      "trechos": [
+        {
+          "origem": "conselho-fiscal",
+          "indice": 0,
+          "similaridade": 0.7467
+        },
+        {
+          "origem": "conselho-administracao",
+          "indice": 3,
+          "similaridade": 0.6561
+        },
+        {
+          "origem": "conselho-administracao",
+          "indice": 2,
+          "similaridade": 0.6184
+        }
+      ],
+      "gabarito_no_contexto": true,
+      "ingênuo": {
+        "resposta": "O Conselho Fiscal deve devolver os balanços, balancetes, relatórios e a prestação de contas da empresa, acompanhados do respectivo parecer, **até o 5º (quinto) dia útil do mês de março de cada ano**【1】.",
+        "veredito": "acerto",
+        "numeros": 1,
+        "orfaos": []
+      },
+      "protegido": {
+        "resposta": "O Conselho Fiscal deve restituir os balanços, balancetes, relatórios e a prestação de contas da Empresa, com o respectivo parecer, até o **5º (quinto) dia útil do mês de março de cada ano**【1】.",
+        "veredito": "acerto",
+        "numeros": 1,
+        "orfaos": [],
+        "motivo": ""
+      }
+    },
+    {
+      "id": 9,
+      "pergunta": "Qual é a missão da Unidade de Gestão de Pessoas?",
+      "respondivel": true,
+      "tipo": null,
+      "documento": "gestao-pessoas",
+      "similaridade_top1": 0.7748,
+      "margem": 0.1922,
+      "trechos": [
+        {
+          "origem": "gestao-pessoas",
+          "indice": 0,
+          "similaridade": 0.7748
+        },
+        {
+          "origem": "gestao-pessoas",
+          "indice": 1,
+          "similaridade": 0.7387
+        },
+        {
+          "origem": "conselho-administracao",
+          "indice": 0,
+          "similaridade": 0.5826
+        }
+      ],
+      "gabarito_no_contexto": true,
+      "ingênuo": {
+        "resposta": "A missão da Unidade de Gestão de Pessoas é **promover a gestão estratégica dos processos e subsistemas de gestão de pessoas e do departamento de pessoal**【1】.",
+        "veredito": "acerto",
+        "numeros": 0,
+        "orfaos": []
+      },
+      "protegido": {
+        "resposta": "A missão da Unidade de Gestão de Pessoas é promover a gestão estratégica dos processos e subsistemas de gestão de pessoas e do departamento de pessoal【1】.",
+        "veredito": "acerto",
+        "numeros": 0,
+        "orfaos": [],
+        "motivo": ""
+      }
+    },
+    {
+      "id": 10,
+      "pergunta": "A Unidade de Gestão de Pessoas é responsável por concurso público?",
+      "respondivel": true,
+      "tipo": null,
+      "documento": "gestao-pessoas",
+      "similaridade_top1": 0.7576,
+      "margem": 0.1755,
+      "trechos": [
+        {
+          "origem": "gestao-pessoas",
+          "indice": 0,
+          "similaridade": 0.7576
+        },
+        {
+          "origem": "gestao-pessoas",
+          "indice": 1,
+          "similaridade": 0.7181
+        },
+        {
+          "origem": "conselho-administracao",
+          "indice": 2,
+          "similaridade": 0.5821
+        }
+      ],
+      "gabarito_no_contexto": true,
+      "ingênuo": {
+        "resposta": "Sim. Conforme o art. 34º da Unidade de Gestão de Pessoas, entre suas competências está “gerir a realização de concurso público e processos seletivos”【1】.",
+        "veredito": "acerto",
+        "numeros": 1,
+        "orfaos": []
+      },
+      "protegido": {
+        "resposta": "Sim. A Unidade de Gestão de Pessoas tem a competência de gerir a realização de concurso público e processos seletivos【1】.",
+        "veredito": "acerto",
+        "numeros": 0,
+        "orfaos": [],
+        "motivo": ""
+      }
+    },
+    {
+      "id": 11,
+      "pergunta": "Quem resolve os casos omissos neste Regimento Interno?",
+      "respondivel": false,
+      "tipo": "fora_do_acervo",
+      "documento": null,
+      "similaridade_top1": 0.6865,
+      "margem": 0.0434,
+      "trechos": [
+        {
+          "origem": "conselho-administracao",
+          "indice": 3,
+          "similaridade": 0.6865
+        },
+        {
+          "origem": "conselho-administracao",
+          "indice": 1,
+          "similaridade": 0.6488
+        },
+        {
+          "origem": "gestao-pessoas",
+          "indice": 0,
+          "similaridade": 0.6431
+        }
+      ],
+      "gabarito_no_contexto": false,
+      "ingênuo": {
+        "resposta": "No Regimento Interno, a responsabilidade de interpretar o Estatuto e deliberar sobre os casos omissos cabe ao **Conselho de Administração**【1】.",
+        "veredito": "resposta livre",
+        "numeros": 0,
+        "orfaos": []
+      },
+      "protegido": {
+        "resposta": "NÃO ENCONTRADO",
+        "veredito": "recusa no contrato",
+        "numeros": 0,
+        "orfaos": [],
+        "motivo": "similaridade 0.687 abaixo do limiar 0.71"
+      }
+    },
+    {
+      "id": 12,
+      "pergunta": "Qual é o salário do Diretor-Presidente da MTI?",
+      "respondivel": false,
+      "tipo": "fora_do_acervo",
+      "documento": null,
+      "similaridade_top1": 0.6552,
+      "margem": 0.0251,
+      "trechos": [
+        {
+          "origem": "conselho-fiscal",
+          "indice": 0,
+          "similaridade": 0.6552
+        },
+        {
+          "origem": "caracterizacao",
+          "indice": 0,
+          "similaridade": 0.6373
+        },
+        {
+          "origem": "conselho-administracao",
+          "indice": 0,
+          "similaridade": 0.6301
+        }
+      ],
+      "gabarito_no_contexto": false,
+      "ingênuo": {
+        "resposta": "O trecho apresentado não traz nenhuma informação sobre o valor do salário do Diretor‑Presidente da MTI. Portanto, com base nos trechos fornecidos, não é possível determinar qual é a remuneração desse cargo. [1][2][3]",
+        "veredito": "resposta livre",
+        "numeros": 0,
+        "orfaos": []
+      },
+      "protegido": {
+        "resposta": "NÃO ENCONTRADO",
+        "veredito": "recusa no contrato",
+        "numeros": 0,
+        "orfaos": [],
+        "motivo": "similaridade 0.655 abaixo do limiar 0.71"
+      }
+    },
+    {
+      "id": 13,
+      "pergunta": "Qual artigo da LGPD define dado pessoal?",
+      "respondivel": false,
+      "tipo": "fora_do_acervo",
+      "documento": null,
+      "similaridade_top1": 0.6033,
+      "margem": 0.0107,
+      "trechos": [
+        {
+          "origem": "caracterizacao",
+          "indice": 0,
+          "similaridade": 0.6033
+        },
+        {
+          "origem": "gestao-pessoas",
+          "indice": 0,
+          "similaridade": 0.5986
+        },
+        {
+          "origem": "objetivos",
+          "indice": 0,
+          "similaridade": 0.5926
+        }
+      ],
+      "gabarito_no_contexto": false,
+      "ingênuo": {
+        "resposta": "O artigo que define **dado pessoal** na Lei Geral de Proteção de Dados (LGPD) é o **art. 5º, inciso I**, que dispõe que dado pessoal é “qualquer informação relacionada a pessoa natural identificada ou identificável”.  \n\n*Fonte: Lei n.º 13.709/2018 – Lei Geral de Proteção de Dados (LGPD), art. 5º, I.*【1】",
+        "veredito": "resposta livre",
+        "numeros": 4,
+        "orfaos": [
+          "13.709",
+          "2018"
+        ]
+      },
+      "protegido": {
+        "resposta": "NÃO ENCONTRADO",
+        "veredito": "recusa no contrato",
+        "numeros": 0,
+        "orfaos": [],
+        "motivo": "similaridade 0.603 abaixo do limiar 0.71"
+      }
+    },
+    {
+      "id": 14,
+      "pergunta": "O planejamento estratégico aprovado pelo Conselho de Administração cobre no mínimo 5 anos. Se cada ano tiver 12 meses, quantos meses esse horizonte mínimo representa?",
+      "respondivel": false,
+      "tipo": "armadilha_aritmetica",
+      "documento": null,
+      "similaridade_top1": 0.6766,
+      "margem": 0.0521,
+      "trechos": [
+        {
+          "origem": "conselho-administracao",
+          "indice": 1,
+          "similaridade": 0.6766
+        },
+        {
+          "origem": "conselho-administracao",
+          "indice": 0,
+          "similaridade": 0.6419
+        },
+        {
+          "origem": "conselho-administracao",
+          "indice": 3,
+          "similaridade": 0.6245
+        }
+      ],
+      "gabarito_no_contexto": false,
+      "ingênuo": {
+        "resposta": "O planejamento estratégico aprovado deve abranger, no mínimo, 5 anos. Como cada ano possui 12 meses, o horizonte mínimo corresponde a:\n\n\\(5 \\text{ anos} \\times 12 \\text{ meses/ano} = 60 \\text{ meses}\\).\n\nFonte: o Conselho de Administração deve “aprovar o planejamento estratégico, contendo a estratégia de longo prazo atualizada com análise de riscos e oportunidades para, no mínimo, os próximos 5 (cinco) anos”【1】.",
+        "veredito": "resposta livre",
+        "numeros": 6,
+        "orfaos": [
+          "12",
+          "12",
+          "60"
+        ]
+      },
+      "protegido": {
+        "resposta": "NÃO ENCONTRADO",
+        "veredito": "recusa no contrato",
+        "numeros": 0,
+        "orfaos": [],
+        "motivo": "similaridade 0.677 abaixo do limiar 0.71"
+      }
+    }
+  ]
+}
