@@ -1,0 +1,108 @@
+{
+  "_nota": "Acervo fictício de normas, criado para a Aula 03. Os textos são resumos didáticos e não substituem a consulta à norma oficial. As leis federais citadas existem; os decretos estaduais são fictícios.",
+  "normas": [
+    {
+      "id": "LEI-14133-2021",
+      "titulo": "Lei nº 14.133/2021 - Lei de Licitações e Contratos Administrativos",
+      "ementa": "Estabelece normas gerais de licitação e contratação para as Administrações Públicas diretas, autárquicas e fundacionais da União, dos Estados, do Distrito Federal e dos Municípios.",
+      "artigos": {
+        "37": "Julgamento por menor preço ou maior desconto considerará o menor dispêndio para a Administração, atendidos os parâmetros mínimos de qualidade definidos no edital.",
+        "124": "Os contratos regidos por esta Lei poderão ser alterados, com as devidas justificativas, unilateralmente pela Administração ou por acordo entre as partes.",
+        "125": "Nas alterações unilaterais, o contratado será obrigado a aceitar acréscimos ou supressões de até 25% do valor inicial atualizado do contrato.",
+        "92": "São necessárias em todo contrato as cláusulas que estabeleçam o prazo de pagamento, não superior a 30 dias contados da liquidação da despesa."
+      },
+      "assuntos": [
+        "licitação",
+        "contrato",
+        "aditivo",
+        "reequilíbrio",
+        "pregão",
+        "prazo de pagamento"
+      ]
+    },
+    {
+      "id": "LEI-13709-2018",
+      "titulo": "Lei nº 13.709/2018 - Lei Geral de Proteção de Dados Pessoais",
+      "ementa": "Dispõe sobre o tratamento de dados pessoais, inclusive nos meios digitais, por pessoa natural ou por pessoa jurídica de direito público ou privado.",
+      "artigos": {
+        "7": "O tratamento de dados pessoais somente poderá ser realizado nas hipóteses previstas, entre elas o cumprimento de obrigação legal e a execução de políticas públicas.",
+        "18": "O titular dos dados pessoais tem direito a obter do controlador a confirmação da existência de tratamento, o acesso, a correção e a eliminação dos dados.",
+        "23": "O tratamento de dados pessoais pelas pessoas jurídicas de direito público deverá ser realizado para o atendimento de sua finalidade pública."
+      },
+      "assuntos": [
+        "dados pessoais",
+        "privacidade",
+        "LGPD",
+        "eliminação",
+        "titular"
+      ]
+    },
+    {
+      "id": "LEI-9784-1999",
+      "titulo": "Lei nº 9.784/1999 - Processo Administrativo Federal",
+      "ementa": "Regula o processo administrativo no âmbito da Administração Pública Federal, aplicada subsidiariamente aos Estados.",
+      "artigos": {
+        "24": "Inexistindo disposição específica, os atos do órgão ou autoridade responsável pelo processo deverão ser praticados no prazo de cinco dias, salvo motivo de força maior.",
+        "49": "Concluída a instrução de processo administrativo, a Administração tem o prazo de até trinta dias para decidir, salvo prorrogação por igual período expressamente motivada.",
+        "59": "Salvo disposição legal específica, é de dez dias o prazo para interposição de recurso administrativo, contado a partir da ciência da decisão recorrida."
+      },
+      "assuntos": [
+        "processo administrativo",
+        "prazo",
+        "recurso",
+        "decisão",
+        "instrução"
+      ]
+    },
+    {
+      "id": "DEC-MT-1250-2024",
+      "titulo": "Decreto Estadual nº 1.250/2024 - Governança Digital (fictício)",
+      "ementa": "Institui a política de governança digital no âmbito da administração direta e indireta do Estado de Mato Grosso.",
+      "artigos": {
+        "5": "Os órgãos deverão manter inventário atualizado das soluções de tecnologia da informação em uso, revisado no mínimo a cada doze meses.",
+        "11": "A contratação de serviços de computação em nuvem exige parecer técnico prévio sobre localização dos dados e cláusula de reversibilidade.",
+        "14": "É vedado o envio de dados pessoais de cidadãos a serviços externos que não constem do catálogo de soluções homologadas."
+      },
+      "assuntos": [
+        "governança digital",
+        "nuvem",
+        "inventário",
+        "homologação",
+        "tecnologia"
+      ]
+    },
+    {
+      "id": "DEC-MT-0987-2023",
+      "titulo": "Decreto Estadual nº 987/2023 - Atualização de Débitos (fictício)",
+      "ementa": "Disciplina os índices de atualização monetária e juros aplicáveis aos débitos para com a Fazenda Pública Estadual.",
+      "artigos": {
+        "2": "Os débitos serão atualizados monetariamente pelo IPCA acumulado no período, calculado pro rata die.",
+        "3": "Sobre o valor atualizado incidirão juros de mora de 1% ao mês, contados do primeiro dia do mês seguinte ao do vencimento.",
+        "6": "A multa de mora é de 2% sobre o valor atualizado, aplicada uma única vez, independentemente do tempo de atraso."
+      },
+      "assuntos": [
+        "débito",
+        "atualização monetária",
+        "juros",
+        "multa",
+        "IPCA",
+        "mora"
+      ]
+    },
+    {
+      "id": "LEI-12527-2011",
+      "titulo": "Lei nº 12.527/2011 - Lei de Acesso à Informação",
+      "ementa": "Regula o acesso a informações previsto na Constituição Federal.",
+      "artigos": {
+        "11": "O órgão deverá autorizar ou conceder o acesso imediato à informação disponível; não sendo possível, deverá responder em prazo não superior a vinte dias, prorrogável por mais dez.",
+        "24": "A informação em poder dos órgãos públicos poderá ser classificada como ultrassecreta, secreta ou reservada, com prazos de restrição de 25, 15 e 5 anos respectivamente."
+      },
+      "assuntos": [
+        "acesso à informação",
+        "transparência",
+        "sigilo",
+        "prazo de resposta"
+      ]
+    }
+  ]
+}

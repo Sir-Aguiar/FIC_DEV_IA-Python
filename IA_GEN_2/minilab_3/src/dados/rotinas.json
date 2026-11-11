@@ -1,0 +1,33 @@
+{
+  "_nota": "Rotinas fictícias de processamento da Gerência de Tecnologia da Informação da Secretaria de Estado de Fazenda. Ritmo e janela são fixos para que o encaixe do lote seja reproduzível e não dependa de um número escolhido pelo modelo.",
+  "rotinas": [
+    {
+      "codigo": "RT-NFE",
+      "nome": "Processamento de NF-e",
+      "registros_por_hora": 120000,
+      "janela_horas": 6,
+      "horas_consumidas": 2.5
+    },
+    {
+      "codigo": "RT-SPED",
+      "nome": "Carga do SPED Fiscal",
+      "registros_por_hora": 40000,
+      "janela_horas": 8,
+      "horas_consumidas": 1
+    },
+    {
+      "codigo": "RT-IPVA",
+      "nome": "Atualização do IPVA",
+      "registros_por_hora": 25000,
+      "janela_horas": 4,
+      "horas_consumidas": 3.5
+    },
+    {
+      "codigo": "RT-GIA",
+      "nome": "Consolidação da GIA",
+      "registros_por_hora": 15000,
+      "janela_horas": 5,
+      "horas_consumidas": 0
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+[
+  {
+    "nome": "SDK openai puro",
+    "acertos": 111,
+    "invalidos": 0,
+    "entrada": 6621,
+    "saida": 1913,
+    "latencia": 2.0423846659250557,
+    "custo": 0.0036198000000000003
+  },
+  {
+    "nome": "LangChain + JsonOutputParser",
+    "acertos": 108,
+    "invalidos": 0,
+    "entrada": 5021,
+    "saida": 2684,
+    "latencia": 2.228033332969062,
+    "custo": 0.0042250000000000005
+  },
+  {
+    "nome": "LangChain + with_structured_output",
+    "acertos": 111,
+    "invalidos": 0,
+    "entrada": 8621,
+    "saida": 1984,
+    "latencia": 1.7504535840125754,
+    "custo": 0.004105
+  }
+]

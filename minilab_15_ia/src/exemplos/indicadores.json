@@ -1,0 +1,216 @@
+{
+  "ficha_tecnica": {
+    "n_total": 70,
+    "periodo": "2026-01-05 a 2026-06-24",
+    "origem": "corpus sintético do curso (manifestacoes_sinteticas.csv)",
+    "tipo_de_levantamento": "censo do período",
+    "modelo_classificador": [
+      "gpt-5.6-luna"
+    ],
+    "classificado_em": [
+      "2026-10-26T23:43:45+00:00"
+    ],
+    "casos_limitrofes": 12,
+    "percentual_limitrofes": 17.1,
+    "qualidade_do_classificador": {
+      "n_conferido": 70,
+      "acuracia_sentimento_percentual": 98.6,
+      "acuracia_tipo_percentual": 100.0,
+      "discordancias_de_sentimento": [
+        {
+          "id": "M028",
+          "humano": "neutro",
+          "modelo": "negativo"
+        }
+      ]
+    }
+  },
+  "por_sentimento": {
+    "negativo": {
+      "n": 30,
+      "percentual": 42.9
+    },
+    "positivo": {
+      "n": 18,
+      "percentual": 25.7
+    },
+    "neutro": {
+      "n": 14,
+      "percentual": 20.0
+    },
+    "misto": {
+      "n": 8,
+      "percentual": 11.4
+    }
+  },
+  "por_tipo": {
+    "reclamacao": {
+      "n": 32,
+      "percentual": 45.7
+    },
+    "elogio": {
+      "n": 18,
+      "percentual": 25.7
+    },
+    "duvida": {
+      "n": 8,
+      "percentual": 11.4
+    },
+    "sugestao": {
+      "n": 7,
+      "percentual": 10.0
+    },
+    "denuncia": {
+      "n": 5,
+      "percentual": 7.1
+    }
+  },
+  "por_tema": {
+    "informacao_e_transparencia": {
+      "n": 14,
+      "percentual": 20.0
+    },
+    "disponibilidade_de_servico": {
+      "n": 13,
+      "percentual": 18.6
+    },
+    "prazo_e_demora": {
+      "n": 12,
+      "percentual": 17.1
+    },
+    "sistema_e_tecnologia": {
+      "n": 11,
+      "percentual": 15.7
+    },
+    "infraestrutura": {
+      "n": 9,
+      "percentual": 12.9
+    },
+    "atendimento": {
+      "n": 8,
+      "percentual": 11.4
+    },
+    "conduta_de_servidor": {
+      "n": 2,
+      "percentual": 2.9
+    },
+    "outro": {
+      "n": 1,
+      "percentual": 1.4
+    }
+  },
+  "por_canal": {
+    "portal": {
+      "n": 32,
+      "percentual": 45.7
+    },
+    "presencial": {
+      "n": 10,
+      "percentual": 14.3
+    },
+    "email": {
+      "n": 10,
+      "percentual": 14.3
+    },
+    "telefone": {
+      "n": 9,
+      "percentual": 12.9
+    },
+    "aplicativo": {
+      "n": 9,
+      "percentual": 12.9
+    }
+  },
+  "por_urgencia": {
+    "baixa": {
+      "n": 57,
+      "percentual": 81.4
+    },
+    "media": {
+      "n": 8,
+      "percentual": 11.4
+    },
+    "alta": {
+      "n": 5,
+      "percentual": 7.1
+    }
+  },
+  "por_orgao": {
+    "Secretaria de Saúde": {
+      "n": 15,
+      "negativas": 10,
+      "percentual_negativas": 66.7
+    },
+    "Secretaria de Educação": {
+      "n": 10,
+      "negativas": 4,
+      "percentual_negativas": 40.0
+    },
+    "DETRAN": {
+      "n": 9,
+      "negativas": 3,
+      "percentual_negativas": 33.3
+    },
+    "Secretaria de Fazenda": {
+      "n": 9,
+      "negativas": 5,
+      "percentual_negativas": 55.6
+    },
+    "Secretaria de Infraestrutura": {
+      "n": 8,
+      "negativas": 3,
+      "percentual_negativas": 37.5
+    },
+    "Secretaria de Segurança": {
+      "n": 7,
+      "negativas": 2,
+      "percentual_negativas": 28.6
+    },
+    "SEMA": {
+      "n": 6,
+      "negativas": 1,
+      "percentual_negativas": 16.7
+    },
+    "Secretaria de Assistência Social": {
+      "n": 6,
+      "negativas": 2,
+      "percentual_negativas": 33.3
+    }
+  },
+  "serie_mensal": {
+    "2026-01": {
+      "n": 13,
+      "negativas": 6,
+      "percentual_negativas": 46.2
+    },
+    "2026-02": {
+      "n": 12,
+      "negativas": 4,
+      "percentual_negativas": 33.3
+    },
+    "2026-03": {
+      "n": 12,
+      "negativas": 6,
+      "percentual_negativas": 50.0
+    },
+    "2026-04": {
+      "n": 12,
+      "negativas": 5,
+      "percentual_negativas": 41.7
+    },
+    "2026-05": {
+      "n": 8,
+      "negativas": 2,
+      "percentual_negativas": 25.0
+    },
+    "2026-06": {
+      "n": 13,
+      "negativas": 7,
+      "percentual_negativas": 53.8
+    }
+  },
+  "requerem_resposta": {
+    "n": 37,
+    "percentual": 52.9
+  }
+}

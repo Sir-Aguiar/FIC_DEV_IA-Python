@@ -1,0 +1,38 @@
+[
+  {
+    "pergunta": "Qual o prazo para interposição de recurso administrativo e, se a ciência ocorreu em 2026-04-06, qual a data limite?",
+    "resposta": "Em regra, o prazo para interposição de recurso administrativo é de **10 dias**, contado da ciência da decisão, conforme o **art. 59 da Lei Federal nº 9.784/1999** — aplicável subsidiariamente quando não houver norma estadual ou específica disciplinando o procedimento.\n\nContudo, a ferramenta de cálculo recusou a data-limite porque é necessário definir a regra de contagem: **dias úteis ou corridos**. A Lei nº 9.784/1999 prevê a contagem dos prazos processuais em **dias corridos**, excluindo-se o dia do começo e incluindo-se o do vencimento (**art. 66**).\n\nAssim, considerando ciência em **06/04/2026**, prazo de 10 dias corridos e sem causa de suspensão ou feriado que altere a contagem:\n\n- início da contagem: **07/04/2026**;\n- término do prazo: **16/04/2026**.\n\nDeve ser verificada, porém, a existência de **legislação estadual ou norma específica do processo**, que pode estabelecer prazo ou forma de contagem diferente.",
+    "ferramentas": [
+      "buscar_legislacao"
+    ],
+    "consultas_modelo": 2,
+    "chamadas_recusadas": 1,
+    "exige_conferencia": true,
+    "motivo_conferencia": []
+  },
+  {
+    "pergunta": "Calcule a atualização de um débito de R$ 18.000,00 com 9 meses de atraso e informe a norma que fundamenta o cálculo.",
+    "resposta": "Considerando a incidência da multa de mora de 2%, o débito fica atualizado assim:\n\n- **Principal:** R$ 18.000,00  \n- **Correção pelo IPCA:** R$ 18.691,94  \n- **Juros de mora de 1% ao mês por 9 meses:** R$ 1.682,27  \n- **Multa de mora de 2%:** R$ 373,84  \n- **Total atualizado:** **R$ 20.748,06**\n\nA fundamentação informada pela base normativa é o **Decreto Estadual nº 987/2023**, especialmente:\n\n- **art. 2º:** atualização pelo IPCA acumulado;\n- **art. 3º:** juros de mora de 1% ao mês;\n- **art. 6º:** multa de mora de 2%, aplicada uma única vez.",
+    "ferramentas": [
+      "calcular_atualizacao_debito",
+      "buscar_legislacao"
+    ],
+    "consultas_modelo": 2,
+    "chamadas_recusadas": 0,
+    "exige_conferencia": false,
+    "motivo_conferencia": []
+  },
+  {
+    "pergunta": "O débito daquele processo antigo já prescreveu? Considere o prazo usual.",
+    "resposta": "Não é possível afirmar sem os dados do processo. “Prazo usual” depende da natureza do débito:\n\n- **Crédito tributário:** em regra, prescrição em **5 anos** para a cobrança judicial, contados conforme o **art. 174 do CTN (Lei nº 5.172/1966)**, com causas de interrupção previstas no parágrafo único.\n- **Crédito não tributário inscrito em dívida ativa:** frequentemente aplica-se o prazo de **5 anos**, conforme a natureza do crédito e a legislação específica; a **Lei nº 6.830/1980, art. 2º, § 3º**, prevê suspensão da prescrição por até 180 dias após a inscrição, ou até a distribuição da execução fiscal.\n- Podem existir **parcelamento, reconhecimento da dívida, ajuizamento, despacho citatório ou outros atos interruptivos**, além de regras especiais.\n\nPara verificar, preciso da **data de vencimento/constituição definitiva**, da **natureza do débito**, da **data da inscrição em dívida ativa** e de eventual **parcelamento ou ação de cobrança**.",
+    "ferramentas": [
+      "buscar_legislacao"
+    ],
+    "consultas_modelo": 2,
+    "chamadas_recusadas": 0,
+    "exige_conferencia": true,
+    "motivo_conferencia": [
+      "prescri"
+    ]
+  }
+]

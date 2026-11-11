@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Relatório — Aula 14</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,560&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            paper: "#e7e2d9",
+            sheet: "#f6f3ed",
+            ink: "#1e1b17",
+            mute: "#6d655c",
+            line: "#ddd4c8",
+            rule: "#3c3832",
+          },
+          fontFamily: {
+            sans: ["Source Sans 3", "sans-serif"],
+            serif: ["Source Serif 4", "Georgia", "serif"],
+          },
+        },
+      },
+    };
+  </script>
+</head>
+<body class="bg-paper font-sans text-ink antialiased">
+  <main class="mx-auto max-w-5xl px-5 py-10 sm:px-8">
+    <article class="border border-line bg-sheet px-7 py-8 sm:px-10 sm:py-10">
+      <header class="flex flex-wrap items-end justify-between gap-4 border-b border-rule pb-5">
+        <div>
+          <p class="text-[0.7rem] font-medium uppercase tracking-[0.22em] text-mute">Ouvidoria · Aula 14</p>
+          <h1 class="mt-2 font-serif text-3xl font-normal tracking-tight sm:text-4xl">Relatório do corpus ampliado</h1>
+        </div>
+        <p class="text-sm leading-5 text-mute sm:text-right">
+          70 manifestações<br>
+          5 jan a 24 jun 2026
+        </p>
+      </header>
+
+      <section class="mt-8" aria-labelledby="quadro">
+        <h2 id="quadro" class="text-[0.7rem] font-medium uppercase tracking-[0.22em] text-mute">Parte 4 · Quadro</h2>
+        <dl class="mt-4 grid gap-px border border-line bg-line sm:grid-cols-5">
+          <div class="bg-sheet px-4 py-4">
+            <dt class="text-sm leading-5 text-mute">Manifestações classificadas</dt>
+            <dd class="mt-3 font-serif text-3xl tabular-nums">70</dd>
+          </div>
+          <div class="bg-sheet px-4 py-4">
+            <dt class="text-sm leading-5 text-mute">Acurácia contra o gabarito</dt>
+            <dd class="mt-3 font-serif text-3xl tabular-nums">98,6%</dd>
+            <dd class="mt-1 text-sm text-mute">sentimento · tipo 100%</dd>
+          </div>
+          <div class="bg-sheet px-4 py-4">
+            <dt class="text-sm leading-5 text-mute">Limítrofes sinalizados pelo modelo</dt>
+            <dd class="mt-3 font-serif text-3xl tabular-nums">12</dd>
+            <dd class="mt-1 text-sm text-mute">de 70 · 17,1%</dd>
+          </div>
+          <div class="bg-sheet px-4 py-4">
+            <dt class="text-sm leading-5 text-mute">Casos considerados ambíguos</dt>
+            <dd class="mt-3 font-serif text-3xl tabular-nums">15</dd>
+            <dd class="mt-1 text-sm text-mute">3 nas dez novas</dd>
+          </div>
+          <div class="bg-sheet px-4 py-4">
+            <dt class="text-sm leading-5 text-mute">Percentual de negativas</dt>
+            <dd class="mt-3 font-serif text-3xl tabular-nums">42,9%</dd>
+            <dd class="mt-1 text-sm text-mute">30 de 70</dd>
+          </div>
+        </dl>
+      </section>
+
+      <section class="mt-8 border-t border-line pt-6" aria-labelledby="conclusao">
+        <h2 id="conclusao" class="text-[0.7rem] font-medium uppercase tracking-[0.22em] text-mute">Conclusão para leitura</h2>
+        <div class="mt-4 max-w-[68ch] space-y-4 font-serif text-[1.125rem] leading-8">
+          <p>Nas dez manifestações, o modelo acertou o sentimento e o tipo em todas. A única diferença foi uma marca de dúvida, na M062.</p>
+          <p>Esse texto não usa palavra de ataque. O cidadão diz que o pedido de restituição, protocolado em março, segue sem despacho, embora o prazo informado no portal seja de trinta dias. E fecha assim: peço a gentileza de indicar o setor responsável. Eu marquei o caso como ambíguo, porque a reclamação está no prazo vencido e o tom é de pedido. O modelo também leu como reclamação negativa. Só que marcou o caso como claro.</p>
+          <p>Os outros dois textos difíceis ele percebeu. Na M061, a pessoa chama de maravilhoso um exame cuja vaga saiu com a guia já vencida, e ainda diz: recomendo a quem tiver bastante tempo livre. É ironia. O modelo marcou como limítrofe, como no gabarito. Na M063, o elogio e a falha vêm na mesma frase: fui atendido com educação e saí com o documento pronto no mesmo dia, pena que a senha só é distribuída até as dez da manhã. Também foi limítrofe.</p>
+          <p>Maravilhoso, recomendo e pena entregam a avaliação na própria palavra. A M062 só descreve um prazo de trinta dias já encerrado, em forma de pedido.</p>
+          <p>No lote, o mesmo modelo recebeu as setenta manifestações de uma vez. Na terceira tentativa, disse que metade era negativa. A contagem do código é trinta de setenta, quarenta e dois vírgula nove por cento. A diferença é de sete vírgula um pontos. A soma por órgão também não fechou: saiu setenta e quatro, setenta e cinco e setenta e quatro. O total de setenta, que está na cara da lista, ele acertou nas três vezes.</p>
+        </div>
+      </section>
+
+      <section class="mt-10 border-t border-line pt-6" aria-labelledby="lote">
+        <h2 id="lote" class="text-[0.7rem] font-medium uppercase tracking-[0.22em] text-mute">Parte 5 · Estimativa em lote</h2>
+        <p class="mt-4 max-w-[78ch] text-sm leading-6 text-mute">
+          Três chamadas do gpt-5.6-luna, com esforço none, receberam as 70 manifestações de uma vez. A referência abaixo é a contagem do exemplo03, feita sobre os rótulos gravados. O total foi acertado nas três. O restante variou.
+        </p>
+
+        <div class="mt-5 overflow-x-auto">
+          <table class="w-full min-w-[36rem] border-collapse text-left text-sm">
+            <caption class="sr-only">Estimativa em lote comparada aos indicadores do exemplo03</caption>
+            <thead>
+              <tr class="border-b border-rule text-mute">
+                <th class="py-2 pr-4 font-medium" scope="col">Indicador</th>
+                <th class="px-3 py-2 text-right font-medium tabular-nums" scope="col">Exemplo03</th>
+                <th class="px-3 py-2 text-right font-medium tabular-nums" scope="col">Execução 1</th>
+                <th class="px-3 py-2 text-right font-medium tabular-nums" scope="col">Execução 2</th>
+                <th class="px-3 py-2 text-right font-medium tabular-nums" scope="col">Execução 3</th>
+              </tr>
+            </thead>
+            <tbody class="tabular-nums">
+              <tr class="border-b border-line">
+                <th class="py-2.5 pr-4 font-normal" scope="row">Total</th>
+                <td class="px-3 py-2.5 text-right">70</td>
+                <td class="px-3 py-2.5 text-right">70</td>
+                <td class="px-3 py-2.5 text-right">70</td>
+                <td class="px-3 py-2.5 text-right">70</td>
+              </tr>
+              <tr class="border-b border-line">
+                <th class="py-2.5 pr-4 font-normal" scope="row">Março</th>
+                <td class="px-3 py-2.5 text-right">12</td>
+                <td class="px-3 py-2.5 text-right">14</td>
+                <td class="px-3 py-2.5 text-right">15</td>
+                <td class="px-3 py-2.5 text-right">13</td>
+              </tr>
+              <tr class="border-b border-line">
+                <th class="py-2.5 pr-4 font-normal" scope="row">Negativas</th>
+                <td class="px-3 py-2.5 text-right">30</td>
+                <td class="px-3 py-2.5 text-right">34</td>
+                <td class="px-3 py-2.5 text-right">33</td>
+                <td class="px-3 py-2.5 text-right">35</td>
+              </tr>
+              <tr class="border-b border-line">
+                <th class="py-2.5 pr-4 font-normal" scope="row">Percentual de negativas</th>
+                <td class="px-3 py-2.5 text-right">42,9%</td>
+                <td class="px-3 py-2.5 text-right">48,6%</td>
+                <td class="px-3 py-2.5 text-right">47,1%</td>
+                <td class="px-3 py-2.5 text-right">50,0%</td>
+              </tr>
+              <tr>
+                <th class="py-2.5 pr-4 font-normal" scope="row">Soma das contagens por órgão</th>
+                <td class="px-3 py-2.5 text-right">70</td>
+                <td class="px-3 py-2.5 text-right">74</td>
+                <td class="px-3 py-2.5 text-right">75</td>
+                <td class="px-3 py-2.5 text-right">74</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="mt-6 grid gap-6 border-t border-line pt-6 sm:grid-cols-2">
+          <div>
+            <p class="text-[0.7rem] font-medium uppercase tracking-[0.22em] text-mute">Maior divergência</p>
+            <p class="mt-3 font-serif text-3xl tabular-nums">7,1 pontos</p>
+            <p class="mt-2 text-sm leading-6 text-mute">
+              Percentual de negativas na terceira execução: 50,0% contra 42,9% contados no exemplo03. Em unidades de manifestação, o maior erro foi de cinco casos, nas negativas dessa mesma execução (35 contra 30) e na soma por órgão da segunda (75 contra 70).
+            </p>
+          </div>
+          <div>
+            <p class="text-[0.7rem] font-medium uppercase tracking-[0.22em] text-mute">Soma por órgão</p>
+            <p class="mt-3 font-serif text-3xl">Não fecha</p>
+            <p class="mt-2 text-sm leading-6 text-mute">
+              Nenhuma das três listas soma 70. Os totais foram 74, 75 e 74. A soma das classes de sentimento, nessas mesmas respostas, fechou 70 nas três vezes. Infraestrutura apareceu como 10 nas três, contra 8 no arquivo.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="mt-10 border-t border-line pt-6" aria-labelledby="consumo">
+        <h2 id="consumo" class="text-[0.7rem] font-medium uppercase tracking-[0.22em] text-mute">Consumo por análise</h2>
+        <p class="mt-4 max-w-[78ch] text-sm leading-6 text-mute">
+          Um único modelo, gpt-5.6-luna. Preço da faixa curta usado no exemplo02: US$ 0,20 por milhão de tokens de entrada e US$ 1,20 por milhão de saída. A agregação não chama modelo.
+        </p>
+        <div class="mt-5 overflow-x-auto">
+          <table class="w-full min-w-[40rem] border-collapse text-left text-sm">
+            <caption class="sr-only">Tempo, tokens e custo de cada análise</caption>
+            <thead>
+              <tr class="border-b border-rule text-mute">
+                <th class="py-2 pr-4 font-medium" scope="col">Análise</th>
+                <th class="px-3 py-2 font-medium" scope="col">Esforço</th>
+                <th class="px-3 py-2 text-right font-medium" scope="col">Chamadas</th>
+                <th class="px-3 py-2 text-right font-medium" scope="col">Tempo</th>
+                <th class="px-3 py-2 text-right font-medium" scope="col">Entrada</th>
+                <th class="px-3 py-2 text-right font-medium" scope="col">Saída</th>
+                <th class="py-2 pl-3 text-right font-medium" scope="col">Custo</th>
+              </tr>
+            </thead>
+            <tbody class="tabular-nums">
+              <tr class="border-b border-line">
+                <th class="py-2.5 pr-4 font-normal" scope="row">Lote, exemplo01</th>
+                <td class="px-3 py-2.5">none</td>
+                <td class="px-3 py-2.5 text-right">3</td>
+                <td class="px-3 py-2.5 text-right">8,4 s</td>
+                <td class="px-3 py-2.5 text-right">10.287</td>
+                <td class="px-3 py-2.5 text-right">507</td>
+                <td class="py-2.5 pl-3 text-right">US$ 0,0027</td>
+              </tr>
+              <tr class="border-b border-line">
+                <th class="py-2.5 pr-4 font-normal" scope="row">Classificação, exemplo02</th>
+                <td class="px-3 py-2.5">low</td>
+                <td class="px-3 py-2.5 text-right">70</td>
+                <td class="px-3 py-2.5 text-right">116,3 s</td>
+                <td class="px-3 py-2.5 text-right">47.383</td>
+                <td class="px-3 py-2.5 text-right">6.290</td>
+                <td class="py-2.5 pl-3 text-right">US$ 0,0170</td>
+              </tr>
+              <tr class="border-b border-line">
+                <th class="py-2.5 pr-4 font-normal" scope="row">Agregação, exemplo03</th>
+                <td class="px-3 py-2.5 text-mute">código</td>
+                <td class="px-3 py-2.5 text-right">0</td>
+                <td class="px-3 py-2.5 text-right">2,3 s</td>
+                <td class="px-3 py-2.5 text-right">0</td>
+                <td class="px-3 py-2.5 text-right">0</td>
+                <td class="py-2.5 pl-3 text-right">US$ 0</td>
+              </tr>
+              <tr>
+                <th class="py-2.5 pr-4 font-normal" scope="row">Redação, exemplo04</th>
+                <td class="px-3 py-2.5">low</td>
+                <td class="px-3 py-2.5 text-right">1</td>
+                <td class="px-3 py-2.5 text-right">20,9 s</td>
+                <td class="px-3 py-2.5 text-right">1.810</td>
+                <td class="px-3 py-2.5 text-right">2.716</td>
+                <td class="py-2.5 pl-3 text-right">US$ 0,0036</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="mt-4 text-sm text-mute">Soma das três chamadas de modelo: US$ 0,0233.</p>
+      </section>
+    </article>
+  </main>
+</body>
+</html>

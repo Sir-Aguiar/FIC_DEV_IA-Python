@@ -1,0 +1,90 @@
+{
+  "modelo": "gpt-5.6-luna",
+  "reasoning_effort": "medium",
+  "real": {
+    "total_manifestacoes": 60,
+    "manifestacoes_em_marco": 12,
+    "por_orgao": {
+      "Secretaria de Saúde": 13,
+      "DETRAN": 8,
+      "Secretaria de Educação": 9,
+      "Secretaria de Fazenda": 8,
+      "SEMA": 5,
+      "Secretaria de Infraestrutura": 7,
+      "Secretaria de Assistência Social": 5,
+      "Secretaria de Segurança": 5
+    },
+    "por_sentimento": {
+      "positivo": 16,
+      "negativo": 24,
+      "neutro": 13,
+      "misto": 7
+    },
+    "percentual_negativas": 40.0
+  },
+  "estimativas": [
+    {
+      "total_manifestacoes": 60,
+      "manifestacoes_em_marco": 12,
+      "por_orgao": {
+        "Secretaria de Saúde": 13,
+        "DETRAN": 8,
+        "Secretaria de Educação": 9,
+        "Secretaria de Fazenda": 8,
+        "SEMA": 5,
+        "Secretaria de Infraestrutura": 7,
+        "Secretaria de Assistência Social": 5,
+        "Secretaria de Segurança": 5
+      },
+      "por_sentimento": {
+        "positivo": 16,
+        "negativo": 24,
+        "neutro": 13,
+        "misto": 7
+      },
+      "percentual_negativas": 40.0
+    },
+    {
+      "total_manifestacoes": 60,
+      "manifestacoes_em_marco": 12,
+      "por_orgao": {
+        "Secretaria de Saúde": 13,
+        "DETRAN": 8,
+        "Secretaria de Educação": 9,
+        "Secretaria de Fazenda": 8,
+        "SEMA": 5,
+        "Secretaria de Infraestrutura": 7,
+        "Secretaria de Assistência Social": 5,
+        "Secretaria de Segurança": 5
+      },
+      "por_sentimento": {
+        "positivo": 16,
+        "negativo": 22,
+        "neutro": 13,
+        "misto": 9
+      },
+      "percentual_negativas": 36.7
+    },
+    {
+      "total_manifestacoes": 60,
+      "manifestacoes_em_marco": 12,
+      "por_orgao": {
+        "Secretaria de Saúde": 13,
+        "DETRAN": 8,
+        "Secretaria de Educação": 9,
+        "Secretaria de Fazenda": 8,
+        "SEMA": 5,
+        "Secretaria de Infraestrutura": 7,
+        "Secretaria de Assistência Social": 5,
+        "Secretaria de Segurança": 5
+      },
+      "por_sentimento": {
+        "positivo": 16,
+        "negativo": 23,
+        "neutro": 13,
+        "misto": 8
+      },
+      "percentual_negativas": 38.3
+    }
+  ]
+}

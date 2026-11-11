@@ -1,0 +1,71 @@
+id,data,canal,orgao,texto
+M001,2026-01-05,portal,Secretaria de Saúde,Fui atendido no posto do bairro Jardim Aurora e quero registrar meu reconhecimento. A equipe de enfermagem foi atenciosa do começo ao fim e o médico explicou o tratamento com paciência. Saí de lá com a receita e as orientações por escrito.
+M002,2026-01-06,telefone,DETRAN,Estou há três semanas tentando transferir meu veículo e o sistema cai toda vez que chego na última etapa. Liguei quatro vezes e ninguém sabe informar nada. Isso é um descaso com quem paga imposto.
+M003,2026-01-08,portal,Secretaria de Educação,Gostaria de saber qual é o prazo para solicitar transferência de escola para o segundo semestre.
+M004,2026-01-09,presencial,Secretaria de Fazenda,"Parabéns pelo novo sistema de emissão de segunda via do IPVA, funcionou de primeira. Levei menos de cinco minutos para resolver o que antes exigia ir até o posto."
+M005,2026-01-12,portal,Secretaria de Saúde,"Excelente o atendimento, só esperei quatro horas em pé com uma criança de colo. Recomendo a experiência a todos."
+M006,2026-01-13,email,SEMA,Solicito informação sobre o procedimento para licenciamento ambiental de pequena propriedade rural.
+M007,2026-01-15,portal,Secretaria de Infraestrutura,A rodovia estadual que liga o distrito à sede está com buracos que já causaram três acidentes este mês. Já registramos ocorrência duas vezes e nada foi feito. Pedimos providências antes que alguém morra.
+M008,2026-01-16,aplicativo,Secretaria de Assistência Social,"O atendimento no CRAS foi correto e a assistente social me orientou bem sobre a documentação. Ainda assim, o agendamento pelo aplicativo é confuso e travou duas vezes antes de eu conseguir marcar."
+M009,2026-01-19,portal,DETRAN,"Sugiro que o site informe o tempo estimado de espera para cada serviço, como já fazem outros estados."
+M010,2026-01-21,telefone,Secretaria de Saúde,Minha mãe está na fila de cirurgia há dois anos e a cada consulta mandam voltar em seis meses. Ela tem 78 anos e não tem mais dois anos para esperar.
+M011,2026-01-22,presencial,Secretaria de Educação,A merenda da escola melhorou muito neste ano e as crianças estão comendo bem. A diretora tem sido acessível e responde aos pais no mesmo dia.
+M012,2026-01-26,portal,Secretaria de Fazenda,O prazo de resposta do meu processo já passou de 90 dias e continua sem movimentação. Solicito informação sobre o andamento e a previsão de conclusão.
+M013,2026-01-28,email,Secretaria de Segurança,Denuncio que há veículos oficiais sendo usados fora do horário de expediente para fins particulares no estacionamento da unidade. Tenho registro fotográfico e datas.
+M014,2026-02-02,portal,Secretaria de Saúde,O programa de vacinação itinerante chegou ao nosso distrito e atendeu todo mundo em um dia. Foi a primeira vez em anos que não precisamos viajar 80 quilômetros para vacinar as crianças.
+M015,2026-02-03,telefone,DETRAN,Quero saber se a vistoria pode ser feita em município diferente do de registro do veículo.
+M016,2026-02-05,portal,Secretaria de Educação,Faltam professores de matemática em três turmas do ensino médio desde o início do ano letivo. Os alunos estão em sala sem aula e ninguém dá previsão de contratação.
+M017,2026-02-06,presencial,Secretaria de Assistência Social,Fui muito bem recebida e resolveram meu caso no mesmo dia. Agradeço à servidora que me atendeu com tanta paciência.
+M018,2026-02-09,portal,SEMA,"O processo de licenciamento tramitou dentro do prazo informado, o que já é raro. Só faltou comunicar a conclusão, que descobri por conta própria consultando o sistema."
+M019,2026-02-11,aplicativo,Secretaria de Infraestrutura,Sugiro que os relatórios de obras publicados no portal incluam o percentual executado e a data prevista de entrega.
+M020,2026-02-12,portal,Secretaria de Saúde,Cheguei às 5 da manhã para pegar ficha e às 7 me informaram que as fichas do dia já tinham acabado. Isso se repete toda semana e ninguém explica o critério de distribuição.
+M021,2026-02-16,email,Secretaria de Fazenda,"Registro meu agradecimento à equipe do plantão fiscal, que atendeu por videoconferência e resolveu a pendência da minha nota em vinte minutos."
+M022,2026-02-17,portal,DETRAN,"Paguei a taxa e o sistema não reconheceu o pagamento. Fui ao posto, me mandaram abrir chamado no site; abri o chamado, me mandaram ir ao posto. Estou nesse círculo há um mês."
+M023,2026-02-19,telefone,Secretaria de Segurança,Gostaria de informação sobre como solicitar cópia de boletim de ocorrência antigo.
+M024,2026-02-23,portal,Secretaria de Educação,"Que maravilha a reforma da quadra, ficou pronta em apenas dois anos e meio. As crianças que entraram no sexto ano já saíram da escola, mas enfim."
+M025,2026-02-25,presencial,Secretaria de Saúde,O novo centro de especialidades reduziu a espera de consulta com cardiologista de oito meses para três semanas. A diferença para quem depende do SUS é enorme.
+M026,2026-03-02,portal,Secretaria de Infraestrutura,A obra da ponte está parada desde novembro sem qualquer aviso à população. Quem depende dela faz um desvio de 40 quilômetros todo dia.
+M027,2026-03-04,email,SEMA,Denuncio desmatamento em área de preservação permanente às margens do córrego que abastece o distrito. Já houve autuação anterior no mesmo local e a atividade voltou.
+M028,2026-03-05,aplicativo,Secretaria de Fazenda,"Sugiro que o aplicativo permita salvar os comprovantes em PDF, hoje só é possível capturar a tela."
+M029,2026-03-09,portal,Secretaria de Saúde,"O agendamento on-line é uma boa ideia e funciona bem para consultas simples. Para exames, porém, nunca há vaga disponível e o sistema não avisa quando abre nova agenda."
+M030,2026-03-10,telefone,DETRAN,Fui atendido com educação e resolvi o licenciamento na hora. Não tenho nada a reclamar desta vez.
+M031,2026-03-12,portal,Secretaria de Educação,O transporte escolar não passou em três dias seguidos e ninguém comunicou os pais. Meus filhos perderam prova por falta de transporte fornecido pelo Estado.
+M032,2026-03-16,presencial,Secretaria de Assistência Social,Quero saber se o benefício continua sendo pago durante o período de recadastramento.
+M033,2026-03-18,portal,Secretaria de Segurança,A ronda escolar passou a ser diária no bairro e a sensação de segurança melhorou visivelmente. Os pais comentam a diferença nas reuniões da escola.
+M034,2026-03-19,email,Secretaria de Fazenda,"Fui informado por telefone de uma regra e por escrito de outra, sobre o mesmo tributo. Peço que a orientação oficial seja unificada, pois o contribuinte não tem como saber qual seguir."
+M035,2026-03-23,portal,Secretaria de Saúde,Faltou medicamento de uso contínuo na farmácia estadual pelo terceiro mês seguido. Estou comprando com recurso próprio o que deveria ser fornecido.
+M036,2026-03-25,aplicativo,Secretaria de Infraestrutura,A iluminação da avenida foi restabelecida dois dias após o registro no aplicativo. Agradeço a agilidade da equipe.
+M037,2026-03-30,portal,DETRAN,"Sugiro ampliar o horário de atendimento do posto do shopping para sábado à tarde, quando a maioria dos trabalhadores está livre."
+M038,2026-04-01,telefone,Secretaria de Educação,A professora substituta chegou no primeiro dia útil após o afastamento da titular. A reposição foi rápida e a turma não ficou sem aula.
+M039,2026-04-02,portal,Secretaria de Saúde,"Marquei consulta pelo sistema, recebi a confirmação por mensagem e, ao chegar, fui informado de que o médico não atende mais na unidade. Perdi um dia de trabalho por uma informação que o sistema deveria ter."
+M040,2026-04-06,email,SEMA,Peço esclarecimento sobre a validade da outorga de uso de água concedida em 2019.
+M041,2026-04-08,portal,Secretaria de Fazenda,O parcelamento de débito foi aprovado rapidamente e as parcelas vieram no valor informado. Reconheço a melhora em relação ao ano passado.
+M042,2026-04-09,presencial,Secretaria de Segurança,"Esperei quatro horas para registrar ocorrência e fui atendido por um servidor que digitou meu relato pela metade. Quando pedi correção, disse que não daria tempo."
+M043,2026-04-13,portal,Secretaria de Educação,"A escola tem estrutura boa e professores dedicados, mas o laboratório de informática está fechado há dois anos por falta de manutenção. É desperdício de equipamento que já foi comprado."
+M044,2026-04-15,aplicativo,Secretaria de Saúde,Denuncio cobrança indevida por procedimento realizado em hospital conveniado ao SUS. Guardei o recibo e o nome de quem cobrou.
+M045,2026-04-16,portal,Secretaria de Infraestrutura,"Sugiro que o portal de obras permita filtrar por município, hoje é preciso percorrer uma lista com centenas de itens."
+M046,2026-04-20,telefone,DETRAN,"Fui muito bem atendido pelo telefone, a atendente resolveu tudo. Pena que precisei ligar onze vezes até alguém atender."
+M047,2026-04-22,portal,Secretaria de Assistência Social,O programa de distribuição de cestas chegou à comunidade indígena pela primeira vez. Foi organizado com respeito e com apoio de intérprete.
+M048,2026-04-27,email,Secretaria de Fazenda,"O sistema exige documento que a própria Secretaria emite, mas não há onde emiti-lo no portal. Solicito que a exigência seja revista ou que o documento seja disponibilizado."
+M049,2026-04-29,portal,Secretaria de Saúde,A ambulância demorou uma hora e quarenta minutos para chegar a uma emergência a doze quilômetros da base. O paciente chegou ao hospital em estado grave.
+M050,2026-05-04,presencial,Secretaria de Educação,Quero saber se a matrícula do meu filho na rede estadual pode ser feita fora do período regular.
+M051,2026-05-06,portal,SEMA,A fiscalização atendeu à denúncia em menos de uma semana e o autuado interrompeu a atividade. Registro o reconhecimento pela resposta rápida.
+M052,2026-05-08,aplicativo,Secretaria de Infraestrutura,Registrei o mesmo buraco quatro vezes desde janeiro e a cada registro o chamado é encerrado como resolvido sem que nada tenha sido feito.
+M053,2026-05-12,portal,Secretaria de Segurança,"Sugiro que o Estado divulgue mensalmente os índices de criminalidade por município, com metodologia aberta."
+M054,2026-05-14,telefone,Secretaria de Saúde,O teleatendimento resolveu minha dúvida sobre o medicamento sem que eu precisasse ir à unidade. Foi rápido e a orientação veio por escrito depois.
+M055,2026-05-18,portal,DETRAN,"A multa foi aplicada com foto de outro veículo, com placa diferente da minha. Apresentei defesa há dois meses e não houve resposta."
+M056,2026-05-20,email,Secretaria de Educação,"A reforma da escola melhorou as salas, mas os banheiros continuam interditados. Metade da obra entregue é meia obra."
+M057,2026-05-25,portal,Secretaria de Fazenda,"Fui atendido dentro do prazo e o servidor explicou a legislação de forma compreensível. Ainda assim, considero que o formulário exigido pede informações que o Estado já possui."
+M058,2026-06-01,presencial,Secretaria de Saúde,Denuncio que pacientes com encaminhamento estão sendo furados na fila por indicação política. Presenciei o fato duas vezes na mesma semana.
+M059,2026-06-03,portal,Secretaria de Assistência Social,O aplicativo do benefício ficou fora do ar durante todo o período de recadastramento. Quem não conseguiu se recadastrar perdeu o pagamento do mês.
+M060,2026-06-05,aplicativo,Secretaria de Infraestrutura,"Parabéns pela sinalização nova da rodovia, ficou visível à noite e nas curvas. A diferença para quem dirige no trecho é grande."
+M061,2026-06-08,portal,Secretaria de Saúde,"Maravilhoso o novo agendamento de exames: marquei em janeiro e a vaga saiu em junho, com a guia já vencida. Recomendo a quem tiver bastante tempo livre."
+M062,2026-06-09,email,Secretaria de Fazenda,"Dirijo-me a esta Ouvidoria para registrar que o pedido de restituição, protocolado em março, segue sem despacho, embora o prazo informado no portal seja de trinta dias. Peço a gentileza de indicar o setor responsável e a data prevista de decisão."
+M063,2026-06-11,telefone,DETRAN,"Fui atendido com educação no posto e saí com o documento pronto no mesmo dia. Pena que a senha só é distribuída até as dez da manhã, e quem chega depois fica sem atendimento mesmo com o posto aberto."
+M064,2026-06-12,presencial,Secretaria de Infraestrutura,A equipe concluiu o recapeamento do trecho no prazo publicado e manteve o desvio sinalizado durante a obra. O tráfego voltou ao normal no dia seguinte à liberação.
+M065,2026-06-15,aplicativo,Secretaria de Educação,O transporte escolar deixou de circular por cinco dias seguidos e a escola só avisou as famílias no terceiro dia. Alunos perderam avaliações por falta de um serviço que o Estado se comprometeu a prestar.
+M066,2026-06-16,portal,Secretaria de Segurança,Gostaria de saber se o boletim de ocorrência emitido pelo canal eletrônico tem a mesma validade do registrado no balcão e onde consultar a autenticidade do documento.
+M067,2026-06-18,email,SEMA,Sugiro que a consulta pública de licenciamento informe a etapa do processo e o setor em que ele se encontra.
+M068,2026-06-19,presencial,Secretaria de Assistência Social,"Denuncio que cestas do programa estadual estão sendo retiradas da unidade por pessoas que não constam da lista de famílias cadastradas, com conhecimento de quem controla a entrega. O fato se repetiu nas duas últimas distribuições."
+M069,2026-06-22,aplicativo,Secretaria de Segurança,"Registrei a ocorrência pelo canal eletrônico e recebi o protocolo em poucos minutos, com o resumo do relato fiel ao que informei. O passo a passo era objetivo e o sistema não apresentou falha."
+M070,2026-06-24,portal,Secretaria de Saúde,A farmácia estadual está sem o medicamento de uso contínuo há quatro meses e não apresentou alternativa. O tratamento foi interrompido porque o insumo que o Estado deveria fornecer não foi reposto.

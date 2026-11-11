@@ -1,384 +1,377 @@
 {
   "documento": {
-    "titulo": "Regimento Interno da Empresa Mato-grossense de Tecnologia da Informação - MTI",
-    "orgao": "MTI",
-    "data_aprovacao": "2025-01-02",
+    "titulo": "Recomendação sobre a Ética da Inteligência Artificial",
+    "orgao": "UNESCO",
+    "data_aprovacao": "2021-11-23",
     "idioma": "pt-BR",
-    "arquivo": "regimento_interno_mti.pdf",
-    "decreto": "Decreto nº 1.212, de 2 de janeiro de 2025"
+    "arquivo": "documento.pdf",
+    "total_paginas": 45
   },
   "secoes": [
     {
-      "id": "caracterizacao",
-      "tipo": "capitulo",
-      "numero": "I.I",
-      "rotulo": "Título I, Capítulo I",
-      "titulo": "Da caracterização",
+      "id": "i-escopo",
+      "tipo": "parte",
+      "numero": "I",
+      "rotulo": "I",
+      "titulo": "Escopo de aplicação",
       "parte": {
         "numero": "I",
-        "titulo": "Da caracterização e objetivos"
+        "titulo": "Escopo de aplicação"
       },
-      "pagina_inicio": null,
-      "pagina_fim": null,
-      "tema": "Natureza jurídica e origem histórica da MTI",
-      "texto_completo": "Art. 1º A Empresa Mato-grossense de Tecnologia da Informação - MTI, assim denominada pelo Art. 1º, da Lei Complementar nº 574, de 04 de fevereiro de 2016, é uma empresa pública dotada de personalidade jurídica de direito privado, criada inicialmente com a denominação de Centro de Processamento de Dados do Estado de Mato Grosso - CEPROMAT nos termos da Lei nº 3.359, de 18 de junho de 1973, autorizada a transformação em empresa pública pela Lei nº 3.681 de 28 de novembro de 1975 e Decreto nº 1.664, de 26 de dezembro de 1978, vinculada à Secretaria de Estado de Planejamento e Gestão - SEPLAG por força do disposto na alínea “c”, do inciso II, do art. 34 da Lei Complementar nº 612, de 28 de janeiro de 2019. A MTI está de acordo com o que dispõe a Lei Federal nº 6.404, de 15 de dezembro de 1976, a Lei Federal nº 13.303 de 30 de junho de 2016 e o",
+      "pagina_inicio": 9,
+      "pagina_fim": 13,
+      "tema": "Alcance da Recomendação e definição operacional de sistema de IA",
+      "texto_completo": "1. Esta Recomendação aborda questões éticas relacionadas ao campo da inteligência artificial, na medida em que aquelas estão dentro do mandato da UNESCO. Ela aborda a ética da IA como uma reflexão normativa sistemática, com base em um marco holístico, abrangente, multicultural e em evolução de valores, princípios e ações interdependentes que podem orientar as sociedades para que lidem de forma responsável com os impactos conhecidos e desconhecidos das tecnologias de IA sobre seres humanos, sociedades, meio ambiente e ecossistemas, oferecendo-lhes uma base para aceitar ou rejeitar essas tecnologias. Ela considera a ética como uma base dinâmica para a avaliação e a orientação normativa das tecnologias de IA, fazendo referência à dignidade humana, ao bem-estar e à prevenção de danos – como uma bússola e tendo como fundamento a ética da ciência e da tecnologia.\n2. Esta Recomendação não tem a ambição de fornecer uma definição única de IA, uma vez que tal definição precisaria se modificar ao longo do tempo, em conformidade com os desenvolvimentos tecnológicos. Em vez disso, sua ambição consiste em abordar os aspectos dos sistemas de IA que têm relevância ética central. Portanto, esta Recomendação aborda os sistemas de IA como sistemas que têm capacidade de processar dados e informações de uma forma que se assemelha ao comportamento inteligente e, normalmente, inclui aspectos de raciocínio, aprendizagem, percepção, previsão, planejamento ou controle. Três elementos ocupam um lugar central nesta abordagem:\n(a) Os sistemas de IA são tecnologias de processamento de informações que integram modelos e algoritmos que produzem a capacidade de aprender e realizar tarefas cognitivas, as quais levam a resultados como a previsão e a tomada de decisões em ambientes reais e virtuais. Os sistemas de IA são projetados para operar com vários graus de autonomia por meio da modelagem e da representação de conhecimento pela exploração de dados e cálculo de correlações. Os sistemas de IA podem incluir vários métodos, tais como, mas não se limitando a:\n(i) aprendizado de máquina, incluindo aprendizado profundo e aprendizado por reforço; e\n(ii) raciocínio de máquina, incluindo planejamento, programação, representação de conhecimento e raciocínio, pesquisa e otimização. Os sistemas de IA podem ser usados em sistemas ciberfísicos, incluindo a internet das coisas, sistemas robóticos, robótica social e interfaces ser humano– computador, que envolvem controle, percepção processamento dos dados coletados por sensores e a operação de atuadores no ambiente em que os sistemas de IA funcionam.\n(b) Questões éticas em relação aos sistemas de IA dizem respeito a todos os estágios do ciclo de vida de tais sistemas, entendidos aqui como abrangendo desde pesquisa, design e desenvolvimento até implementação e uso, incluindo manutenção, operação, comércio, financiamento, monitoramento e avaliação, validação, fim de uso, desmontagem e término. Além disso, os atores de IA podem ser definidos como qualquer ator envolvido em pelo menos uma etapa do ciclo de vida do sistema de IA, e podem se referir tanto a pessoas físicas quanto jurídicas, tais como pesquisadores, programadores, engenheiros, cientistas de dados, usuários finais, empresas, universidades e entidades públicas e privadas, entre outros.\n(c) Os sistemas de IA levantam novas espécies de questões éticas que incluem, mas não se limitam a, seu impacto na tomada de decisões, emprego e trabalho, interação social, assistência médica, educação, meios de comunicação, acesso à informação, exclusão digital, dados pessoais e proteção ao consumidor, meio ambiente, democracia, Estado de direito, segurança e policiamento, dupla utilização, e direitos humanos e liberdades fundamentais, incluindo liberdade de expressão, privacidade e não discriminação. Além disso, novos desafios éticos são criados pela possibilidade de que os algoritmos de IA reproduzam e reforcem vieses existentes e, assim, agravem formas já existentes de discriminação, preconceitos e estereótipos. Algumas dessas questões estão relacionadas à capacidade de os sistemas de IA realizarem tarefas que anteriormente apenas seres vivos eram capazes de fazer, e que, em alguns casos, eram até mesmo limitadas apenas a seres e humanos. Essas características conferem aos sistemas de IA um novo e profundo papel nas práticas humanas e sociais, bem como em sua relação com o meio ambiente e com os ecossistemas, criando com isso um novo contexto para crianças e jovens crescerem, desenvolverem uma compreensão do mundo e de si mesmos, entenderem criticamente os meios de comunicação e as informações, e aprenderem a tomar decisões. No longo prazo, os sistemas de IA podem desafiar o sentido especial de experiência e capacidade de ação dos humanos, o que levanta preocupações adicionais sobre, entre outros, autocompreensão humana, interação social, cultural e ambiental, autonomia, capacidade de ação, valor e dignidade. e\n3. Esta Recomendação dá atenção especial às implicações éticas mais amplas dos sistemas de IA em relação às áreas centrais de atuação da UNESCO: educação, ciência, cultura, e comunicação e informação, como explorado no “Estudo preliminar sobre a ética da inteligência artificial” realizado em 2019 pela Comissão Mundial para a Ética do Conhecimento Científico e Tecnológico da UNESCO (COMEST):\n(a) Educação, porque viver em sociedades em digitalizadas exige novas práticas educacionais, reflexão ética, pensamento crítico, práticas de projeto responsáveis e novas competências, dadas as implicações para o mercado de trabalho, a empregabilidade e a participação cívica.\n(b) Ciência, no sentido mais amplo e incluindo todos os campos acadêmicos, das ciências naturais e médicas às ciências sociais e humanidades, uma vez que as tecnologias de IA trazem novas capacidades e abordagens de pesquisa, têm implicações para os nossos conceitos de compreensão e explicação científica criam uma nova base para a tomada de decisões.\n(c) Identidade e diversidade culturais, visto que as tecnologias de IA podem enriquecer as indústrias culturais e criativas, mas também podem ocasionar uma maior concentração da oferta de conteúdo, dados, mercados e renda nas mãos de apenas alguns atores da área de cultura, com potenciais implicações negativas para a diversidade e pluralismo de línguas, meios de comunicação, expressões culturais, participação e igualdade.\n(d) Comunicação e informação, uma vez que as tecnologias de IA desempenham um papel cada vez mais importante no processamento, estruturação e disponibilização da informação; as questões do jornalismo automatizado, do fornecimento de notícias por meio de algoritmos e da moderação e curadoria de conteúdo nas redes sociais e motores de busca são apenas alguns exemplos que levantam questões relacionadas com o acesso à informação, desinformação, informações falsas, discurso de ódio, surgimento de novas formas de narrativas sociais, discriminação, liberdade de expressão, privacidade e alfabetização midiática e informacional (AMI), entre outros.\n4. Esta recomendação é dirigida aos Estados-membros, e tanto como atores de IA como autoridades responsáveis pelo desenvolvimento de marcos jurídicos e regulatórios ao longo de todo o ciclo de vida do sistema de IA e pela promoção de responsabilidade empresarial. Ela também fornece orientação ética para todos os atores de IA, incluindo os setores público e privado, fornecendo uma base para uma avaliação do impacto ético dos sistemas de IA ao longo de seu ciclo de vida.",
       "paragrafos": [
         {
           "numero": 1,
           "bloco_tematico": null,
-          "texto": "A Empresa Mato-grossense de Tecnologia da Informação - MTI, assim denominada pelo Art. 1º, da Lei Complementar nº 574, de 04 de fevereiro de 2016, é uma empresa pública dotada de personalidade jurídica de direito privado, criada inicialmente com a denominação de Centro de Processamento de Dados do Estado de Mato Grosso - CEPROMAT nos termos da Lei nº 3.359, de 18 de junho de 1973, autorizada a transformação em empresa pública pela Lei nº 3.681 de 28 de novembro de 1975 e Decreto nº 1.664, de 26 de dezembro de 1978, vinculada à Secretaria de Estado de Planejamento e Gestão - SEPLAG por força do disposto na alínea “c”, do inciso II, do art. 34 da Lei Complementar nº 612, de 28 de janeiro de 2019. A MTI está de acordo com o que dispõe a Lei Federal nº 6.404, de 15 de dezembro de 1976, a Lei Federal nº 13.303 de 30 de junho de 2016 e o",
+          "texto": "Esta Recomendação aborda questões éticas relacionadas ao campo da inteligência artificial, na medida em que aquelas estão dentro do mandato da UNESCO. Ela aborda a ética da IA como uma reflexão normativa sistemática, com base em um marco holístico, abrangente, multicultural e em evolução de valores, princípios e ações interdependentes que podem orientar as sociedades para que lidem de forma responsável com os impactos conhecidos e desconhecidos das tecnologias de IA sobre seres humanos, sociedades, meio ambiente e ecossistemas, oferecendo-lhes uma base para aceitar ou rejeitar essas tecnologias. Ela considera a ética como uma base dinâmica para a avaliação e a orientação normativa das tecnologias de IA, fazendo referência à dignidade humana, ao bem-estar e à prevenção de danos – como uma bússola e tendo como fundamento a ética da ciência e da tecnologia.",
+          "alineas": []
+        },
+        {
+          "numero": 2,
+          "bloco_tematico": null,
+          "texto": "Esta Recomendação não tem a ambição de fornecer uma definição única de IA, uma vez que tal definição precisaria se modificar ao longo do tempo, em conformidade com os desenvolvimentos tecnológicos. Em vez disso, sua ambição consiste em abordar os aspectos dos sistemas de IA que têm relevância ética central. Portanto, esta Recomendação aborda os sistemas de IA como sistemas que têm capacidade de processar dados e informações de uma forma que se assemelha ao comportamento inteligente e, normalmente, inclui aspectos de raciocínio, aprendizagem, percepção, previsão, planejamento ou controle. Três elementos ocupam um lugar central nesta abordagem:",
+          "alineas": [
+            {
+              "marcador": "a",
+              "texto": "Os sistemas de IA são tecnologias de processamento de informações que integram modelos e algoritmos que produzem a capacidade de aprender e realizar tarefas cognitivas, as quais levam a resultados como a previsão e a tomada de decisões em ambientes reais e virtuais. Os sistemas de IA são projetados para operar com vários graus de autonomia por meio da modelagem e da representação de conhecimento pela exploração de dados e cálculo de correlações. Os sistemas de IA podem incluir vários métodos, tais como, mas não se limitando a:",
+              "itens": []
+            },
+            {
+              "marcador": "i",
+              "texto": "aprendizado de máquina, incluindo aprendizado profundo e aprendizado por reforço; e",
+              "itens": [
+                {
+                  "marcador": "ii",
+                  "texto": "raciocínio de máquina, incluindo planejamento, programação, representação de conhecimento e raciocínio, pesquisa e otimização. Os sistemas de IA podem ser usados em sistemas ciberfísicos, incluindo a internet das coisas, sistemas robóticos, robótica social e interfaces ser humano– computador, que envolvem controle, percepção processamento dos dados coletados por sensores e a operação de atuadores no ambiente em que os sistemas de IA funcionam."
+                }
+              ]
+            },
+            {
+              "marcador": "b",
+              "texto": "Questões éticas em relação aos sistemas de IA dizem respeito a todos os estágios do ciclo de vida de tais sistemas, entendidos aqui como abrangendo desde pesquisa, design e desenvolvimento até implementação e uso, incluindo manutenção, operação, comércio, financiamento, monitoramento e avaliação, validação, fim de uso, desmontagem e término. Além disso, os atores de IA podem ser definidos como qualquer ator envolvido em pelo menos uma etapa do ciclo de vida do sistema de IA, e podem se referir tanto a pessoas físicas quanto jurídicas, tais como pesquisadores, programadores, engenheiros, cientistas de dados, usuários finais, empresas, universidades e entidades públicas e privadas, entre outros.",
+              "itens": []
+            },
+            {
+              "marcador": "c",
+              "texto": "Os sistemas de IA levantam novas espécies de questões éticas que incluem, mas não se limitam a, seu impacto na tomada de decisões, emprego e trabalho, interação social, assistência médica, educação, meios de comunicação, acesso à informação, exclusão digital, dados pessoais e proteção ao consumidor, meio ambiente, democracia, Estado de direito, segurança e policiamento, dupla utilização, e direitos humanos e liberdades fundamentais, incluindo liberdade de expressão, privacidade e não discriminação. Além disso, novos desafios éticos são criados pela possibilidade de que os algoritmos de IA reproduzam e reforcem vieses existentes e, assim, agravem formas já existentes de discriminação, preconceitos e estereótipos. Algumas dessas questões estão relacionadas à capacidade de os sistemas de IA realizarem tarefas que anteriormente apenas seres vivos eram capazes de fazer, e que, em alguns casos, eram até mesmo limitadas apenas a seres e humanos. Essas características conferem aos sistemas de IA um novo e profundo papel nas práticas humanas e sociais, bem como em sua relação com o meio ambiente e com os ecossistemas, criando com isso um novo contexto para crianças e jovens crescerem, desenvolverem uma compreensão do mundo e de si mesmos, entenderem criticamente os meios de comunicação e as informações, e aprenderem a tomar decisões. No longo prazo, os sistemas de IA podem desafiar o sentido especial de experiência e capacidade de ação dos humanos, o que levanta preocupações adicionais sobre, entre outros, autocompreensão humana, interação social, cultural e ambiental, autonomia, capacidade de ação, valor e dignidade. e",
+              "itens": []
+            }
+          ]
+        },
+        {
+          "numero": 3,
+          "bloco_tematico": null,
+          "texto": "Esta Recomendação dá atenção especial às implicações éticas mais amplas dos sistemas de IA em relação às áreas centrais de atuação da UNESCO: educação, ciência, cultura, e comunicação e informação, como explorado no “Estudo preliminar sobre a ética da inteligência artificial” realizado em 2019 pela Comissão Mundial para a Ética do Conhecimento Científico e Tecnológico da UNESCO (COMEST):",
+          "alineas": [
+            {
+              "marcador": "a",
+              "texto": "Educação, porque viver em sociedades em digitalizadas exige novas práticas educacionais, reflexão ética, pensamento crítico, práticas de projeto responsáveis e novas competências, dadas as implicações para o mercado de trabalho, a empregabilidade e a participação cívica.",
+              "itens": []
+            },
+            {
+              "marcador": "b",
+              "texto": "Ciência, no sentido mais amplo e incluindo todos os campos acadêmicos, das ciências naturais e médicas às ciências sociais e humanidades, uma vez que as tecnologias de IA trazem novas capacidades e abordagens de pesquisa, têm implicações para os nossos conceitos de compreensão e explicação científica criam uma nova base para a tomada de decisões.",
+              "itens": []
+            },
+            {
+              "marcador": "c",
+              "texto": "Identidade e diversidade culturais, visto que as tecnologias de IA podem enriquecer as indústrias culturais e criativas, mas também podem ocasionar uma maior concentração da oferta de conteúdo, dados, mercados e renda nas mãos de apenas alguns atores da área de cultura, com potenciais implicações negativas para a diversidade e pluralismo de línguas, meios de comunicação, expressões culturais, participação e igualdade.",
+              "itens": []
+            },
+            {
+              "marcador": "d",
+              "texto": "Comunicação e informação, uma vez que as tecnologias de IA desempenham um papel cada vez mais importante no processamento, estruturação e disponibilização da informação; as questões do jornalismo automatizado, do fornecimento de notícias por meio de algoritmos e da moderação e curadoria de conteúdo nas redes sociais e motores de busca são apenas alguns exemplos que levantam questões relacionadas com o acesso à informação, desinformação, informações falsas, discurso de ódio, surgimento de novas formas de narrativas sociais, discriminação, liberdade de expressão, privacidade e alfabetização midiática e informacional (AMI), entre outros.",
+              "itens": []
+            }
+          ]
+        },
+        {
+          "numero": 4,
+          "bloco_tematico": null,
+          "texto": "Esta recomendação é dirigida aos Estados-membros, e tanto como atores de IA como autoridades responsáveis pelo desenvolvimento de marcos jurídicos e regulatórios ao longo de todo o ciclo de vida do sistema de IA e pela promoção de responsabilidade empresarial. Ela também fornece orientação ética para todos os atores de IA, incluindo os setores público e privado, fornecendo uma base para uma avaliação do impacto ético dos sistemas de IA ao longo de seu ciclo de vida.",
           "alineas": []
         }
       ]
     },
     {
-      "id": "objetivos",
-      "tipo": "capitulo",
-      "numero": "I.II",
-      "rotulo": "Título I, Capítulo II",
-      "titulo": "Dos objetivos",
+      "id": "iv-ap-01",
+      "tipo": "area_politica",
+      "numero": "IV.1",
+      "rotulo": "Área política 1",
+      "titulo": "Avaliação de impacto ético",
       "parte": {
-        "numero": "I",
-        "titulo": "Da caracterização e objetivos"
+        "numero": "IV",
+        "titulo": "Áreas de ação política"
       },
-      "pagina_inicio": null,
-      "pagina_fim": null,
-      "tema": "Objetivos e alcance dos serviços da MTI",
-      "texto_completo": "Art. 2º Nos termos do artigo 5º do Decreto nº 722, de 23 de Fevereiro 2024, constituem-se objetivos da Empresa Mato-grossense de Tecnologia da Informação - MTI: § 1º A Empresa Mato-grossense de Tecnologia da Informação - MTI poderá prestar seus serviços aos órgãos públicos da esfera Federal, Estadual Municipal e iniciativa privada. § 2º A Empresa Mato-grossense de Tecnologia da Informação - MTI poderá, mediante convênio, termo de cooperação ou contrato de patrocínio, prestar apoio técnico e financeiro aos projetos e programas desenvolvidos por outras entidades estatais que estejam vinculadas à sua área de atuação. § 3º Para a consecução de seus fins a Empresa poderá celebrar contratos, acordos, convênios, ou outros instrumentos afins com quaisquer entidades da Administração Pública, esferas de governo federal, estadual e municipal e com a iniciativa privada.\nI - prestar serviços de Infraestrutura de Tecnologia da Informação e Comunicação -TIC;\nII - prestar serviços de elaboração de projetos, assessoria, consultoria, suporte, monitoramento, gerenciamento e treinamento na área de Tecnologia da Informação e Comunicação;\nIII - prestar serviços de desenvolvimento, integração, implementação, manutenção e sustentação de sistemas de informação e aplicativos;\nIV - prestar serviços de processamento e tratamentos de dados, promover a integração entre sistemas de informação e bases de dados por meio de soluções de interoperabilidade;\nV - desenvolver atividades de inovação e pesquisa tecnológica, disseminação de novas tecnologias de produtos e serviços relacionados à Tecnologia de Informação e Comunicação.",
+      "pagina_inicio": 26,
+      "pagina_fim": 27,
+      "tema": "Avaliação de riscos e impactos éticos de sistemas de IA",
+      "texto_completo": "50. Os Estados-membros devem criar marcos para a realização de avaliações de impacto, como avaliação de impacto ético, para identificar e avaliar os benefícios, as preocupações e os riscos dos sistemas de IA, bem como medidas adequadas de prevenção, mitigação e monitoramento de riscos, entre outros mecanismos de garantia. Tais avaliações de impacto devem identificar impactos nos direitos humanos e nas liberdades fundamentais, especialmente, mas não apenas, nos direitos de pessoas marginalizadas e vulneráveis ou pessoas em situações vulneráveis, direitos do trabalho, meio ambiente e ecossistemas e suas implicações éticas e sociais, e facilitar participação dos cidadãos em sintonia com os valores princípios estabelecidos nesta Recomendação.\n51. Os Estados-membros e as empresas do setor privado devem desenvolver mecanismos de devida diligência e supervisão para identificar, prevenir, mitigar e explicar de que forma abordam o impacto dos sistemas de IA no respeito aos direitos humanos, ao Estado de direito e às sociedades inclusivas. Os Estados-membros também devem ser capazes de avaliar o impacto socioeconômico dos sistemas de IA na pobreza e assegurar que a distância entre as pessoas que vivem na riqueza e na pobreza, bem como a exclusão digital dentro entre os países, não aumente com a adoção em massa de tecnologias de IA no presente e no futuro. Para esse efeito, de maneira particular, devem ser implementados protocolos de transparência aplicáveis, correspondentes ao acesso à informação, incluindo informações de interesse público em posse de entidades privadas. Os Estados-membros, as empresas do setor privado e a sociedade civil devem investigar os efeitos sociológicos e psicológicos das recomendações baseadas em IA na autonomia de decisão dos seres humanos. Sistemas de IA identificados como possíveis riscos para os direitos humanos devem ser amplamente testados por atores de IA, inclusive, se necessário, em condições do mundo real, como parte da avaliação de impacto ético, antes de lançá-los no mercado. a 52. Os Estados-membros e as empresas devem implee mentar medidas adequadas para acompanhar todas as fases do ciclo de vida dos sistemas de IA, incluindo o funcionamento dos algoritmos utilizados para tomada de decisão, os dados, bem como os atores de IA envolvidos no processo, especialmente em serviços públicos e onde for necessária a interação direta do usuário final, como parte da avaliação de impacto ético. As obrigações dos Estados-membros relativas a direitos humanos devem fazer parte dos aspectos éticos das avaliações de sistemas de IA.\n53. Os governos devem adotar um marco normativo que e estabeleça um procedimento, em especial para autoridades públicas, para realizar avaliações de impacto ético em sistemas de IA para prever consequências, mitigar riscos, evitar consequências prejudiciais, facilitar a participação dos cidadãos e abordar desafios sociais. A avaliação também deve estabelecer mecanismos de supervisão apropriados, incluindo auditabilidade, rastreabilidade e explicabilidade, que permitam a avaliação de algoritmos, dados e processos de planejamento, bem como incluir a revisão externa dos sistemas de IA. As avaliações de impacto ético devem ser transparentes e abertas ao público, quando for apropriado. Essas avaliações também devem ser multidisciplinares, multiparceiros, multiculturais, pluralistas e inclusivas. As autoridades públicas devem ser obrigadas a monitorar os sistemas de IA implementados e/ou utilizados por essas autoridades, introduzindo mecanismos e ferramentas adequados.",
       "paragrafos": [
         {
-          "numero": 2,
+          "numero": 50,
           "bloco_tematico": null,
-          "texto": "Nos termos do artigo 5º do Decreto nº 722, de 23 de Fevereiro 2024, constituem-se objetivos da Empresa Mato-grossense de Tecnologia da Informação - MTI: § 1º A Empresa Mato-grossense de Tecnologia da Informação - MTI poderá prestar seus serviços aos órgãos públicos da esfera Federal, Estadual Municipal e iniciativa privada. § 2º A Empresa Mato-grossense de Tecnologia da Informação - MTI poderá, mediante convênio, termo de cooperação ou contrato de patrocínio, prestar apoio técnico e financeiro aos projetos e programas desenvolvidos por outras entidades estatais que estejam vinculadas à sua área de atuação. § 3º Para a consecução de seus fins a Empresa poderá celebrar contratos, acordos, convênios, ou outros instrumentos afins com quaisquer entidades da Administração Pública, esferas de governo federal, estadual e municipal e com a iniciativa privada.",
-          "alineas": [
-            {
-              "marcador": "I",
-              "texto": "prestar serviços de Infraestrutura de Tecnologia da Informação e Comunicação -TIC;",
-              "itens": []
-            },
-            {
-              "marcador": "II",
-              "texto": "prestar serviços de elaboração de projetos, assessoria, consultoria, suporte, monitoramento, gerenciamento e treinamento na área de Tecnologia da Informação e Comunicação;",
-              "itens": []
-            },
-            {
-              "marcador": "III",
-              "texto": "prestar serviços de desenvolvimento, integração, implementação, manutenção e sustentação de sistemas de informação e aplicativos;",
-              "itens": []
-            },
-            {
-              "marcador": "IV",
-              "texto": "prestar serviços de processamento e tratamentos de dados, promover a integração entre sistemas de informação e bases de dados por meio de soluções de interoperabilidade;",
-              "itens": []
-            },
-            {
-              "marcador": "V",
-              "texto": "desenvolver atividades de inovação e pesquisa tecnológica, disseminação de novas tecnologias de produtos e serviços relacionados à Tecnologia de Informação e Comunicação.",
-              "itens": []
-            }
-          ]
+          "texto": "Os Estados-membros devem criar marcos para a realização de avaliações de impacto, como avaliação de impacto ético, para identificar e avaliar os benefícios, as preocupações e os riscos dos sistemas de IA, bem como medidas adequadas de prevenção, mitigação e monitoramento de riscos, entre outros mecanismos de garantia. Tais avaliações de impacto devem identificar impactos nos direitos humanos e nas liberdades fundamentais, especialmente, mas não apenas, nos direitos de pessoas marginalizadas e vulneráveis ou pessoas em situações vulneráveis, direitos do trabalho, meio ambiente e ecossistemas e suas implicações éticas e sociais, e facilitar participação dos cidadãos em sintonia com os valores princípios estabelecidos nesta Recomendação.",
+          "alineas": []
+        },
+        {
+          "numero": 51,
+          "bloco_tematico": null,
+          "texto": "Os Estados-membros e as empresas do setor privado devem desenvolver mecanismos de devida diligência e supervisão para identificar, prevenir, mitigar e explicar de que forma abordam o impacto dos sistemas de IA no respeito aos direitos humanos, ao Estado de direito e às sociedades inclusivas. Os Estados-membros também devem ser capazes de avaliar o impacto socioeconômico dos sistemas de IA na pobreza e assegurar que a distância entre as pessoas que vivem na riqueza e na pobreza, bem como a exclusão digital dentro entre os países, não aumente com a adoção em massa de tecnologias de IA no presente e no futuro. Para esse efeito, de maneira particular, devem ser implementados protocolos de transparência aplicáveis, correspondentes ao acesso à informação, incluindo informações de interesse público em posse de entidades privadas. Os Estados-membros, as empresas do setor privado e a sociedade civil devem investigar os efeitos sociológicos e psicológicos das recomendações baseadas em IA na autonomia de decisão dos seres humanos. Sistemas de IA identificados como possíveis riscos para os direitos humanos devem ser amplamente testados por atores de IA, inclusive, se necessário, em condições do mundo real, como parte da avaliação de impacto ético, antes de lançá-los no mercado. a 52. Os Estados-membros e as empresas devem implee mentar medidas adequadas para acompanhar todas as fases do ciclo de vida dos sistemas de IA, incluindo o funcionamento dos algoritmos utilizados para tomada de decisão, os dados, bem como os atores de IA envolvidos no processo, especialmente em serviços públicos e onde for necessária a interação direta do usuário final, como parte da avaliação de impacto ético. As obrigações dos Estados-membros relativas a direitos humanos devem fazer parte dos aspectos éticos das avaliações de sistemas de IA.",
+          "alineas": []
+        },
+        {
+          "numero": 53,
+          "bloco_tematico": null,
+          "texto": "Os governos devem adotar um marco normativo que e estabeleça um procedimento, em especial para autoridades públicas, para realizar avaliações de impacto ético em sistemas de IA para prever consequências, mitigar riscos, evitar consequências prejudiciais, facilitar a participação dos cidadãos e abordar desafios sociais. A avaliação também deve estabelecer mecanismos de supervisão apropriados, incluindo auditabilidade, rastreabilidade e explicabilidade, que permitam a avaliação de algoritmos, dados e processos de planejamento, bem como incluir a revisão externa dos sistemas de IA. As avaliações de impacto ético devem ser transparentes e abertas ao público, quando for apropriado. Essas avaliações também devem ser multidisciplinares, multiparceiros, multiculturais, pluralistas e inclusivas. As autoridades públicas devem ser obrigadas a monitorar os sistemas de IA implementados e/ou utilizados por essas autoridades, introduzindo mecanismos e ferramentas adequados.",
+          "alineas": []
         }
       ]
     },
     {
-      "id": "conselho-administracao",
-      "tipo": "secao",
-      "numero": "III.I.I",
-      "rotulo": "Título III, Capítulo I, Seção I",
-      "titulo": "Do Conselho de Administração",
+      "id": "iv-ap-02",
+      "tipo": "area_politica",
+      "numero": "IV.2",
+      "rotulo": "Área política 2",
+      "titulo": "Governança e gestão ética",
       "parte": {
-        "numero": "III",
-        "titulo": "Das competências"
+        "numero": "IV",
+        "titulo": "Áreas de ação política"
       },
-      "pagina_inicio": 2,
-      "pagina_fim": 2,
-      "tema": "Competências do Conselho de Administração",
-      "texto_completo": "Art. 4º O Conselho de Administração, órgão superior de deliberação colegiada da Empresa Mato-grossense de Tecnologia da Informação - MTI, tem como missão discutir e aprovar estratégias de negócio apresentadas pela diretoria, acompanhar e zelar pela governança corporativa da empresa e participar de atividades institucionais, em conformidade com a missão da destinadas a promover o desenvolvimento e a integração na área da Tecnologia da Informação e Comunicação no Estado;\nII - deliberar sobre alteração do Estatuto Social da Empresa Mato-grossense de Tecnologia da Informação - MTI, encaminhando-o ao Governador do Estado para a devida formalização legal, respeitando a legislação vigente;\nIII - aprovar e fiscalizar o Acordo de Resultados ou instrumento equivalente com metas e resultados específicos a serem alcançados;\nIV - fixar orientação geral dos negócios da Empresa;\nV - monitorar a gestão dos diretores;\nVI - examinar, a qualquer tempo, os livros e papéis da empresa;\nVII - solicitar informações sobre contratos celebrados ou em via de celebração, e quaisquer outros atos, com vista a assegurar a execução da política da empresa;\nVIII - manifestar-se sobre o relatório da administração e as prestações de contas da empresa;\nIX - aprovar o Plano de Negócios para o exercício anual seguinte;\nX - aprovar o planejamento estratégico, contendo a estratégia de longo prazo atualizada com análise de riscos e oportunidades para, no mínimo, os próximos 5 (cinco) anos;\nXI - aprovar a Carta Anual de Políticas Públicas e Governança Corporativa;\nXII - aprovar a Política de Transações com partes relacionadas;\nXIII - aprovar o Relatório Integrado de Sustentabilidade;\nXIV - aprovar a Política de Divulgação da Informação;\nXV - apoiar a Área de Conformidade, Gestão de Riscos e de Controle Interno quando houver suspeita do envolvimento em irregularidades ou descumprimento da obrigação de adoção de medidas necessárias em relação a situação relatada, por parte dos membros da Diretoria, assegurada sempre a sua atuação independente;\nXVI - aprovar o Código de Conduta e Integridade;\nXVII - discutir, aprovar e monitorar decisões envolvendo práticas de governança corporativa, relacionamento com partes interessadas, política de gestão de pessoas e código de conduta dos agentes;\nXVIII - implementar e supervisionar os sistemas de gestão de riscos e de controle interno estabelecidos para a prevenção e mitigação dos principais riscos a que está exposta a empresa pública, inclusive os riscos relacionados à integridade das informações contábeis e financeiras e os relacionados à ocorrência de corrupção e fraude;\nXIX - devem participar, anualmente, de treinamentos específicos sobre divulgação de informações, controle interno, código de conduta, a Lei Federal nº 12.846, de 1º de agosto de 2013 (Lei Anticorrupção), Governança Corporativa e demais temas relacionados às atividades da empresa pública;\nXX - aprovar a contratação de seguro de responsabilidade civil em favor dos Administradores da Empresa (Conselho de Administração e Diretoria Executiva), se assim tiver interesse;\nXXI - deliberar sobre as alterações de estrutura, avaliando o impacto econômico-financeiro, encaminhando-a ao Governador do Estado para a devida formalização legal, respeitando a legislação vigente;\nXXII - deliberar sobre as demonstrações contábeis e a respectiva prestação de contas;\nXXIII - deliberar sobre a criação de filiais, sucursais e escritórios em outros municípios e países;\nXXIV - autorizar viagens a serviços ou de estudos ao exterior;\nXXV - promover a interpretação do presente Estatuto e deliberar sobre os casos omissos.",
+      "pagina_inicio": 27,
+      "pagina_fim": 29,
+      "tema": "Governança, auditoria, certificação e reparação ética de sistemas de IA",
+      "texto_completo": "54. Os Estados-membros devem garantir que os mecanismos de governança da IA sejam inclusivos, transparentes, multidisciplinares, multilaterais (incluindo a possibilidade de mitigação e reparação de danos além das fronteiras) e multiparceiros. Em particular, a governança deve incluir aspectos de antecipação e proteção efetiva, monitoramento de impacto, execução e reparação.\n55. Os Estados-membros devem assegurar que os danos causados por meio de sistemas de IA sejam investigados e corrigidos, promulgando mecanismos robustos de execução e ações corretivas, para garantir que os direitos humanos, as liberdades fundamentais e o Estado de direito sejam respeitados nos mundos digital físico. Tais mecanismos e ações devem incluir mecanismos de reparação fornecidos por empresas dos setores público e privado. A auditabilidade e a rastreabilidade dos sistemas de IA devem ser promovidas para esse fim. Além disso, os Estados-membros devem fortalecer suas capacidades institucionais de cumprir esse compromisso e, da mesma forma, devem colaborar com os pesquisadores e outras partes interessadas para investigar, prevenir e mitigar usos potencialmente mal-intencionados dos sistemas de IA.\n56. Os Estados-membros são encorajados a desenvolver estratégias nacionais e regionais de IA, assim como a considerar formas brandas de governança, tais como um mecanismo de certificação para sistemas de IA e o reconhecimento mútuo de sua certificação, de acordo com a sensibilidade do campo de aplicação e o impacto esperado nos direitos humanos, no meio ambiente e nos ecossistemas, além de outras considerações éticas estabelecidas nesta Recomendação. Tal mecanismo pode incluir diferentes níveis de auditoria de sistemas, dados e adesão às diretrizes éticas aos requisitos procedimentais considerando os aspectos éticos. Ao mesmo tempo, tal mecanismo não deve impedir a inovação ou desfavorecer pequenas e médias empresas ou start-ups, a sociedade civil, bem como as organizações científicas e de pesquisa, como resultado de uma carga administrativa excessiva. Esses mecanismos também devem incluir um componente de monitoramento periódico para garantir a robustez do sistema e a continuada integridade adesão às diretrizes éticas durante todo o ciclo de vida dos sistemas de IA, exigindo, se necessário, a recertificação.\n57. Os Estados-membros e as autoridades públicas devem realizar uma autoavaliação transparente dos sistemas de IA existentes e propostos, a qual deve incluir, em especial, avaliar se a adoção da IA é apropriada e, em caso afirmativo, incluir uma avaliação mais aprofundada para determinar qual é o método adequado, bem como uma avaliação de se tal adoção resultaria em violações ou abusos de obrigações legais dos Estados-membros relativas a direitos humanos e, se for esse o caso, proibir sua utilização.\n58. Os Estados-membros devem encorajar entidades públicas, empresas do setor privado e organizações da sociee dade civil a envolverem diferentes partes interessadas em sua governança de IA, bem como a considerar o acréscimo do papel de um oficial de ética da IA independente, ou algum outro mecanismo para supervisionar a avaliação do impacto ético, auditoria e esforços de monitoramento contínuo, e garantir a orientação ética dos sistemas de IA. Os Estados-membros, empresas do setor privado e organizações da sociedade civil, com o apoio da UNESCO, são incentivados a criar uma rede de oficiais de ética da IA independentes para dar apoio a esse processo nos âmbitos nacional, regional e internacional.\n59. Os Estados-membros devem promover a criação e o acesso a um ecossistema digital para o desenvolvimento ético e inclusivo de sistemas de IA no âmbito nacional, incluindo abordar as lacunas existentes no acesso ao ciclo de vida dos sistemas de IA, contribuindo assim para a colaboração internacional. Tal ecossistema inclui, em particular, tecnologias e infraestrutura digitais e mecanismos para compartilhar conhecimentos de IA, conforme apropriado. e\n60. Os Estados-membros devem estabelecer mecanismos, em colaboração com organizações internacionais, corporações transnacionais, instituições acadêmicas e sociedade civil, para assegurar a participação ativa de todos os próprios Estados-membros, especialmente os LMICs, em particular LDCs, LLDCs e SIDS, nos debates internacionais sobre governança de IA. Isso pode ocore rer pela provisão de fundos, garantindo a participação regional igualitária, ou quaisquer outros mecanismos. Além disso, a fim de garantir a inclusão dos fóruns de IA, os Estados-membros devem facilitar as viagens dos atores de IA dentro e fora do seu território, especialmente dos LMICs, em particular dos LDCs, LLDCs SIDS, para fins de participação nesses fóruns.\n61. As alterações às leis nacionais existentes ou a elaboração de nova legislação que aborde sistemas de IA devem cumprir com as obrigações legais dos Estados-membros relativas direitos humanos e promover esses direitos e as liberdades fundamentais em todo o ciclo de vida daqueles sistemas. A promoção deles também deve assumir a forma de iniciativas de governança, bons exemplos de práticas colaborativas em relação a sistemas de IA, e diretrizes técnicas metodológicas, nacionais e internacionais, à medida que as tecnologias de IA avancem. Os diversos setores, incluindo o setor privado, em suas práticas relativas aos sistemas de IA, devem respeitar, proteger e promover os direitos humanos e as liberdades fundamentais, usando instrumentos novos e existentes em combinação com esta Recomendação.\n62. Os Estados-membros que adquirem sistemas de IA para uso em casos sensíveis aos direitos humanos, como aplicação da lei, bem-estar, emprego, meios de comunicação e provedores de informação, assistência médica e sistema judiciário independente, devem fornecer mecanismos para monitorar os impactos sociais e econômicos de tais sistemas por autoridades supervisoras adequadas, incluindo autoridades independentes com a função de proteção de dados, supervisão setorial e órgãos públicos responsáveis pela supervisão.\n63. Os Estados-membros devem aumentar a capacidade do Poder Judiciário de tomar decisões relacionadas a sistemas de IA, de acordo com o Estado de direito e em sintonia com o direito e as normas internacionais, inclusive no uso de sistemas de IA em suas deliberações, ao mesmo tempo assegurando que seja mantido o princípio da supervisão humana. No caso de o Judiciário utilizar sistemas de IA, são necessárias salvaguardas suficientes para garantir, entre outros, a proteção dos direitos humanos fundamentais, do Estado de direito, da independência judicial, bem como o princípio da supervisão humana, assim como para garantir que o desenvolvimento e o uso de sistemas de IA no próprio Judiciário sejam confiáveis, orientados ao interesse público e centrado no ser humano.\n64. Os Estados-membros devem assegurar que os governos e as organizações multilaterais desempenhem um papel de liderança na garantia da proteção e segurança dos sistemas de IA, com a participação das várias partes interessadas. Especificamente, os Estados-membros, as organizações internacionais e outros organismos relevantes devem desenvolver padrões internacionais que descrevam níveis mensuráveis e verificáveis de segurança e transparência, de modo que os sistemas possam ser avaliados de forma objetiva e os níveis de conformidade possam ser determinados. Além disso, os Estados-membros e as empresas devem apoiar continuamente a pesquisa estratégica sobre potene ciais riscos de segurança e proteção das tecnologias de IA e incentivar a pesquisa sobre transparência e explicabilidade, inclusão e alfabetização, destinando financiamento adicional a essas áreas para diferentes domínios e em diferentes níveis, tais como linguagem técnica e natural. a\n65. Os Estados-membros devem implementar políticas para assegurar que as ações dos atores de IA sejam compatíveis com as leis, as normas e os princípios internacionais de direitos humanos durante todo o ciclo de vida e dos sistemas de IA, ao mesmo tempo levando em plena consideração as atuais diversidades culturais e sociais, incluindo os costumes locais e as tradições religiosas, tendo em devida conta a precedência e a universalidade dos direitos humanos.\n66. Os Estados-membros devem colocar em prática mecanismos para exigir que os atores de IA divulguem e combatam todos os tipos de estereótipos nos resultados de sistemas e dados de IA, seja por projeto ou por negligência, e para garantir que o treinamento de conjuntos de dados destinados a sistemas de IA não fomentem desigualdades culturais, econômicas ou sociais, preconceitos, disseminação de desinformação, e interrupção da liberdade de expressão e do acesso à informação. Atenção especial deve ser dada às regiões onde os dados são escassos.\n67. Os Estados-membros devem implementar políticas para promover e ampliar a diversidade e a inclusão, que reflitam suas populações em equipes de desenvolvimento de IA e treinamentos de conjuntos de dados, bem como para garantir acesso igualitário a tecnologias de IA e seus benefícios, especialmente para grupos marginalizados, tanto de áreas rurais como urbanas.\n68. Os Estados-membros devem desenvolver, revisar e adaptar, conforme apropriado, marcos regulatórios para obter responsabilização e prestação de contas pelo conteúdo e pelos resultados dos sistemas de IA nas diferentes fases de seu ciclo de vida. Os Estados-membros também devem, se necessário, criar marcos de responsabilização ou esclarecer a interpretação dos marcos existentes para assegurar a prestação de contas quanto aos resultados e ao funcionamento dos sistemas de IA. Além disso, quando do desenvolvimento de marcos regulatórios, os Estados- -membros devem, em particular, levar em conta que a responsabilidade e imputabilidade finais devem estar sempre com pessoas físicas ou jurídicas, e que os sistemas de IA não devem eles próprios ser dotados de personalidade jurídica. Para garantir isso, tais marcos devem ser coerentes com o princípio da supervisão humana e estabelecer uma abordagem abrangente, com foco nos atores de IA e nos processos tecnológicos envolvidos em todo os estágios do ciclo de vida dos sistemas de IA.\n69. A fim de estabelecer normas onde elas não existem, ou para adaptar os marcos legais existentes, os Estados- -membros devem envolver todos os atores de IA (incluindo, mas sem se limitar a, pesquisadores, representantes da sociedade civil e de aplicação da lei, seguradoras, investidores, fabricantes, engenheiros, advogados e usuários). As normas podem amadurecer e se tornar melhores práticas, leis e regulamentos. Os Estados-membros são ainda encorajados a usar mecanismos, tais como protótipos de políticas e “caixas de areia” regulatórias para acelerar o desenvolvimento de leis, regulamentos e políticas, incluindo revisões periódicas de tais mecanismos, em sintonia com o rápido desenvolvimento de novas tecnologias, assim como assegurar que as leis e os regulamentos possam ser testados em um ambiente seguro antes de ser oficialmente adotados. Os Estados-membros devem apoiar administrações locais no desenvolvimento de políticas, regulamentos e leis locais alinhadas com os marcos legais nacionais e internacionais.\n70. Os Estados-membros devem definir claramente os requisitos de transparência e explicabilidade dos sistemas de IA, de modo a ajudar a assegurar a confiabilidade de todo o ciclo de vida desses sistemas. Tais requisitos devem envolver o planejamento e a implementação de mecanismos de impacto que considerem a natureza do domínio do aplicativo, o uso pretendido, o público- -alvo e a viabilidade de cada sistema de IA específico.",
       "paragrafos": [
         {
-          "numero": 4,
+          "numero": 54,
           "bloco_tematico": null,
-          "texto": "O Conselho de Administração, órgão superior de deliberação colegiada da Empresa Mato-grossense de Tecnologia da Informação - MTI, tem como missão discutir e aprovar estratégias de negócio apresentadas pela diretoria, acompanhar e zelar pela governança corporativa da empresa e participar de atividades institucionais, em conformidade com a missão da destinadas a promover o desenvolvimento e a integração na área da Tecnologia da Informação e Comunicação no Estado;",
-          "alineas": [
-            {
-              "marcador": "II",
-              "texto": "deliberar sobre alteração do Estatuto Social da Empresa Mato-grossense de Tecnologia da Informação - MTI, encaminhando-o ao Governador do Estado para a devida formalização legal, respeitando a legislação vigente;",
-              "itens": []
-            },
-            {
-              "marcador": "III",
-              "texto": "aprovar e fiscalizar o Acordo de Resultados ou instrumento equivalente com metas e resultados específicos a serem alcançados;",
-              "itens": []
-            },
-            {
-              "marcador": "IV",
-              "texto": "fixar orientação geral dos negócios da Empresa;",
-              "itens": []
-            },
-            {
-              "marcador": "V",
-              "texto": "monitorar a gestão dos diretores;",
-              "itens": []
-            },
-            {
-              "marcador": "VI",
-              "texto": "examinar, a qualquer tempo, os livros e papéis da empresa;",
-              "itens": []
-            },
-            {
-              "marcador": "VII",
-              "texto": "solicitar informações sobre contratos celebrados ou em via de celebração, e quaisquer outros atos, com vista a assegurar a execução da política da empresa;",
-              "itens": []
-            },
-            {
-              "marcador": "VIII",
-              "texto": "manifestar-se sobre o relatório da administração e as prestações de contas da empresa;",
-              "itens": []
-            },
-            {
-              "marcador": "IX",
-              "texto": "aprovar o Plano de Negócios para o exercício anual seguinte;",
-              "itens": []
-            },
-            {
-              "marcador": "X",
-              "texto": "aprovar o planejamento estratégico, contendo a estratégia de longo prazo atualizada com análise de riscos e oportunidades para, no mínimo, os próximos 5 (cinco) anos;",
-              "itens": []
-            },
-            {
-              "marcador": "XI",
-              "texto": "aprovar a Carta Anual de Políticas Públicas e Governança Corporativa;",
-              "itens": []
-            },
-            {
-              "marcador": "XII",
-              "texto": "aprovar a Política de Transações com partes relacionadas;",
-              "itens": []
-            },
-            {
-              "marcador": "XIII",
-              "texto": "aprovar o Relatório Integrado de Sustentabilidade;",
-              "itens": []
-            },
-            {
-              "marcador": "XIV",
-              "texto": "aprovar a Política de Divulgação da Informação;",
-              "itens": []
-            },
-            {
-              "marcador": "XV",
-              "texto": "apoiar a Área de Conformidade, Gestão de Riscos e de Controle Interno quando houver suspeita do envolvimento em irregularidades ou descumprimento da obrigação de adoção de medidas necessárias em relação a situação relatada, por parte dos membros da Diretoria, assegurada sempre a sua atuação independente;",
-              "itens": []
-            },
-            {
-              "marcador": "XVI",
-              "texto": "aprovar o Código de Conduta e Integridade;",
-              "itens": []
-            },
-            {
-              "marcador": "XVII",
-              "texto": "discutir, aprovar e monitorar decisões envolvendo práticas de governança corporativa, relacionamento com partes interessadas, política de gestão de pessoas e código de conduta dos agentes;",
-              "itens": []
-            },
-            {
-              "marcador": "XVIII",
-              "texto": "implementar e supervisionar os sistemas de gestão de riscos e de controle interno estabelecidos para a prevenção e mitigação dos principais riscos a que está exposta a empresa pública, inclusive os riscos relacionados à integridade das informações contábeis e financeiras e os relacionados à ocorrência de corrupção e fraude;",
-              "itens": []
-            },
-            {
-              "marcador": "XIX",
-              "texto": "devem participar, anualmente, de treinamentos específicos sobre divulgação de informações, controle interno, código de conduta, a Lei Federal nº 12.846, de 1º de agosto de 2013 (Lei Anticorrupção), Governança Corporativa e demais temas relacionados às atividades da empresa pública;",
-              "itens": []
-            },
-            {
-              "marcador": "XX",
-              "texto": "aprovar a contratação de seguro de responsabilidade civil em favor dos Administradores da Empresa (Conselho de Administração e Diretoria Executiva), se assim tiver interesse;",
-              "itens": []
-            },
-            {
-              "marcador": "XXI",
-              "texto": "deliberar sobre as alterações de estrutura, avaliando o impacto econômico-financeiro, encaminhando-a ao Governador do Estado para a devida formalização legal, respeitando a legislação vigente;",
-              "itens": []
-            },
-            {
-              "marcador": "XXII",
-              "texto": "deliberar sobre as demonstrações contábeis e a respectiva prestação de contas;",
-              "itens": []
-            },
-            {
-              "marcador": "XXIII",
-              "texto": "deliberar sobre a criação de filiais, sucursais e escritórios em outros municípios e países;",
-              "itens": []
-            },
-            {
-              "marcador": "XXIV",
-              "texto": "autorizar viagens a serviços ou de estudos ao exterior;",
-              "itens": []
-            },
-            {
-              "marcador": "XXV",
-              "texto": "promover a interpretação do presente Estatuto e deliberar sobre os casos omissos.",
-              "itens": []
-            }
-          ]
+          "texto": "Os Estados-membros devem garantir que os mecanismos de governança da IA sejam inclusivos, transparentes, multidisciplinares, multilaterais (incluindo a possibilidade de mitigação e reparação de danos além das fronteiras) e multiparceiros. Em particular, a governança deve incluir aspectos de antecipação e proteção efetiva, monitoramento de impacto, execução e reparação.",
+          "alineas": []
+        },
+        {
+          "numero": 55,
+          "bloco_tematico": null,
+          "texto": "Os Estados-membros devem assegurar que os danos causados por meio de sistemas de IA sejam investigados e corrigidos, promulgando mecanismos robustos de execução e ações corretivas, para garantir que os direitos humanos, as liberdades fundamentais e o Estado de direito sejam respeitados nos mundos digital físico. Tais mecanismos e ações devem incluir mecanismos de reparação fornecidos por empresas dos setores público e privado. A auditabilidade e a rastreabilidade dos sistemas de IA devem ser promovidas para esse fim. Além disso, os Estados-membros devem fortalecer suas capacidades institucionais de cumprir esse compromisso e, da mesma forma, devem colaborar com os pesquisadores e outras partes interessadas para investigar, prevenir e mitigar usos potencialmente mal-intencionados dos sistemas de IA.",
+          "alineas": []
+        },
+        {
+          "numero": 56,
+          "bloco_tematico": null,
+          "texto": "Os Estados-membros são encorajados a desenvolver estratégias nacionais e regionais de IA, assim como a considerar formas brandas de governança, tais como um mecanismo de certificação para sistemas de IA e o reconhecimento mútuo de sua certificação, de acordo com a sensibilidade do campo de aplicação e o impacto esperado nos direitos humanos, no meio ambiente e nos ecossistemas, além de outras considerações éticas estabelecidas nesta Recomendação. Tal mecanismo pode incluir diferentes níveis de auditoria de sistemas, dados e adesão às diretrizes éticas aos requisitos procedimentais considerando os aspectos éticos. Ao mesmo tempo, tal mecanismo não deve impedir a inovação ou desfavorecer pequenas e médias empresas ou start-ups, a sociedade civil, bem como as organizações científicas e de pesquisa, como resultado de uma carga administrativa excessiva. Esses mecanismos também devem incluir um componente de monitoramento periódico para garantir a robustez do sistema e a continuada integridade adesão às diretrizes éticas durante todo o ciclo de vida dos sistemas de IA, exigindo, se necessário, a recertificação.",
+          "alineas": []
+        },
+        {
+          "numero": 57,
+          "bloco_tematico": null,
+          "texto": "Os Estados-membros e as autoridades públicas devem realizar uma autoavaliação transparente dos sistemas de IA existentes e propostos, a qual deve incluir, em especial, avaliar se a adoção da IA é apropriada e, em caso afirmativo, incluir uma avaliação mais aprofundada para determinar qual é o método adequado, bem como uma avaliação de se tal adoção resultaria em violações ou abusos de obrigações legais dos Estados-membros relativas a direitos humanos e, se for esse o caso, proibir sua utilização.",
+          "alineas": []
+        },
+        {
+          "numero": 58,
+          "bloco_tematico": null,
+          "texto": "Os Estados-membros devem encorajar entidades públicas, empresas do setor privado e organizações da sociee dade civil a envolverem diferentes partes interessadas em sua governança de IA, bem como a considerar o acréscimo do papel de um oficial de ética da IA independente, ou algum outro mecanismo para supervisionar a avaliação do impacto ético, auditoria e esforços de monitoramento contínuo, e garantir a orientação ética dos sistemas de IA. Os Estados-membros, empresas do setor privado e organizações da sociedade civil, com o apoio da UNESCO, são incentivados a criar uma rede de oficiais de ética da IA independentes para dar apoio a esse processo nos âmbitos nacional, regional e internacional.",
+          "alineas": []
+        },
+        {
+          "numero": 59,
+          "bloco_tematico": null,
+          "texto": "Os Estados-membros devem promover a criação e o acesso a um ecossistema digital para o desenvolvimento ético e inclusivo de sistemas de IA no âmbito nacional, incluindo abordar as lacunas existentes no acesso ao ciclo de vida dos sistemas de IA, contribuindo assim para a colaboração internacional. Tal ecossistema inclui, em particular, tecnologias e infraestrutura digitais e mecanismos para compartilhar conhecimentos de IA, conforme apropriado. e",
+          "alineas": []
+        },
+        {
+          "numero": 60,
+          "bloco_tematico": null,
+          "texto": "Os Estados-membros devem estabelecer mecanismos, em colaboração com organizações internacionais, corporações transnacionais, instituições acadêmicas e sociedade civil, para assegurar a participação ativa de todos os próprios Estados-membros, especialmente os LMICs, em particular LDCs, LLDCs e SIDS, nos debates internacionais sobre governança de IA. Isso pode ocore rer pela provisão de fundos, garantindo a participação regional igualitária, ou quaisquer outros mecanismos. Além disso, a fim de garantir a inclusão dos fóruns de IA, os Estados-membros devem facilitar as viagens dos atores de IA dentro e fora do seu território, especialmente dos LMICs, em particular dos LDCs, LLDCs SIDS, para fins de participação nesses fóruns.",
+          "alineas": []
+        },
+        {
+          "numero": 61,
+          "bloco_tematico": null,
+          "texto": "As alterações às leis nacionais existentes ou a elaboração de nova legislação que aborde sistemas de IA devem cumprir com as obrigações legais dos Estados-membros relativas direitos humanos e promover esses direitos e as liberdades fundamentais em todo o ciclo de vida daqueles sistemas. A promoção deles também deve assumir a forma de iniciativas de governança, bons exemplos de práticas colaborativas em relação a sistemas de IA, e diretrizes técnicas metodológicas, nacionais e internacionais, à medida que as tecnologias de IA avancem. Os diversos setores, incluindo o setor privado, em suas práticas relativas aos sistemas de IA, devem respeitar, proteger e promover os direitos humanos e as liberdades fundamentais, usando instrumentos novos e existentes em combinação com esta Recomendação.",
+          "alineas": []
+        },
+        {
+          "numero": 62,
+          "bloco_tematico": null,
+          "texto": "Os Estados-membros que adquirem sistemas de IA para uso em casos sensíveis aos direitos humanos, como aplicação da lei, bem-estar, emprego, meios de comunicação e provedores de informação, assistência médica e sistema judiciário independente, devem fornecer mecanismos para monitorar os impactos sociais e econômicos de tais sistemas por autoridades supervisoras adequadas, incluindo autoridades independentes com a função de proteção de dados, supervisão setorial e órgãos públicos responsáveis pela supervisão.",
+          "alineas": []
+        },
+        {
+          "numero": 63,
+          "bloco_tematico": null,
+          "texto": "Os Estados-membros devem aumentar a capacidade do Poder Judiciário de tomar decisões relacionadas a sistemas de IA, de acordo com o Estado de direito e em sintonia com o direito e as normas internacionais, inclusive no uso de sistemas de IA em suas deliberações, ao mesmo tempo assegurando que seja mantido o princípio da supervisão humana. No caso de o Judiciário utilizar sistemas de IA, são necessárias salvaguardas suficientes para garantir, entre outros, a proteção dos direitos humanos fundamentais, do Estado de direito, da independência judicial, bem como o princípio da supervisão humana, assim como para garantir que o desenvolvimento e o uso de sistemas de IA no próprio Judiciário sejam confiáveis, orientados ao interesse público e centrado no ser humano.",
+          "alineas": []
+        },
+        {
+          "numero": 64,
+          "bloco_tematico": null,
+          "texto": "Os Estados-membros devem assegurar que os governos e as organizações multilaterais desempenhem um papel de liderança na garantia da proteção e segurança dos sistemas de IA, com a participação das várias partes interessadas. Especificamente, os Estados-membros, as organizações internacionais e outros organismos relevantes devem desenvolver padrões internacionais que descrevam níveis mensuráveis e verificáveis de segurança e transparência, de modo que os sistemas possam ser avaliados de forma objetiva e os níveis de conformidade possam ser determinados. Além disso, os Estados-membros e as empresas devem apoiar continuamente a pesquisa estratégica sobre potene ciais riscos de segurança e proteção das tecnologias de IA e incentivar a pesquisa sobre transparência e explicabilidade, inclusão e alfabetização, destinando financiamento adicional a essas áreas para diferentes domínios e em diferentes níveis, tais como linguagem técnica e natural. a",
+          "alineas": []
+        },
+        {
+          "numero": 65,
+          "bloco_tematico": null,
+          "texto": "Os Estados-membros devem implementar políticas para assegurar que as ações dos atores de IA sejam compatíveis com as leis, as normas e os princípios internacionais de direitos humanos durante todo o ciclo de vida e dos sistemas de IA, ao mesmo tempo levando em plena consideração as atuais diversidades culturais e sociais, incluindo os costumes locais e as tradições religiosas, tendo em devida conta a precedência e a universalidade dos direitos humanos.",
+          "alineas": []
+        },
+        {
+          "numero": 66,
+          "bloco_tematico": null,
+          "texto": "Os Estados-membros devem colocar em prática mecanismos para exigir que os atores de IA divulguem e combatam todos os tipos de estereótipos nos resultados de sistemas e dados de IA, seja por projeto ou por negligência, e para garantir que o treinamento de conjuntos de dados destinados a sistemas de IA não fomentem desigualdades culturais, econômicas ou sociais, preconceitos, disseminação de desinformação, e interrupção da liberdade de expressão e do acesso à informação. Atenção especial deve ser dada às regiões onde os dados são escassos.",
+          "alineas": []
+        },
+        {
+          "numero": 67,
+          "bloco_tematico": null,
+          "texto": "Os Estados-membros devem implementar políticas para promover e ampliar a diversidade e a inclusão, que reflitam suas populações em equipes de desenvolvimento de IA e treinamentos de conjuntos de dados, bem como para garantir acesso igualitário a tecnologias de IA e seus benefícios, especialmente para grupos marginalizados, tanto de áreas rurais como urbanas.",
+          "alineas": []
+        },
+        {
+          "numero": 68,
+          "bloco_tematico": null,
+          "texto": "Os Estados-membros devem desenvolver, revisar e adaptar, conforme apropriado, marcos regulatórios para obter responsabilização e prestação de contas pelo conteúdo e pelos resultados dos sistemas de IA nas diferentes fases de seu ciclo de vida. Os Estados-membros também devem, se necessário, criar marcos de responsabilização ou esclarecer a interpretação dos marcos existentes para assegurar a prestação de contas quanto aos resultados e ao funcionamento dos sistemas de IA. Além disso, quando do desenvolvimento de marcos regulatórios, os Estados- -membros devem, em particular, levar em conta que a responsabilidade e imputabilidade finais devem estar sempre com pessoas físicas ou jurídicas, e que os sistemas de IA não devem eles próprios ser dotados de personalidade jurídica. Para garantir isso, tais marcos devem ser coerentes com o princípio da supervisão humana e estabelecer uma abordagem abrangente, com foco nos atores de IA e nos processos tecnológicos envolvidos em todo os estágios do ciclo de vida dos sistemas de IA.",
+          "alineas": []
+        },
+        {
+          "numero": 69,
+          "bloco_tematico": null,
+          "texto": "A fim de estabelecer normas onde elas não existem, ou para adaptar os marcos legais existentes, os Estados- -membros devem envolver todos os atores de IA (incluindo, mas sem se limitar a, pesquisadores, representantes da sociedade civil e de aplicação da lei, seguradoras, investidores, fabricantes, engenheiros, advogados e usuários). As normas podem amadurecer e se tornar melhores práticas, leis e regulamentos. Os Estados-membros são ainda encorajados a usar mecanismos, tais como protótipos de políticas e “caixas de areia” regulatórias para acelerar o desenvolvimento de leis, regulamentos e políticas, incluindo revisões periódicas de tais mecanismos, em sintonia com o rápido desenvolvimento de novas tecnologias, assim como assegurar que as leis e os regulamentos possam ser testados em um ambiente seguro antes de ser oficialmente adotados. Os Estados-membros devem apoiar administrações locais no desenvolvimento de políticas, regulamentos e leis locais alinhadas com os marcos legais nacionais e internacionais.",
+          "alineas": []
+        },
+        {
+          "numero": 70,
+          "bloco_tematico": null,
+          "texto": "Os Estados-membros devem definir claramente os requisitos de transparência e explicabilidade dos sistemas de IA, de modo a ajudar a assegurar a confiabilidade de todo o ciclo de vida desses sistemas. Tais requisitos devem envolver o planejamento e a implementação de mecanismos de impacto que considerem a natureza do domínio do aplicativo, o uso pretendido, o público- -alvo e a viabilidade de cada sistema de IA específico.",
+          "alineas": []
         }
       ]
     },
     {
-      "id": "conselho-fiscal",
-      "tipo": "secao",
-      "numero": "III.I.II",
-      "rotulo": "Título III, Capítulo I, Seção II",
-      "titulo": "Do Conselho Fiscal",
+      "id": "iv-ap-05",
+      "tipo": "area_politica",
+      "numero": "IV.5",
+      "rotulo": "Área política 5",
+      "titulo": "Meio ambiente e ecossistemas",
       "parte": {
-        "numero": "III",
-        "titulo": "Das competências"
+        "numero": "IV",
+        "titulo": "Áreas de ação política"
       },
-      "pagina_inicio": 2,
-      "pagina_fim": 3,
-      "tema": "Competências do Conselho Fiscal",
-      "texto_completo": "Art. 5º O Conselho Fiscal da MTI, órgão fiscalizador, tem como missão assegurar os princípios de transparência, equidade e prestação de contas da Empresa, competindo-lhe:\nI - fiscalizar a gestão financeira da Empresa, zelando pelo bom e regular emprego de seus recursos financeiros e orçamentários;\nII - examinar os balanços, balancetes, relatórios e prestação de contas da Empresa do ano que findou, restituindo- os ao seu Di- retor-Presidente com o respectivo parecer até o 5º (quinto) dia útil do mês de março de cada ano;\nIII - acompanhar e analisar a execução financeira e orçamentária da Empresa, podendo examinar livros ou quaisquer documentos e ainda requisitar informações que entender necessárias;\nIV - pronunciar-se sobre assunto de fiscalização a que for submetido pelo Conselho Administrativo e/ou pelo Diretor Presidente da Empresa;\nVII - levar ao conhecimento do Diretor-Presidente e do Conselho de Administração da Empresa quaisquer irregularidades constatadas;\nVIII - exarar parecer técnico contendo relatório, fundamentação, conclusão e recomendações sobre as análises realizadas em cada reunião, entregando-o impreterivelmente até a data da reunião subsequente.",
+      "pagina_inicio": 31,
+      "pagina_fim": 32,
+      "tema": "Impacto ambiental da IA e uso da IA para sustentabilidade",
+      "texto_completo": "84. Os Estados-membros e as empresas devem avaliar o impacto ambiental direto e indireto ao longo do ciclo de vida dos sistemas de IA, incluindo, mas não se limitando sua pegada de carbono, consumo de energia e impacto ambiental da extração de matérias-primas para apoiar fabricação de tecnologias de IA, e reduzir o impacto ambiental dos sistemas de IA e das infraestruturas de dados. Os Estados-membros também devem garantir a conformidade de todos os atores de IA com a legislação, as políticas e as práticas ambientais.\n85. Os Estados-membros devem aplicar incentivos, quando for necessário e apropriado, para garantir o desenvolvimento e a adoção de soluções éticas e baseadas em direitos, alimentadas por IA, para a resiliência ao risco de desastres; o monitoramento, proteção e regeneração do meio ambiente e dos ecossistemas; e a preservação do planeta. Esses sistemas de IA devem envolver a participação das comunidades locais e indígenas em todo o ciclo de vida dos sistemas de IA, bem como devem apoiar abordagens do tipo “economia circular” e padrões de consumo e produção sustentáveis. Alguns exemplos incluem o uso de sistemas de IA, quando for necessário e apropriado, para:\n(a) apoiar a proteção, o monitoramento e a gestão de recursos naturais;\n(b) apoiar a previsão, a prevenção, o controle e a mitigação de problemas relacionados ao clima;\n(c) apoiar um ecossistema alimentar mais eficiente sustentável;\n(d) apoiar a aceleração do acesso e da adoção em massa de energias sustentáveis; a\n(e) habilitar e promover a integração de infraestruturas a sustentáveis, modelos de negócios sustentáveis e financiamento sustentável para o desenvolvimento sustentável; e\n(f) detectar poluentes ou prever os níveis de poluição e, assim, ajudar as partes interessadas relevantes a identificar, planejar e colocar em prática intervenções direcionadas para prevenir e reduzir a poluição e exposição.\n86. Ao escolher métodos de IA, considerando o potencial caráter de uso intensivo de dados ou recursos de alguns deles, assim como o respectivo impacto sobre o meio ambiente, os Estados-membros devem assegurar que os atores de IA, em consonância com o princípio da proporcionalidade, deem preferência a métodos de IA eficientes em termos de dados, energia e recursos. Devem ser desenvolvidos requisitos para garantir que evidências adequadas estejam disponíveis para mostrar que um aplicativo de IA terá o efeito pretendido, ou que as salvaguardas que acompanham tal aplicativo podem apoiar a justificativa para seu uso. Se isso não puder ser feito, deve ser favorecido o princípio da precaução e, em casos em que existem impactos desproporcionalmente negativos ao meio ambiente, a IA deve não ser usada. e",
       "paragrafos": [
         {
-          "numero": 5,
+          "numero": 84,
           "bloco_tematico": null,
-          "texto": "O Conselho Fiscal da MTI, órgão fiscalizador, tem como missão assegurar os princípios de transparência, equidade e prestação de contas da Empresa, competindo-lhe:",
+          "texto": "Os Estados-membros e as empresas devem avaliar o impacto ambiental direto e indireto ao longo do ciclo de vida dos sistemas de IA, incluindo, mas não se limitando sua pegada de carbono, consumo de energia e impacto ambiental da extração de matérias-primas para apoiar fabricação de tecnologias de IA, e reduzir o impacto ambiental dos sistemas de IA e das infraestruturas de dados. Os Estados-membros também devem garantir a conformidade de todos os atores de IA com a legislação, as políticas e as práticas ambientais.",
+          "alineas": []
+        },
+        {
+          "numero": 85,
+          "bloco_tematico": null,
+          "texto": "Os Estados-membros devem aplicar incentivos, quando for necessário e apropriado, para garantir o desenvolvimento e a adoção de soluções éticas e baseadas em direitos, alimentadas por IA, para a resiliência ao risco de desastres; o monitoramento, proteção e regeneração do meio ambiente e dos ecossistemas; e a preservação do planeta. Esses sistemas de IA devem envolver a participação das comunidades locais e indígenas em todo o ciclo de vida dos sistemas de IA, bem como devem apoiar abordagens do tipo “economia circular” e padrões de consumo e produção sustentáveis. Alguns exemplos incluem o uso de sistemas de IA, quando for necessário e apropriado, para:",
           "alineas": [
             {
-              "marcador": "I",
-              "texto": "fiscalizar a gestão financeira da Empresa, zelando pelo bom e regular emprego de seus recursos financeiros e orçamentários;",
+              "marcador": "a",
+              "texto": "apoiar a proteção, o monitoramento e a gestão de recursos naturais;",
               "itens": []
             },
             {
-              "marcador": "II",
-              "texto": "examinar os balanços, balancetes, relatórios e prestação de contas da Empresa do ano que findou, restituindo- os ao seu Di- retor-Presidente com o respectivo parecer até o 5º (quinto) dia útil do mês de março de cada ano;",
+              "marcador": "b",
+              "texto": "apoiar a previsão, a prevenção, o controle e a mitigação de problemas relacionados ao clima;",
               "itens": []
             },
             {
-              "marcador": "III",
-              "texto": "acompanhar e analisar a execução financeira e orçamentária da Empresa, podendo examinar livros ou quaisquer documentos e ainda requisitar informações que entender necessárias;",
+              "marcador": "c",
+              "texto": "apoiar um ecossistema alimentar mais eficiente sustentável;",
               "itens": []
             },
             {
-              "marcador": "IV",
-              "texto": "pronunciar-se sobre assunto de fiscalização a que for submetido pelo Conselho Administrativo e/ou pelo Diretor Presidente da Empresa;",
+              "marcador": "d",
+              "texto": "apoiar a aceleração do acesso e da adoção em massa de energias sustentáveis; a",
               "itens": []
             },
             {
-              "marcador": "VII",
-              "texto": "levar ao conhecimento do Diretor-Presidente e do Conselho de Administração da Empresa quaisquer irregularidades constatadas;",
+              "marcador": "e",
+              "texto": "habilitar e promover a integração de infraestruturas a sustentáveis, modelos de negócios sustentáveis e financiamento sustentável para o desenvolvimento sustentável; e",
               "itens": []
             },
             {
-              "marcador": "VIII",
-              "texto": "exarar parecer técnico contendo relatório, fundamentação, conclusão e recomendações sobre as análises realizadas em cada reunião, entregando-o impreterivelmente até a data da reunião subsequente.",
+              "marcador": "f",
+              "texto": "detectar poluentes ou prever os níveis de poluição e, assim, ajudar as partes interessadas relevantes a identificar, planejar e colocar em prática intervenções direcionadas para prevenir e reduzir a poluição e exposição.",
               "itens": []
             }
           ]
+        },
+        {
+          "numero": 86,
+          "bloco_tematico": null,
+          "texto": "Ao escolher métodos de IA, considerando o potencial caráter de uso intensivo de dados ou recursos de alguns deles, assim como o respectivo impacto sobre o meio ambiente, os Estados-membros devem assegurar que os atores de IA, em consonância com o princípio da proporcionalidade, deem preferência a métodos de IA eficientes em termos de dados, energia e recursos. Devem ser desenvolvidos requisitos para garantir que evidências adequadas estejam disponíveis para mostrar que um aplicativo de IA terá o efeito pretendido, ou que as salvaguardas que acompanham tal aplicativo podem apoiar a justificativa para seu uso. Se isso não puder ser feito, deve ser favorecido o princípio da precaução e, em casos em que existem impactos desproporcionalmente negativos ao meio ambiente, a IA deve não ser usada. e",
+          "alineas": []
         }
       ]
     },
     {
-      "id": "gestao-pessoas",
-      "tipo": "secao",
-      "numero": "III.V.IV",
-      "rotulo": "Título III, Capítulo V, Seção IV",
-      "titulo": "Da Unidade de Gestão de Pessoas",
+      "id": "iv-ap-06",
+      "tipo": "area_politica",
+      "numero": "IV.6",
+      "rotulo": "Área política 6",
+      "titulo": "Gênero",
       "parte": {
-        "numero": "III",
-        "titulo": "Das competências"
+        "numero": "IV",
+        "titulo": "Áreas de ação política"
       },
-      "pagina_inicio": 2,
-      "pagina_fim": 8,
-      "tema": "Competências da Unidade de Gestão de Pessoas",
-      "texto_completo": "Art. 34º A Unidade de Gestão de Pessoas tem como missão promover a gestão estratégica dos processos e subsistemas de gestão de pessoas e departamento de pessoal, competindo-lhe: Parágrafo único: A Unidade de Gestão de Pessoas atuará sob a orientação da Unidade Jurídica, submetendo a ela os processos relativos a empregados públicos que carecem de amparo técnico para a tomada de decisão pelo Diretor da área.\nI - propor, implantar e avaliar a Política e o Regimento de Gestão de Pessoas;\nII - supervisionar e orientar a execução dos processos de provimento, movimentação, desenvolvimento, manutenção e monitoramento de pessoal;\nIII - propor, implantar, supervisionar e orientar a execução do Programa gestão por competência;\nIV - acompanhar processo administrativo disciplinar;\nV - gerir a realização de concurso público e processos seletivos;\nVI - participar de negociações coletivas e acordos trabalhistas e monitorar ACT;\nVII - propor, implantar e monitorar a execução PCCS - Plano de Cargos, Carreiras e Salários;\nVIII - supervisionar os processos de recrutamento, seleção, integração e retenção de talentos;\nIX - desenvolver, implementar e acompanhar indicadores de Gestão de Pessoas.\nX - implementar ações corretivas e preventivas para a melhoria contínua dos processos da unidade;\nXI - monitorar o processo de eleição da Comissão Interna de Prevenção de Acidentes (CIPA).;\nXII - planejar, monitorar, controlar e avaliar orçamento da despesa com pessoal/encargo social\nXIII - propor, implantar o regulamento de licença para capacitação;\nXIV - propor, implantar e avaliar o Programa de Socialização do Conhecimento\nXV - propor, implantar e avaliar o Regulamento de Capacitação e Desenvolvimento;\nXVI - zelar pela conformidade com as normas legais e regulamentares vigentes relativas às atividades da Unidade",
+      "pagina_inicio": 32,
+      "pagina_fim": 33,
+      "tema": "Igualdade de gênero e proteção de meninas e mulheres no ciclo de vida da IA",
+      "texto_completo": "87. Os Estados-membros devem garantir que o potencial das tecnologias digitais e da inteligência artificial para contribuir para alcançar a igualdade de gênero seja totalmente maximizado; devem garantir também que os direitos humanos e as liberdades fundamentais de meninas e mulheres, bem como sua segurança e integridade, não sejam violados em nenhum estágio do ciclo de vida dos sistemas de IA. Além disso, a avaliação de impacto ético deve incluir uma perspectiva transversal de gênero.\n88. Os Estados-membros devem ter verbas específicas de seus orçamentos públicos vinculadas ao financiamento de sistemas sensíveis ao gênero, garantir que as políticas digitais nacionais incluam um plano de ação de gênero e desenvolver políticas relevantes, por exemplo, sobre educação para o trabalho, destinadas a apoiar meninas e mulheres para garantir que elas não sejam excluídas da economia digital alimentada por IA. Da mesma forma, deve ser considerado e implementado um investimento especial no fornecimento de programas direcionados e linguagem específica de gênero, para aumentar as oportunidades de participação de meninas e mulheres nas áreas de ciência, tecnologia, engenharia e matemática (STEM), incluindo disciplinas de tecnologias da informação e comunicação (TIC), preparação, empregabilidade, equidade no desenvolvimento de carreiras e crescimento profissional de meninas e mulheres.\n89. Os Estados-membros devem assegurar que o potencial dos sistemas de IA para promover a obtenção da igualdade de gênero seja concretizado. Eles também devem garantir que essas tecnologias não exacerbem, mas eliminem as já amplas disparidades de gênero existentes em vários campos no mundo analógico. Essas disparidades incluem: desigualdade salarial de gênero; representação desigual em certas profissões e atividades; falta de representação em cargos de alta gerência, diretorias ou equipes de pesquisa na área de IA; disparidade educacional; desigualdade de acesso, adoção, uso e acessibilidade financeira a tecnologias digitais e de IA; e distribuição desigual do trabalho não remunerado e das responsabilidades assistenciais em nossas sociedades.\n90. Os Estados-membros devem assegurar que os estereótipos de gênero e os vieses discriminatórios não sejam traduzidos em sistemas de IA; em vez disso, tais elementos devem ser identificados e reparados de forma proativa. São necessários esforços para evitar o efeito negativo crescente das divisões tecnológicas para alcançar a igualdade de gênero e evitar diversas formas de violência, como assédio, intimidação ou tráfico de meninas, mulheres e grupos sub-representados, inclusive no mundo online.\n91. Os Estados-membros devem encorajar o empreendedorismo, a participação e o engajamento femininos em todos os estágios do ciclo de vida dos sistemas de IA, oferecendo e promovendo incentivos econômicos reguladores, entre outros sistemas de apoio e incentivo, bem como políticas que visem a uma equilibrada participação de gênero na pesquisa em IA no meio acadêmico, representação de gênero em cargos de chefia, diretorias e equipes de pesquisa de empresas digitais e de IA. Os Estados-membros também devem assegurar que verbas públicas (para inovação, pesquisa e tecnologias) sejam canalizadas para programas e empresas inclusivas, com uma clara representação de gênero, e que investimentos privados sejam igualmente estimulados por meio de princípios de ação afirmativa. Devem ser desenvolvidas e aplicadas políticas sobre ambientes livres de assédio, juntamente com o incentivo à transferência de melhores práticas sobre como promover a diversidade em todo o ciclo de vida dos sistemas de IA.\n92. Os Estados-membros devem promover a diversidade de gênero na pesquisa de IA nas universidades e na indústria, oferecendo incentivos para que meninas e mulheres entrem nesses campos, implementando mecanismos para combater os estereótipos de gênero e o assédio dentro da comunidade de pesquisa em IA e encorajando entidades acadêmicas e privadas a compartilhar as melhores práticas sobre como aumentar a diversidade de gênero.\n93. A UNESCO pode ajudar a desenvolver um repositório de melhores práticas para incentivar a participação de meninas, mulheres e grupos sub-representados em todos os estágios do ciclo de vida dos sistemas de IA.",
       "paragrafos": [
         {
-          "numero": 34,
+          "numero": 87,
           "bloco_tematico": null,
-          "texto": "A Unidade de Gestão de Pessoas tem como missão promover a gestão estratégica dos processos e subsistemas de gestão de pessoas e departamento de pessoal, competindo-lhe: Parágrafo único: A Unidade de Gestão de Pessoas atuará sob a orientação da Unidade Jurídica, submetendo a ela os processos relativos a empregados públicos que carecem de amparo técnico para a tomada de decisão pelo Diretor da área.",
-          "alineas": [
-            {
-              "marcador": "I",
-              "texto": "propor, implantar e avaliar a Política e o Regimento de Gestão de Pessoas;",
-              "itens": []
-            },
-            {
-              "marcador": "II",
-              "texto": "supervisionar e orientar a execução dos processos de provimento, movimentação, desenvolvimento, manutenção e monitoramento de pessoal;",
-              "itens": []
-            },
-            {
-              "marcador": "III",
-              "texto": "propor, implantar, supervisionar e orientar a execução do Programa gestão por competência;",
-              "itens": []
-            },
-            {
-              "marcador": "IV",
-              "texto": "acompanhar processo administrativo disciplinar;",
-              "itens": []
-            },
-            {
-              "marcador": "V",
-              "texto": "gerir a realização de concurso público e processos seletivos;",
-              "itens": []
-            },
-            {
-              "marcador": "VI",
-              "texto": "participar de negociações coletivas e acordos trabalhistas e monitorar ACT;",
-              "itens": []
-            },
-            {
-              "marcador": "VII",
-              "texto": "propor, implantar e monitorar a execução PCCS - Plano de Cargos, Carreiras e Salários;",
-              "itens": []
-            },
-            {
-              "marcador": "VIII",
-              "texto": "supervisionar os processos de recrutamento, seleção, integração e retenção de talentos;",
-              "itens": []
-            },
-            {
-              "marcador": "IX",
-              "texto": "desenvolver, implementar e acompanhar indicadores de Gestão de Pessoas.",
-              "itens": []
-            },
-            {
-              "marcador": "X",
-              "texto": "implementar ações corretivas e preventivas para a melhoria contínua dos processos da unidade;",
-              "itens": []
-            },
-            {
-              "marcador": "XI",
-              "texto": "monitorar o processo de eleição da Comissão Interna de Prevenção de Acidentes (CIPA).;",
-              "itens": []
-            },
-            {
-              "marcador": "XII",
-              "texto": "planejar, monitorar, controlar e avaliar orçamento da despesa com pessoal/encargo social",
-              "itens": []
-            },
-            {
-              "marcador": "XIII",
-              "texto": "propor, implantar o regulamento de licença para capacitação;",
-              "itens": []
-            },
-            {
-              "marcador": "XIV",
-              "texto": "propor, implantar e avaliar o Programa de Socialização do Conhecimento",
-              "itens": []
-            },
-            {
-              "marcador": "XV",
-              "texto": "propor, implantar e avaliar o Regulamento de Capacitação e Desenvolvimento;",
-              "itens": []
-            },
-            {
-              "marcador": "XVI",
-              "texto": "zelar pela conformidade com as normas legais e regulamentares vigentes relativas às atividades da Unidade",
-              "itens": []
-            }
-          ]
+          "texto": "Os Estados-membros devem garantir que o potencial das tecnologias digitais e da inteligência artificial para contribuir para alcançar a igualdade de gênero seja totalmente maximizado; devem garantir também que os direitos humanos e as liberdades fundamentais de meninas e mulheres, bem como sua segurança e integridade, não sejam violados em nenhum estágio do ciclo de vida dos sistemas de IA. Além disso, a avaliação de impacto ético deve incluir uma perspectiva transversal de gênero.",
+          "alineas": []
+        },
+        {
+          "numero": 88,
+          "bloco_tematico": null,
+          "texto": "Os Estados-membros devem ter verbas específicas de seus orçamentos públicos vinculadas ao financiamento de sistemas sensíveis ao gênero, garantir que as políticas digitais nacionais incluam um plano de ação de gênero e desenvolver políticas relevantes, por exemplo, sobre educação para o trabalho, destinadas a apoiar meninas e mulheres para garantir que elas não sejam excluídas da economia digital alimentada por IA. Da mesma forma, deve ser considerado e implementado um investimento especial no fornecimento de programas direcionados e linguagem específica de gênero, para aumentar as oportunidades de participação de meninas e mulheres nas áreas de ciência, tecnologia, engenharia e matemática (STEM), incluindo disciplinas de tecnologias da informação e comunicação (TIC), preparação, empregabilidade, equidade no desenvolvimento de carreiras e crescimento profissional de meninas e mulheres.",
+          "alineas": []
+        },
+        {
+          "numero": 89,
+          "bloco_tematico": null,
+          "texto": "Os Estados-membros devem assegurar que o potencial dos sistemas de IA para promover a obtenção da igualdade de gênero seja concretizado. Eles também devem garantir que essas tecnologias não exacerbem, mas eliminem as já amplas disparidades de gênero existentes em vários campos no mundo analógico. Essas disparidades incluem: desigualdade salarial de gênero; representação desigual em certas profissões e atividades; falta de representação em cargos de alta gerência, diretorias ou equipes de pesquisa na área de IA; disparidade educacional; desigualdade de acesso, adoção, uso e acessibilidade financeira a tecnologias digitais e de IA; e distribuição desigual do trabalho não remunerado e das responsabilidades assistenciais em nossas sociedades.",
+          "alineas": []
+        },
+        {
+          "numero": 90,
+          "bloco_tematico": null,
+          "texto": "Os Estados-membros devem assegurar que os estereótipos de gênero e os vieses discriminatórios não sejam traduzidos em sistemas de IA; em vez disso, tais elementos devem ser identificados e reparados de forma proativa. São necessários esforços para evitar o efeito negativo crescente das divisões tecnológicas para alcançar a igualdade de gênero e evitar diversas formas de violência, como assédio, intimidação ou tráfico de meninas, mulheres e grupos sub-representados, inclusive no mundo online.",
+          "alineas": []
+        },
+        {
+          "numero": 91,
+          "bloco_tematico": null,
+          "texto": "Os Estados-membros devem encorajar o empreendedorismo, a participação e o engajamento femininos em todos os estágios do ciclo de vida dos sistemas de IA, oferecendo e promovendo incentivos econômicos reguladores, entre outros sistemas de apoio e incentivo, bem como políticas que visem a uma equilibrada participação de gênero na pesquisa em IA no meio acadêmico, representação de gênero em cargos de chefia, diretorias e equipes de pesquisa de empresas digitais e de IA. Os Estados-membros também devem assegurar que verbas públicas (para inovação, pesquisa e tecnologias) sejam canalizadas para programas e empresas inclusivas, com uma clara representação de gênero, e que investimentos privados sejam igualmente estimulados por meio de princípios de ação afirmativa. Devem ser desenvolvidas e aplicadas políticas sobre ambientes livres de assédio, juntamente com o incentivo à transferência de melhores práticas sobre como promover a diversidade em todo o ciclo de vida dos sistemas de IA.",
+          "alineas": []
+        },
+        {
+          "numero": 92,
+          "bloco_tematico": null,
+          "texto": "Os Estados-membros devem promover a diversidade de gênero na pesquisa de IA nas universidades e na indústria, oferecendo incentivos para que meninas e mulheres entrem nesses campos, implementando mecanismos para combater os estereótipos de gênero e o assédio dentro da comunidade de pesquisa em IA e encorajando entidades acadêmicas e privadas a compartilhar as melhores práticas sobre como aumentar a diversidade de gênero.",
+          "alineas": []
+        },
+        {
+          "numero": 93,
+          "bloco_tematico": null,
+          "texto": "A UNESCO pode ajudar a desenvolver um repositório de melhores práticas para incentivar a participação de meninas, mulheres e grupos sub-representados em todos os estágios do ciclo de vida dos sistemas de IA.",
+          "alineas": []
         }
       ]
     }

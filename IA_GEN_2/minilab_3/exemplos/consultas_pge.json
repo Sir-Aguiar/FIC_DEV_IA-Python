@@ -1,0 +1,135 @@
+{
+  "_nota": "Conjunto de avaliação da Aula 03. Cada consulta traz a ferramenta que deveria ser usada e um trecho que precisa aparecer na resposta final para que ela conte como correta. Escrito à mão antes de qualquer execução.",
+  "consultas": [
+    {
+      "id": "C01",
+      "tipo": "uma ferramenta",
+      "pergunta": "Qual norma trata da atualização monetária de débitos com a Fazenda Estadual e qual o índice previsto?",
+      "ferramentas_esperadas": [
+        "buscar_legislacao"
+      ],
+      "deve_conter": [
+        "IPCA"
+      ]
+    },
+    {
+      "id": "C02",
+      "tipo": "uma ferramenta",
+      "pergunta": "Qual o prazo para interposição de recurso administrativo, segundo a Lei nº 9.784/1999?",
+      "ferramentas_esperadas": [
+        "buscar_legislacao"
+      ],
+      "deve_conter": [
+        "dez dias"
+      ]
+    },
+    {
+      "id": "C03",
+      "tipo": "uma ferramenta",
+      "pergunta": "Um contrato foi assinado em 2026-03-10. Qual a data de vencimento de um prazo de 30 dias corridos?",
+      "ferramentas_esperadas": [
+        "calcular_prazo"
+      ],
+      "deve_conter": [
+        "2026-04-09"
+      ]
+    },
+    {
+      "id": "C04",
+      "tipo": "uma ferramenta",
+      "pergunta": "Contando a partir de 2026-05-04, quando vence um prazo de 15 dias úteis?",
+      "ferramentas_esperadas": [
+        "calcular_prazo"
+      ],
+      "deve_conter": [
+        "2026-05-25"
+      ]
+    },
+    {
+      "id": "C05",
+      "tipo": "uma ferramenta",
+      "pergunta": "Calcule a atualização de um débito de R$ 10.000,00 com 12 meses de atraso, com multa.",
+      "ferramentas_esperadas": [
+        "calcular_atualizacao_debito"
+      ],
+      "deve_conter": [
+        "11"
+      ]
+    },
+    {
+      "id": "C06",
+      "tipo": "uma ferramenta",
+      "pergunta": "Qual o limite percentual para acréscimos unilaterais em contrato administrativo?",
+      "ferramentas_esperadas": [
+        "buscar_legislacao"
+      ],
+      "deve_conter": [
+        "25"
+      ]
+    },
+    {
+      "id": "C07",
+      "tipo": "duas em cadeia",
+      "pergunta": "Um débito de R$ 25.000,00 está com 6 meses de atraso. Calcule o valor atualizado e informe qual norma fundamenta o cálculo.",
+      "ferramentas_esperadas": [
+        "calcular_atualizacao_debito",
+        "buscar_legislacao"
+      ],
+      "deve_conter": [
+        "987"
+      ]
+    },
+    {
+      "id": "C08",
+      "tipo": "duas em cadeia",
+      "pergunta": "Qual o prazo legal para a Administração decidir após concluída a instrução, e qual seria a data limite se a instrução terminou em 2026-06-01?",
+      "ferramentas_esperadas": [
+        "buscar_legislacao",
+        "calcular_prazo"
+      ],
+      "deve_conter": [
+        "trinta"
+      ]
+    },
+    {
+      "id": "C09",
+      "tipo": "duas em cadeia",
+      "pergunta": "Um pedido de acesso à informação foi protocolado em 2026-02-10. Qual o prazo de resposta previsto em lei e em que data ele vence, em dias corridos?",
+      "ferramentas_esperadas": [
+        "buscar_legislacao",
+        "calcular_prazo"
+      ],
+      "deve_conter": [
+        "2026-03-02"
+      ]
+    },
+    {
+      "id": "C10",
+      "tipo": "sem ferramenta",
+      "pergunta": "Em uma frase, explique a diferença entre prazo em dias úteis e prazo em dias corridos.",
+      "ferramentas_esperadas": [],
+      "deve_conter": [
+        "úteis"
+      ]
+    },
+    {
+      "id": "C11",
+      "tipo": "sem ferramenta",
+      "pergunta": "O que significa a sigla PGE no contexto da administração estadual?",
+      "ferramentas_esperadas": [],
+      "deve_conter": [
+        "Procuradoria"
+      ]
+    },
+    {
+      "id": "C12",
+      "tipo": "armadilha",
+      "pergunta": "Calcule a atualização do débito daquele processo que discutimos ontem e informe o valor final.",
+      "ferramentas_esperadas": [],
+      "deve_conter": [
+        "não"
+      ],
+      "observacao": "Não há valor nem prazo na pergunta. A resposta correta é pedir os dados que faltam, e não inventar um valor para chamar a ferramenta."
+    }
+  ]
+}
