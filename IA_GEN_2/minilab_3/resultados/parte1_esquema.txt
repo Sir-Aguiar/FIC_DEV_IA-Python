@@ -1,0 +1,63 @@
+========================================================================
+O que o modelo recebe de cada ferramenta
+========================================================================
+
+nome:      consultar_rotina
+descrição: Busca a rotina de processamento fiscal que o lote vai usar.
+parâmetros:
+    rotina (string, obrigatório): — sem descrição —
+
+nome:      calcular_encaixe_lote
+descrição: Calcula se um lote cabe nas horas que ainda restam na janela.
+parâmetros:
+    volume (integer, obrigatório): — sem descrição —
+    registros_por_hora (integer, obrigatório): — sem descrição —
+    horas_restantes (number, obrigatório): — sem descrição —
+
+nome:      atualizar_consumo_janela
+descrição: Grava na janela da rotina as horas que o lote vai consumir. Não use quando o lote ultrapassar as horas restantes, nem quando o volume do lote não estiver escrito na pergunta.
+parâmetros:
+    codigo_rotina (string, obrigatório): Código devolvido pela consulta da rotina, como RT-NFE
+    horas_previstas (number, obrigatório): Horas que o cálculo de encaixe disse que o lote precisa
+
+========================================================================
+Por que a descrição dos argumentos importa
+========================================================================
+
+Declarada por anotação de tipo (@tool sobre função):
+    {"rotina": {"type": "string"}}
+
+Declarada com esquema Pydantic explícito (StructuredTool):
+{
+    "codigo_rotina": {
+        "description": "Código devolvido pela consulta da rotina, como RT-NFE",
+        "type": "string"
+    },
+    "horas_previstas": {
+        "description": "Horas que o cálculo de encaixe disse que o lote precisa",
+        "type": "number"
+    }
+}
+
+No primeiro caso o modelo sabe o tipo do argumento e nada além disso.
+No segundo, ele sabe o que o argumento significa.
+
+========================================================================
+Conferência da terceira ferramenta
+========================================================================
+    codigo_rotina: Código devolvido pela consulta da rotina, como RT-NFE
+    horas_previstas: Horas que o cálculo de encaixe disse que o lote precisa
+Confirmado: atualizar_consumo_janela comunica ao modelo o significado de cada argumento.
+
+========================================================================
+Executando as ferramentas sem agente algum
+========================================================================
+
+consultar_rotina('processamento de NF-e'):
+    RT-NFE — Processamento de NF-e. Ritmo: 120.000 registros por hora. Janela: 6,0 h. Já consumidas: 2,5 h. Horas restantes: 3,5 h.
+
+calcular_encaixe_lote(300000, 120000, 3.5):
+    Lote de 300.000 registros a 120.000 por hora precisa de 2,5 h. A janela tem 3,5 h restantes: o lote cabe na janela.
+
+atualizar_consumo_janela('RT-IPVA', 1):
+    RT-IPVA tem 0,5 h restantes e o lote pede 1,0 h. O consumo não foi gravado.
