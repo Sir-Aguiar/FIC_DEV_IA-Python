@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Memória do atendimento — MTI</title>
+  <style>
+    :root {
+      color: #111;
+      background: #fff;
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background: #fff;
+      color: #111;
+    }
+
+    .topo {
+      display: grid;
+      grid-template-columns: 16rem 1fr;
+      border-bottom: 1px solid #111;
+    }
+
+    .marca,
+    .abertura {
+      padding: 1.5rem 1.75rem 1.75rem;
+    }
+
+    .marca {
+      border-right: 1px solid #111;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 2rem;
+    }
+
+    .olho {
+      margin: 0;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 0;
+      max-width: 14ch;
+      font-size: clamp(3.2rem, 7vw, 5.6rem);
+      font-weight: 700;
+      letter-spacing: -0.045em;
+      line-height: 0.88;
+    }
+
+    .tese {
+      margin: 1.25rem 0 0;
+      max-width: 36rem;
+      font-size: 1.35rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      line-height: 1.25;
+    }
+
+    .secao {
+      display: grid;
+      grid-template-columns: 16rem 1fr;
+      border-bottom: 1px solid #111;
+    }
+
+    .secao h2 {
+      margin: 0;
+      padding: 1.75rem 1.25rem;
+      border-right: 1px solid #111;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      line-height: 1.35;
+      text-transform: uppercase;
+    }
+
+    .miolo {
+      padding: 1.75rem 2rem 2.25rem;
+      min-width: 0;
+    }
+
+    .miolo p,
+    .miolo li {
+      max-width: 44rem;
+      font-size: 1.0625rem;
+      line-height: 1.5;
+    }
+
+    .miolo h3 {
+      margin: 1.6rem 0 0.35rem;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      line-height: 1.3;
+      text-transform: uppercase;
+    }
+
+    .miolo ul,
+    .miolo ol {
+      margin: 0.4rem 0 0;
+      padding-left: 1.15rem;
+      max-width: 44rem;
+    }
+
+    .miolo li { margin: 0.35rem 0; }
+
+    .fonte {
+      margin: 1.25rem 0 0;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1rem 0 0;
+      font-size: 0.95rem;
+      line-height: 1.35;
+    }
+
+    th,
+    td {
+      border: 1px solid #111;
+      padding: 0.55rem 0.7rem;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    th {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    td.num,
+    th.num {
+      text-align: right;
+      font-variant-numeric: tabular-nums;
+    }
+
+    tr.adotada td {
+      background: #111;
+      color: #fff;
+    }
+
+    .excede {
+      color: #b00000;
+      font-weight: 700;
+    }
+
+    tr.adotada .excede { color: #fff; }
+
+    blockquote {
+      margin: 1rem 0;
+      max-width: 44rem;
+      padding: 0.85rem 1rem;
+      border: 1px solid #111;
+      font-size: 1.0625rem;
+      line-height: 1.45;
+    }
+
+    code {
+      font-family: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+      font-size: 0.92em;
+    }
+
+    .serie {
+      display: grid;
+      gap: 0.35rem;
+      margin-top: 1.25rem;
+    }
+
+    .barra {
+      display: grid;
+      grid-template-columns: 2.5rem 1fr 4.5rem;
+      gap: 0.75rem;
+      align-items: center;
+      font-variant-numeric: tabular-nums;
+      font-size: 0.8rem;
+    }
+
+    .trilho {
+      height: 0.55rem;
+      border: 1px solid #111;
+    }
+
+    .trilho span {
+      display: block;
+      height: 100%;
+      background: #111;
+    }
+
+    .conta {
+      margin-top: 1.25rem;
+      padding-top: 1rem;
+      border-top: 1px solid #111;
+      max-width: 44rem;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .decisao {
+      display: grid;
+      grid-template-columns: 14rem 1fr;
+      gap: 1rem;
+      padding: 0.9rem 0;
+      border-top: 1px solid #111;
+    }
+
+    .decisao:first-child { border-top: 0; padding-top: 0; }
+
+    .decisao h3 {
+      margin: 0;
+      font-size: 0.95rem;
+      line-height: 1.3;
+    }
+
+    .decisao p {
+      margin: 0;
+    }
+
+    .falha {
+      padding: 1.5rem 1.75rem;
+      border-bottom: 1px solid #111;
+      font-size: 1.0625rem;
+    }
+
+    @media (max-width: 800px) {
+      .topo,
+      .secao,
+      .decisao,
+      .barra {
+        grid-template-columns: 1fr;
+      }
+
+      .marca,
+      .secao h2 {
+        border-right: 0;
+        border-bottom: 1px solid #111;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="topo">
+    <div class="marca">
+      <p class="olho">Mini LAB 7<br>Service desk da MTI</p>
+      <p class="olho">Apresentação<br>para a turma</p>
+    </div>
+    <div class="abertura">
+      <h1>Quanto custa lembrar</h1>
+      <p class="tese" id="tese">Carregando os resultados medidos.</p>
+    </div>
+  </header>
+  <main id="conteudo"></main>
+  <script>
+    const ARQUIVOS = {
+      memoria: "../resultados/resultado_memoria.json",
+      roteiro: "../dados/roteiro_atendimento.json",
+      necessidade: "../resultados/tabela_necessidade.md",
+      eliminacao: "../resultados/eliminacao.md",
+      vazamento: "../resultados/vazamento.md",
+      ficha: "../resultados/ficha_decisoes.md"
+    };
+
+    function escapar(texto) {
+      return String(texto)
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;");
+    }
+
+    function inline(texto) {
+      return escapar(texto)
+        .replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>")
+        .replace(/`([^`]+)`/g, "<code>$1</code>");
+    }
+
+    function inteiro(valor) {
+      return Number(valor).toLocaleString("pt-BR");
+    }
+
+    function dolar(valor) {
+      return Number(valor).toLocaleString("pt-BR", {
+        minimumFractionDigits: 5,
+        maximumFractionDigits: 5
+      });
+    }
+
+    function decimal(valor) {
+      return Number(valor).toLocaleString("pt-BR", {
+        minimumFractionDigits: 1,
+        maximumFractionDigits: 1
+      });
+    }
+
+    async function ler(caminho) {
+      const resposta = await fetch(caminho);
+      if (!resposta.ok) {
+        throw new Error(caminho);
+      }
+      return resposta.text();
+    }
+
+    function renderizarMarkdown(markdown) {
+      const linhas = markdown.replace(/\r\n/g, "\n").split("\n");
+      const blocos = [];
+      let i = 0;
+
+      while (i < linhas.length && (linhas[i].trim() === "" || linhas[i].startsWith("# "))) {
+        i += 1;
+      }
+
+      while (i < linhas.length) {
+        const linha = linhas[i];
+        if (linha.trim() === "") {
+          i += 1;
+          continue;
+        }
+        if (linha.startsWith("## ")) {
+          blocos.push("<h3>" + inline(linha.slice(3)) + "</h3>");
+          i += 1;
+          continue;
+        }
+        if (linha.startsWith("> ")) {
+          const citacao = [];
+          while (i < linhas.length && linhas[i].startsWith("> ")) {
+            citacao.push(linhas[i].slice(2));
+            i += 1;
+          }
+          blocos.push("<blockquote><p>" + inline(citacao.join(" ")) + "</p></blockquote>");
+          continue;
+        }
+        if (linha.startsWith("| ")) {
+          const tabela = [];
+          while (i < linhas.length && linhas[i].startsWith("|")) {
+            tabela.push(linhas[i]);
+            i += 1;
+          }
+          blocos.push(tabelaHtml(tabela));
+          continue;
+        }
+        if (linha.startsWith("- ")) {
+          const itens = [];
+          while (i < linhas.length && linhas[i].startsWith("- ")) {
+            itens.push("<li>" + inline(linhas[i].slice(2)) + "</li>");
+            i += 1;
+          }
+          blocos.push("<ul>" + itens.join("") + "</ul>");
+          continue;
+        }
+        const paragrafo = [];
+        while (
+          i < linhas.length &&
+          linhas[i].trim() !== "" &&
+          !linhas[i].startsWith("#") &&
+          !linhas[i].startsWith(">") &&
+          !linhas[i].startsWith("|") &&
+          !linhas[i].startsWith("- ")
+        ) {
+          paragrafo.push(linhas[i].trim());
+          i += 1;
+        }
+        blocos.push("<p>" + inline(paragrafo.join(" ")) + "</p>");
+      }
+      return blocos.join("");
+    }
+
+    function tabelaHtml(linhas) {
+      const uteis = linhas.filter((linha) => !/^\|\s*-+/.test(linha));
+      const celulas = (linha) => linha.split("|").slice(1, -1).map((item) => item.trim());
+      const cabecalho = celulas(uteis[0]);
+      const corpo = uteis.slice(1).map(celulas);
+      const head = cabecalho.map((item) => "<th>" + inline(item) + "</th>").join("");
+      const body = corpo.map((linha) => {
+        const cols = linha.map((item) => {
+          const classe = /excede/i.test(item) ? " class=\"excede\"" : "";
+          return "<td" + classe + ">" + inline(item) + "</td>";
+        }).join("");
+        return "<tr>" + cols + "</tr>";
+      }).join("");
+      return "<table><thead><tr>" + head + "</tr></thead><tbody>" + body + "</tbody></table>";
+    }
+
+    function secao(numero, titulo, miolo) {
+      return "<section class=\"secao\"><h2>" + numero + "<br>" + titulo + "</h2><div class=\"miolo\">" + miolo + "</div></section>";
+    }
+
+    function serie(entradas) {
+      const maior = Math.max(...entradas);
+      return "<div class=\"serie\">" + entradas.map((valor, indice) => {
+        const largura = Math.max(2, Math.round((valor / maior) * 100));
+        return "<div class=\"barra\"><span>" + (indice + 1) + "</span><div class=\"trilho\"><span style=\"width:" + largura + "%\"></span></div><span>" + inteiro(valor) + "</span></div>";
+      }).join("") + "</div>";
+    }
+
+    function montar(dados) {
+      const memoria = dados.memoria;
+      const roteiro = dados.roteiro;
+      const base = memoria.configuracoes[0];
+      const historico = memoria.configuracoes.find((item) => item.rotulo.startsWith("histórico"));
+      const resumo = memoria.configuracoes.find((item) => item.rotulo.startsWith("resumo"));
+      const verificacao = roteiro.turnos.find((turno) => turno.verificacao);
+      const turnoExcedente = roteiro.turnos.find((turno) => turno.n === roteiro.dado_desnecessario.turno);
+      const virada = Math.round(memoria.turnos_para_resumo_compensar);
+
+      document.querySelector("#tese").textContent =
+        "Neste balcão de " + memoria.turnos + " turnos, o histórico completo lembrou " +
+        historico.acertos + "/" + historico.verificacoes + " por US$ " + dolar(historico.custo) +
+        ". Apagar o que ficou gravado exigiu duas chamadas.";
+
+      const linhasCusto = memoria.configuracoes.map((item) => {
+        const classe = item.rotulo === historico.rotulo ? " class=\"adotada\"" : "";
+        return "<tr" + classe + ">" +
+          "<td>" + escapar(item.rotulo) + "</td>" +
+          "<td class=\"num\">" + item.acertos + "/" + item.verificacoes + "</td>" +
+          "<td class=\"num\">" + inteiro(item.entrada_t1) + "</td>" +
+          "<td class=\"num\">" + inteiro(item.entrada_meio) + "</td>" +
+          "<td class=\"num\">" + inteiro(item.entrada_fim) + "</td>" +
+          "<td class=\"num\">" + inteiro(item.entrada_total) + "</td>" +
+          "<td class=\"num\">" + dolar(item.custo) + "</td>" +
+          "</tr>";
+      }).join("");
+
+      const custo = [
+        "<p class=\"tese\">Sem memória é a linha de base. O histórico completo é o que acerta enquanto o chamado cabe numa conversa. O resumo já cobra trabalho extra no primeiro turno.</p>",
+        "<p>Sem memória a entrada ficou entre " + inteiro(Math.min(...base.entradas)) + " e " + inteiro(Math.max(...base.entradas)) + " tokens e não respondeu nenhuma das " + base.verificacoes + " verificações. O histórico reenvia os turnos anteriores: a entrada saiu de " + inteiro(historico.entrada_t1) + " para " + inteiro(historico.entrada_fim) + " e acertou todas. O resumo com janela de três começou em " + inteiro(resumo.entrada_t1) + " tokens, lembrou " + resumo.acertos + "/" + resumo.verificacoes + " e custou US$ " + dolar(resumo.custo) + ".</p>",
+        "<table><thead><tr><th>Configuração</th><th class=\"num\">Lembrou</th><th class=\"num\">Entrada T1</th><th class=\"num\">Meio T" + historico.turno_meio + "</th><th class=\"num\">Fim</th><th class=\"num\">Acumulado</th><th class=\"num\">US$</th></tr></thead><tbody>" + linhasCusto + "</tbody></table>",
+        "<p>A série abaixo é a entrada do histórico completo, turno a turno. O crescimento médio é de " + decimal(memoria.crescimento_entrada_por_turno) + " tokens por turno.</p>",
+        serie(historico.entradas),
+        "<div class=\"conta\"><p>O resumo foi tratado como um custo fixo por chamada, medido no último turno: " + inteiro(memoria.patamar_resumo) + " tokens. A soma da reta do histórico passa desse patamar quando</p><p><code>n = 1 + 2 × (" + inteiro(memoria.patamar_resumo) + " − " + inteiro(historico.entrada_t1) + ") / " + decimal(memoria.crescimento_entrada_por_turno) + " = " + virada + "</code></p><p>O resumo passaria a compensar por volta do turno " + virada + ". Um chamado de " + memoria.turnos + " turnos fica antes disso.</p></div>",
+        "<p class=\"fonte\">resultados/resultado_memoria.json</p>"
+      ].join("");
+
+      const roteiroHtml = [
+        "<p class=\"tese\">Ana Beatriz Costa pede o desbloqueio do login " + escapar(roteiro.usuario.login) + " no correio e no SEI.</p>",
+        "<p>O roteiro tem " + roteiro.turnos.length + " turnos e " + roteiro.turnos.filter((turno) => turno.verificacao).length + " verificações. Cada verificação cobra um fato dito num turno anterior, e o gabarito registra qual. Sem isso, não dá para saber se o agente lembrou ou se apenas respondeu alguma coisa.</p>",
+        "<p>No turno " + verificacao.n + " a cidadã pergunta: «" + escapar(verificacao.texto) + "». A resposta precisa conter «" + escapar(verificacao.verificacao.deve_conter.join("», «")) + "». O campo testa aponta: " + escapar(verificacao.verificacao.testa) + ".</p>",
+        "<p>No turno " + turnoExcedente.n + " ela informa um dado que não serve ao desbloqueio: «" + escapar(turnoExcedente.texto) + "». A Parte 3 procura esse excedente no banco. O marcador estável é " + escapar(roteiro.dado_desnecessario.trecho) + ".</p>",
+        "<p class=\"fonte\">dados/roteiro_atendimento.json</p>"
+      ].join("");
+
+      const necessidade = [
+        "<p class=\"tese\">O que melhora a conversa pode ficar na memória do framework. Protocolo, situação e prazo não.</p>",
+        "<p>Nome e preferência de tratamento ajudam o próximo turno. A situação do bloqueio muda enquanto o chamado anda, então não pode ser respondida de memória. Conta bancária e nome da mãe não servem ao desbloqueio. A extração varia de uma execução para outra; o filtro procura o trecho declarado no roteiro, e um serviço real trocaria esse filtro por revisão humana.</p>",
+        renderizarMarkdown(dados.necessidade),
+        "<p class=\"fonte\">resultados/tabela_necessidade.md</p>"
+      ].join("");
+
+      const eliminacao = [
+        "<p class=\"tese\">delete_session apaga a conversa e deixa a memória. O titular só some depois de delete_user_memories.</p>",
+        "<p>Não há uma chamada única por pessoa nesta versão do Agno. A primeira etapa tira a sessão e as execuções. A segunda lista os memory_id e apaga as memórias no banco. A pergunta seguinte usa uma sessão nova, sem histórico, para ver se ainda sobrou o que só a memória saberia.</p>",
+        renderizarMarkdown(dados.eliminacao),
+        "<p class=\"fonte\">resultados/eliminacao.md</p>"
+      ].join("");
+
+      const vazamento = [
+        "<p class=\"tese\">O framework separa o identificador que recebe. Ele não descobre que um guichê não é uma pessoa.</p>",
+        "<p>Na primeira metade, Ana e Carlos dividem a sessão e cada um entra com o próprio CPF. Na segunda, os dois herdam o identificador do guichê. A regra deste serviço está em identificador_do_cidadao: o user_id é o CPF, porque há um por servidor. Guichê, canal e atendente são compartilhados por todos os chamados daquele balcão.</p>",
+        renderizarMarkdown(dados.vazamento),
+        "<p class=\"fonte\">resultados/vazamento.md</p>"
+      ].join("");
+
+      const decisoes = dados.ficha.split("\n").filter((linha) => linha.includes(":") && !linha.startsWith("#"));
+      const ficha = [
+        "<p class=\"tese\">Cinco decisões, cada uma amarrada a um número desta medição ou à eliminação.</p>",
+        decisoes.map((linha) => {
+          const corte = linha.indexOf(":");
+          return "<article class=\"decisao\"><h3>" + inline(linha.slice(0, corte)) + "</h3><p>" + inline(linha.slice(corte + 1).trim()) + "</p></article>";
+        }).join(""),
+        "<p class=\"fonte\">resultados/ficha_decisoes.md</p>"
+      ].join("");
+
+      const fecho = [
+        "<p class=\"tese\">Quatro frases para repetir.</p>",
+        "<ol>",
+        "<li>A memória adotada é o histórico completo com teto de 15 execuções: em " + memoria.turnos + " turnos ele lembrou " + historico.acertos + "/" + historico.verificacoes + " por US$ " + dolar(historico.custo) + ", e o resumo só compensaria no turno " + virada + ".</li>",
+        "<li>O user_id sai do CPF do servidor, nunca do guichê.</li>",
+        "<li>Protocolo, situação e prazo moram na tabela do órgão. Nome e tratamento podem ficar na memória do framework.</li>",
+        "<li>A eliminação encadeia delete_session e delete_user_memories. Parar na primeira deixa o agente sabendo o nome, o login e o nome da mãe.</li>",
+        "</ol>"
+      ].join("");
+
+      document.querySelector("#conteudo").innerHTML = [
+        secao("01", "Problema", "<p class=\"tese\">Sem estado, o assistente pede de novo o que a pessoa já disse.</p><p>O caso é um retorno ao service desk da MTI: acesso ao correio institucional e ao SEI depois de um reset de senha. Dar memória a esse assistente tem dois custos. O pedido cresce a cada turno, porque o histórico é reenviado. E o que fica gravado passa a ser dado pessoal sob a LGPD. A pergunta do laboratório é quanto a memória custa neste roteiro e se a titular consegue apagá-la de fato.</p>"),
+        secao("02", "Roteiro", roteiroHtml),
+        secao("03", "Custo", custo),
+        secao("04", "O que ficou gravado", necessidade),
+        secao("05", "Eliminação", eliminacao),
+        secao("06", "Vazamento", vazamento),
+        secao("07", "Decisões", ficha),
+        secao("08", "Defesa", fecho)
+      ].join("");
+    }
+
+    Promise.all(Object.values(ARQUIVOS).map(ler)).then((textos) => {
+      const chaves = Object.keys(ARQUIVOS);
+      const dados = {};
+      chaves.forEach((chave, indice) => {
+        dados[chave] = chave === "memoria" || chave === "roteiro" ? JSON.parse(textos[indice]) : textos[indice];
+      });
+      montar(dados);
+    }).catch(() => {
+      document.querySelector("#tese").textContent = "Os resultados não carregaram.";
+      document.querySelector("#conteudo").innerHTML =
+        "<p class=\"falha\">Abra esta página a partir da raiz do minilab, com <code>python3 -m http.server</code>, e entre em <code>/interface/</code>. O arquivo isolado não consegue ler <code>resultados/</code>.</p>";
+    });
+  </script>
+</body>
+</html>

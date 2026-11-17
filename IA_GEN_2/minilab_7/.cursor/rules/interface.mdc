@@ -1,0 +1,23 @@
+---
+description: Estilo visual da interface em interface/ — Swiss International Style, editorial
+globs: interface/**/*
+alwaysApply: false
+---
+
+# Interface — Swiss International Style / Editorial
+
+Aplique só ao construir ou alterar arquivos em `interface/`. Não invente telas antes do pedido.
+
+- Grid assimétrico e rigoroso. Colunas e linhas alinhadas; o desequilíbrio vem da proporção, não de elementos soltos.
+- Divisórias visíveis de 1px (hairline). Separe blocos com `border` de 1px em cor sólida. Nada de borda decorativa, raio grande ou contorno duplo.
+- Alto contraste tipográfico. Título grande e texto corrido em pesos e tamanhos distantes. Corpo de texto legível, sem título competindo com o parágrafo.
+- Zero `box-shadow`.
+- Zero gradientes. Fundo e texto em cores chapadas.
+
+```css
+/* ❌ */
+.card { box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12); background: linear-gradient(#fff, #eee); border-radius: 16px; }
+
+/* ✅ */
+.bloco { border: 1px solid #111; background: #fff; color: #111; border-radius: 0; }
+```
