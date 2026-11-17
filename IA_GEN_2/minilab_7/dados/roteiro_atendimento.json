@@ -1,0 +1,105 @@
+{
+  "_nota": "Roteiro de quatorze turnos de um atendimento do service desk da MTI (Empresa Mato-grossense de Tecnologia da Informação). O caso é desbloqueio de acesso ao correio institucional e ao SEI depois de um reset de senha. Há seis perguntas de verificação, cada uma amarrada a um turno anterior específico. O turno 4 informa conta bancária e nome da mãe, dados pessoais que não servem ao desbloqueio e que a Parte 3 deve procurar na memória.",
+  "orgao": "MTI — service desk de identidade e acesso",
+  "usuario": {
+    "nome": "Ana Beatriz Costa",
+    "cpf": "045.882.173-90",
+    "login": "ana.costa"
+  },
+  "dado_desnecessario": {
+    "turno": 4,
+    "trecho": "45123-8",
+    "trechos": ["45123-8", "Lúcia Costa"],
+    "descricao": "Conta bancária salarial e nome da mãe, informados pelo cidadão sem serem pedidos e sem servirem ao desbloqueio de acesso."
+  },
+  "turnos": [
+    {
+      "n": 1,
+      "texto": "Bom dia. Aqui é Ana Beatriz Costa, CPF 045.882.173-90. Pode me chamar de Ana. Não consigo entrar nos sistemas do Estado e preciso do suporte da MTI.",
+      "verificacao": null
+    },
+    {
+      "n": 2,
+      "texto": "Meu login institucional é ana.costa. O que travou foi o correio eletrônico e o SEI.",
+      "verificacao": null
+    },
+    {
+      "n": 3,
+      "texto": "Ontem eu redefini a senha e, desde hoje de manhã, a tela só mostra a mensagem usuário bloqueado.",
+      "verificacao": null
+    },
+    {
+      "n": 4,
+      "texto": "Se for útil para o cadastro, minha conta salarial é do Banco do Brasil, agência 3821, conta 45123-8. Minha mãe, Lúcia Costa, mora comigo.",
+      "verificacao": null
+    },
+    {
+      "n": 5,
+      "texto": "Qual é o meu nome completo? Quero confirmar que você registrou certo.",
+      "verificacao": {
+        "deve_conter": ["Ana Beatriz"],
+        "testa": "nome informado no turno 1"
+      }
+    },
+    {
+      "n": 6,
+      "texto": "Pode abrir um chamado para a equipe de identidade e acesso acompanhar o desbloqueio?",
+      "verificacao": null
+    },
+    {
+      "n": 7,
+      "texto": "Qual é o login institucional que eu passei?",
+      "verificacao": {
+        "deve_conter": ["ana.costa"],
+        "testa": "login informado no turno 2"
+      }
+    },
+    {
+      "n": 8,
+      "texto": "O reset da senha foi ontem, pelo portal de autoatendimento, por volta das 17h.",
+      "verificacao": null
+    },
+    {
+      "n": 9,
+      "texto": "Qual mensagem de erro apareceu para mim hoje de manhã?",
+      "verificacao": {
+        "deve_conter": ["bloqueado"],
+        "testa": "mensagem de erro relatada no turno 3"
+      }
+    },
+    {
+      "n": 10,
+      "texto": "Trabalho na Secretaria de Fazenda, na Coordenadoria de Arrecadação.",
+      "verificacao": null
+    },
+    {
+      "n": 11,
+      "texto": "A que horas, mais ou menos, eu disse que fiz o reset da senha?",
+      "verificacao": {
+        "deve_conter": ["17"],
+        "testa": "horário do reset informado no turno 8"
+      }
+    },
+    {
+      "n": 12,
+      "texto": "Além do correio, qual outro sistema eu disse que estava travado?",
+      "verificacao": {
+        "deve_conter": ["SEI"],
+        "testa": "sistemas informados no turno 2"
+      }
+    },
+    {
+      "n": 13,
+      "texto": "A prioridade pode ser normal. Não estou em plantão.",
+      "verificacao": null
+    },
+    {
+      "n": 14,
+      "texto": "Em qual secretaria e coordenadoria eu trabalho?",
+      "verificacao": {
+        "deve_conter": ["Fazenda", "Arrecadação"],
+        "testa": "lotação informada no turno 10"
+      }
+    }
+  ]
+}

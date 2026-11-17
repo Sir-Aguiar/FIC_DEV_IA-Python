@@ -1,0 +1,4 @@
+agno==3.2.1
+sqlalchemy[asyncio]==2.1.9
+openai==3.53.0
+python-dotenv==1.2.4

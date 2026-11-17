@@ -1,0 +1,18 @@
+{
+  "_nota": "Roteiro de doze turnos de um atendimento sobre IPVA, com seis perguntas de verificação distribuídas ao longo da conversa. As verificações testam se o agente ainda tem acesso ao que foi dito antes, e o gabarito indica o que precisa aparecer na resposta.",
+  "usuario": {"nome": "João Silva", "cpf": "111.222.333-44", "veiculo": "Fiat Uno placa QBA-1234"},
+  "turnos": [
+    {"n": 1, "texto": "Bom dia. Meu nome é João Silva, CPF 111.222.333-44. Preciso de ajuda com o IPVA do meu carro.", "verificacao": null},
+    {"n": 2, "texto": "É um Fiat Uno, placa QBA-1234, ano 2019.", "verificacao": null},
+    {"n": 3, "texto": "O problema é que paguei o IPVA em janeiro e o sistema continua mostrando como em aberto.", "verificacao": null},
+    {"n": 4, "texto": "Qual o meu nome mesmo? Quero confirmar que você anotou certo.", "verificacao": {"deve_conter": ["João"], "testa": "nome informado no turno 1"}},
+    {"n": 5, "texto": "Pode abrir um protocolo para eu acompanhar?", "verificacao": null},
+    {"n": 6, "texto": "Qual é a placa do veículo que eu informei?", "verificacao": {"deve_conter": ["QBA-1234"], "testa": "placa informada no turno 2"}},
+    {"n": 7, "texto": "Enquanto isso, me diga: qual o prazo legal para a Fazenda responder a um requerimento?", "verificacao": null},
+    {"n": 8, "texto": "Qual era mesmo o problema que eu relatei no começo da conversa?", "verificacao": {"deve_conter": ["pag"], "testa": "problema relatado no turno 3"}},
+    {"n": 9, "texto": "Se eu não resolver, posso pedir restituição do valor pago?", "verificacao": null},
+    {"n": 10, "texto": "Me lembre o número do meu CPF, por favor.", "verificacao": {"deve_conter": ["111"], "testa": "CPF informado no turno 1"}},
+    {"n": 11, "texto": "Em que ano é o meu veículo?", "verificacao": {"deve_conter": ["2019"], "testa": "ano informado no turno 2"}},
+    {"n": 12, "texto": "Para encerrar: resuma em duas linhas o meu caso e o que foi encaminhado.", "verificacao": {"deve_conter": ["IPVA"], "testa": "síntese do atendimento inteiro"}}
+  ]
+}
