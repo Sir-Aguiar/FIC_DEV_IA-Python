@@ -254,7 +254,7 @@
   <header class="topo">
     <div class="marca">
       <p class="olho">Mini LAB 7<br>Service desk da MTI</p>
-      <p class="olho">Apresentação<br>para a turma</p>
+      <p class="olho">O que foi feito<br>neste minilab</p>
     </div>
     <div class="abertura">
       <h1>Quanto custa lembrar</h1>
@@ -414,9 +414,9 @@
       const virada = Math.round(memoria.turnos_para_resumo_compensar);
 
       document.querySelector("#tese").textContent =
-        "Neste balcão de " + memoria.turnos + " turnos, o histórico completo lembrou " +
-        historico.acertos + "/" + historico.verificacoes + " por US$ " + dolar(historico.custo) +
-        ". Apagar o que ficou gravado exigiu duas chamadas.";
+        "Foi medido um chamado de " + memoria.turnos + " turnos. Com o histórico completo, o agente lembrou " +
+        historico.acertos + "/" + historico.verificacoes + " e gastou US$ " + dolar(historico.custo) +
+        ". Para a Ana sumir de fato do banco, foram necessárias duas chamadas.";
 
       const linhasCusto = memoria.configuracoes.map((item) => {
         const classe = item.rotulo === historico.rotulo ? " class=\"adotada\"" : "";
@@ -432,47 +432,47 @@
       }).join("");
 
       const custo = [
-        "<p class=\"tese\">Sem memória é a linha de base. O histórico completo é o que acerta enquanto o chamado cabe numa conversa. O resumo já cobra trabalho extra no primeiro turno.</p>",
-        "<p>Sem memória a entrada ficou entre " + inteiro(Math.min(...base.entradas)) + " e " + inteiro(Math.max(...base.entradas)) + " tokens e não respondeu nenhuma das " + base.verificacoes + " verificações. O histórico reenvia os turnos anteriores: a entrada saiu de " + inteiro(historico.entrada_t1) + " para " + inteiro(historico.entrada_fim) + " e acertou todas. O resumo com janela de três começou em " + inteiro(resumo.entrada_t1) + " tokens, lembrou " + resumo.acertos + "/" + resumo.verificacoes + " e custou US$ " + dolar(resumo.custo) + ".</p>",
+        "<p class=\"tese\">O mesmo roteiro foi executado três vezes. A linha preta é a adotada.</p>",
+        "<p>Sem memória serve de comparação: a entrada ficou entre " + inteiro(Math.min(...base.entradas)) + " e " + inteiro(Math.max(...base.entradas)) + " tokens e o agente não acertou nenhuma das " + base.verificacoes + " verificações, porque não carregava o turno anterior. Com o histórico completo, cada turno reenvia o que a Ana já disse. A entrada saiu de " + inteiro(historico.entrada_t1) + " para " + inteiro(historico.entrada_fim) + " e ele acertou todas. O resumo com janela de três já começou em " + inteiro(resumo.entrada_t1) + " tokens, lembrou " + resumo.acertos + " de " + resumo.verificacoes + " e custou US$ " + dolar(resumo.custo) + ". Resumir é uma chamada a mais, e neste chamado curto isso saiu mais caro do que reenviar a conversa.</p>",
         "<table><thead><tr><th>Configuração</th><th class=\"num\">Lembrou</th><th class=\"num\">Entrada T1</th><th class=\"num\">Meio T" + historico.turno_meio + "</th><th class=\"num\">Fim</th><th class=\"num\">Acumulado</th><th class=\"num\">US$</th></tr></thead><tbody>" + linhasCusto + "</tbody></table>",
-        "<p>A série abaixo é a entrada do histórico completo, turno a turno. O crescimento médio é de " + decimal(memoria.crescimento_entrada_por_turno) + " tokens por turno.</p>",
+        "<p>Esta é a entrada do histórico, turno a turno. Neste roteiro ela cresceu " + decimal(memoria.crescimento_entrada_por_turno) + " tokens por turno, quase em linha reta.</p>",
         serie(historico.entradas),
-        "<div class=\"conta\"><p>O resumo foi tratado como um custo fixo por chamada, medido no último turno: " + inteiro(memoria.patamar_resumo) + " tokens. A soma da reta do histórico passa desse patamar quando</p><p><code>n = 1 + 2 × (" + inteiro(memoria.patamar_resumo) + " − " + inteiro(historico.entrada_t1) + ") / " + decimal(memoria.crescimento_entrada_por_turno) + " = " + virada + "</code></p><p>O resumo passaria a compensar por volta do turno " + virada + ". Um chamado de " + memoria.turnos + " turnos fica antes disso.</p></div>",
+        "<div class=\"conta\"><p>Para estimar quando o resumo passaria a valer a pena, o último turno dele foi tratado como um custo fixo: " + inteiro(memoria.patamar_resumo) + " tokens. A soma da reta do histórico passa desse valor quando</p><p><code>n = 1 + 2 × (" + inteiro(memoria.patamar_resumo) + " − " + inteiro(historico.entrada_t1) + ") / " + decimal(memoria.crescimento_entrada_por_turno) + " = " + virada + "</code></p><p>Isso dá por volta do turno " + virada + ". O chamado tem " + memoria.turnos + " turnos, então o resumo ainda não compensa.</p></div>",
         "<p class=\"fonte\">resultados/resultado_memoria.json</p>"
       ].join("");
 
       const roteiroHtml = [
-        "<p class=\"tese\">Ana Beatriz Costa pede o desbloqueio do login " + escapar(roteiro.usuario.login) + " no correio e no SEI.</p>",
-        "<p>O roteiro tem " + roteiro.turnos.length + " turnos e " + roteiro.turnos.filter((turno) => turno.verificacao).length + " verificações. Cada verificação cobra um fato dito num turno anterior, e o gabarito registra qual. Sem isso, não dá para saber se o agente lembrou ou se apenas respondeu alguma coisa.</p>",
-        "<p>No turno " + verificacao.n + " a cidadã pergunta: «" + escapar(verificacao.texto) + "». A resposta precisa conter «" + escapar(verificacao.verificacao.deve_conter.join("», «")) + "». O campo testa aponta: " + escapar(verificacao.verificacao.testa) + ".</p>",
-        "<p>No turno " + turnoExcedente.n + " ela informa um dado que não serve ao desbloqueio: «" + escapar(turnoExcedente.texto) + "». A Parte 3 procura esse excedente no banco. O marcador estável é " + escapar(roteiro.dado_desnecessario.trecho) + ".</p>",
+        "<p class=\"tese\">Foi escrito um chamado da Ana Beatriz Costa pedindo o desbloqueio do login " + escapar(roteiro.usuario.login) + " no correio e no SEI.</p>",
+        "<p>São " + roteiro.turnos.length + " turnos e " + roteiro.turnos.filter((turno) => turno.verificacao).length + " perguntas de verificação. Cada uma cobra um fato que ela disse antes, e o gabarito marca de qual turno esse fato veio. Sem isso não se saberia se o agente lembrou ou se só deu uma resposta qualquer.</p>",
+        "<p>Um exemplo é o turno " + verificacao.n + ". Ela pergunta: «" + escapar(verificacao.texto) + "». A resposta precisa conter «" + escapar(verificacao.verificacao.deve_conter.join("», «")) + "», porque isso testa o " + escapar(verificacao.verificacao.testa) + ".</p>",
+        "<p>No turno " + turnoExcedente.n + " foi colocado, de propósito, um dado que não serve ao desbloqueio: «" + escapar(turnoExcedente.texto) + "». Mais adiante esse dado é procurado no banco. O marcador usado é " + escapar(roteiro.dado_desnecessario.trecho) + ".</p>",
         "<p class=\"fonte\">dados/roteiro_atendimento.json</p>"
       ].join("");
 
       const necessidade = [
-        "<p class=\"tese\">O que melhora a conversa pode ficar na memória do framework. Protocolo, situação e prazo não.</p>",
-        "<p>Nome e preferência de tratamento ajudam o próximo turno. A situação do bloqueio muda enquanto o chamado anda, então não pode ser respondida de memória. Conta bancária e nome da mãe não servem ao desbloqueio. A extração varia de uma execução para outra; o filtro procura o trecho declarado no roteiro, e um serviço real trocaria esse filtro por revisão humana.</p>",
+        "<p class=\"tese\">A extração de memória foi ligada para ver o que o banco guardou da Ana.</p>",
+        "<p>O nome dela, e o pedido para ser chamada de Ana, ajudam a conversa, então podem ficar na memória do Agno. Protocolo, situação e prazo não ficam aí: o bloqueio muda enquanto o chamado anda, e a memória responderia com o que era verdade na hora em que gravou. Conta bancária e nome da mãe não servem ao desbloqueio. O filtro usado procura o trecho que está no roteiro. Num serviço de verdade, esses registros são lidos um a um, porque a frase extraída muda de uma execução para outra.</p>",
         renderizarMarkdown(dados.necessidade),
         "<p class=\"fonte\">resultados/tabela_necessidade.md</p>"
       ].join("");
 
       const eliminacao = [
-        "<p class=\"tese\">delete_session apaga a conversa e deixa a memória. O titular só some depois de delete_user_memories.</p>",
-        "<p>Não há uma chamada única por pessoa nesta versão do Agno. A primeira etapa tira a sessão e as execuções. A segunda lista os memory_id e apaga as memórias no banco. A pergunta seguinte usa uma sessão nova, sem histórico, para ver se ainda sobrou o que só a memória saberia.</p>",
+        "<p class=\"tese\">Depois foi testado se apagar apaga mesmo.</p>",
+        "<p>Nesta versão do Agno não existe uma chamada só por pessoa. delete_session foi chamado: a conversa e as execuções saíram, e as memórias ficaram. Em seguida os memory_id foram listados e delete_user_memories foi chamado. Para saber se tinha sobrado alguma coisa que só a memória saberia, a pergunta foi feita de novo, numa sessão nova: nome, login e nome da mãe.</p>",
         renderizarMarkdown(dados.eliminacao),
         "<p class=\"fonte\">resultados/eliminacao.md</p>"
       ].join("");
 
       const vazamento = [
-        "<p class=\"tese\">O framework separa o identificador que recebe. Ele não descobre que um guichê não é uma pessoa.</p>",
-        "<p>Na primeira metade, Ana e Carlos dividem a sessão e cada um entra com o próprio CPF. Na segunda, os dois herdam o identificador do guichê. A regra deste serviço está em identificador_do_cidadao: o user_id é o CPF, porque há um por servidor. Guichê, canal e atendente são compartilhados por todos os chamados daquele balcão.</p>",
+        "<p class=\"tese\">Por último, duas pessoas foram misturadas de propósito.</p>",
+        "<p>Ana e Carlos foram colocados na mesma sessão. Com um CPF para cada um, o Carlos não viu o atendimento dela. Quando os dois ficaram com o identificador do guichê, ele recebeu o nome e o login da Ana. Por isso, neste serviço, o user_id sai do CPF, na função identificador_do_cidadao. O framework só separa o identificador que se declara. Ele não descobre sozinho que um guichê não é uma pessoa.</p>",
         renderizarMarkdown(dados.vazamento),
         "<p class=\"fonte\">resultados/vazamento.md</p>"
       ].join("");
 
       const decisoes = dados.ficha.split("\n").filter((linha) => linha.includes(":") && !linha.startsWith("#"));
       const ficha = [
-        "<p class=\"tese\">Cinco decisões, cada uma amarrada a um número desta medição ou à eliminação.</p>",
+        "<p class=\"tese\">O minilab foi fechado em cinco decisões. Cada uma está presa a um número medido ou ao teste de apagar.</p>",
         decisoes.map((linha) => {
           const corte = linha.indexOf(":");
           return "<article class=\"decisao\"><h3>" + inline(linha.slice(0, corte)) + "</h3><p>" + inline(linha.slice(corte + 1).trim()) + "</p></article>";
@@ -481,24 +481,24 @@
       ].join("");
 
       const fecho = [
-        "<p class=\"tese\">Quatro frases para repetir.</p>",
+        "<p class=\"tese\">Se perguntarem, a resposta cabe nestas quatro frases.</p>",
         "<ol>",
-        "<li>A memória adotada é o histórico completo com teto de 15 execuções: em " + memoria.turnos + " turnos ele lembrou " + historico.acertos + "/" + historico.verificacoes + " por US$ " + dolar(historico.custo) + ", e o resumo só compensaria no turno " + virada + ".</li>",
-        "<li>O user_id sai do CPF do servidor, nunca do guichê.</li>",
-        "<li>Protocolo, situação e prazo moram na tabela do órgão. Nome e tratamento podem ficar na memória do framework.</li>",
-        "<li>A eliminação encadeia delete_session e delete_user_memories. Parar na primeira deixa o agente sabendo o nome, o login e o nome da mãe.</li>",
+        "<li>Foi adotado o histórico completo, com teto de 15 execuções. Em " + memoria.turnos + " turnos ele lembrou " + historico.acertos + "/" + historico.verificacoes + " por US$ " + dolar(historico.custo) + ", e o resumo só compensaria lá no turno " + virada + ".</li>",
+        "<li>O user_id sai do CPF do servidor, não do guichê.</li>",
+        "<li>Protocolo, situação e prazo ficam na tabela do órgão. Nome e tratamento podem ficar na memória.</li>",
+        "<li>Para a Ana sair do banco e da resposta, são necessárias as chamadas delete_session e delete_user_memories. Se a rotina parar na primeira, o agente ainda sabe o nome, o login e o nome da mãe.</li>",
         "</ol>"
       ].join("");
 
       document.querySelector("#conteudo").innerHTML = [
-        secao("01", "Problema", "<p class=\"tese\">Sem estado, o assistente pede de novo o que a pessoa já disse.</p><p>O caso é um retorno ao service desk da MTI: acesso ao correio institucional e ao SEI depois de um reset de senha. Dar memória a esse assistente tem dois custos. O pedido cresce a cada turno, porque o histórico é reenviado. E o que fica gravado passa a ser dado pessoal sob a LGPD. A pergunta do laboratório é quanto a memória custa neste roteiro e se a titular consegue apagá-la de fato.</p>"),
-        secao("02", "Roteiro", roteiroHtml),
-        secao("03", "Custo", custo),
-        secao("04", "O que ficou gravado", necessidade),
-        secao("05", "Eliminação", eliminacao),
-        secao("06", "Vazamento", vazamento),
-        secao("07", "Decisões", ficha),
-        secao("08", "Defesa", fecho)
+        secao("01", "O problema", "<p class=\"tese\">Sem guardar nada, o assistente pede de novo o que a Ana já falou.</p><p>O caso é um retorno no service desk da MTI. Ela redefiniu a senha e o correio e o SEI ficaram bloqueados. Se o agente não tem memória, ela explica tudo outra vez. Com a memória ligada, aparecem dois custos: a conta de tokens cresce a cada turno, e o que fica gravado vira dado pessoal. A medição responde quanto isso custa neste roteiro e se ela consegue apagar de verdade.</p>"),
+        secao("02", "O roteiro", roteiroHtml),
+        secao("03", "O que custou", custo),
+        secao("04", "O que ficou salvo", necessidade),
+        secao("05", "Apagar", eliminacao),
+        secao("06", "Quando vaza", vazamento),
+        secao("07", "O que foi decidido", ficha),
+        secao("08", "Se perguntarem", fecho)
       ].join("");
     }
 
