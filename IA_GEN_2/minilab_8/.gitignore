@@ -1,0 +1,5 @@
+.env
+langflow-env/
+.venv/
+__pycache__/
+langflow.db
