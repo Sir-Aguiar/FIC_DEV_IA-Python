@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mini LAB 08 — Central de TI da MTI</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif'],
+          },
+          colors: {
+            sinal: '#ff0000',
+          },
+        },
+      },
+    };
+  </script>
+  <style>
+    body { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; }
+    .num { font-variant-numeric: tabular-nums; }
+  </style>
+</head>
+<body class="bg-white text-black antialiased">
+  <header class="border-b-2 border-black">
+    <div class="grid grid-cols-12">
+      <div class="col-span-12 md:col-span-3 border-b md:border-b-0 md:border-r border-black px-5 py-4">
+        <p class="text-[11px] uppercase tracking-[0.22em]">Mini LAB 08</p>
+        <p class="mt-1 text-[11px] uppercase tracking-[0.22em] text-neutral-500">Introdução ao LangFlow</p>
+      </div>
+      <div class="col-span-12 md:col-span-9 px-5 py-8 md:py-12">
+        <p class="text-[11px] uppercase tracking-[0.22em] text-sinal">Apresentação para a turma</p>
+        <h1 class="mt-4 max-w-3xl text-5xl font-medium leading-[0.92] tracking-tight md:text-7xl">
+          Quatro fluxos para a central de TI da MTI.
+        </h1>
+        <p class="mt-6 max-w-2xl text-lg leading-snug">
+          Foram separados o atendimento, o resumo, o classificador e um agente de pesquisa.
+          Cada número desta página foi lido do Playground, do Flow Activity ou da API.
+        </p>
+      </div>
+    </div>
+  </header>
+
+  <div class="lg:grid lg:grid-cols-12">
+    <nav class="border-b border-black lg:col-span-3 lg:sticky lg:top-0 lg:h-screen lg:border-b-0 lg:border-r lg:overflow-y-auto" aria-label="Seções">
+      <ol class="text-[13px]" id="indice">
+        <li><a class="flex gap-3 border-b border-neutral-200 px-5 py-3 hover:bg-neutral-50" href="#problema"><span class="num text-sinal">01</span> Problema</a></li>
+        <li><a class="flex gap-3 border-b border-neutral-200 px-5 py-3 hover:bg-neutral-50" href="#setor"><span class="num text-sinal">02</span> Setor</a></li>
+        <li><a class="flex gap-3 border-b border-neutral-200 px-5 py-3 hover:bg-neutral-50" href="#grafo"><span class="num text-sinal">03</span> Grafo</a></li>
+        <li><a class="flex gap-3 border-b border-neutral-200 px-5 py-3 hover:bg-neutral-50" href="#prompt"><span class="num text-sinal">04</span> Prompt</a></li>
+        <li><a class="flex gap-3 border-b border-neutral-200 px-5 py-3 hover:bg-neutral-50" href="#atendimento"><span class="num text-sinal">05</span> Atendimento</a></li>
+        <li><a class="flex gap-3 border-b border-neutral-200 px-5 py-3 hover:bg-neutral-50" href="#resumo"><span class="num text-sinal">06</span> Resumo</a></li>
+        <li><a class="flex gap-3 border-b border-neutral-200 px-5 py-3 hover:bg-neutral-50" href="#classificador"><span class="num text-sinal">07</span> Classificador</a></li>
+        <li><a class="flex gap-3 border-b border-neutral-200 px-5 py-3 hover:bg-neutral-50" href="#agente"><span class="num text-sinal">08</span> Agente</a></li>
+        <li><a class="flex gap-3 border-b border-neutral-200 px-5 py-3 hover:bg-neutral-50" href="#api"><span class="num text-sinal">09</span> API</a></li>
+        <li><a class="flex gap-3 px-5 py-3 hover:bg-neutral-50" href="#governanca"><span class="num text-sinal">10</span> Governança</a></li>
+      </ol>
+    </nav>
+
+    <main class="lg:col-span-9">
+      <p id="estado" class="border-b border-black px-5 py-3 text-[11px] uppercase tracking-[0.18em] text-sinal">A ler os arquivos de resultados.</p>
+
+      <section id="problema" class="border-b border-black px-5 py-12">
+        <p class="text-[11px] uppercase tracking-[0.22em] text-sinal">01</p>
+        <h2 class="mt-2 text-4xl font-medium tracking-tight">O procedimento anterior não deixa rastro.</h2>
+        <p class="mt-6 max-w-2xl text-lg leading-snug">
+          A central recebe os mesmos pedidos muitas vezes. Colar cada texto num assistente de conversa produz quatro falhas.
+        </p>
+        <ol class="mt-8 border-t border-black">
+          <li class="grid grid-cols-12 border-b border-neutral-300 py-4">
+            <span class="num col-span-2 text-sinal md:col-span-1">01</span>
+            <span class="col-span-10 md:col-span-11">O pedido muda de pessoa para pessoa.</span>
+          </li>
+          <li class="grid grid-cols-12 border-b border-neutral-300 py-4">
+            <span class="num col-span-2 text-sinal md:col-span-1">02</span>
+            <span class="col-span-10 md:col-span-11">O resultado não fica registrado.</span>
+          </li>
+          <li class="grid grid-cols-12 border-b border-neutral-300 py-4">
+            <span class="num col-span-2 text-sinal md:col-span-1">03</span>
+            <span class="col-span-10 md:col-span-11">O custo em tokens e em tempo não aparece.</span>
+          </li>
+          <li class="grid grid-cols-12 border-b border-neutral-300 py-4">
+            <span class="num col-span-2 text-sinal md:col-span-1">04</span>
+            <span class="col-span-10 md:col-span-11">Dados pessoais saem sem política de uso.</span>
+          </li>
+        </ol>
+        <p class="mt-8 max-w-2xl leading-snug">
+          No lugar disso, foram escritos quatro fluxos em arquivo, o prompt como documento e um registro de cada execução, com tokens e duração.
+        </p>
+      </section>
+
+      <section id="setor" class="border-b border-black px-5 py-12">
+        <p class="text-[11px] uppercase tracking-[0.22em] text-sinal">02</p>
+        <h2 class="mt-2 text-4xl font-medium tracking-tight">O setor declara o que aceita antes do prompt.</h2>
+        <p class="mt-6 max-w-2xl text-lg leading-snug" id="setor-orgao"></p>
+        <div class="mt-8 grid gap-8 md:grid-cols-2">
+          <div>
+            <p class="text-[11px] uppercase tracking-[0.22em]">Dentro do escopo</p>
+            <p class="mt-3 leading-snug" id="setor-escopo"></p>
+          </div>
+          <div>
+            <p class="text-[11px] uppercase tracking-[0.22em]">Fora do escopo</p>
+            <p class="mt-3 leading-snug" id="setor-fora"></p>
+          </div>
+        </div>
+        <div class="mt-10" id="setor-categorias"></div>
+        <p class="mt-4 text-[11px] uppercase tracking-[0.16em] text-neutral-500">Fonte: dados/setor.md</p>
+      </section>
+
+      <section id="grafo" class="border-b border-black px-5 py-12">
+        <p class="text-[11px] uppercase tracking-[0.22em] text-sinal">03</p>
+        <h2 class="mt-2 text-4xl font-medium tracking-tight">A pergunta e o prompt entram por portas diferentes.</h2>
+        <p class="mt-6 max-w-2xl text-lg leading-snug">
+          Foi montado o atendimento em tela em branco. Quatro componentes, três ligações. A chave da OpenAI fica no ambiente do servidor e não viaja no JSON.
+        </p>
+        <div class="mt-8 border-t border-black">
+          <div class="grid grid-cols-12 border-b border-neutral-300 py-4 text-[11px] uppercase tracking-[0.16em] text-neutral-500">
+            <span class="col-span-1">n</span>
+            <span class="col-span-4">De</span>
+            <span class="col-span-4">O que passa</span>
+            <span class="col-span-3">Para</span>
+          </div>
+          <div class="grid grid-cols-12 border-b border-neutral-300 py-4">
+            <span class="num col-span-1 text-sinal">01</span>
+            <span class="col-span-4">Chat Input</span>
+            <span class="col-span-4">Mensagem do usuário</span>
+            <span class="col-span-3">Input do modelo</span>
+          </div>
+          <div class="grid grid-cols-12 border-b border-neutral-300 py-4">
+            <span class="num col-span-1 text-sinal">02</span>
+            <span class="col-span-4">Prompt Template</span>
+            <span class="col-span-4">Mensagem de sistema</span>
+            <span class="col-span-3">System Message</span>
+          </div>
+          <div class="grid grid-cols-12 border-b border-neutral-300 py-4">
+            <span class="num col-span-1 text-sinal">03</span>
+            <span class="col-span-4">Language Model</span>
+            <span class="col-span-4">Resposta do modelo</span>
+            <span class="col-span-3">Chat Output</span>
+          </div>
+        </div>
+        <p class="mt-6 max-w-2xl leading-snug">
+          Resumo e classificador repetem esses quatro nós e essas três arestas. Muda o texto do prompt, não o desenho.
+        </p>
+      </section>
+
+      <section id="prompt" class="border-b border-black px-5 py-12">
+        <p class="text-[11px] uppercase tracking-[0.22em] text-sinal">04</p>
+        <h2 class="mt-2 text-4xl font-medium tracking-tight">O prompt é o programa do fluxo.</h2>
+        <p class="mt-6 max-w-2xl text-lg leading-snug">
+          Cada texto define o papel, o limite do formato e o que fazer quando a informação não existe. O markdown em prompts/ é a leitura. O mesmo texto está no JSON que o LangFlow executa.
+        </p>
+        <div class="mt-8 border-t border-black">
+          <article class="grid gap-2 border-b border-neutral-300 py-5 md:grid-cols-12">
+            <h3 class="md:col-span-3">Atendimento</h3>
+            <p class="md:col-span-9 leading-snug">Assistente da central de TI. No máximo quatro frases. Se a norma, o prazo ou o número do chamado não forem conhecidos, encaminha-se à central, sem inventar número, data ou artigo. Assunto fora de TI é recusado.</p>
+          </article>
+          <article class="grid gap-2 border-b border-neutral-300 py-5 md:grid-cols-12">
+            <h3 class="md:col-span-3">Resumo</h3>
+            <p class="md:col-span-9 leading-snug">Até três frases, a lista de providências com responsável e prazo, e o número do documento. O que o texto não diz sai como «não informado».</p>
+          </article>
+          <article class="grid gap-2 border-b border-neutral-300 py-5 md:grid-cols-12">
+            <h3 class="md:col-span-3">Classificador</h3>
+            <p class="md:col-span-9 leading-snug">Uma categoria só. Se o trabalho já parou, INCIDENTE. Se pede recurso novo, REQUISICAO. Se pede explicação, DUVIDA. A primeira linha traz apenas a categoria, em maiúsculas, para a API ler.</p>
+          </article>
+          <article class="grid gap-2 border-b border-neutral-300 py-5 md:grid-cols-12">
+            <h3 class="md:col-span-3">Agente</h3>
+            <p class="md:col-span-9 leading-snug">Busca na web, leitura da página e resposta em até quatro frases, com o endereço da fonte. Se a página não trouxer a data pedida, encerra-se, sem nova busca.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="atendimento" class="border-b border-black px-5 py-12">
+        <p class="text-[11px] uppercase tracking-[0.22em] text-sinal">05</p>
+        <h2 class="mt-2 text-4xl font-medium tracking-tight">O atendimento encaminha. Não inventa prazo.</h2>
+        <p class="mt-6 max-w-2xl text-lg leading-snug">
+          Antes do setor, foi reproduzida a pergunta da Seção 4.3 no fluxo de exemplo da SEDUC-MT.
+        </p>
+        <div class="mt-8 grid border-t border-b border-black md:grid-cols-12">
+          <div class="border-b border-black px-0 py-6 md:col-span-3 md:border-b-0 md:border-r md:pr-6">
+            <p class="text-[11px] uppercase tracking-[0.16em] text-neutral-500">Tokens</p>
+            <p class="num mt-2 text-6xl font-medium tracking-tight" id="aula-tokens">—</p>
+            <p class="mt-4 text-[11px] uppercase tracking-[0.16em] text-neutral-500">Tempo</p>
+            <p class="num mt-2 text-6xl font-medium tracking-tight" id="aula-tempo">—</p>
+          </div>
+          <div class="py-6 md:col-span-9 md:pl-8">
+            <p class="text-[11px] uppercase tracking-[0.16em]">Pergunta</p>
+            <p class="mt-2 text-xl leading-snug" id="aula-pergunta"></p>
+            <p class="mt-6 text-[11px] uppercase tracking-[0.16em]">Resposta no Playground</p>
+            <p class="mt-2 leading-snug" id="aula-resposta"></p>
+          </div>
+        </div>
+        <p class="mt-4 text-sm leading-snug text-neutral-700" id="aula-nota"></p>
+        <p class="mt-8 max-w-2xl text-lg leading-snug">
+          Em seguida, foram feitas seis perguntas do setor, cada uma numa sessão nova. O fluxo não tem histórico: a segunda pergunta não herda a primeira. A sexta está fora do escopo.
+        </p>
+        <div class="mt-6 overflow-x-auto" id="tabela-atendimento"></div>
+        <p class="mt-4 text-sm leading-snug" id="nota-atendimento"></p>
+        <p class="mt-4 text-[11px] uppercase tracking-[0.16em] text-neutral-500">Fonte: resultados/reproducao_aula.md e resultados/bateria_atendimento.md</p>
+      </section>
+
+      <section id="resumo" class="border-b border-black px-5 py-12">
+        <p class="text-[11px] uppercase tracking-[0.22em] text-sinal">06</p>
+        <h2 class="mt-2 text-4xl font-medium tracking-tight">O resumo só escreve o que o ofício contém.</h2>
+        <p class="mt-6 max-w-2xl text-lg leading-snug" id="resumo-lead"></p>
+        <div class="mt-8 flex gap-10 border-y border-black py-6">
+          <div>
+            <p class="text-[11px] uppercase tracking-[0.16em] text-neutral-500">Tokens</p>
+            <p class="num mt-1 text-5xl font-medium" id="resumo-tokens">—</p>
+          </div>
+          <div>
+            <p class="text-[11px] uppercase tracking-[0.16em] text-neutral-500">Tempo</p>
+            <p class="num mt-1 text-5xl font-medium" id="resumo-tempo">—</p>
+          </div>
+        </div>
+        <div class="mt-6 overflow-x-auto" id="tabela-resumo"></div>
+        <p class="mt-4 text-sm leading-snug" id="nota-resumo"></p>
+        <p class="mt-4 text-[11px] uppercase tracking-[0.16em] text-neutral-500">Fonte: resultados/conferencia_resumo.md</p>
+      </section>
+
+      <section id="classificador" class="border-b border-black px-5 py-12">
+        <p class="text-[11px] uppercase tracking-[0.22em] text-sinal">07</p>
+        <h2 class="mt-2 text-4xl font-medium tracking-tight">A primeira linha é a categoria. O resto explica.</h2>
+        <p class="mt-6 max-w-2xl text-lg leading-snug">
+          Foram enviadas cinco mensagens. Três cobrem uma categoria cada. Duas são ambíguas. O desempate está no prompt: trabalho já interrompido vira INCIDENTE; recurso novo, REQUISICAO; só explicação, DUVIDA.
+        </p>
+        <div class="mt-6 overflow-x-auto" id="tabela-classificador"></div>
+        <div class="mt-6 space-y-3 text-sm leading-snug" id="notas-classificador"></div>
+        <p class="mt-4 text-[11px] uppercase tracking-[0.16em] text-neutral-500">Fonte: resultados/bateria_classificador.md</p>
+      </section>
+
+      <section id="agente" class="border-b border-black px-5 py-12">
+        <p class="text-[11px] uppercase tracking-[0.22em] text-sinal">08</p>
+        <h2 class="mt-2 text-4xl font-medium tracking-tight">O agente custa o que as ferramentas consomem.</h2>
+        <p class="mt-6 max-w-2xl text-lg leading-snug" id="agente-lead"></p>
+        <div class="mt-8 grid border-y border-black md:grid-cols-2">
+          <div class="border-b border-black py-6 md:border-b-0 md:border-r md:pr-8">
+            <p class="text-[11px] uppercase tracking-[0.16em]">Pergunta direta</p>
+            <p class="num mt-2 text-5xl font-medium tracking-tight md:text-6xl" id="agente-tokens-direta">—</p>
+            <p class="mt-1 text-sm" id="agente-tempo-direta"></p>
+          </div>
+          <div class="py-6 md:pl-8">
+            <p class="text-[11px] uppercase tracking-[0.16em] text-sinal">Pergunta vaga</p>
+            <p class="num mt-2 text-5xl font-medium tracking-tight text-sinal md:text-6xl" id="agente-tokens-vaga">—</p>
+            <p class="mt-1 text-sm" id="agente-tempo-vaga"></p>
+          </div>
+        </div>
+        <p class="mt-4 text-[11px] uppercase tracking-[0.16em]" id="agente-razao"></p>
+        <div class="mt-8 grid gap-10 md:grid-cols-2">
+          <div>
+            <p class="text-[11px] uppercase tracking-[0.16em]">Chamadas da pergunta direta</p>
+            <div class="mt-3" id="tabela-agente-direta"></div>
+          </div>
+          <div>
+            <p class="text-[11px] uppercase tracking-[0.16em]">Chamadas da pergunta vaga</p>
+            <div class="mt-3" id="tabela-agente-vaga"></div>
+          </div>
+        </div>
+        <div class="mt-6 space-y-3 text-sm leading-snug" id="notas-agente"></div>
+        <p class="mt-4 text-[11px] uppercase tracking-[0.16em] text-neutral-500">Fonte: resultados/custo_agente.md · colunas Token e Latency do Flow Activity</p>
+      </section>
+
+      <section id="api" class="border-b border-black px-5 py-12">
+        <p class="text-[11px] uppercase tracking-[0.22em] text-sinal">09</p>
+        <h2 class="mt-2 text-4xl font-medium tracking-tight">A API repetiu o Playground.</h2>
+        <p class="mt-6 max-w-2xl text-lg leading-snug">
+          As mesmas cinco mensagens foram enviadas por exemplos/cliente_api.py, com o cabeçalho x-api-key. A categoria lida é a primeira linha da resposta. Quem ajusta o trabalho usa a tela. Quem integra um sistema chama o fluxo pela rede.
+        </p>
+        <p class="num mt-8 text-6xl font-medium tracking-tight" id="api-placar">—</p>
+        <p class="text-[11px] uppercase tracking-[0.16em] text-neutral-500">Categorias iguais nas duas vias</p>
+        <div class="mt-6 overflow-x-auto" id="tabela-api"></div>
+        <p class="mt-4 text-[11px] uppercase tracking-[0.16em] text-neutral-500">Fonte: resultados/comparacao_api.md</p>
+      </section>
+
+      <section id="governanca" class="px-5 py-12">
+        <p class="text-[11px] uppercase tracking-[0.22em] text-sinal">10</p>
+        <h2 class="mt-2 text-4xl font-medium tracking-tight">A resposta não sai em nome do setor sozinha.</h2>
+        <p class="mt-6 max-w-2xl text-lg leading-snug">
+          Foram registradas quatro decisões. O Playground testa. A API integra. Nenhum dos dois é o canal público.
+        </p>
+        <div class="mt-8 border-t border-black" id="ficha"></div>
+        <div class="mt-12 border-t-2 border-black pt-8">
+          <p class="text-[11px] uppercase tracking-[0.22em]">O que fica para defender</p>
+          <ol class="mt-4">
+            <li class="border-b border-neutral-300 py-3">O atendimento é um grafo de quatro componentes e três ligações, com o prompt na mensagem de sistema.</li>
+            <li class="border-b border-neutral-300 py-3">Resumo e classificador reutilizam esse grafo e mudam o prompt.</li>
+            <li class="border-b border-neutral-300 py-3">A pergunta vaga do agente gastou mais tokens porque fez mais chamadas de ferramenta.</li>
+            <li class="border-b border-neutral-300 py-3">O fluxo versionado é o JSON, executado pela API, e a chave do provedor permanece no ambiente.</li>
+            <li class="border-b border-neutral-300 py-3">A resposta só sai em nome do setor depois da revisão da coordenação da central.</li>
+          </ol>
+        </div>
+        <p class="mt-8 text-[11px] uppercase tracking-[0.16em] text-neutral-500">Fonte: resultados/ficha_governanca.md</p>
+      </section>
+    </main>
+  </div>
+
+  <script>
+    const ARQUIVOS = {
+      setor: '../dados/setor.md',
+      aula: '../resultados/reproducao_aula.md',
+      atendimento: '../resultados/bateria_atendimento.md',
+      resumo: '../resultados/conferencia_resumo.md',
+      classificador: '../resultados/bateria_classificador.md',
+      agente: '../resultados/custo_agente.md',
+      api: '../resultados/comparacao_api.md',
+      ficha: '../resultados/ficha_governanca.md',
+    };
+
+    const ROTULOS_FICHA = [
+      'Para onde vão os textos',
+      'Por quanto tempo ficam no banco',
+      'Quem revisa a resposta',
+      'Onde o prompt fica guardado',
+    ];
+
+    function limpar(texto) {
+      return texto
+        .replace(/`([^`]+)`/g, '$1')
+        .replace(/\*\*([^*]+)\*\*/g, '$1')
+        .replace(/\s+/g, ' ')
+        .trim();
+    }
+
+    function paragrafos(md) {
+      return md
+        .split(/\n\s*\n/)
+        .map((bloco) => bloco.trim())
+        .filter((bloco) => bloco && !bloco.startsWith('#') && !bloco.startsWith('|') && !bloco.startsWith('>'))
+        .map((bloco) => limpar(bloco.replace(/\n/g, ' ')));
+    }
+
+    function citacoes(md) {
+      return md
+        .split('\n')
+        .filter((linha) => linha.startsWith('>'))
+        .map((linha) => limpar(linha.replace(/^>\s?/, '')));
+    }
+
+    function tabelas(md) {
+      const blocos = [];
+      let atual = [];
+      md.split('\n').forEach((linha) => {
+        if (linha.trim().startsWith('|')) {
+          atual.push(linha);
+          return;
+        }
+        if (atual.length) {
+          blocos.push(atual);
+          atual = [];
+        }
+      });
+      if (atual.length) blocos.push(atual);
+      return blocos.map((linhas) => {
+        const celulas = (linha) => linha.split('|').slice(1, -1).map((c) => limpar(c));
+        return {
+          cabeca: celulas(linhas[0]),
+          corpo: linhas.slice(2).map(celulas),
+        };
+      });
+    }
+
+    function desenharTabela(destino, tabela) {
+      if (!tabela) return;
+      const thead = tabela.cabeca.map((c) => `<th class="py-2 pr-4 text-left text-[11px] font-normal uppercase tracking-[0.14em] text-neutral-500">${c}</th>`).join('');
+      const linhas = tabela.corpo.map((linha) => {
+        const marca = linha.join(' ').toLowerCase().includes('auxílio') || linha.join(' ').includes('não informado');
+        const celulas = linha.map((c, i) => {
+          const numero = /tokens|tempo|duração/i.test(tabela.cabeca[i] || '');
+          return `<td class="py-3 pr-4 align-top leading-snug ${numero ? 'num whitespace-nowrap' : ''}">${c}</td>`;
+        }).join('');
+        return `<tr class="border-b border-neutral-300 ${marca ? 'bg-neutral-50' : ''}">${celulas}</tr>`;
+      }).join('');
+      destino.innerHTML = `<table class="w-full min-w-[40rem] border-collapse text-sm"><thead><tr class="border-b border-black">${thead}</tr></thead><tbody>${linhas}</tbody></table>`;
+    }
+
+    function texto(id, valor) {
+      const el = document.getElementById(id);
+      if (el) el.textContent = valor || '';
+    }
+
+    function categorias(md) {
+      return md
+        .split('\n')
+        .filter((linha) => linha.startsWith('- '))
+        .map((linha) => limpar(linha.slice(2)));
+    }
+
+    function preencher(arquivos) {
+      const setor = arquivos.setor;
+      texto('setor-orgao', paragrafos(setor)[0]);
+      texto('setor-escopo', paragrafos(setor).find((p) => p.startsWith('O atendimento aceita')));
+      texto('setor-fora', paragrafos(setor).find((p) => p.startsWith('Fica fora')));
+      document.getElementById('setor-categorias').innerHTML = categorias(setor).map((item) => {
+        const [nome, criterio] = item.split(':');
+        return `<div class="grid border-t border-black py-4 md:grid-cols-12"><p class="text-[11px] uppercase tracking-[0.16em] md:col-span-3">${nome}</p><p class="md:col-span-9">${criterio || ''}</p></div>`;
+      }).join('');
+
+      const cit = citacoes(arquivos.aula);
+      texto('aula-pergunta', cit[0]);
+      texto('aula-resposta', cit[1]);
+      const tokensAula = arquivos.aula.match(/\*\*(\d+)\*\* tokens/);
+      const tempoAula = arquivos.aula.match(/\*\*([0-9,]+ s)\*\*/);
+      texto('aula-tokens', tokensAula ? tokensAula[1] : '—');
+      texto('aula-tempo', tempoAula ? tempoAula[1] : '—');
+      texto('aula-nota', paragrafos(arquivos.aula).find((p) => p.includes('tokens')));
+
+      desenharTabela(document.getElementById('tabela-atendimento'), tabelas(arquivos.atendimento)[0]);
+      texto('nota-atendimento', paragrafos(arquivos.atendimento).at(-1));
+
+      const medidaResumo = arquivos.resumo.match(/usou (\d+) tokens em ([0-9,]+ s)/);
+      texto('resumo-tokens', medidaResumo ? medidaResumo[1] : '—');
+      texto('resumo-tempo', medidaResumo ? medidaResumo[2] : '—');
+      texto('resumo-lead', paragrafos(arquivos.resumo)[0]);
+      desenharTabela(document.getElementById('tabela-resumo'), tabelas(arquivos.resumo)[0]);
+      texto('nota-resumo', paragrafos(arquivos.resumo).at(-1));
+
+      desenharTabela(document.getElementById('tabela-classificador'), tabelas(arquivos.classificador)[0]);
+      document.getElementById('notas-classificador').innerHTML = paragrafos(arquivos.classificador)
+        .filter((p) => p.startsWith('A quarta') || p.startsWith('A quinta'))
+        .map((p) => `<p>${p}</p>`)
+        .join('');
+
+      texto('agente-lead', paragrafos(arquivos.agente).find((p) => p.startsWith('A pergunta direta')));
+      const direta = arquivos.agente.match(/direta custou ([0-9.]+) tokens em ([0-9,]+ s)/);
+      const vaga = arquivos.agente.match(/vaga custou ([0-9.]+) tokens em ([0-9,]+ s)/);
+      const razao = arquivos.agente.match(/cerca de ([0-9,]+ vezes)/);
+      texto('agente-tokens-direta', direta ? direta[1] : '—');
+      texto('agente-tempo-direta', direta ? `${direta[2]} no Flow Activity` : '');
+      texto('agente-tokens-vaga', vaga ? vaga[1] : '—');
+      texto('agente-tempo-vaga', vaga ? `${vaga[2]} no Flow Activity` : '');
+      texto('agente-razao', razao ? `A vaga custou ${razao[1]} os tokens da pergunta direta.` : '');
+      const tabelasAgente = tabelas(arquivos.agente);
+      desenharTabela(document.getElementById('tabela-agente-direta'), tabelasAgente[0]);
+      desenharTabela(document.getElementById('tabela-agente-vaga'), tabelasAgente[1]);
+      document.getElementById('notas-agente').innerHTML = paragrafos(arquivos.agente)
+        .filter((p) => p.startsWith('Resposta:'))
+        .map((p) => `<p>${p}</p>`)
+        .join('');
+
+      const tabelaApi = tabelas(arquivos.api)[0];
+      desenharTabela(document.getElementById('tabela-api'), tabelaApi);
+      if (tabelaApi) {
+        const iguais = tabelaApi.corpo.filter((linha) => (linha.at(-1) || '').toLowerCase() === 'sim').length;
+        texto('api-placar', `${iguais} / ${tabelaApi.corpo.length}`);
+      }
+
+      document.getElementById('ficha').innerHTML = paragrafos(arquivos.ficha).map((p, i) => `
+        <article class="grid gap-2 border-b border-neutral-300 py-5 md:grid-cols-12">
+          <h3 class="text-[11px] uppercase tracking-[0.16em] md:col-span-4"><span class="num text-sinal">${String(i + 1).padStart(2, '0')}</span> ${ROTULOS_FICHA[i] || ''}</h3>
+          <p class="leading-snug md:col-span-8">${p}</p>
+        </article>
+      `).join('');
+
+      document.getElementById('estado').remove();
+    }
+
+    Promise.all(Object.entries(ARQUIVOS).map(async ([chave, caminho]) => {
+      const resposta = await fetch(caminho);
+      if (!resposta.ok) throw new Error(caminho);
+      return [chave, await resposta.text()];
+    }))
+      .then((pares) => preencher(Object.fromEntries(pares)))
+      .catch(() => {
+        document.getElementById('estado').textContent = 'Os arquivos não foram lidos. Abra esta página por um servidor na pasta do minilab, para alcançar resultados/ e dados/.';
+      });
+  </script>
+</body>
+</html>
