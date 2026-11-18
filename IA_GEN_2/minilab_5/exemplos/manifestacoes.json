@@ -1,0 +1,44 @@
+{
+  "_comentario": "Manifestações recebidas pela Ouvidoria-Geral da Controladoria-Geral do Estado. Os nomes e protocolos são fictícios. O campo 'tipo_esperado' é o gabarito da triagem; 'classificacao_esperada' é o gabarito do fluxo de acesso à informação.",
+  "manifestacoes": [
+    {
+      "id": "M1",
+      "canal": "formulário do portal",
+      "texto": "Solicitei a certidão negativa de débitos estaduais há 23 dias e até agora não recebi retorno. O prazo informado no portal era de 10 dias úteis. Já liguei três vezes para o 0800 e ninguém sabe informar o andamento.",
+      "tipo_esperado": "atendimento"
+    },
+    {
+      "id": "M2",
+      "canal": "e-mail",
+      "texto": "Quero denunciar que um servidor da unidade de atendimento de Rondonópolis vem fotografando as telas do sistema com dados de contribuintes e enviando por aplicativo de mensagens para pessoas de fora do órgão. Tenho prints que posso apresentar.",
+      "tipo_esperado": "juridico"
+    },
+    {
+      "id": "M3",
+      "canal": "formulário do portal",
+      "texto": "Com base na Lei de Acesso à Informação, solicito a relação de contratos de obras firmados pela Secretaria de Infraestrutura em 2025, com objeto, valor e empresa contratada.",
+      "tipo_esperado": "informacao",
+      "classificacao_esperada": "publica"
+    },
+    {
+      "id": "M4",
+      "canal": "e-mail",
+      "texto": "Solicito cópia integral do processo administrativo 2026.004.1187, que trata da apuração de infração em que figuro como interessado, incluindo os depoimentos das testemunhas.",
+      "tipo_esperado": "informacao",
+      "classificacao_esperada": "dado_pessoal"
+    },
+    {
+      "id": "M5",
+      "canal": "formulário do portal",
+      "texto": "Solicito acesso ao relatório da auditoria que a Controladoria está realizando na folha de pagamento da Secretaria de Educação, iniciada em agosto de 2026.",
+      "tipo_esperado": "informacao",
+      "classificacao_esperada": "sigilosa"
+    },
+    {
+      "id": "M6",
+      "canal": "telefone",
+      "texto": "O portal de serviços fica fora do ar toda manhã entre 8h e 9h, e quando volta o protocolo que eu tinha começado a preencher some. Perdi o mesmo requerimento três vezes esta semana.",
+      "tipo_esperado": "tecnologia"
+    }
+  ]
+}

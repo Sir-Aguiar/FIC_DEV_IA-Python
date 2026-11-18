@@ -1,0 +1,24 @@
+{
+  "processo": "SEINFRA-2026-PRO-00471",
+  "chamadas": 12,
+  "tokens_entrada": 14616,
+  "tokens_saida": 7974,
+  "custo_usd": 0.01249,
+  "segundos": 33.4,
+  "nota": {
+    "sintese": "O projeto é tecnicamente viável, mas não está apto à contratação imediata. O volume de 340 mil processos/ano e 2.100 usuários é compatível com solução de mercado, mediante arquitetura escalável, porém a migração do acervo, as integrações com o SIAFEM e o Diário Oficial, a disponibilidade de 99,5% e o prazo de implantação de 14 meses dependem de requisitos, ETP, testes e governança ainda não concluídos. A contratação somente é recomendável após o saneamento técnico, orçamentário, jurídico e de governança.",
+    "valor_estimado": 1870000.0,
+    "dotacao_disponivel": 1400000.0,
+    "recomendacao": "Não autorizar a contratação imediata. Recomenda-se concluir o estudo técnico preliminar, o levantamento de requisitos, o parecer jurídico, o plano de migração, a prova de conceito e o plano orçamentário, com definição de SLA, backup, monitoramento, recuperação de desastres, interfaces e testes de homologação, antes da realização do pregão por menor preço. A dotação de R$ 1.400.000,00 é insuficiente diante do valor estimado de R$ 1.870.000,00, gerando déficit imediato de R$ 470.000,00; a previsão de R$ 600.000,00 no exercício seguinte não garante disponibilidade financeira nem autoriza antecipar despesa futura. A recomendação observa a fase preparatória e a necessidade de planejamento, definição do objeto, estimativa de despesas e demonstração da compatibilidade orçamentária previstas na legislação aplicável, especialmente em seu art. 18.",
+    "pontos_de_atencao": [
+      "A migração do acervo, incluindo anexos, exige inventário, saneamento, piloto, validação e plano de reversão.",
+      "As integrações com o SIAFEM e o Diário Oficial dependem de requisitos e interfaces formalmente definidos.",
+      "A disponibilidade de 99,5% deve constar em SLA, com backup, monitoramento e recuperação de desastres.",
+      "O prazo de implantação de 14 meses é possível, mas incompatível com a ausência de ETP e levantamento de requisitos concluído.",
+      "A equipe própria de 6 servidores, sem dedicação exclusiva, demanda reforço contratado e governança específica.",
+      "A previsão de R$ 600.000,00 no exercício seguinte pode cobrir a diferença, mas não garante disponibilidade financeira nem autoriza antecipar despesa futura.",
+      "A manutenção anual projetada de R$ 224.400,00 representa economia potencial de R$ 85.600,00 frente aos R$ 310.000,00 do legado, condicionada à plena substituição.",
+      "Deve-se considerar a sobreposição contratual até 31/03/2027, além dos custos de transição, treinamento e migração."
+    ]
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "_comentario": "Manifestações típicas do setor de TI da MTI, escritas para exercício. Nomes, matrículas, chamados, unidades e horários são fictícios. O campo 'area_esperada' é o gabarito, registrado antes de qualquer execução, e não deve ser copiado para a tarefa do agente.",
+  "manifestacoes": [
+    {
+      "id": "MTI1",
+      "canal": "formulário do portal",
+      "area_esperada": "service desk",
+      "texto": "Abri chamado na central de serviços da MTI na segunda-feira porque o código de acesso à rede não chega no celular corporativo. O prazo informado na abertura foi de 8 horas úteis e já se passaram três dias úteis. Sem esse código não entro no ponto eletrônico nem no e-mail. Liguei duas vezes para o ramal da central e a ligação cai na fila de espera."
+    },
+    {
+      "id": "MTI2",
+      "canal": "telefone",
+      "area_esperada": "infraestrutura e redes",
+      "texto": "A conexão da unidade administrativa no interior cai todo dia útil entre 10h e 11h desde a semana passada. O sistema de protocolo abre, trava na hora de salvar e o texto digitado some. O link volta sozinho, sempre no mesmo horário. O atendimento ao público para nesse intervalo e a equipe de redes ainda não deu uma posição."
+    },
+    {
+      "id": "MTI3",
+      "canal": "e-mail",
+      "area_esperada": "segurança da informação",
+      "texto": "Registro que uma conta de administrador de sistema interno foi usada fora do expediente, a partir de um endereço que não é da rede do órgão, para consultar cadastros de servidores. A pessoa responsável por essa conta estava de férias no período. Não informo nome aqui. Posso indicar à equipe de segurança o horário dos acessos e um identificador anonimizado da conta."
+    },
+    {
+      "id": "MTI4",
+      "canal": "formulário do portal",
+      "area_esperada": "sustentação de sistemas",
+      "texto": "Desde a atualização de quinta-feira, o módulo de tramitação do sistema de processos recusa anexos em PDF. A tela mostra apenas 'falha ao persistir documento', e o erro ocorre quando o arquivo passa de alguns megabytes. Os processos ficam parados na unidade porque não conseguimos juntar o parecer ao expediente."
+    },
+    {
+      "id": "MTI5",
+      "canal": "e-mail",
+      "area_esperada": "dados e banco de dados",
+      "texto": "O painel gerencial que a MTI disponibiliza para a secretaria passou a exibir, desde ontem, os quantitativos de outra pasta no lugar dos nossos. O filtro de órgão não está sendo aplicado. Pedimos a correção com urgência: a reunião de acompanhamento é amanhã e o número mostrado não corresponde à nossa unidade."
+    },
+    {
+      "id": "MTI6",
+      "canal": "formulário do portal",
+      "area_esperada": "gestão de acessos",
+      "texto": "Solicito o desligamento dos acessos de um colaborador terceirizado cujo contrato encerrou no dia 31. A conta de e-mail e o perfil no sistema de compras continuam ativos. O ofício de desligamento foi enviado ao service desk há dez dias e não houve retorno. Peço a revogação imediata e a confirmação por escrito, sem precisar repetir dados pessoais do colaborador nesta mensagem."
+    }
+  ]
+}

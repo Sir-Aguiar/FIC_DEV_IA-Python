@@ -1,0 +1,73 @@
+{
+  "_nota": "Rubrica de seis itens objetivos, aplicada por regra sobre o texto do parecer. Cada item vale um ponto. Escrita antes de qualquer execução, para que o critério não seja ajustado ao resultado. A rubrica não tenta detectar número inventado, porque cálculos derivados e números de lei são indistinguíveis de invenção sem interpretação; a fidelidade é medida pelo juiz automático, conforme a Seção 5.4.",
+  "itens": [
+    {
+      "id": "R1",
+      "criterio": "Cita o valor estimado da contratação",
+      "verificacao": "contem_algum",
+      "alvos": [
+        "1.870.000",
+        "1870000",
+        "1,87 milh"
+      ]
+    },
+    {
+      "id": "R2",
+      "criterio": "Aponta a insuficiência da dotação do exercício",
+      "verificacao": "contem_algum",
+      "alvos": [
+        "1.400.000",
+        "1400000",
+        "dotação",
+        "insufici"
+      ]
+    },
+    {
+      "id": "R3",
+      "criterio": "Menciona a ausência do estudo técnico preliminar exigido pela Lei 14.133/2021",
+      "verificacao": "contem_algum",
+      "alvos": [
+        "estudo técnico preliminar",
+        "14.133",
+        "14133"
+      ]
+    },
+    {
+      "id": "R4",
+      "criterio": "Trata do prazo de implantação ou do limite de empenho",
+      "verificacao": "contem_algum",
+      "alvos": [
+        "14 meses",
+        "quatorze meses",
+        "30 de novembro",
+        "empenho"
+      ]
+    },
+    {
+      "id": "R5",
+      "criterio": "Apresenta recomendação explícita",
+      "verificacao": "contem_algum",
+      "alvos": [
+        "recomend",
+        "opina",
+        "conclui-se",
+        "sugere",
+        "parecer favor",
+        "parecer contr"
+      ]
+    },
+    {
+      "id": "R6",
+      "criterio": "Aponta a pendência jurídica: ausência de parecer da assessoria ou contrato vigente com o fornecedor legado",
+      "verificacao": "contem_algum",
+      "alvos": [
+        "parecer jur",
+        "assessoria jur",
+        "contrato vigente",
+        "fornecedor do sistema legado",
+        "31 de março de 2027",
+        "sobreposição de custos"
+      ]
+    }
+  ]
+}

@@ -50,3 +50,20 @@ As duas primeiras ferramentas chegam só com o tipo (rotina como string; volume,
 
 - codigo_rotina: código devolvido pela consulta da rotina, como RT-NFE
 - horas_previstas: horas que o cálculo de encaixe disse que o lote precisa
+
+## Consultas
+
+- C01, C02, C06 (Uma ferramenta)
+> consultar_rotina: ritmo da NF-e (120.000), 7,0 h restantes do SPED, e uma rotina que não existe
+
+- C03, C04, C05 (Uma ferramenta)
+> calcular_encaixe_lote, com ritmo e horas já escritos na pergunta
+
+- C07, C08, C09 (Duas em cadeia)
+> consulta e depois cálculo: NF-e cabe, IPVA não cabe, GIA leva 4,0 h
+
+- C10, C11 (Sem Ferramenta)
+> diferença entre ritmo e janela; o significado de GTI
+
+- C12 (Armadilha)
+> "aquele lote de ontem", sem rotina e sem volume; a resposta certa pede os dados

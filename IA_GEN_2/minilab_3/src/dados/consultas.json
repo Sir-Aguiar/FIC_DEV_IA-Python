@@ -1,0 +1,135 @@
+{
+  "_nota": "Gabarito do encaixe de lote, escrito antes de qualquer execução. São doze consultas na proporção da aula: seis de uma ferramenta, três de duas em cadeia, duas sem ferramenta e uma armadilha. O acerto não é comparação literal: src/criterio.py iguala grafias (120.000 e 120 mil, 7,0 h e sete horas, não e nao) antes de procurar cada trecho. Nenhuma consulta grava na janela, para que rotinas.json permaneça estável.",
+  "consultas": [
+    {
+      "id": "C01",
+      "tipo": "uma ferramenta",
+      "pergunta": "Qual o ritmo, em registros por hora, da rotina de processamento de NF-e?",
+      "ferramentas_esperadas": [
+        "consultar_rotina"
+      ],
+      "deve_conter": [
+        "120.000"
+      ]
+    },
+    {
+      "id": "C02",
+      "tipo": "uma ferramenta",
+      "pergunta": "Quantas horas ainda restam na janela da carga do SPED Fiscal?",
+      "ferramentas_esperadas": [
+        "consultar_rotina"
+      ],
+      "deve_conter": [
+        "7,0 h"
+      ]
+    },
+    {
+      "id": "C03",
+      "tipo": "uma ferramenta",
+      "pergunta": "Um lote de 80.000 registros será processado a 40.000 registros por hora e a janela tem 7 horas restantes. O lote cabe?",
+      "ferramentas_esperadas": [
+        "calcular_encaixe_lote"
+      ],
+      "deve_conter": [
+        "cabe"
+      ]
+    },
+    {
+      "id": "C04",
+      "tipo": "uma ferramenta",
+      "pergunta": "Preciso encaixar 50.000 registros a 25.000 por hora numa janela com 0,5 hora restante. Esse lote cabe?",
+      "ferramentas_esperadas": [
+        "calcular_encaixe_lote"
+      ],
+      "deve_conter": [
+        "não cabe"
+      ]
+    },
+    {
+      "id": "C05",
+      "tipo": "uma ferramenta",
+      "pergunta": "Calcule as horas necessárias para 15.000 registros a 15.000 por hora, com 5 horas restantes na janela.",
+      "ferramentas_esperadas": [
+        "calcular_encaixe_lote"
+      ],
+      "deve_conter": [
+        "1,0 h"
+      ]
+    },
+    {
+      "id": "C06",
+      "tipo": "uma ferramenta",
+      "pergunta": "A rotina de malha fiscal do Simples Nacional está cadastrada? Se estiver, qual é o código?",
+      "ferramentas_esperadas": [
+        "consultar_rotina"
+      ],
+      "deve_conter": [
+        "não existe"
+      ]
+    },
+    {
+      "id": "C07",
+      "tipo": "duas em cadeia",
+      "pergunta": "Vai entrar um lote de 300.000 registros no processamento de NF-e. Ele cabe na janela que ainda resta?",
+      "ferramentas_esperadas": [
+        "consultar_rotina",
+        "calcular_encaixe_lote"
+      ],
+      "deve_conter": [
+        "cabe"
+      ]
+    },
+    {
+      "id": "C08",
+      "tipo": "duas em cadeia",
+      "pergunta": "Um lote de 100.000 registros precisa passar na atualização do IPVA. Ele cabe nas horas que ainda restam?",
+      "ferramentas_esperadas": [
+        "consultar_rotina",
+        "calcular_encaixe_lote"
+      ],
+      "deve_conter": [
+        "não cabe"
+      ]
+    },
+    {
+      "id": "C09",
+      "tipo": "duas em cadeia",
+      "pergunta": "A consolidação da GIA vai receber 60.000 registros. Quantas horas o lote leva?",
+      "ferramentas_esperadas": [
+        "consultar_rotina",
+        "calcular_encaixe_lote"
+      ],
+      "deve_conter": [
+        "4,0 h"
+      ]
+    },
+    {
+      "id": "C10",
+      "tipo": "sem ferramenta",
+      "pergunta": "Em uma frase, qual a diferença entre o ritmo de uma rotina e as horas restantes da janela?",
+      "ferramentas_esperadas": [],
+      "deve_conter": [
+        "por hora"
+      ]
+    },
+    {
+      "id": "C11",
+      "tipo": "sem ferramenta",
+      "pergunta": "O que significa a sigla GTI no contexto da Secretaria de Estado de Fazenda?",
+      "ferramentas_esperadas": [],
+      "deve_conter": [
+        "Tecnologia"
+      ]
+    },
+    {
+      "id": "C12",
+      "tipo": "armadilha",
+      "pergunta": "Encaixe aquele lote de ontem na rotina e me diga se cabe na janela.",
+      "ferramentas_esperadas": [],
+      "deve_conter": [
+        "não"
+      ],
+      "observacao": "Não há rotina nem volume na pergunta. A resposta correta é pedir os dados que faltam, e não inventar um código ou um ritmo para chamar a ferramenta."
+    }
+  ]
+}

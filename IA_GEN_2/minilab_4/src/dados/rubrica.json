@@ -1,0 +1,41 @@
+{
+  "_nota": "Rubrica de seis itens objetivos, escrita antes de qualquer execução do parecer. Cada item vale um ponto e se verifica pela presença de um termo ou número no texto. Não há item que tente flagrar número inventado: um parecer fiel pode calcular o desvio de 0,33 ponto percentual ou citar a Lei 13.709, e uma regra de substring não distingue esse uso de invenção. A fidelidade fica com o juiz.",
+  "itens": [
+    {
+      "id": "R1",
+      "criterio": "Cita a disponibilidade realizada das soluções de TIC",
+      "verificacao": "contem_algum",
+      "alvos": ["99,47", "99.47"]
+    },
+    {
+      "id": "R2",
+      "criterio": "Cita a meta de disponibilidade do ciclo",
+      "verificacao": "contem_algum",
+      "alvos": ["99,80", "99.80"]
+    },
+    {
+      "id": "R3",
+      "criterio": "Cita o nível de satisfação realizado",
+      "verificacao": "contem_algum",
+      "alvos": ["89,82", "89.82"]
+    },
+    {
+      "id": "R4",
+      "criterio": "Cita a dotação inicial do programa na LOA",
+      "verificacao": "contem_algum",
+      "alvos": ["101.311.882", "101311882", "101,3 milh"]
+    },
+    {
+      "id": "R5",
+      "criterio": "Menciona a LGPD ou o Selo Diamante de transparência",
+      "verificacao": "contem_algum",
+      "alvos": ["lgpd", "selo diamante"]
+    },
+    {
+      "id": "R6",
+      "criterio": "Apresenta recomendação explícita",
+      "verificacao": "contem_algum",
+      "alvos": ["recomend"]
+    }
+  ]
+}

@@ -1,0 +1,102 @@
+[
+  [
+    {
+      "rotulo": "Chamada única",
+      "rubrica": 6,
+      "perdidos": [],
+      "fidelidade": 5,
+      "utilidade": 5,
+      "justificativa": "O parecer se apoia corretamente nos dados do dossiê, distingue a divergência financeira e o não atingimento da disponibilidade, e oferece condicionantes e providências concretas que permitem à Diretoria decidir sobre a aprovação e continuidade do programa.",
+      "chamadas": 1,
+      "tokens": 5272,
+      "tempo": 38.93315580001217,
+      "custo": 0.0053584
+    },
+    {
+      "rotulo": "Equipe sem backstory",
+      "rubrica": 6,
+      "perdidos": [],
+      "fidelidade": 4,
+      "utilidade": 5,
+      "justificativa": "O parecer reproduz corretamente os principais indicadores, riscos, valores e a divergência orçamentária do dossiê, mas apresenta como conclusões verificadas a adequação da arquitetura, a admissibilidade jurídica da continuidade e a existência de suplementações/bases orçamentárias distintas, pontos que o dossiê não comprova integralmente; ainda assim, oferece condicionantes e encaminhamentos suficientemente concretos para decisão gerencial.",
+      "chamadas": 9,
+      "tokens": 22110,
+      "tempo": 39.663942899991525,
+      "custo": 0.016644
+    },
+    {
+      "rotulo": "Equipe com backstory",
+      "rubrica": 6,
+      "perdidos": [],
+      "fidelidade": 5,
+      "utilidade": 5,
+      "justificativa": "O parecer reproduz com precisão os dados técnicos e as duas séries financeiras divergentes do dossiê, explicita suas limitações e propõe encaminhamentos concretos para disponibilidade, metodologia de aferição e conciliação orçamentária.",
+      "chamadas": 9,
+      "tokens": 24954,
+      "tempo": 40.618489599990426,
+      "custo": 0.0192768
+    },
+    {
+      "rotulo": "Backstory e saída estruturada",
+      "rubrica": 6,
+      "perdidos": [],
+      "fidelidade": 4,
+      "utilidade": 4,
+      "justificativa": "O parecer reproduz com precisão os indicadores, valores divergentes, riscos operacionais e causas de suplementação do dossiê, mas extrapola parcialmente ao tratar a conformidade com LGPD e Selo Diamante como não comprovada, embora o RAG os vincule expressamente, e ao condicionar a aprovação a documentação não necessariamente exigida pelo material apresentado.",
+      "chamadas": 9,
+      "tokens": 20682,
+      "tempo": 22.970155699993484,
+      "custo": 0.0117954
+    }
+  ],
+  [
+    {
+      "rotulo": "Chamada única",
+      "rubrica": 6,
+      "perdidos": [],
+      "fidelidade": 5,
+      "utilidade": 3,
+      "justificativa": "O parecer reproduz corretamente os dados, metas, resultados, incidentes e divergência financeira do dossiê, e suas exigências adicionais são recomendações técnicas; porém, está truncado na análise orçamentária e não apresenta conclusão/dispositivo final completo que permita uma decisão gerencial plenamente operacional.",
+      "chamadas": 1,
+      "tokens": 4991,
+      "tempo": 34.912787100009155,
+      "custo": 0.0050212
+    },
+    {
+      "rotulo": "Equipe sem backstory",
+      "rubrica": 6,
+      "perdidos": [],
+      "fidelidade": 5,
+      "utilidade": 5,
+      "justificativa": "O parecer reproduz corretamente os resultados, riscos e divergências do dossiê, distingue adequadamente as duas apurações financeiras e oferece condicionantes e medidas concretas suficientes para decisão gerencial.",
+      "chamadas": 9,
+      "tokens": 23727,
+      "tempo": 40.615250200004084,
+      "custo": 0.0175764
+    },
+    {
+      "rotulo": "Equipe com backstory",
+      "rubrica": 6,
+      "perdidos": [],
+      "fidelidade": 5,
+      "utilidade": 4,
+      "justificativa": "O parecer reproduz com precisão os resultados físicos, os incidentes, as duas séries orçamentárias divergentes e as limitações documentais do dossiê, propondo cautelas coerentes, mas o trecho apresentado termina de forma incompleta na análise jurídica e não explicita uma deliberação final consolidada.",
+      "chamadas": 9,
+      "tokens": 22734,
+      "tempo": 34.24236299999757,
+      "custo": 0.0168678
+    },
+    {
+      "rotulo": "Backstory e saída estruturada",
+      "rubrica": 6,
+      "perdidos": [],
+      "fidelidade": 4,
+      "utilidade": 5,
+      "justificativa": "O parecer reproduz corretamente os indicadores, entregas, metas, riscos e as duas séries orçamentárias do dossiê, oferecendo condicionantes decisórios claros, mas extrapola parcialmente ao vincular o sigilo do plano de negócios à impossibilidade de verificar integralmente LGPD, segurança e conformidade, além de exigir documentos específicos não descritos no dossiê.",
+      "chamadas": 9,
+      "tokens": 23931,
+      "tempo": 29.505273299990222,
+      "custo": 0.015007199999999998
+    }
+  ]
+]
