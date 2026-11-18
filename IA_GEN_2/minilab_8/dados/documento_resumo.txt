@@ -1,0 +1,11 @@
+Ofício Circular nº 48/2026/GINF/MTI
+Cuiabá, 10 de novembro de 2026.
+Assunto: atualização das estações e da VPN.
+
+A Coordenadoria de Infraestrutura da Empresa Mato-grossense de Tecnologia da Informação comunica às unidades o seguinte.
+
+1. Conferir as estações de trabalho com o sistema operacional desatualizado e registrar o inventário no portal de chamados. Responsável: Ana Ribeiro, analista da Central de Atendimento. Prazo: 28 de novembro de 2026.
+
+2. Substituir as senhas das contas de serviço usadas pela VPN e confirmar o teste de conexão. Responsável: Carlos Mendes, da equipe de redes. Prazo: 21 de novembro de 2026.
+
+3. Esclarecer às unidades as dúvidas sobre o novo formulário de abertura de chamado.

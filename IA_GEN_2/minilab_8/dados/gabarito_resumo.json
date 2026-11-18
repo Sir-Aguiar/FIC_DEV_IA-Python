@@ -1,0 +1,21 @@
+{
+  "documento": "Ofício Circular nº 48/2026/GINF/MTI",
+  "data": "10 de novembro de 2026",
+  "providencias": [
+    {
+      "providencia": "Conferir as estações de trabalho com o sistema operacional desatualizado e registrar o inventário no portal de chamados",
+      "responsavel": "Ana Ribeiro",
+      "prazo": "28 de novembro de 2026"
+    },
+    {
+      "providencia": "Substituir as senhas das contas de serviço usadas pela VPN e confirmar o teste de conexão",
+      "responsavel": "Carlos Mendes",
+      "prazo": "21 de novembro de 2026"
+    },
+    {
+      "providencia": "Esclarecer às unidades as dúvidas sobre o novo formulário de abertura de chamado",
+      "responsavel": "nao_informado",
+      "prazo": "nao_informado"
+    }
+  ]
+}

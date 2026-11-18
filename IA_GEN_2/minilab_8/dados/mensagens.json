@@ -1,0 +1,22 @@
+[
+  {
+    "texto": "A VPN da MTI caiu agora e ninguém da unidade consegue entrar no sistema de protocolo.",
+    "categoria_esperada": "INCIDENTE"
+  },
+  {
+    "texto": "Solicito a instalação do LibreOffice na estação da sala 204 e a liberação do meu acesso ao portal de chamados.",
+    "categoria_esperada": "REQUISICAO"
+  },
+  {
+    "texto": "Qual a diferença entre a conta de rede e a conta do e-mail institucional?",
+    "categoria_esperada": "DUVIDA"
+  },
+  {
+    "texto": "O computador da recepção está lento desde ontem. Dá para trocar por uma máquina nova?",
+    "categoria_esperada": "REQUISICAO"
+  },
+  {
+    "texto": "A impressora do setor não imprime desde as 8h de hoje. Vocês me explicam como resetar ou isso já é chamado?",
+    "categoria_esperada": "INCIDENTE"
+  }
+]
