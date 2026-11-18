@@ -1,0 +1,32 @@
+[
+  {
+    "n": 1,
+    "texto": "Esqueci a senha da conta de rede. Como recupero o acesso?",
+    "espera": "Orientar a recuperação em termos gerais e encaminhar à Central de Atendimento de TI quando o procedimento exato não estiver no fluxo, sem inventar prazo."
+  },
+  {
+    "n": 2,
+    "texto": "Meu computador não liga depois da queda de energia. O que faço?",
+    "espera": "Orientar a abertura de chamado de hardware, sem inventar prazo ou número de protocolo."
+  },
+  {
+    "n": 3,
+    "texto": "A VPN da MTI não conecta no trabalho remoto. Por onde começo?",
+    "espera": "Dar a orientação geral de acesso remoto e encaminhar à central se a norma de configuração não estiver no fluxo."
+  },
+  {
+    "n": 4,
+    "texto": "Preciso de acesso ao sistema de protocolo eletrônico. Quem libera?",
+    "espera": "Encaminhar a liberação de acesso à central ou à área responsável, sem citar artigo ou prazo que o fluxo não conhece."
+  },
+  {
+    "n": 5,
+    "texto": "A impressora do setor está offline desde hoje cedo. Como registro isso?",
+    "espera": "Orientar o registro do chamado de impressão, sem inventar o número do chamado."
+  },
+  {
+    "n": 6,
+    "texto": "Qual o valor do auxílio-alimentação dos servidores da MTI neste mês?",
+    "espera": "Recusar o assunto, porque não é suporte de TI, e indicar a área de gestão de pessoas em vez de informar um valor."
+  }
+]
